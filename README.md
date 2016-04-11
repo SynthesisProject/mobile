@@ -42,11 +42,7 @@ You may use any nodejs libraries you require to be able to export the config obj
 ### Log Level
 During development you might want to increase the log level.
 
-See `src/scripts/base/SynthConfig.js` - logLevel
-
-## Development environment
-### Windows
-[Register Device for Development](https://msdn.microsoft.com/library/windows/apps/ff769508(v=vs.105).aspx)
+See `config/build.config.js` - logLevel
 
 
 ## Development
