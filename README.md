@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/SynthesisProject/mobile.svg?branch=master)](https://travis-ci.org/SynthesisProject/mobile)
+
 # Synthesis Mobile
 
 This project is used as a client for the Synthesis Service
