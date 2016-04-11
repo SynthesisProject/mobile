@@ -1,0 +1,35 @@
+var fs = require('fs'),
+	path = require('path');
+
+var cordovaAppendXml;
+try{
+	cordovaAppendXml = fs.readFileSync(path.resolve(__dirname, 'config/cordova-append.xml'), 'utf8');
+}
+catch(error){
+	console.log('Failed to read android icons');
+	console.log(error);
+}
+
+module.exports = {
+	'cordova' : {
+		'dir' : 'cordova',
+		'packageId' : 'com.qmuzik.finclude',
+		'authorName' : 'Charl Thiem',
+		'authorEmail' : 'charl@opencollab.co.za',
+		'xml' : cordovaAppendXml,
+		'plugins' : [
+		    "cordova-plugin-whitelist@1.2.1",
+			"phonegap-plugin-push@1.3.0",
+			"cordova-plugin-file@4.1.1",
+			"cordova-plugin-file-transfer@1.5.0",
+			"cordova-plugin-device@1.1.1",
+			"cordova-plugin-inappbrowser@1.3.0",
+			"cordova-plugin-statusbar@2.1.1",
+			"cordova-plugin-dialogs@1.2.0",
+			"cordova-plugin-disable-nsapptransportsecurity@1.0.2",
+			"https://github.com/OpenCollabZA/cordova-plugin-fileopener.git"
+			]
+	},
+	"serverUrl": "http://synthesis.opencollab.co.za",
+    "applicationName": "Synthesis Mobile"
+};

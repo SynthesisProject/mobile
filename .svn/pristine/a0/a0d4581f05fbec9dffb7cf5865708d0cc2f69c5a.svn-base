@@ -1,0 +1,78 @@
+'use strict';
+/**
+* Controller to for replying on a discussion
+*/
+var ReplyCtrl = ($scope, $rootScope, $location, $routeParams, ForumService, SynthErrorHandler, SyncService) => {
+	$rootScope.activePage = 'forums';
+	$scope.moduleId = $routeParams.moduleId;
+
+	// Flag if we are replying on a message, else we are replying on a discussion
+	var replyingOnMessage = $routeParams.messageId !== undefined;
+
+	if (replyingOnMessage){
+		// Get the discussion
+		ForumService
+		.getMessage($routeParams.moduleId, $routeParams.forumId, $routeParams.discussionId, $routeParams.messageId)
+		.then(
+			// Success
+			function(message) {
+				$scope.replyMessage = message;
+				setupTopic(message.topic);
+				$rootScope.breadcrumbs = [{'name' : 'Discussions', 'url' : '#/tool/forums'},
+				{'name' : 'Reply'}];
+			},
+			// Failed
+			SynthErrorHandler
+		);
+	}
+	else{
+		// Get the discussion
+		ForumService
+		.getDiscussion($routeParams.moduleId, $routeParams.forumId, $routeParams.discussionId)
+		.then(
+			// Success
+			function(discussion) {
+				$scope.replyMessage = discussion;
+				setupTopic(discussion.topic);
+			},
+			// Failed
+			SynthErrorHandler
+		);
+	}
+
+	function setupTopic(topic){
+		// Initialise the topic for the reply
+		if (topic.indexOf('Re:') < 0){
+			$scope.topic = 'Re: ' + topic;
+		}
+		else{
+			$scope.topic = topic;
+		}
+	}
+
+
+	// Called when the user submits the form
+	$scope.submit = function(){
+		//var message = $scope.message;
+		var data = {
+			'topic' : $scope.topic,
+			'message' : $scope.message,
+			'messageId' : $routeParams.messageId
+		};
+
+		// Call service to add the reply message
+		ForumService
+		.replyOnMessage($routeParams.moduleId, $routeParams.forumId, $routeParams.discussionId, data)
+		.then(
+			// Success
+			function(){
+				SyncService.notifyChanges('forums');
+				$location.location('/tool/forums/' + $routeParams.forumId + '/' + $routeParams.discussionId);
+			},
+			// Failed
+			SynthErrorHandler
+		);
+	};
+};
+ReplyCtrl.$inject = ['$scope', '$rootScope', '$location', '$routeParams', 'ForumService', 'SynthErrorHandler', 'SyncService'];
+export default ReplyCtrl;

@@ -1,0 +1,7 @@
+{
+	"autoSyncEnabled" : true,
+	"autoSyncInterval" : 180000,
+	"autoSyncDownload" : false,
+	"autoSyncUpload" : true,
+	"singleToolMenu" : true
+}

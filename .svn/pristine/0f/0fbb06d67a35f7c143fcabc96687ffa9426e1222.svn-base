@@ -1,0 +1,54 @@
+'use strict';
+var ForumsLinkHandler = ($q, $timeout, SynthLinkHandler, SynthQLoop) => {
+	return (toolContent) => {
+
+		var forumKeys = Object.keys(toolContent),
+			discussionKeys,
+			discussionIdx = 0,
+			messageKeys,
+			messageIdx = 0,
+			forumIdx = 0,
+			currentForum,
+			currentDiscussion;
+
+
+		function fixNextMessage(){
+			if(messageIdx < messageKeys.length){
+				var message = currentDiscussion.messages[messageKeys[messageIdx++]];
+				return SynthLinkHandler.fixContent(message.content).then((fixedContent) =>{
+					message.content = fixedContent;
+				});
+			}
+			return null;
+		}
+
+		function fixNextDiscussion(){
+			if(discussionIdx < discussionKeys.length){
+				currentDiscussion = currentForum.discussions[discussionKeys[discussionIdx++]];
+				messageKeys = Object.keys(currentDiscussion.messages);
+				messageIdx = 0;
+				return SynthLinkHandler.fixContent(currentDiscussion.content).then((fixedContent) =>{
+					currentDiscussion.content = fixedContent;
+					return SynthQLoop(fixNextMessage);
+				});
+			}
+			// We are completely done
+			return null;
+		}
+
+		function fixNextForum(){
+			if(forumIdx < forumKeys.length){
+				currentForum = toolContent[forumKeys[forumIdx++]];
+				discussionKeys = Object.keys(currentForum.discussions);
+				discussionIdx = 0;
+				return SynthQLoop(fixNextDiscussion);
+			}
+			// We are completely done
+			return null;
+		}
+		return SynthQLoop(fixNextForum).then(() =>{
+			return toolContent;
+		});
+	};
+};
+export default ForumsLinkHandler;

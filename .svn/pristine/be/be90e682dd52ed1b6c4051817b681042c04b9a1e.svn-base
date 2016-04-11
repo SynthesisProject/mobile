@@ -1,0 +1,27 @@
+'use strict';
+var FaqService = ($q, ModuleService) => {
+
+	class FaqServiceImpl {
+
+		/**
+		* Gets the Frequently asked questions
+		*/
+		getFaqs(moduleId) {
+			return ModuleService.getToolData(moduleId, 'faq');
+		}
+
+		/**
+		* Gets a faq for the specified faq id
+		*/
+		getFaq(moduleId, faqId) {
+			return this.getFaqs(moduleId)
+			.then(function(data) {
+				return data[faqId];
+			});
+		}
+	}
+
+	return new FaqServiceImpl();
+};
+FaqService.$inject = ['$q', 'ModuleService'];
+export default FaqService;

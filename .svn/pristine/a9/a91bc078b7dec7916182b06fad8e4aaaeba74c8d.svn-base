@@ -1,0 +1,22 @@
+'use strict';
+/*
+ * tools/faq/routes.js
+ */
+var Config = ($routeProvider, SynthAttachmentMinerProvider, SynthEmbeddedImageHandlerProvider, SynthLinkHandlerProvider,
+	SynthDeleteHandlerProvider, SynthUploadResponseHandlerProvider) => {
+
+	SynthAttachmentMinerProvider.addHandler('forums', 'ForumsAttachmentMiner');
+	SynthEmbeddedImageHandlerProvider.addHandler('forums', 'ForumsEmbeddedImageHandler');
+	SynthUploadResponseHandlerProvider.addHandler('forums', 'ForumsUploadResponseHandler');
+	SynthLinkHandlerProvider.addHandler('forums', 'ForumsLinkHandler');
+
+	$routeProvider
+		.when('/tool/forums/:moduleId/', 										{templateUrl : 'tools/forums/partials/forums-list.html'})
+		.when('/tool/forums/:moduleId/:forumId', 								{templateUrl : 'tools/forums/partials/discussions-list.html'})
+		.when('/tool/forums/:moduleId/:forumId/:discussionId',					{templateUrl : 'tools/forums/partials/discussion.html'})
+		.when('/tool/forums/:moduleId/:forumId/:discussionId/reply',			{templateUrl : 'tools/forums/partials/reply.html'})
+		.when('/tool/forums/:moduleId/:forumId/:discussionId/:messageId/reply', {templateUrl : 'tools/forums/partials/reply.html'});
+};
+Config.$inject = ['$routeProvider', 'SynthAttachmentMinerProvider', 'SynthEmbeddedImageHandlerProvider', 'SynthLinkHandlerProvider',
+	'SynthDeleteHandlerProvider', 'SynthUploadResponseHandlerProvider'];
+export default Config;

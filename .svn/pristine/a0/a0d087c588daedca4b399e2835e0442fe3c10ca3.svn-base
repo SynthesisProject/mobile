@@ -1,0 +1,23 @@
+'use strict';
+import getNumberOfProperties from '../../../base/Utilities';
+/**
+* Controller for displaying the list of Forums
+*/
+var ForumListCtrl = ($scope, $rootScope, $routeParams, ForumService, SynthErrorHandler) => {
+
+	$rootScope.activePage = 'forums';
+	$rootScope.breadcrumbs = [{'name' : 'Discussions'}];
+	$scope.moduleId = $routeParams.moduleId;
+
+	// Attach the properties count method from utilities
+	$scope.props = getNumberOfProperties;
+
+	// Put all announcements on UI
+	ForumService
+	.getForums($routeParams.moduleId)
+	.then(function(forums) {
+		$scope.forums = forums;
+	}, SynthErrorHandler);
+};
+ForumListCtrl.$inject = ['$scope', '$rootScope', '$routeParams', 'ForumService', 'SynthErrorHandler'];
+export default ForumListCtrl;

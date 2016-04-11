@@ -1,0 +1,45 @@
+'use strict';
+
+import LearningUnitsListCtrl from './controllers/LearningUnitsListCtrl';
+import LearningUnitsViewUnitCtrl from './controllers/LearningUnitsViewUnitCtrl';
+import LearningUnitsViewSectionCtrl from './controllers/LearningUnitsViewSectionCtrl';
+
+import LearningUnitsService from './factories/LearningUnitsService';
+
+import Config from './config';
+import LearningUnitsImageHandler from './handlers/LearningUnitsImageHandler';
+import LearningUnitsLinkHandler from './handlers/LearningUnitsLinkHandler';
+/*
+import SynthEmbeddedImageHandler from '../../base/handlers/SynthEmbeddedImageHandler';
+import SynthLinkHandler from '../../base/handlers/SynthLinkHandler';
+
+// Register handlers
+SynthEmbeddedImageHandler.addHandler('learning_units', EmbeddedImageHandler);
+SynthLinkHandler.addHandler('learning_units', LinkHandler);
+*/
+
+var LearningUnitsTool = 'synthesis.tools.learning_units',
+	controllers = 'synthesis.tools.learning_units.controllers',
+	factories = 'synthesis.tools.learning_units.factories',
+	handlers = 'synthesis.tools.learning_units.handlers';
+
+
+angular.module(controllers, [])
+	.controller('LearningUnitsListCtrl', LearningUnitsListCtrl)
+	.controller('LearningUnitsViewUnitCtrl', LearningUnitsViewUnitCtrl)
+	.controller('LearningUnitsViewSectionCtrl', LearningUnitsViewSectionCtrl);
+
+angular.module(factories, [])
+	.factory('LearningUnitsService', LearningUnitsService);
+
+angular.module(handlers, [])
+	.factory('LearningUnitsImageHandler', LearningUnitsImageHandler)
+	.factory('LearningUnitsLinkHandler', LearningUnitsLinkHandler);
+
+angular.module(LearningUnitsTool, [
+	controllers,
+	factories,
+	handlers
+]).config(Config);
+
+export default LearningUnitsTool;

@@ -1,0 +1,57 @@
+'use strict';
+var ForumsAttachmentMiner = ($q, $timeout, SynthAttachmentMiner, SynthQLoop) => {
+
+	return function(contentData){
+		var filesToDownload = [],
+			forumKeys = Object.keys(contentData),
+			discussionKeys,
+			discussionIdx = 0,
+			messageKeys,
+			messageIdx = 0,
+			forumIdx = 0,
+			currentForum,
+			currentDiscussion;
+
+
+		function fixNextMessage(){
+			if(messageIdx < messageKeys.length){
+				var message = currentDiscussion.messages[messageKeys[messageIdx++]];
+				return SynthAttachmentMiner.parseArray(message.attachments).then((attachments) =>{
+					filesToDownload.concat(attachments);
+				});
+			}
+			return null;
+		}
+
+		function fixNextDiscussion(){
+			if(discussionIdx < discussionKeys.length){
+				currentDiscussion = currentForum.discussions[discussionKeys[discussionIdx++]];
+				messageKeys = Object.keys(currentDiscussion.messages);
+				messageIdx = 0;
+				return SynthAttachmentMiner.parseArray(currentDiscussion.attachments).then((attachments) =>{
+					filesToDownload.concat(attachments);
+					return SynthQLoop(fixNextMessage);
+				});
+			}
+			// We are completely done
+			return null;
+		}
+
+		function fixNextForum(){
+			if(forumIdx < forumKeys.length){
+				currentForum = contentData[forumKeys[forumIdx++]];
+				discussionKeys = Object.keys(currentForum.discussions);
+				discussionIdx = 0;
+				return SynthQLoop(fixNextDiscussion);
+			}
+			// We are completely done
+			return null;
+		}
+		return SynthQLoop(fixNextForum).then(()=>{
+			return filesToDownload;
+		});
+	};
+
+};
+ForumsAttachmentMiner.$inject = ['$q', '$timeout', 'SynthAttachmentMiner', 'SynthQLoop'];
+export default ForumsAttachmentMiner;

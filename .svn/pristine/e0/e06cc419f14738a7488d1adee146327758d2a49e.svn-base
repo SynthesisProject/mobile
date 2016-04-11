@@ -1,0 +1,21 @@
+'use strict';
+var ForumsUploadResponseHandler = ($q, $timeout) => {
+	return function(sentObject, responseObject){
+		var deferred = $q.defer();
+		$timeout(() => {
+			var string = JSON.stringify(sentObject);
+			// Replace Ids
+			for(var oldKey in responseObject){
+				var newKey = responseObject[oldKey];
+				var regEx = new RegExp(oldKey, 'g');
+				// Replace all instances of the old key with the new key
+				string = string.replace(regEx, newKey);
+			}
+			deferred.resolve(string);
+		});
+
+		return deferred.promise;
+	};
+};
+ForumsUploadResponseHandler.$inject = ['$q', '$timeout'];
+export default ForumsUploadResponseHandler;

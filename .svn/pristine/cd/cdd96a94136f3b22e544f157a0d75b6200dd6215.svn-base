@@ -1,0 +1,6 @@
+src/www/libs/ie10.responsive-fix.js
+src/www/libs/ie8.responsive-fix.js
+src/www/libs/**/*.js
+src/scripts/tools/learning_units/
+src/scripts/tools/welcome/
+src/scripts/tools/forums/

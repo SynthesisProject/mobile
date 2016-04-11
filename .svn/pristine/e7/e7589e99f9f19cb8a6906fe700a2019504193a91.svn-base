@@ -1,0 +1,23 @@
+/*
+ * tools/welcome/js/welcome.services.js
+ */
+(function(synthMobile){
+	'use strict';
+
+
+/**
+ * Welcome controller
+ */
+	synthMobile.controller('WelcomeCtrl',
+	['$scope', '$routeParams', 'WelcomeService', 'SynthErrorHandler',
+	function($scope, $routeParams, WelcomeService, SynthErrorHandler) {
+		WelcomeService
+		.getWelcome($routeParams.moduleId)
+		.then(
+			// Success
+			function(welcome) {
+				$scope.welcome = welcome;
+			}, SynthErrorHandler);
+	}
+]);
+})(synthMobile);

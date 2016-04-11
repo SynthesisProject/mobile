@@ -1,0 +1,97 @@
+<div ng-controller="ResourcesCtrl">
+	<div class="list-group list-menu" ng-hide="showResourceInfo" ng-swipe-left="previousPage()" ng-swipe-right="nextPage()">
+		<div class="list-group-item" ng-click="goUp()">
+			<span class="glyphicon glyphicon-folder-open"> </span> <b>..</b>
+			<div class="pull-right">
+				<button type="button" class="btn btn-danger btn-xs" ng-click="downloadAll($event)"><span class="glyphicon glyphicon-cloud-download"></span> Download All</button>
+			</div>
+			<div style="font-weight: normal; border-top: 1px solid;margin-top: 6px;" ng-if="promptDownloadAll">
+				<div ng-if="downloadAllObject.resources.length > 0">
+					You are about to download <b>{{downloadAllObject.size | bytesToSize}}</b><br>
+					Are you sure you want to continue?
+				</div>
+				<div ng-if="downloadAllObject.resources.length == 0">
+					No more files to download.
+				</div>
+				<div style="margin-bottom: 25px; ">
+					<button type="button" class="pull-left btn btn-danger btn-sm" ng-click="cancelDownloadAll($event)">Cancel</button>
+					<button type="button" class="pull-right btn btn-primary btn-sm" ng-click="startDownloadAll($event)" ng-if="downloadAllObject.resources.length > 0">Continue</button>
+				</div>
+			</div>
+			<div style="margin-top: 7px; font-weight: normal" ng-if="busyDownloadingAll">
+					<div>Downloaded {{downloadAllObject.downloadedFiles}} of {{downloadAllObject.resources.length}} files..</div>
+					<div class="progress progress-striped active" style="margin-bottom: 0;">
+					<div class="progress-bar progress-bar-success" role="progressbar" ng-style="{'width' : ((downloadAllObject.progress || 0) + '%')}"></div>
+					</div>
+				</div>
+		</div>
+		<div class="list-group-item" resource-list-item resource="resource" ng-repeat="resource in resources" ng-click="openResource(resource, $event)" ng-if="!loadingResources">
+		</div>
+	</div>
+	<div class="alert alert-warning synth-busybox" ng-if="loadingResources" style="margin-top: -20px">
+		<span class="synth-icon-loader32"></span>
+		<span>Loading Resources...</span>
+	</div>
+	<div ng-if="!loadingResources && pageListAllCount > pageListPageCount && showResourceInfo!==true" style="text-align: center">
+		<pagination total-items="pageListAllCount"
+			style="margin: 0;"
+			items-per-page="pageListPageCount"
+			max-size="paginationSize"
+			ng-model="pageCurrent"
+			ng-change="paginationUpdate(pageCurrent)"
+			next-text="&#62;"
+			previous-text="&#60;"
+			first-text="&#171;"
+			last-text="&#187;"
+			boundary-links="true"
+			rotate="true"></pagination>
+	</div>
+
+
+	<div class="panel panel-default" ng-if="showResourceInfo===true" style="border-radius: 0;">
+         <div class="panel-heading"  style="border-radius: 0;">
+         Information
+         </div>
+         <div class="panel-body">
+         	<table cellspacing="0" style="width: 100%">
+				<tbody>
+					<tr>
+						<th>Title</th>
+						<td>{{resourceInfo.title}}</td>
+					</tr>
+					<tr>
+						<th>Description</th>
+						<td>{{resourceInfo.description}}</td>
+					</tr>
+					<tr>
+						<th>Access</th>
+						<td>{{resourceInfo.access}}</td>
+					</tr>
+					<tr>
+						<th>Created By</th>
+						<td>{{resourceInfo.createdByDisplayName}}</td>
+					</tr>
+					<tr>
+						<th>Created Time</th>
+						<td>{{resourceInfo.created_on | formatDate}}</td>
+					</tr>
+					<tr>
+						<th>Last Modified Time</th>
+						<td>{{resourceInfo.modified_on | formatDate}}</td>
+					</tr>
+					<tr>
+						<th>Last Modified By</th>
+						<td>{{resourceInfo.lastmodifiedByDisplayName}}</td>
+					</tr>
+					<tr>
+						<th>Size</th>
+						<td>{{resourceInfo.size | bytesToSize}}</td>
+					</tr>
+				</tbody>
+			</table>
+         </div>
+         <div class="panel-footer"style="text-align: right;"  style="border-radius: 0;">
+			<button class="btn btn-default" ng-click="hideInfo()">Back</button>
+		</div>
+     </div>
+</div>

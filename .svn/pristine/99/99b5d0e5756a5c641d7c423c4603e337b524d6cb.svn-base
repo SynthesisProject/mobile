@@ -1,0 +1,154 @@
+'use strict';
+import {generateUID} from '../../../base/Utilities';
+
+var ForumService = ($q, ModuleService, DataService) => {
+
+	function ForumServiceImpl() {}
+
+	/**
+	* Gets the data for the Forums tool
+	*/
+	ForumServiceImpl.prototype._getData = function(moduleId){
+		return ModuleService.getMergedToolData(moduleId, 'forums');
+	};
+
+
+	/**
+	* Gets the forums
+	*/
+	ForumServiceImpl.prototype.getForums = function(moduleId) {
+		return this._getData(moduleId);
+	};
+
+	/**
+	* Gets the discussions for a forum
+	* @param forumId ID of the forum to get
+	*/
+	ForumServiceImpl.prototype.getForum = function(moduleId, forumId) {
+		return this._getData(moduleId)
+		.then(function(data) {
+			return data[forumId];
+		});
+	};
+
+
+	/**
+	* Gets a specific discussion
+	*
+	* @param forumId ID of the forum in which the discussion is
+	* @param discussionId ID of the discussion to get
+	*/
+	ForumServiceImpl.prototype.getDiscussion = function(moduleId, forumId, discussionId) {
+		return this.getForum(moduleId, forumId)
+		.then(function(forum) {
+			return forum.discussions[discussionId];
+		});
+	};
+
+	/**
+	* Gets a specific message
+	* @param forumId ID of the forum in which the discussion is
+	* @param discussionId ID of the discussion to get
+	* @param messageId ID of the message to get
+	*/
+	ForumServiceImpl.prototype.getMessage = function(moduleId, forumId, discussionId, messageId) {
+		return this.getDiscussion(moduleId, forumId, discussionId)
+		.then(function(discussion) {
+			return discussion.messages[messageId];
+		});
+	};
+
+	/**
+	* Adds a reply message to a discussion
+	* @param forumId ID of the forum the message is in
+	* @param discussionId ID of the discussion the message is in
+	* @param data Object with the following fields:
+	*  {
+	*  	'topic' 	: "<topic for the message>",
+	*  	'message' 	: "<the reply message>",
+	*  	'messageId'	: "<id of message, only if the reply is on a message, not a discussion>"
+	*  }
+	*/
+	ForumServiceImpl.prototype.replyOnMessage = function(moduleId, forumId, discussionId, data) {
+		var deferred = $q.defer();
+		// We are replying to a message
+		if (data.messsageId){
+			this.getMessage(moduleId, forumId, discussionId, data.messsageId).then(
+				// Success
+				function(message){
+					saveNewMessage(message);
+				},
+				// Failed
+				function(error){
+					deferred.reject(error);
+				}
+			);
+		}
+		// We are replying on a discussion
+		else{
+			this.getDiscussion(moduleId, forumId, discussionId).then(
+				// Success
+				function(discussion){
+					saveNewMessage(discussion);
+				},
+				// Failed
+				function(error){
+					deferred.reject(error);
+				}
+			);
+		}
+
+		/**
+		* Function to save the new message to the replying message
+		*/
+		function saveNewMessage(replyingToMessage){
+			var mergeData = {};
+
+			// Create the new message entry
+			var now = moment().toISOString();
+			var uid = generateUID();
+			var newMessage = {
+				'id' : uid,
+				'topic' : data.topic,
+				'content' : data.message,
+				'depth' : (replyingToMessage.depth + 1), // Calculate depth
+				'url' : null,
+				'parent' : replyingToMessage.id, // Calculate parent
+				'status' : 'READY',
+				'attachments' : null,
+				'create_date' : now,
+// TODO this is broken!				'creator_name' : UserSession.username,
+// TODO this is broken!				'creator_id' : UserSession.lms_id,
+				'discussion_id' : discussionId,
+				'group_size' : 0, // ?
+				'site_id' : moduleId,
+				'attachment_count' : 0,
+				'reply_count' : 0
+			};
+
+			// Create the merge data for the new message
+			mergeData[forumId] = {};
+			mergeData[forumId].discussions = {};
+			mergeData[forumId].discussions[discussionId] = {};
+			mergeData[forumId].discussions[discussionId].messages = {};
+			mergeData[forumId].discussions[discussionId].messages[uid] = newMessage;
+
+			// Now merge to the upload file
+			ModuleService.mergeToToolData(moduleId, 'forums', mergeData, true).then(
+				// Success
+				function(){
+					deferred.resolve();
+				},
+				// Failed
+				function(error){
+					deferred.reject(error);
+				});
+		}
+		return deferred.promise;
+	};
+
+
+	return new ForumServiceImpl();
+};
+ForumService.$inject = ['$q', 'ModuleService', 'DataService'];
+export default ForumService;

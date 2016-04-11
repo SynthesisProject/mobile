@@ -1,0 +1,37 @@
+{
+  "name": "synthesis-mobile",
+  "version": "1.0.1",
+  "authors": [
+    "Charl Thiem <charl.thiem@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "private",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "jQuery#2.2.0",
+    "moment": "2.10.6",
+    "bootstrap": "3.1.1",
+    "angular": "1.4.9",
+    "angular-animate": "1.4.9",
+    "angular-resource": "1.4.9",
+    "angular-route": "1.4.9",
+    "angular-touch": "1.4.9",
+    "angular-utf8-base64": "0.0.5",
+    "angular-bootstrap": "0.11.0",
+    "iscroll": "5.1.1",
+    "lodash": "3.10.1",
+    "bootstrap-switch": "~3.3.2",
+    "angular-bootstrap-switch": "~0.5.0",
+    "spin.js": "~2.3.2"
+  }
+}

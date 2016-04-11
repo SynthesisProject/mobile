@@ -1,0 +1,57 @@
+'use strict';
+var LearningUnitsService = ($q, filterFilter, ModuleService) => {
+
+	class LearningUnitsServiceImpl{
+		_getData(moduleId){
+			return ModuleService.getMergedToolData(moduleId, 'learning_units');
+		}
+
+		getUnits() {
+			return this.getSectionsForParent(null);
+		}
+
+		getSectionsForParent(moduleId, parentTtId, recursive) {
+			var self = this;
+			var sections = [];
+
+			// Find all the children that has the tt_parent_id as the tt_id
+			function getChildren(data, ttId){
+				// Filters only work with arrays, units is not an array
+				for(var key in data){
+					if(data[key].tt_parent_id == ttId){
+						// Push this child, and then recursively get its children
+						var section = data[key];
+						sections.push(section);
+						if (recursive){
+							getChildren(data, section.tt_id);
+						}
+					}
+				}
+			}
+
+			return self._getData(moduleId).then(function(data){
+				getChildren(data, parentTtId);
+				return sections;
+			});
+		}
+
+		getSection(moduleId, id) {
+			return this._getData(moduleId).then(function(units){
+				return units[id];
+			});
+		}
+
+		getSections(moduleId, id, recursive) {
+			var self = this;
+			function getChildrenPromise(section){
+				return self.getSectionsForParent(moduleId, section.tt_id, recursive);
+			}
+			return this.getSection(moduleId, id).then(getChildrenPromise);
+		}
+	}
+
+
+	return new LearningUnitsServiceImpl();
+};
+LearningUnitsService.$inject = ['$q', 'filterFilter', 'ModuleService'];
+export default LearningUnitsService;

@@ -1,0 +1,21 @@
+var fs = require('fs'),
+	path = require('path');
+
+var cordovaAppendXml;
+try{
+	cordovaAppendXml = fs.readFileSync(path.resolve(__dirname, 'config/cordova-append.xml'), 'utf8');
+}
+catch(error){
+	console.log('Failed to read android icons');
+	console.log(error);
+}
+
+module.exports = {
+	'cordova' : {
+		'dir' : 'cordova',
+		'packageId' : 'com.qmuzik.finclude',
+		'authorName' : 'Charl Thiem',
+		'authorEmail' : 'charl@opencollab.co.za',
+		'xml' : cordovaAppendXml
+	}
+};

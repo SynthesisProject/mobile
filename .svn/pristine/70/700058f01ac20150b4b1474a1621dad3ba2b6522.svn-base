@@ -1,0 +1,77 @@
+'use strict';
+var LearningUnitsImageHandler = ($q, $timeout, SynthEmbeddedImageHandler, SynthQLoop) => {
+	var regEx1 = new RegExp('/access/meleteDocs/content/private/meleteDocs/', 'g');
+	var regEx2 = new RegExp('/uploads/', 'g');
+
+	// Fix all the images in html content
+	function fixImages(html, resourcesPath){
+		var deferred = $q.defer();
+
+		$timeout(() => {
+			var dummyData = $('<div/>').html(html);
+			// Find each image and create a promise to fix the image
+			dummyData.find('img').each(function() {
+				var src = $(this).attr('src');
+				// Get the current source attribute, and update
+				var newSrc = src;
+				newSrc = newSrc.replace(regEx1, '/data/');
+				newSrc = newSrc.replace(regEx2, '/images/');
+				$(this).attr('data-src', resourcesPath + newSrc);
+				$(this).attr('src', '#'); // Clear the src
+
+				var resourceId = src;
+				resourceId = resourceId.replace(regEx1, '/group/');
+				resourceId = resourceId.replace(regEx2, '/images/');
+				// Also add an extra attribute to set the resource Id
+				$(this).attr('data-resource-id', resourceId);
+
+			});
+			deferred.resolve(dummyData.html());
+		});
+		return deferred.promise;
+	}
+
+	return function(toolContent){
+		var idx = 0;
+		var unitKeys = Object.keys(toolContent);
+		/**
+		 * If there is no annoucment content, there is nothing to
+		 * attempt to change
+		 */
+		if(unitKeys.length === 0){
+			return $q.when(toolContent);
+		}
+
+		function fixNextUnit(){
+			let currentIndex = idx++;
+			if(currentIndex < unitKeys.length){
+				let unit = toolContent[unitKeys[currentIndex]];
+
+				return fixImages(unit.content, 'TODO PATH')
+					.then((fixedContent) =>{
+						// Update the content to the newly fixed html content
+						unit.content = fixedContent;
+					})
+					.then(() => {
+						return fixImages(unit.description, 'TODO PATH');
+					})
+					.then((fixedContent) =>{
+						unit.description = fixedContent;
+					});
+
+			}
+
+			// Nothing more to loop, so lets return a null to stop the SynthQLoop
+			return null;
+		}
+
+		// Start looping over each announcement
+		return SynthQLoop(fixNextUnit)
+			.then(()=>{
+				return toolContent;
+			});
+	};
+
+};
+LearningUnitsImageHandler.$inject = [];
+export default LearningUnitsImageHandler;

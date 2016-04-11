@@ -1,0 +1,35 @@
+<div class="list-group list-menu">
+
+	<!-- Push Settings -->
+	<a href="#/settings-push" class="list-group-item" ng-hide="!isRegistered">
+		<h4 class="list-group-item-heading">Push Notifications</h4>
+		<p class="list-group-item-text">Configure Push notifications</p>
+	</a>
+
+	<!--  Sync settings -->
+	<div class="list-group-item list-group-divider" ng-hide="!isRegistered">Synchronise</div>
+	<a class="list-group-item" ng-hide="!isRegistered">
+		<div class="pull-right"><input bs-switch ng-model="settings.autoSyncDownload" type="checkbox" switch-animate="animateSwitch"/></div>
+		<h4 class="list-group-item-heading">Auto Download</h4>
+		<p class="list-group-item-text">Automatically download new content</p>
+	</a>
+	<a class="list-group-item" ng-hide="!isRegistered || !canUpload">
+		<div class="pull-right"><input bs-switch ng-model="settings.autoSyncUpload" type="checkbox" switch-animate="animateSwitch"/></div>
+		<h4 class="list-group-item-heading">Auto Upload</h4>
+		<p class="list-group-item-text">Automatically upload your changes</p>
+	</a>
+
+	<!-- Module Management settings -->
+	<div class="list-group-item list-group-divider" ng-hide="!isRegistered">Modules</div>
+	<a href="#/register-selectModules" class="list-group-item" ng-hide="!isRegistered">
+		<h4 class="list-group-item-heading">Register Modules</h4>
+		<p class="list-group-item-text">Register for more modules</p>
+	</a>
+
+
+	<div class="list-group-item list-group-divider">Account</div>
+	<a class="list-group-item" ng-click="confirmDeleteAccount($event)">
+		<h4 class="list-group-item-heading">Log out</h4>
+		<p class="list-group-item-text">Delete all account data</p>
+	</a>
+</div>

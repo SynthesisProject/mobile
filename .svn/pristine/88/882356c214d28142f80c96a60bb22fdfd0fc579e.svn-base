@@ -1,0 +1,27 @@
+'use strict';
+var LearningUnitsViewUnitCtrl = ($scope, $rootScope, $routeParams, LearningUnitsService, SynthErrorHandler) => {
+
+	$rootScope.activePage = 'learning_units';
+	$rootScope.breadcrumbs = [{'name' : 'Learning Units', 'url' : '#/tool/learning_units/' + $routeParams.moduleId}];
+
+	$scope.moduleId = $routeParams.moduleId;
+	$scope.unitId = $routeParams.unitId;
+
+	// Get the unit
+	LearningUnitsService
+	.getSection($routeParams.moduleId, $routeParams.unitId)
+	.then(function(unit) {
+		$scope.unit = unit;
+		$rootScope.breadcrumbs = [{'name' : 'Learning Units', 'url' : '#/tool/learning_units/' + $routeParams.moduleId},
+		{'name' : unit.title}];
+	}, SynthErrorHandler);
+
+	// Get the sections
+	LearningUnitsService
+	.getSections($routeParams.moduleId, $routeParams.unitId, true)
+	.then(function(sections) {
+		$scope.sections = sections;
+	}, SynthErrorHandler);
+};
+LearningUnitsViewUnitCtrl.$inject = ['$scope', '$rootScope', '$routeParams', 'LearningUnitsService', 'SynthErrorHandler'];
+export default LearningUnitsViewUnitCtrl;

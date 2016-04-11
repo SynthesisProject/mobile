@@ -1,0 +1,44 @@
+'use strict';
+
+import ForumListCtrl from './controllers/ForumListCtrl';
+import DiscussionListCtrl from './controllers/DiscussionListCtrl';
+import DiscussionCtrl from './controllers/DiscussionCtrl';
+import ReplyCtrl from './controllers/ReplyCtrl';
+
+import ForumService from './factories/ForumService';
+
+import Config from './config';
+import ForumsAttachmentMiner from './handlers/ForumsAttachmentMiner';
+import ForumsEmbeddedImageHandler from './handlers/ForumsEmbeddedImageHandler';
+import ForumsUploadResponseHandler from './handlers/ForumsUploadResponseHandler';
+import ForumsLinkHandler from './handlers/ForumsLinkHandler';
+
+var ForumsTool = 'synthesis.tools.forums',
+	controllers = 'synthesis.tools.forums.controllers',
+	factories = 'synthesis.tools.forums.factories',
+	providers = 'synthesis.tools.forums.providers';
+
+
+angular.module(controllers, [])
+	.controller('ForumListCtrl', ForumListCtrl)
+	.controller('DiscussionListCtrl', DiscussionListCtrl)
+	.controller('DiscussionCtrl', DiscussionCtrl)
+	.controller('ReplyCtrl', ReplyCtrl);
+
+angular.module(factories, [])
+	.factory('ForumService', ForumService);
+
+angular.module(providers, [])
+	.factory('ForumsAttachmentMiner', ForumsAttachmentMiner)
+	.factory('ForumsEmbeddedImageHandler', ForumsEmbeddedImageHandler)
+	.factory('ForumsUploadResponseHandler', ForumsUploadResponseHandler)
+	.factory('ForumsLinkHandler', ForumsLinkHandler);
+
+
+angular.module(ForumsTool, [
+	controllers,
+	factories,
+	providers
+]).config(Config);
+
+export default ForumsTool;

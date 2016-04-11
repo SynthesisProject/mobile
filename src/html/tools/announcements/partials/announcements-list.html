@@ -1,0 +1,14 @@
+<div ng-controller="AnnouncementListCtrl">
+	<div class="list-group list-menu" ng-if="announcements.length > 0">
+		<a href="#/tool/announcements/{{moduleId}}/{{announcement.id}}"
+			class="list-group-item"
+			ng-repeat="announcement in announcements | orderBy:orderDateFunc:true">{{announcement.subject}}</a>
+	</div>
+	<div class="alert alert-warning" ng-show="loadingAnnouncements">
+			<span class="synth-icon-loader32"></span>
+			<span>Loading announcements...</span>
+	</div>
+	<div class="alert alert-warning" ng-show="!loadingAnnouncements && announcements.length === 0">
+			<span>There are no announcements</span>
+	</div>
+</div>

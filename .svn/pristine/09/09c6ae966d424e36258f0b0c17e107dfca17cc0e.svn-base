@@ -1,0 +1,104 @@
+#!/usr/bin/env node
+/* eslint linebreak-style: 0*/
+var gulp = require('gulp'),
+	browserify = require('browserify'),
+	uglify = require('gulp-uglify'),
+	less = require('gulp-less'),
+	minifyCss = require('gulp-minify-css'),
+	buffer = require('vinyl-buffer'),
+	source = require('vinyl-source-stream'),
+	babelify = require('babelify'),
+	usemin = require('gulp-usemin'),
+	eslint = require('gulp-eslint');
+
+
+var DEVELOPMENT = !!process.env.DEVELOPMENT && (process.env.DEVELOPMENT.indexOf('true') == 0);
+
+gulp.task('usemin', function() {
+
+	var jsArray;
+	if(DEVELOPMENT){
+		jsArray = [];
+	}
+	else{
+		jsArray = [uglify];
+	}
+
+
+	return gulp.src('./src/www/index.html')
+	.pipe(usemin({
+		less : [less(), minifyCss(), 'concat'],
+		css : [ ],
+		/*html: [ minifyHtml({ empty: true }) ],*/
+		js : jsArray
+	}))
+	.pipe(gulp.dest('./www'));
+});
+
+gulp.task('lint', function () {
+	// ESLint ignores files with "node_modules" paths.
+	// So, it's best to have gulp ignore the directory as well.
+	// Also, Be sure to return the stream from the task;
+	// Otherwise, the task may end before the stream has finished.
+	return gulp.src(['./src/**/*.js', '!node_modules/**'])
+		// eslint() attaches the lint output to the "eslint" property
+		// of the file object so it can be used by other modules.
+		.pipe(eslint())
+		// eslint.format() outputs the lint results to the console.
+		// Alternatively use eslint.formatEach() (see Docs).
+		.pipe(eslint.format())
+		// To have the process exit with an error code (1) on
+		// lint error, return the stream and pipe to failAfterError last.
+		.pipe(eslint.failAfterError());
+});
+
+function doDevelopment(){
+	console.log('Gulp - Developer Mode');
+	return browserify('./src/scripts/init.js', { debug : true })
+	.transform(babelify)
+	.bundle()
+	.on('error', function (err) {
+		console.log(err);
+	})
+	.pipe(source('synthesis.min.js'))
+	.pipe(buffer())
+	//.pipe(uglify())
+	.pipe(gulp.dest('./www/js'));
+}
+
+
+function doProduction(){
+	console.log('Gulp - Production Mode');
+	return browserify('./src/scripts/init.js')
+	.transform(babelify)
+	.bundle()
+	.on('error', function (err) {
+		console.log(err);
+	})
+	.pipe(source('synthesis.min.js'))
+	.pipe(buffer())
+	.pipe(uglify())
+	.pipe(gulp.dest('./www/js'));
+}
+
+// Pipeline - styles, lint, browserify
+// ----------------------------------------
+gulp.task('pipeline', ['usemin', 'lint'], function () {
+
+	gulp.src(['./src/www/**', '!./src/www/index.html'], {base : './src/www'})
+	.pipe(gulp.dest('www'));
+
+	// Copy the bootstrap font
+	gulp.src(['./bower_components/bootstrap/dist/fonts/**'], {base : './bower_components/bootstrap/dist'})
+	.pipe(gulp.dest('www'));
+
+	if (DEVELOPMENT){
+		return doDevelopment();
+	}
+	else{
+		return doProduction();
+	}
+
+});
+
+gulp.start('pipeline');
