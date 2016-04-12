@@ -1,6 +1,7 @@
 {
   "name": "synthesis-mobile",
-  "version": "1.0.1",
+  "version": "1.0.0",
+  "private" : "true",
   "authors": [
     "Charl Thiem <charl@opencollab.co.za>"
   ],

@@ -3,9 +3,13 @@
   "version": "1.0.0",
   "private": true,
   "description": "Synthesis mobile application",
+  "license" : "AGPL-3.0",
   "repository": {
-    "type": "svn",
-    "url": "http://svn.opencollab.co.za:18080/svn/opencollab/synthesis/synth-mobile/trunk"
+    "type": "git",
+    "url": "https://github.com/SynthesisProject/mobile.git"
+  },
+  "contributors" : {
+	  "name" : "Charl Thiem"
   },
   "devDependencies": {
     "babel-eslint": "5.0.0",
