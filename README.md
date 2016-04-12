@@ -15,8 +15,12 @@ Node 4.2 or higher with gulp installed globally
 
 
 ## Installation
-`npm install`
-
+```bash
+git clone https://github.com/SynthesisProject/mobile.git
+cd mobile
+npm install
+```
+Now you are ready to start building the application
 
 ## Usage
 Once ready to run on a device or emulator:
@@ -28,11 +32,15 @@ Once ready to run on a device or emulator:
 To use developer mode you need to set an environment variable
 Unix:
 
-`export DEVELOPMENT=true; gulp build-android`
+``` bash
+export DEVELOPMENT=true; gulp build-android
+```
 
 Windows:
 
-`set DEVELOPMENT=true; gulp build-android`
+```
+set DEVELOPMENT=true; gulp build-android
+```
 
 ## Configuration
 
