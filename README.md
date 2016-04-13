@@ -29,6 +29,8 @@ Once ready to run on a device or emulator:
 
 `gulp build-ios`
 
+`gulp build-windows`
+
 To use developer mode you need to set an environment variable
 Unix:
 
