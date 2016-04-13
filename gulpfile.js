@@ -8,6 +8,7 @@ var gulp = require('gulp'),
 	plugin = require('gulp-cordova-plugin'),
 	android = require('gulp-cordova-build-android'),
 	ios = require('gulp-cordova-build-ios'),
+	windows = require('gulp-cordova-build-windows'),
 	access = require('gulp-cordova-access'),
 	author = require('gulp-cordova-author'),
 	description = require('gulp-cordova-description'),
@@ -188,6 +189,15 @@ gulp.task('build-ios', ['clean-cordova', 'pipeline'], function() {
 		// No dest, the ios plugin can't currently export a file
 });
 
+gulp.task('build-windows', ['clean-cordova', 'pipeline'], function() {
+	return createCordova()
+		.pipe(windows({
+			version : buildConfig.cordova.platforms.windows,
+			reAdd : true
+		}));
+		// No dest, the ios plugin can't currently export a file
+});
+
 /**
  * This task should always be the last in a chain as it does not pipe properly
  */
@@ -200,5 +210,6 @@ gulp.task('run-ios', ['build-ios'], function() {
 	process.env.PWD = __dirname + path.sep + buildConfig.cordova.dir;
 	cordovaRun('ios');
 });
+
 
 gulp.task('default', ['cordova-android']);

@@ -3,13 +3,13 @@
   "version": "1.0.0",
   "private": true,
   "description": "Synthesis mobile application",
-  "license" : "AGPL-3.0",
+  "license": "AGPL-3.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/SynthesisProject/mobile.git"
   },
-  "contributors" : {
-	  "name" : "Charl Thiem"
+  "contributors": {
+    "name": "Charl Thiem"
   },
   "devDependencies": {
     "babel-eslint": "5.0.0",
@@ -26,6 +26,7 @@
     "gulp-cordova-author": "1.0.0",
     "gulp-cordova-build-android": "1.5.0",
     "gulp-cordova-build-ios": "2.0.0",
+    "gulp-cordova-build-windows": "git+https://github.com/trojanc/gulp-cordova-build-windows.git",
     "gulp-cordova-create": "1.3.0",
     "gulp-cordova-description": "1.0.1",
     "gulp-cordova-plugin": "1.5.0",

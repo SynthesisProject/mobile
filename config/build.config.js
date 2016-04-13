@@ -20,7 +20,8 @@ module.exports = {
 		'xml' : cordovaAppendXml,
 		'platforms' : {
 			'android' : '5.1.1',
-			'ios' : '4.1.0'
+			'ios' : '4.1.0',
+			'windows' : '4.3.2'
 		},
 		'plugins' : [
 			'cordova-plugin-whitelist@1.2.1',
