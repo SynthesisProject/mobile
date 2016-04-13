@@ -41,7 +41,10 @@ module.exports = {
 			'DisallowOverscroll' : 'true',
 			'StatusBarOverlaysWebView' : 'false',
 			'StatusBarBackgroundColor' : '#000000',
-			'StatusBarStyle' : 'lightcontent'
+			'StatusBarStyle' : 'lightcontent',
+			'AndroidPersistentFileLocation' : 'Compatibility',
+			'iosPersistentFileLocation' : 'Library',
+			'windows-target-version' : '8.1',
 		}
 	},
 	/**
