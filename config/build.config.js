@@ -1,5 +1,8 @@
 var fs = require('fs'),
-	path = require('path');
+	path = require('path'),
+	os = require('os'),
+	pkg = require('../package.json'),
+	extend = require('extend');
 
 var cordovaAppendXml;
 try{
@@ -11,7 +14,7 @@ catch(error){
 	throw error;
 }
 
-module.exports = {
+var buildConfig = {
 	'cordova' : {
 		'dir' : 'cordova',
 		'packageId' : 'coza.opencollab.synthesis.mobile',
@@ -44,7 +47,17 @@ module.exports = {
 			'StatusBarStyle' : 'lightcontent',
 			'AndroidPersistentFileLocation' : 'Compatibility',
 			'iosPersistentFileLocation' : 'Library',
-			'windows-target-version' : '8.1',
+			'windows-target-version' : '8.1'
+		},
+		'android' : {
+			// Path to the key store
+			storeFile : null,
+			// Alias of the key in the key store
+			keyAlias : null,
+			// Password for the keystore
+			storePassword : null,
+			// Password for the key in the key store
+			keyPassword : null
 		}
 	},
 	/**
@@ -102,3 +115,40 @@ module.exports = {
 	// Sender ID for android push notifications
 	'androidSenderID' : null
 };
+
+// Check if there is an external file with build config we need to load
+// The file must be located at ~/.${module-name}/build-config.json
+// For example if you did not change the package name the config will be located at
+// ~/.synthesis-mobile/config.json
+// Which resolves to
+// (linux) /home/username/.synthesis-mobile/build-config.json
+// (Windows) C:/Users/username/.synthesis-mobile/build-config.json
+var home = os.homedir();
+var externalConfigPath = home + '/.' + pkg.name + '/build-config.json';
+var externalConfig = null;
+try{
+	var stat = fs.statSync(externalConfigPath);
+	if(stat.isFile()){
+		var externalConfig = fs.readFileSync(externalConfigPath, 'utf8');
+		try{
+			console.log(externalConfig);
+			externalConfig = JSON.parse(externalConfig);
+		}
+		catch(pError){
+			console.log('Failed to parse config as json: ' + pError);
+		}
+	}
+	else {
+		console.log(externalConfigPath + ' is not a file.');
+	}
+}
+catch(error){
+	console.log('No external config found at: ' + externalConfigPath);
+}
+// Merge the external config to the application config
+if(externalConfig != null){
+	buildConfig = extend(true, buildConfig, externalConfig);
+}
+
+console.log(JSON.stringify(buildConfig, 4, true));
+module.exports = buildConfig;
