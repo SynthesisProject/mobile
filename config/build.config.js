@@ -150,5 +150,4 @@ if(externalConfig != null){
 	buildConfig = extend(true, buildConfig, externalConfig);
 }
 
-console.log(JSON.stringify(buildConfig, 4, true));
 module.exports = buildConfig;

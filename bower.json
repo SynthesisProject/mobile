@@ -10,7 +10,6 @@
   "moduleType": [],
   "license": "private",
   "homepage": "",
-  "private": true,
   "ignore": [
     "**/.*",
     "node_modules",

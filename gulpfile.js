@@ -170,13 +170,15 @@ function createCordova(){
 }
 
 gulp.task('build-android', ['clean-cordova', 'pipeline'], function() {
-	return createCordova().pipe(android({
-		version : buildConfig.cordova.platforms.android/*
-		storeFile : buildConfig.cordova.keystoreFile,
-		keyAlias : buildConfig.cordova.keystoreAlias,
-		storePassword : buildConfig.cordova.keyStorePassword,
-		keyPassword : buildConfig.cordova.keyStorePassword*/
-	}))
+	var androidConfig = {
+		version : buildConfig.cordova.platforms.android
+	};
+	androidConfig.storeFile = buildConfig.cordova.keystoreFile || undefined;
+	androidConfig.keyAlias = buildConfig.cordova.keystoreAlias || undefined;
+	androidConfig.storePassword = buildConfig.cordova.keyStorePassword || undefined;
+	androidConfig.keyPassword = buildConfig.cordova.keyPassword || undefined;
+
+	return createCordova().pipe(android(androidConfig))
 	.pipe(gulp.dest(dstBinaries));
 });
 

@@ -9,3 +9,11 @@ insert_final_newline = true
 
 [*.sh]
 end_of_line = lf
+
+[package.json]
+indent_style = spaces
+tab_width = 2
+
+[bower.json]
+indent_style = spaces
+tab_width = 2
