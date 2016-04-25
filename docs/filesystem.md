@@ -17,12 +17,24 @@ If there is a module with id "be7f092e-8895-4548-8759-07f2b48b9998", and a tool 
 /Synthesis/data/be7f092e-8895-4548-8759-07f2b48b9998-resources.json<br>
 /Synthesis/data/be7f092e-8895-4548-8759-07f2b48b9998-resources.up.json
 
+The file be7f092e-8895-4548-8759-07f2b48b9998.json contains information about the module.
+This includes:
+ - Sync status of each tool
+ - Versions of each tool and it's content
+
+The file be7f092e-8895-4548-8759-07f2b48b9998-resources.json contains information about the resources tool.
+This includes:
+ - Tool specific data
+ - References to downloaded filesystem
+
+The file be7f092e-8895-4548-8759-07f2b48b9998-resources.up.json contains a simmilar structure as the file mentioned above, except this is content that the user created that still needs to be uploaded to the Synthesis Service.
+
 
 'content' directory
 ---
 This directory contains system generated directory names for files contained within the tool's content.
 
-The directories are generated using a algorithm by using "[0-9]\[a-z\]-\_" as a character set
+The directories are generated using a algorithm by using "[0-9]\[a-z\]\_" as a character set
 
 **Example**<br>
 /Synthesis/content/1/MyImage.png<br>
