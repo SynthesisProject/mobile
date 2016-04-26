@@ -59,6 +59,19 @@ The build configuration is used to set parameters of the build, as well as some 
 	"androidSenderID" : null
 }
 ```
+
+## External configuration file
+You might want to keep your custom configuration out of the project code, especially when you start adding passwords to keystores etc.
+An external config file can be placed at `~/.${module-name}/build-config.json`
+
+For example if you did not change the package name the config will be located at
+` ~/.synthesis-mobile/build-config.json`
+
+Which resolves to
+
+**\*unix** `/home/username/.synthesis-mobile/build-config.json`
+
+**Windows** `C:/Users/username/.synthesis-mobile/build-config.json`
 ## Options
 
 ### cordova.dir

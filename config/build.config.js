@@ -119,7 +119,7 @@ var buildConfig = {
 // Check if there is an external file with build config we need to load
 // The file must be located at ~/.${module-name}/build-config.json
 // For example if you did not change the package name the config will be located at
-// ~/.synthesis-mobile/config.json
+// ~/.synthesis-mobile/build-config.json
 // Which resolves to
 // (linux) /home/username/.synthesis-mobile/build-config.json
 // (Windows) C:/Users/username/.synthesis-mobile/build-config.json
