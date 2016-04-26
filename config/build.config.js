@@ -131,8 +131,8 @@ try{
 	if(stat.isFile()){
 		var externalConfig = fs.readFileSync(externalConfigPath, 'utf8');
 		try{
-			console.log(externalConfig);
 			externalConfig = JSON.parse(externalConfig);
+			console.log('Loaded external config: ' + externalConfigPath);
 		}
 		catch(pError){
 			console.log('Failed to parse config as json: ' + pError);
@@ -149,5 +149,4 @@ catch(error){
 if(externalConfig != null){
 	buildConfig = extend(true, buildConfig, externalConfig);
 }
-
 module.exports = buildConfig;
