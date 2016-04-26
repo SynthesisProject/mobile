@@ -1,12 +1,12 @@
-Custom icons
---
+# Branding
+
+## Custom icons
 Icons are automatically included to the application during the cordova build process
 These icons / splash screens are placed in `src/res` for each platform
 
 You may replace these icons with your own.
 
-Icon generator script
----
+### Icon generator script
 You can generate your own icons by using the script within `src/res/icons.sh`
 This script uses svg files as an input, and generates all icons and splash screens using linux command line tools (see source code of the script for more info).
 After the script is completed, all icons will be replaced within `src/res` and you can rebuild the application which will now include your new icons.

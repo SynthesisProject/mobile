@@ -54,7 +54,7 @@ set DEVELOPMENT=true; gulp build-android
 * [Filesystem](./docs/filesystem.md)
 * [Push Notifications](./docs/push_notifications.md)
 * [Technology Stack](./docs/technology_stack.md)
-*
+
 ## Development
 ### Source code
 All source code for the application is located `src` directory

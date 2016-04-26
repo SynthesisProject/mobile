@@ -1,3 +1,5 @@
+# Push notifications
+
 ## Setup push notifications
 
 ### Android API Configuration
@@ -38,4 +40,3 @@ navigate the "keys" directory and execute `./createKeys.sh`
 `push.apple.key.file=file:///opt/synthesis_home/SynthesisMobile-development-server.p12`
 
 `push.apple.key.passphrase=<your password>`
-
