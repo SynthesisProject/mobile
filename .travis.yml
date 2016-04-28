@@ -1,9 +1,11 @@
 language: node_js
 node_js:
-- 4.4.2
+  - 4.4.2
 before_script:
-- npm install -g gulp
-script: gulp pipeline
+  - npm install -g gulp
+script:
+  - gulp pipeline
+  - npm run docs
 after_success:
     - config/publish-docs.sh
 env:
