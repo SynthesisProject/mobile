@@ -12,7 +12,10 @@ JS_DOCS_DEST="$HOME/js-docs-latest"
 # Directory within the gh-pages repo where the docs must be placed
 JS_DOCS_GIT="./js-docs"
 
-if [ "$TRAVIS_REPO_SLUG" == "$SYNTHESIS_MOBILE_REPO" ] && [ "$TRAVIS_NODE_VERSION" == "4.4.3" ] && [ "$TRAVIS_PULL_REQUEST" == "false" ] && [ "$TRAVIS_BRANCH" == "master" ]; then
+# Only build docs when using this version of nodejs
+JS_DOCS__NODE_VERSION="4.4.3"
+
+if [ "$TRAVIS_REPO_SLUG" == "$SYNTHESIS_MOBILE_REPO" ] && [ "$TRAVIS_NODE_VERSION" == "$JS_DOCS__NODE_VERSION" ] && [ "$TRAVIS_PULL_REQUEST" == "false" ] && [ "$TRAVIS_BRANCH" == "master" ]; then
 
   echo -e "Publishing esdocs...\n"
   cp -R $JS_DOCS_SRC $JS_DOCS_DEST
