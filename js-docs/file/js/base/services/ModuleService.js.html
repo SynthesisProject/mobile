@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../../../">
+  <title data-ice="title">js/base/services/ModuleService.js | API Document</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  
+  
+  <script src="script/manual.js"></script>
+</head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  <a data-ice="repoURL" href="https://github.com/SynthesisProject/mobile.git" class="repo-url-github">Repository</a>
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+</header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SynthMobile">SynthMobile</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">base</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-convertToObject">convertToObject</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-convertToString">convertToString</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generateUID">generateUID</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getNumberOfProperties">getNumberOfProperties</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Routes">Routes</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-base">base</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">base/boot</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-BootCtrl">BootCtrl</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">base/controllers</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/base/controllers/AppController.js~AppController.html">AppController</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">base/directives</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-animatedEllipse">animatedEllipse</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-bootSpinner">bootSpinner</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-currentModuleName">currentModuleName</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-moduleCollapse">moduleCollapse</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-moduleName">moduleName</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-overallSyncStatus">overallSyncStatus</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-synthAttachments">synthAttachments</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-synthFooter">synthFooter</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-synthMenu">synthMenu</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-toolName">toolName</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-toolSyncStatus">toolSyncStatus</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">base/factories</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/base/factories/AppSyncStatus.js~AppSyncStatus.html">AppSyncStatus</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/base/factories/Lock.js~Lock.html">Lock</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/base/factories/UserSession.js~UserSession.html">UserSession</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-AppSyncStatusFactory">AppSyncStatusFactory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-LockFactory">LockFactory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-UserSessionFactory">UserSessionFactory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SynthAuthenticateUser">SynthAuthenticateUser</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SynthCheckResponseError">SynthCheckResponseError</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SynthError">SynthError</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SynthErrorHandler">SynthErrorHandler</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SynthFail">SynthFail</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SynthQIfStatement">SynthQIfStatement</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SynthQLoop">SynthQLoop</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-safo">safo</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">base/filters</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-array2Object">array2Object</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-attachments">attachments</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-bytesToSize">bytesToSize</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-formatDate">formatDate</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-noEscape">noEscape</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-object2Array">object2Array</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">base/handlers</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-SynthAttachmentMinerProvider">SynthAttachmentMinerProvider</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-SynthDeleteHandlerProvider">SynthDeleteHandlerProvider</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-SynthEmbeddedImageHandlerProvider">SynthEmbeddedImageHandlerProvider</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-SynthLinkHandlerProvider">SynthLinkHandlerProvider</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-SynthAttachmentMinerProvider">SynthAttachmentMinerProvider</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">base/home</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-HomeCtrl">HomeCtrl</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-HomeService">HomeService</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">base/register</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-RegisterCtrl">RegisterCtrl</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-RegisterModuleRegistrationCtrl">RegisterModuleRegistrationCtrl</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-RegisterSelectModuleCtrl">RegisterSelectModuleCtrl</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-RegisterService">RegisterService</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">base/services</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-DataService">DataService</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-LoggerService">LoggerService</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ModuleService">ModuleService</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-PushService">PushService</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-RegistrationService">RegistrationService</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SyncAPIService">SyncAPIService</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SynthesisRESTClient">SynthesisRESTClient</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-UserService">UserService</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-UserSettings">UserSettings</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">base/settings</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SettingsCtrl">SettingsCtrl</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SettingsPushCtrl">SettingsPushCtrl</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">base/sync</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SyncConfigureCtrl">SyncConfigureCtrl</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SyncCtrl">SyncCtrl</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SyncProgressCtrl">SyncProgressCtrl</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SyncSelection">SyncSelection</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SyncService">SyncService</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">tools</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SynthesisTools">SynthesisTools</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">tools/announcements</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Config">Config</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-AnnouncementsTool">AnnouncementsTool</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">tools/announcements/controllers</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-AnnouncementDetailCtrl">AnnouncementDetailCtrl</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-AnnouncementListCtrl">AnnouncementListCtrl</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">tools/announcements/handlers</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-AnnouncementsDeleteHandler">AnnouncementsDeleteHandler</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-AnnouncementsImageHandler">AnnouncementsImageHandler</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-AnnouncementsLinkHandler">AnnouncementsLinkHandler</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">tools/announcements/services</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-AnnouncementService">AnnouncementService</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">tools/resources</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Config">Config</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ResourcesTool">ResourcesTool</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">tools/resources/controllers</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ResourcesCtrl">ResourcesCtrl</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">tools/resources/directives</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-resourceImg">resourceImg</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-resourceListItem">resourceListItem</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">tools/resources/factories</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ResourcesService">ResourcesService</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">tools/resources/handlers</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ResourcesDeleteHandler">ResourcesDeleteHandler</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">tools/schedule</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Config">Config</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ScheduleTool">ScheduleTool</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">tools/schedule/controllers</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ScheduleCtrl">ScheduleCtrl</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">tools/schedule/factories</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ScheduleService">ScheduleService</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">tools/schedule/handlers</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ScheduleLinkHandler">ScheduleLinkHandler</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">js/base/services/ModuleService.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">&apos;use strict&apos;;
+import {convertToObject} from &apos;../Utilities&apos;;
+var ModuleService = ($q, DataService, RegistrationService, LoggerService, _SF, SynthQLoop, $filter, safo, SynthError, SynthesisRESTClient) =&gt; {
+	var LOG = LoggerService(&apos;ModuleService&apos;);
+
+
+	// Cache of module data
+	var moduleDataCache = {};
+
+	// Return the factory
+	class ModuleServiceImpl {
+
+		/**
+		 * Return the modules the user has linked with this application
+		 *
+		 * @returns an array of modules that are linked to the application
+		 * [
+		 *   {
+		 *		&quot;id&quot;: &quot;module1&quot;,
+		 *		&quot;name&quot;: &quot;Course 1&quot;,
+		 *		&quot;description&quot;: &quot;Course 1&quot;,
+		 *		&quot;createdDate&quot;: &quot;20140627145828000&quot;,
+		 *		&quot;isRegistered&quot;: true
+		 *	},
+		 *	{
+		 *		&quot;id&quot;: &quot;module2&quot;,
+		 *		&quot;name&quot;: &quot;Course 2&quot;,
+		 *		&quot;description&quot;: &quot;&quot;,
+		 *		&quot;createdDate&quot;: &quot;20141128133105000&quot;,
+		 *		&quot;isRegistered&quot;: true
+		 *	}
+		 * ]
+		 */
+		getLinkedModules(){
+			return RegistrationService.getRegistration().then((registrationData) =&gt; {
+				var filteredModules = [];
+				if(registrationData.modules){
+					var modulesArray = $filter(&apos;object2Array&apos;)(registrationData.modules);
+					filteredModules = _.filter(modulesArray, &apos;registered&apos;, true);
+				}
+				return filteredModules;
+			});
+		}
+
+		/**
+		 * Gets all the currently known modules. This include ones that that use
+		 * is registered for or not
+		 */
+		getCurrentModules(){
+			return RegistrationService.getRegistration().then((registrationData) =&gt; {
+				if(registrationData.modules){
+					return $filter(&apos;object2Array&apos;)(registrationData.modules);
+				}
+				return [];
+			});
+		}
+
+		/**
+		 * Returns an array of modules that are newly available from the
+		 * Synthesis Server that we do not currently have knowledge of
+		 */
+		getNewModules(){
+			var availableModules;
+			const self = this;
+
+			function getCurrentlyKnownModules(synthesisModules){
+				availableModules = synthesisModules;
+				return self.getCurrentModules();
+			}
+
+			function findNewArray(currentModules){
+				// If we currently have no modules, all available morules are new
+				if(currentModules.length === 0){
+					return $q.when(availableModules);
+				}
+
+				var newModules = [];
+				_.forEach(availableModules, (availableModule) =&gt; {
+					// look in our current array if we have such an item
+					var matchedModule = _.find(currentModules, &apos;id&apos;, availableModule.id);
+
+					// If none matched, its a new matchedModule
+					if(matchedModule == null){
+						newModules.push(availableModule);
+					}
+				});
+				return $q.when(newModules);
+			}
+			return SynthesisRESTClient.getAllowedSites()
+				.then(getCurrentlyKnownModules)
+				.then(findNewArray);
+		}
+
+		hasNewModules(){
+			return this.getNewModules()
+				.then((newModules) =&gt; {
+					return newModules.length &gt; 0;
+				});
+		}
+
+		/**
+		 * Sets a property on the specified module
+		 */
+		setModuleProperty(moduleId, property, value){
+			var mergeData = { &apos;modules&apos; : {}};
+			mergeData.modules[moduleId] = {};
+			mergeData.modules[moduleId][property] = value;
+			return RegistrationService.mergeRegistration(mergeData);
+		}
+
+		/**
+		 * Returns the modules that are available that we know of, and what
+		 * the Syntehsis Server has to offer
+		 *
+		 * @returns a array of modules that are linked to the application
+		 * [{
+		 *		&quot;id&quot;: &quot;module1&quot;,
+		 *		&quot;name&quot;: &quot;Course 1&quot;,
+		 *		&quot;description&quot;: &quot;Course 1&quot;,
+		 *		&quot;createdDate&quot;: &quot;20140627145828000&quot;,
+		 *		&quot;isRegistered&quot;: true
+		 *	},{
+		 *		&quot;id&quot;: &quot;module2&quot;,
+		 *		&quot;name&quot;: &quot;Course 2&quot;,
+		 *		&quot;description&quot;: &quot;&quot;,
+		 *		&quot;createdDate&quot;: &quot;20141128133105000&quot;,
+		 *		&quot;isRegistered&quot;: false | undefined
+		 *	}
+		 *]
+
+		&apos;getAvailableModules&apos; : function(){
+			var service = this;
+			// Calculate what the new map should look like
+			function calculateNewMap(newModules){
+				return service.getLinkedModules().then((currentModulesArray) =&gt; {
+					// If there are no new modules, we can return what we currently have
+					if(newModules.length == 0){
+						return currentModulesArray;
+					}
+
+					// Else we need to merge the new modules
+
+					var mergeMap = { modules : {}};
+
+					_.forEach(newModules, (newModule) =&gt; {
+						// look in our current array if we have such an item
+						var matchedModule = _.find(currentModulesArray, &apos;id&apos;, newModule.id);
+						if(matchedModule == null){
+							mergeMap.modules[newModule.id] = newModule;
+						}
+					});
+
+					return mergeNewModules(mergeMap);
+				});
+			}
+
+			// Merge the new modules that we calculated to the registration data
+			function mergeNewModules(newMergeData){
+				return RegistrationService.mergeRegistration(newMergeData).then((registrationData) =&gt; {
+					return $filter(&apos;object2Array&apos;)(registrationData.modules);
+				});
+			}
+
+			return this.getNewModules().then(calculateNewMap);
+		},
+ 	*/
+
+		/**
+		 * Gets all the tools of linked modules. This data return will be in a similar format as:
+		 * [{
+		 *		&apos;id&apos;: &apos;trailrunning&apos;,
+		 *		&apos;name&apos;: &apos;Trailrunning 201&apos;,
+		 *		&apos;description&apos;: &apos;&apos;,
+		 *		&apos;createdDate&apos;: &apos;20141128133105000&apos;,
+		 *		&apos;tools :
+		 *			[{
+		 *				&apos;defaultPage&apos;: &apos;#tool/faq&apos;,
+		 *				&apos;name&apos;: &apos;faq&apos;,
+		 *				&apos;label&apos;: &apos;FAQs&apos;,
+		 *				&apos;heading&apos;: &apos;FAQs&apos;,
+		 *				&apos;icon&apos;: &apos;icon-sakai-help&apos;,
+		 *				&apos;description&apos;: &apos;&apos;,
+		 *				&apos;menu&apos;: false,
+		 *				&apos;seq&apos;: 40
+		 *			},
+		 *			{
+		 *				&apos;defaultPage&apos;: &apos;#tool/forums&apos;,
+		 *				&apos;name&apos;: &apos;forums&apos;,
+		 *				&apos;label&apos;: &apos;Discussions&apos;,
+		 *				&apos;heading&apos;: &apos;Discussions&apos;,
+		 *				&apos;icon&apos;: &apos;icon-sakai-forums&apos;,
+		 *				&apos;description&apos;: &apos;&apos;,
+		 *				&apos;menu&apos;: false,
+		 *				&apos;seq&apos;: 60
+		 *			}]
+			* }]
+		 */
+		getAllHomeToolsSorted(){
+			var modules, idx = 0,
+				moduleTools = [];
+			const self = this;
+
+			function getModuleToolsPromise(){
+				if(modules == null || idx &gt;= modules.length) {
+					return null;
+				}
+
+				var theModule = modules[idx++];
+				return self.getModuleHomeToolsSorted(theModule.id)
+					.then((tools) =&gt; {
+						moduleTools.push(theModule);
+						moduleTools[moduleTools.length - 1].tools = tools;
+					});
+			}
+
+			function getLoopModulesPromise(availableModules){
+				modules = availableModules;
+				return SynthQLoop(getModuleToolsPromise).then(() =&gt; {
+					return moduleTools;
+				});
+			}
+
+			return this.getLinkedModules().then(getLoopModulesPromise);
+		}
+
+		/**
+		 * Creates the default module.json file for the module
+		 */
+		createDefaultModuleFile(moduleId){
+			return DataService.copyFromWebToFile(&apos;base/data/module.json&apos;, &apos;data&apos;, `${moduleId}.json`);
+		}
+
+		/**
+		 * Gets the data for the specified module ID
+		 */
+		getModuleData(moduleId){
+			if(moduleDataCache[moduleId] != null){
+				return $q.when(moduleDataCache[moduleId]);
+			}
+			else{
+				return DataService.getDataFile(`${moduleId}.json`).then((moduleData) =&gt; {
+					moduleDataCache[moduleId] = moduleData;
+					return moduleData;
+				});
+			}
+		}
+
+		/**
+		 * Return the proper display name for a module
+		 */
+		getModuleName(moduleId){
+			return this.getLinkedModules().then((registrationData) =&gt; {
+				var theModule = _.find(registrationData, { &apos;id&apos; : moduleId});
+				return theModule ? theModule.name : null;
+			});
+		}
+
+		/**
+		 * Return the proper display name for a module&apos;s tool
+		 */
+		getToolName(moduleId, toolId){
+			return this.getModuleData(moduleId).then((moduleData) =&gt; {
+				// First check if we have such a field
+				if(moduleData &amp;&amp; moduleData.toolDescriptions &amp;&amp; moduleData.toolDescriptions[toolId]){
+					return moduleData.toolDescriptions[toolId].heading;
+				}
+				return null;
+
+			});
+		}
+
+
+		/**
+		 * Get the home tools for a module
+		 */
+		getModuleHomeTools(moduleId){
+			return this.getModuleData(moduleId)
+				.then((moduleData) =&gt; {
+					var tools = moduleData.toolDescriptions;
+					var availableTools = $filter(&apos;object2Array&apos;)(tools);
+					availableTools = $filter(&apos;filter&apos;)(availableTools, {menu : true});
+					safo(availableTools, &apos;moduleId&apos;, moduleId);
+					return availableTools;
+				});
+		}
+
+
+		/**
+		 * Get the home tools for a module sorted
+		 */
+		getModuleHomeToolsSorted(moduleId){
+			return this.getModuleHomeTools(moduleId)
+				.then(function(tools){
+					// TODO implement user custom sorting
+					return $filter(&apos;orderBy&apos;)(tools, &apos;seq&apos;);
+				});
+		}
+
+
+		/**
+		 * Merge data to a module&apos;s data file.
+		 *
+		 * @param moduleId - ID of the module to merge too
+		 * @jsonData - Data to merge. Data can be a JSON string or a JSON object
+		 */
+		mergeToModuleData(moduleId, jsonData){
+			return DataService.mergeDataFile(`${moduleId}.json`, jsonData).then((data) =&gt; {
+				moduleDataCache[moduleId] = data;
+				return data;
+			});
+		}
+
+
+		/**
+		 * Gets the data for a tool
+		 * @param moduleId - ID of the module in which the tool is
+		 * @param toolname - Name of the tool to get data of
+		 * @param isUploadData - Indication if the data is the upload data (optional, default=false)
+		 */
+		getToolData(moduleId, toolname, isUploadData){
+			LOG.debug(&apos;Getting data for tool : &apos; + moduleId + &apos; - &apos; + toolname);
+			var deferred = $q.defer();
+			DataService.getToolDataFile(moduleId, toolname, isUploadData)
+				.then(
+				// Success
+				function(fileEntry){
+					DataService.getFileAsObject(fileEntry)
+						.then(
+						// Success
+						function(object){
+							deferred.resolve(object);
+						}, fail);
+				}, fail);
+
+			function fail(error){
+				deferred.reject(error);
+			}
+			return deferred.promise;
+		}
+
+		/**
+		 * Gets a merge of the downloaded and (still-to) upload data for a tool
+		 *
+		 * @param moduleId Module in which the tool is
+		 * @param toolname Name of the tool
+		 */
+		getMergedToolData(moduleId, toolname){
+			var toolData, toolUploadData;
+			const self = this;
+			function getToolDataPromise(){
+				return self.getToolData(moduleId, toolname, true).then((data) =&gt; {
+					toolData = data;
+				});
+			}
+
+			function getToolUploadDataPromise(){
+				return self.getToolData(moduleId, toolname, false).then((data) =&gt; {
+					toolUploadData = data;
+				});
+			}
+
+			function getMergedDataPromise(){
+				var mergedData = jQuery.extend(true, toolData, toolUploadData);
+				return $q.when(mergedData);
+			}
+
+			return getToolDataPromise()
+				.then(getToolUploadDataPromise)
+				.then(getMergedDataPromise);
+		}
+
+
+		/**
+		 * Merges data to a tool&apos;s data file.
+		 * This will typically by used when downloading sync&apos;d content and merge it to a file
+		 *
+		 * @param moduleId - Module ID in which the tool is
+		 * @param toolname - Name of the tool to write data too
+		 * @param jsonData - Either a JSON String, or a JSON Object representing the data to write
+		 * @param isUploadData - Flag if the data should be merged to the upload data of the tool
+		 * @returns A promise with the data that was merged as the parameters
+		 */
+		mergeToToolData(moduleId, toolname, jsonData, isUploadData){
+			var deferred = $q.defer();
+			this.getToolData(moduleId, toolname, isUploadData).then(
+				// Success
+				function(data){
+					var jsonObject = convertToObject(jsonData);
+					var writeObject = jQuery.extend(true, data, jsonObject);
+					// Write the merged data to the file
+					DataService.writeToolData(moduleId, toolname, writeObject, isUploadData).then(
+						// Success
+						function(){
+							deferred.resolve(writeObject);
+						},
+						//Fail
+						function (){
+							deferred.reject(SynthError(1004));
+						}
+					);
+				}
+			);
+
+			return deferred.promise;
+		}
+
+	}
+
+	return new ModuleServiceImpl();
+};
+ModuleService.$inject = [&apos;$q&apos;, &apos;DataService&apos;, &apos;RegistrationService&apos;, &apos;LoggerService&apos;, &apos;SynthFail&apos;, &apos;SynthQLoop&apos;, &apos;$filter&apos;, &apos;safo&apos;, &apos;SynthError&apos;, &apos;SynthesisRESTClient&apos;];
+export default ModuleService;
+</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(0.4.6)</span></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../../../">
+  <title data-ice="title">js/base/sync/SyncService.js | API Document</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  
+  
+  <script src="script/manual.js"></script>
+</head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  <a data-ice="repoURL" href="https://github.com/SynthesisProject/mobile.git" class="repo-url-github">Repository</a>
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+</header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SynthMobile">SynthMobile</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">base</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-convertToObject">convertToObject</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-convertToString">convertToString</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generateUID">generateUID</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getNumberOfProperties">getNumberOfProperties</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Routes">Routes</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-base">base</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">base/boot</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-BootCtrl">BootCtrl</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">base/controllers</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/base/controllers/AppController.js~AppController.html">AppController</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">base/directives</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-animatedEllipse">animatedEllipse</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-bootSpinner">bootSpinner</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-currentModuleName">currentModuleName</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-moduleCollapse">moduleCollapse</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-moduleName">moduleName</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-overallSyncStatus">overallSyncStatus</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-synthAttachments">synthAttachments</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-synthFooter">synthFooter</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-synthMenu">synthMenu</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-toolName">toolName</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-toolSyncStatus">toolSyncStatus</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">base/factories</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/base/factories/AppSyncStatus.js~AppSyncStatus.html">AppSyncStatus</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/base/factories/Lock.js~Lock.html">Lock</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/base/factories/UserSession.js~UserSession.html">UserSession</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-AppSyncStatusFactory">AppSyncStatusFactory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-LockFactory">LockFactory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-UserSessionFactory">UserSessionFactory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SynthAuthenticateUser">SynthAuthenticateUser</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SynthCheckResponseError">SynthCheckResponseError</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SynthError">SynthError</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SynthErrorHandler">SynthErrorHandler</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SynthFail">SynthFail</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SynthQIfStatement">SynthQIfStatement</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SynthQLoop">SynthQLoop</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-safo">safo</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">base/filters</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-array2Object">array2Object</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-attachments">attachments</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-bytesToSize">bytesToSize</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-formatDate">formatDate</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-noEscape">noEscape</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-object2Array">object2Array</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">base/handlers</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-SynthAttachmentMinerProvider">SynthAttachmentMinerProvider</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-SynthDeleteHandlerProvider">SynthDeleteHandlerProvider</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-SynthEmbeddedImageHandlerProvider">SynthEmbeddedImageHandlerProvider</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-SynthLinkHandlerProvider">SynthLinkHandlerProvider</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-SynthAttachmentMinerProvider">SynthAttachmentMinerProvider</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">base/home</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-HomeCtrl">HomeCtrl</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-HomeService">HomeService</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">base/register</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-RegisterCtrl">RegisterCtrl</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-RegisterModuleRegistrationCtrl">RegisterModuleRegistrationCtrl</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-RegisterSelectModuleCtrl">RegisterSelectModuleCtrl</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-RegisterService">RegisterService</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">base/services</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-DataService">DataService</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-LoggerService">LoggerService</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ModuleService">ModuleService</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-PushService">PushService</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-RegistrationService">RegistrationService</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SyncAPIService">SyncAPIService</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SynthesisRESTClient">SynthesisRESTClient</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-UserService">UserService</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-UserSettings">UserSettings</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">base/settings</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SettingsCtrl">SettingsCtrl</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SettingsPushCtrl">SettingsPushCtrl</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">base/sync</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SyncConfigureCtrl">SyncConfigureCtrl</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SyncCtrl">SyncCtrl</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SyncProgressCtrl">SyncProgressCtrl</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SyncSelection">SyncSelection</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SyncService">SyncService</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">tools</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SynthesisTools">SynthesisTools</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">tools/announcements</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Config">Config</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-AnnouncementsTool">AnnouncementsTool</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">tools/announcements/controllers</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-AnnouncementDetailCtrl">AnnouncementDetailCtrl</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-AnnouncementListCtrl">AnnouncementListCtrl</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">tools/announcements/handlers</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-AnnouncementsDeleteHandler">AnnouncementsDeleteHandler</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-AnnouncementsImageHandler">AnnouncementsImageHandler</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-AnnouncementsLinkHandler">AnnouncementsLinkHandler</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">tools/announcements/services</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-AnnouncementService">AnnouncementService</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">tools/resources</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Config">Config</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ResourcesTool">ResourcesTool</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">tools/resources/controllers</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ResourcesCtrl">ResourcesCtrl</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">tools/resources/directives</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-resourceImg">resourceImg</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-resourceListItem">resourceListItem</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">tools/resources/factories</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ResourcesService">ResourcesService</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">tools/resources/handlers</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ResourcesDeleteHandler">ResourcesDeleteHandler</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">tools/schedule</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Config">Config</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ScheduleTool">ScheduleTool</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">tools/schedule/controllers</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ScheduleCtrl">ScheduleCtrl</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">tools/schedule/factories</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ScheduleService">ScheduleService</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">tools/schedule/handlers</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ScheduleLinkHandler">ScheduleLinkHandler</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">js/base/sync/SyncService.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">&apos;use strict&apos;;
+
+var SyncService = ($q, $timeout, $filter, $rootScope, SyncAPIService, LoggerService,
+	UserSession, SynthQLoop, SyncSelection, ModuleService, safo, UserSettings) =&gt; {
+
+
+	var LOG = LoggerService(&apos;SyncService&apos;);
+
+	// The current sync promsie
+	var syncBackgroundPromise = null;
+
+
+	class SyncServiceImpl{
+
+		/**
+		* Gets a summary of the sync status for all modules the user
+		* is linked to.
+		*/
+		getSyncDetails(){
+
+			var modules, idx = 0,
+				syncDetails = {&apos;inSync&apos; : true,
+					&apos;download&apos; : 0,
+					&apos;upload&apos; : 0,
+					&apos;total&apos; : 0,
+					&apos;tools&apos; : []
+				};
+
+			/**
+			* Returns a promise to get the Sync Status of the next module in a list.
+			* If there is no more modules in the list, it return null
+			*/
+			function getSyncStatusPromise(){
+				// Check if we have any more modules to work with
+				if(modules == null || idx &gt;= modules.length){
+					return null;
+				}
+
+				// Get the next module and increment the index
+				var module = modules[idx++];
+
+				// Get the sync details for the current item in the list
+				return SyncAPIService.getSyncStatus(module.id)
+				.then((syncStatus) =&gt; {
+					syncDetails.inSync = syncDetails.inSync &amp;&amp; syncStatus.inSync;
+					syncDetails.download += syncStatus.download;
+					syncDetails.upload += syncStatus.upload;
+					syncDetails.total += syncStatus.total;
+
+					var tools = $filter(&apos;object2Array&apos;)(syncStatus.tools);
+					safo(tools, &apos;moduleId&apos;, module.id, &apos;moduleName&apos;, module.name);
+					syncDetails.tools = syncDetails.tools.concat(tools);
+				});
+			}
+
+			/**
+			* Returns a promise to loop through all the modules to get their sync status
+			*/
+			function getLoopModulesPromise(linkedModules){
+				modules = linkedModules;
+				return SynthQLoop(getSyncStatusPromise).then(function(){
+					$rootScope.$broadcast(&apos;syncStatusChanged&apos;, {&apos;state&apos; : syncDetails.inSync ? &apos;inSync&apos; : &apos;outSync&apos;});
+					return syncDetails;
+				});
+			}
+
+			/**
+			* Get the list of all the modules currently linked to this app
+			* Then loop through each of them to build up a big sync status
+			*/
+			return ModuleService.getLinkedModules()
+				.then(getLoopModulesPromise);
+		}
+
+		/***
+		* Sync a tool
+		* @param toolname - name of the tool to sync
+		*/
+		syncDownloadTool(moduleId, toolname){
+			return SyncAPIService.syncDownloadTool(moduleId, toolname);
+		}
+
+
+		/***
+		* Performs a synchronise of the selected tools
+		*/
+		syncSelected(syncSelection){
+
+			// Initialise scope variables for this page
+			var toolUploads = syncSelection.getUploadArray();
+			var toolDownloads = syncSelection.getDownloadArray();
+			var didUpdateBase = false;// Flag if we updated base. If base was updated we need to reload the tools
+			var self = this;
+			/*
+			* Function that will return promise for new download if there is any
+			* or returns null if there are no more promises for downloads
+			*/
+			var dIdx = 0;
+			function getDownloadPromise(){
+				var promise = null;
+				var idx = dIdx++; // keep a local instance of the current index
+				if (idx &lt; toolDownloads.length){
+					promise = self.syncDownloadTool(toolDownloads[idx].moduleId, toolDownloads[idx].key)
+					.then(() =&gt; {
+						LOG.debug(&apos;Completed download for tool : &apos; + toolDownloads[idx].key);
+						toolDownloads[idx].downloadProgress = 100;
+
+						// Set the flag if we downloaded for base
+						if(toolDownloads[idx].key == &apos;base&apos;){
+							didUpdateBase = true;
+						}
+					});
+				}
+				return promise;
+			}
+
+			/*
+			* Function that will return a promise for the new upload if there is any
+			* or returns null if there are no more promises for uploads
+			*/
+			var uIdx = 0;
+			function getUploadPromise(){
+				var promise = null;
+				var idx = uIdx++; // keep a local instance of the current index
+				if (idx &lt; toolUploads.length){
+					promise = self
+					.syncUploadTool(toolUploads[idx].key)
+					.then(() =&gt; {
+						LOG.debug(&apos;Completed upload for tool : &apos; + toolUploads[idx].key);
+						toolUploads[idx].downloadProgress = 100;
+					});
+				}
+				return promise;
+			}
+
+			// Get the promise to check the offline status
+			function emitSyncStatusChange(){
+				$rootScope.$broadcast(&apos;syncStatusChanged&apos;);
+				return $q.when([]);
+			}
+
+			// Start loop with downloads
+			return SynthQLoop(getDownloadPromise)
+			// When all downloads are complete, we start with the uploads
+			.then(() =&gt; {
+				return SynthQLoop(getUploadPromise);
+			})
+			// Now we do an offline Sync status check just to update the UI
+			.then(emitSyncStatusChange)
+			.then(() =&gt; {
+				return {
+					&apos;didUpdateBase&apos; : didUpdateBase
+				};
+			});
+
+		}
+
+
+		/***
+		* Sync a tool
+		* @param toolname - name of the tool to sync
+		*/
+		syncUploadTool(moduleId, toolname){
+			return SyncAPIService.syncUploadTool(moduleId, toolname);
+		}
+
+		startBackgroundSync(){
+			var self = this;
+			// Make sure we are not already running
+			if(syncBackgroundPromise == null){
+
+				UserSettings.getSettings().then((settings) =&gt; {
+					if(settings.autoSyncDownload || settings.autoSyncUpload){
+						LOG.debug(&apos;Starting background sync timer... &apos; + settings.autoSyncInterval);
+						// Start and save the promise
+						syncBackgroundPromise = $timeout(() =&gt; {
+							/*
+							* Because this happens somewhere later in time, we need to check if we actually still
+							* want to continue with the sync.
+							* This shouldn&apos;t be a problem because the UI should stop the timer promise when the user
+							* decides to cancel the auto sync, but we do it anyway ;)
+							*/
+							if(settings.autoSyncDownload || settings.autoSyncUpload){
+								self._handleTimedSync();
+							}
+						}, settings.autoSyncInterval);
+					}
+					else{
+						LOG.debug(&apos;Not going to start sync, it is not enabled&apos;);
+					}
+				});
+			}
+			else{
+				LOG.debug(&apos;Cannot start background sync again, already running...&apos;);
+			}
+		}
+
+		_handleTimedSync(){
+			LOG.debug(&apos;Need to check for sync now&apos;);
+			var self = this;
+			$timeout.cancel(syncBackgroundPromise);
+
+			UserSettings.getSettings().then((settings) =&gt; {
+				self.getSyncDetails().then((syncStatus) =&gt; {
+
+					var syncSelection = SyncSelection.newInstance();
+					syncSelection.tools = syncStatus.tools;
+
+					if(settings.autoSyncDownload){
+						syncSelection.selectAllDownloads();
+					}
+
+					if(settings.autoSyncUpload){
+						syncSelection.selectAllUploads();
+					}
+
+					self.syncSelected(syncSelection).then(() =&gt; {
+						syncBackgroundPromise = null;
+						self.startBackgroundSync(); // Restart the timer
+					});
+
+				});
+			});
+		}
+
+
+		stopBackgroundSync(){
+			LOG.debug(&apos;Stopping background sync timer...&apos;);
+			if(syncBackgroundPromise != null){
+				$timeout.cancel(syncBackgroundPromise);
+				syncBackgroundPromise = null;
+			}
+		}
+
+		/**
+		* Function to notify this service that there are changes that need
+		* attention
+		*/
+		notifyChanges(){
+			$rootScope.$broadcast(&apos;syncStatusChanged&apos;, {&apos;state&apos; : &apos;outSync&apos;});
+			this._handleTimedSync(); // Handle it now if we can
+		}
+
+	}
+
+
+	return new SyncServiceImpl();
+
+};
+SyncService.$inject = [&apos;$q&apos;, &apos;$timeout&apos;, &apos;$filter&apos;, &apos;$rootScope&apos;, &apos;SyncAPIService&apos;, &apos;LoggerService&apos;,
+&apos;UserSession&apos;, &apos;SynthQLoop&apos;, &apos;SyncSelection&apos;, &apos;ModuleService&apos;, &apos;safo&apos;, &apos;UserSettings&apos;];
+export default SyncService;
+</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(0.4.6)</span></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

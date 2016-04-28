@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../../../../">
+  <title data-ice="title">js/tools/resources/controllers/ResourcesCtrl.js | API Document</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  
+  
+  <script src="script/manual.js"></script>
+</head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  <a data-ice="repoURL" href="https://github.com/SynthesisProject/mobile.git" class="repo-url-github">Repository</a>
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+</header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SynthMobile">SynthMobile</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">base</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-convertToObject">convertToObject</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-convertToString">convertToString</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generateUID">generateUID</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getNumberOfProperties">getNumberOfProperties</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Routes">Routes</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-base">base</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">base/boot</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-BootCtrl">BootCtrl</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">base/controllers</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/base/controllers/AppController.js~AppController.html">AppController</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">base/directives</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-animatedEllipse">animatedEllipse</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-bootSpinner">bootSpinner</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-currentModuleName">currentModuleName</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-moduleCollapse">moduleCollapse</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-moduleName">moduleName</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-overallSyncStatus">overallSyncStatus</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-synthAttachments">synthAttachments</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-synthFooter">synthFooter</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-synthMenu">synthMenu</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-toolName">toolName</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-toolSyncStatus">toolSyncStatus</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">base/factories</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/base/factories/AppSyncStatus.js~AppSyncStatus.html">AppSyncStatus</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/base/factories/Lock.js~Lock.html">Lock</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/base/factories/UserSession.js~UserSession.html">UserSession</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-AppSyncStatusFactory">AppSyncStatusFactory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-LockFactory">LockFactory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-UserSessionFactory">UserSessionFactory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SynthAuthenticateUser">SynthAuthenticateUser</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SynthCheckResponseError">SynthCheckResponseError</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SynthError">SynthError</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SynthErrorHandler">SynthErrorHandler</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SynthFail">SynthFail</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SynthQIfStatement">SynthQIfStatement</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SynthQLoop">SynthQLoop</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-safo">safo</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">base/filters</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-array2Object">array2Object</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-attachments">attachments</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-bytesToSize">bytesToSize</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-formatDate">formatDate</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-noEscape">noEscape</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-object2Array">object2Array</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">base/handlers</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-SynthAttachmentMinerProvider">SynthAttachmentMinerProvider</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-SynthDeleteHandlerProvider">SynthDeleteHandlerProvider</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-SynthEmbeddedImageHandlerProvider">SynthEmbeddedImageHandlerProvider</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-SynthLinkHandlerProvider">SynthLinkHandlerProvider</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-SynthAttachmentMinerProvider">SynthAttachmentMinerProvider</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">base/home</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-HomeCtrl">HomeCtrl</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-HomeService">HomeService</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">base/register</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-RegisterCtrl">RegisterCtrl</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-RegisterModuleRegistrationCtrl">RegisterModuleRegistrationCtrl</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-RegisterSelectModuleCtrl">RegisterSelectModuleCtrl</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-RegisterService">RegisterService</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">base/services</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-DataService">DataService</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-LoggerService">LoggerService</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ModuleService">ModuleService</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-PushService">PushService</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-RegistrationService">RegistrationService</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SyncAPIService">SyncAPIService</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SynthesisRESTClient">SynthesisRESTClient</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-UserService">UserService</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-UserSettings">UserSettings</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">base/settings</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SettingsCtrl">SettingsCtrl</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SettingsPushCtrl">SettingsPushCtrl</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">base/sync</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SyncConfigureCtrl">SyncConfigureCtrl</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SyncCtrl">SyncCtrl</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SyncProgressCtrl">SyncProgressCtrl</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SyncSelection">SyncSelection</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SyncService">SyncService</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">tools</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SynthesisTools">SynthesisTools</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">tools/announcements</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Config">Config</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-AnnouncementsTool">AnnouncementsTool</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">tools/announcements/controllers</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-AnnouncementDetailCtrl">AnnouncementDetailCtrl</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-AnnouncementListCtrl">AnnouncementListCtrl</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">tools/announcements/handlers</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-AnnouncementsDeleteHandler">AnnouncementsDeleteHandler</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-AnnouncementsImageHandler">AnnouncementsImageHandler</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-AnnouncementsLinkHandler">AnnouncementsLinkHandler</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">tools/announcements/services</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-AnnouncementService">AnnouncementService</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">tools/resources</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Config">Config</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ResourcesTool">ResourcesTool</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">tools/resources/controllers</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ResourcesCtrl">ResourcesCtrl</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">tools/resources/directives</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-resourceImg">resourceImg</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-resourceListItem">resourceListItem</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">tools/resources/factories</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ResourcesService">ResourcesService</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">tools/resources/handlers</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ResourcesDeleteHandler">ResourcesDeleteHandler</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">tools/schedule</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Config">Config</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ScheduleTool">ScheduleTool</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">tools/schedule/controllers</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ScheduleCtrl">ScheduleCtrl</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">tools/schedule/factories</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ScheduleService">ScheduleService</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">tools/schedule/handlers</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ScheduleLinkHandler">ScheduleLinkHandler</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">js/tools/resources/controllers/ResourcesCtrl.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">&apos;use strict&apos;;
+var ResourcesCtrl = ($scope, $filter, $rootScope, $routeParams, $window, $timeout, ResourcesService, DataService, SynthErrorHandler, SynthQLoop, SynthError) =&gt; {
+
+	$rootScope.activePage = &apos;forums&apos;;
+	$rootScope.breadcrumbs = [{&apos;name&apos; : &apos;Resources&apos;}];
+	$scope.showResourceInfo = false;	// Flag showing info about the resource
+	$scope.loadingResources = true;		// Flag loading the resources to be displayed in the list
+	$scope.promptDownloadAll = false;	// Flag is showing download all prompts
+	$scope.busyDownloadingAll = false;	// Flag busy downloading all resources
+	$scope.downloadAllObject = {};		// Object containing the download all information
+	$scope.pageCurrent 		= 1;		// Page the user is currently on
+	$scope.pageListAllCount = 0;		// Total number of items that needs to be displayed on pages
+	$scope.pageListPageCount = 10;		// Number of items that may be displayed on a page
+	$scope.paginationSize 	= 5;		// Limit number for pagination size
+	$scope.parentResource = null; 		// Current parent resource we are viewing
+	var moduleId = $scope.moduleId = $routeParams.moduleId; // Id of the module we are currently working with
+
+	var pageResourcesAll = null;		// All the resources that needs to be split over pages
+	var currentDirectory = null;		// Current resource directory
+
+	$scope.goUp = function(){
+		$window.history.back();
+	};
+
+
+	/**
+	* Function to download all the resources in the current (recursive) view
+	*/
+	$scope.downloadAll = function($event){
+		$event.stopPropagation();
+
+		function getResourcesToDownloadPromise(){
+			return ResourcesService.getUndownloadedChildren(moduleId, currentDirectory);
+		}
+
+		getResourcesToDownloadPromise()
+		.then(function(resourcesToDownload){
+			$scope.downloadAllObject = resourcesToDownload;
+			$scope.promptDownloadAll = true;
+		});
+	};
+
+	/**
+	* Callback to start downloading all resources
+	*/
+	$scope.startDownloadAll = function($event){
+		$event.stopPropagation();
+		$scope.promptDownloadAll = false;
+		$scope.busyDownloadingAll = true;
+		var rIdx = 0; // Index of the resources
+
+		// Get the next resource in the list if there is any
+		function getDownloadResourcePromise(){
+			// If there is nothing we are done
+			if($scope.downloadAllObject.resources == null){
+				return null;
+			}
+			else if(rIdx &lt; $scope.downloadAllObject.resources.length){
+				return ResourcesService.downloadResource(moduleId, $scope.downloadAllObject.resources[rIdx])
+				.then(function(){
+					var resource = $scope.downloadAllObject.resources[rIdx];
+					// If there is no progress yet we add a zero progress
+					if(resource.downloaded === undefined){
+						resource.downloaded = 0;
+					}
+					// When a resource is completly download we add the full size to the progress
+					$scope.downloadAllObject.downloaded = ($scope.downloadAllObject.downloaded - resource.downloaded) + resource.size;
+					$scope.downloadAllObject.progress = ($scope.downloadAllObject.downloaded / $scope.downloadAllObject.size) * 100;
+					$scope.downloadAllObject.downloadedFiles++;
+					rIdx++;
+				});
+			}
+			// We are done
+			else{
+				return null;
+			}
+		}
+
+		SynthQLoop(getDownloadResourcePromise)
+		.then(function(){ // Success
+			$scope.busyDownloadingAll = false;
+			openDirectory(currentDirectory);
+		}, function(){ // Error
+			$scope.busyDownloadingAll = false;
+		}, function(notification){ // Status
+			// Check the file download progress
+			if(notification instanceof ProgressEvent){
+				var resource = $scope.downloadAllObject.resources[rIdx];
+				if(notification.lengthComputable) {
+					resource.size = notification.total;
+				}
+				// If there is no progress yet we add a zero progress
+				if(resource.downloaded === undefined){
+					resource.downloaded = 0;
+				}
+				$scope.downloadAllObject.downloaded = ($scope.downloadAllObject.downloaded - resource.downloaded) + notification.loaded;
+				resource.downloaded = notification.loaded;
+				$scope.downloadAllObject.progress = ($scope.downloadAllObject.downloaded / $scope.downloadAllObject.size) * 100;
+			}
+		});
+	};
+
+	/**
+	* Callback to start downloading all resources
+	*/
+	$scope.cancelDownloadAll = function($event){
+		$event.stopPropagation();
+		$scope.promptDownloadAll = false;
+	};
+
+	// this function is used to populate the resources
+	function openDirectory(id){
+		$scope.loadingResources = true;
+		$scope.showResourceInfo = false;
+		$scope.promptDownloadAll = false;
+		currentDirectory = id;
+		$timeout(function(){
+			ResourcesService.getDirectChildren(moduleId, id).then(function(items){
+
+				var resources = items.sort(function(item1, item2){
+
+					// If both is a directory or file, we go by name
+					if((item1.directory &amp;&amp; item2.directory) || (!item1.directory &amp;&amp; !item2.directory)){
+						if(item1.name &lt; item2.name){
+							return -1;
+						}
+						if(item1.name &gt; item2.name){
+							return 1;
+						}
+						return 0;
+					}
+					// If 1 is a directory and 2 not
+					else if(item1.directory &amp;&amp; !item2.directory){
+						return -1;
+					}
+					// If 2 is a directory and 1 not
+					else{
+						return 1;
+					}
+				});
+				// TODO this should move to page
+				$scope.loadingResources = false;
+				pageResourcesAll = $filter(&apos;object2Array&apos;)(resources);
+				paginationCalculate();
+				$scope.paginationUpdate(1);
+			});
+		}, 500);
+	}
+
+	/**
+	* Calculate what can fit onto screen and how paging should work
+	*/
+	function paginationCalculate(){
+		$scope.pageListAllCount = pageResourcesAll.length;
+
+	}
+
+	$scope.nextPage = function(){
+		if($scope.pageCurrent &gt; 1){
+			$scope.paginationUpdate($scope.pageCurrent - 1);
+		}
+	};
+
+	$scope.previousPage = function(){
+		var pageSize = $scope.pageListPageCount,
+			itemCount = $scope.pageListAllCount,
+			numPages = Math.floor(itemCount / pageSize) + (itemCount % pageSize &gt; 0 ? 1 : 0);
+		if($scope.pageCurrent &lt; numPages){
+			$scope.paginationUpdate($scope.pageCurrent + 1);
+		}
+	};
+
+	/**
+	* Update the display for the current page
+	*/
+	$scope.paginationUpdate = function(newPage){
+		$scope.pageCurrent = newPage;
+		var pageSize = $scope.pageListPageCount,
+			itemCount = $scope.pageListAllCount,
+			startIdx = (newPage - 1) * pageSize,
+			endIdx = Math.min((newPage * pageSize) - 1, itemCount);
+
+		$scope.resources = pageResourcesAll.slice(startIdx, endIdx);
+		$scope.myScroll.mainScroll.scrollTo(0, 0);// Scroll to top to see modal
+	};
+
+	$scope.showInfo = function(resource, $event){
+		$event.stopPropagation();
+		$scope.resourceInfo = resource;
+		$scope.myScroll.mainScroll.scrollTo(0, 0);// Scroll to top to see modal
+		$scope.showResourceInfo = true;
+		history.pushState({}, &apos;Resources&apos;, &apos;#/tool/resources/&apos; + moduleId + &apos;/&apos;);
+	};
+
+
+	$scope.hideInfo = function(){
+		$scope.myScroll.mainScroll.scrollTo(0, 0);// Scroll to top to see modal
+		$scope.showResourceInfo = false;
+	};
+
+	$scope.openResource = function(resource){
+
+		var openURL = function(path){
+			var FileOpener = $window.plugins.FileOpener;
+			FileOpener.open({
+				&apos;path&apos; : path,
+				&apos;mimeType&apos; : resource.mime_type
+			},
+			function(){
+
+			},
+			function(error){
+				var synthError;
+				// If the error is that there is not application
+				if(error == FileOpener.NO_APP){
+					synthError = SynthError(4001);
+				}
+				// We couldn&apos;t open the file
+				else if(error == FileOpener.FAIL_TO_OPEN){
+					synthError = SynthError(4002);
+				}
+				// Something else went wrong
+				else{
+					synthError = SynthError(1000);
+				}
+
+				/*
+				* We need to make this change in an apply scope, because we are changing
+				* the angular scope (inside the Error Handler) from outside of an angular
+				* thread
+				*/
+				$rootScope.$apply(function(){
+					SynthErrorHandler(synthError);
+				});
+			});
+
+
+		};
+
+		// If the resource is a directory, we will navigate into the directory
+		if(resource.directory){
+			history.pushState(resource, &apos;Resources&apos;, &apos;#/tool/resources/&apos; + moduleId + &apos;/&apos;);
+			openDirectory(resource.id);
+		}
+		else if (resource.mime_type == &apos;text/url&apos;) {
+			if(resource.linkURL != null){
+				cordova.InAppBrowser.open(resource.linkURL, &apos;_system&apos;);
+			}
+		}
+		else if(resource.resourceType == &apos;org.sakaiproject.citation.impl.CitationList&apos;){
+			cordova.InAppBrowser.open(resource.url, &apos;_system&apos;);
+		}
+		// If the file is already downloaded we will open it
+		else if(resource.isDownloaded){
+			openURL(resource.downloadPath);
+		}
+
+	};
+
+	/**
+	* Download a selected resource
+	*/
+	$scope.downloadResource = function(resource, $event){
+		if($event){
+			$event.stopPropagation();
+		}
+
+		resource.busyDownloading = true;
+		ResourcesService.downloadResource(moduleId, resource)
+		.then(
+			// Success
+			function(result){
+				resource.busyDownloading = false;
+				resource.isDownloaded = result.isDownloaded;
+				resource.downloadPath = result.downloadPath;
+			},
+			//Failed
+			function(reason){
+				resource.busyDownloading = false;
+				console.log(reason);
+			},
+			// Notifications
+			function(notification){
+
+				// Check the file download progress
+				if(notification instanceof ProgressEvent){
+					if(notification.lengthComputable) {
+						resource.downloadProgress = (notification.loaded / notification.total) * 100;
+					}
+					else{
+						resource.downloadProgress = (notification.loaded / resource.size) * 100;
+					}
+				}
+			});
+	};
+
+	/**
+	* Delete the specified resource
+	*/
+	$scope.deleteResource = function(resource, $event){
+		// Stop the click event from progating
+		if($event){
+			$event.stopPropagation();
+		}
+
+		navigator.notification.confirm(
+			&apos;Are you sure you want to delete the resource?&apos;,
+			function(index){
+				if (index === 2){
+					ResourcesService.deleteResource(moduleId, resource.id).then(function(){
+						// Update the object passed to this function,
+						// so that angular will update the current screen without having to refresh
+						if(resource.isDownloaded !== undefined){
+							delete resource.isDownloaded;
+						}
+					}, SynthErrorHandler);
+				}
+			},
+			&apos;Delete resource&apos;,
+			[&apos;No&apos;, &apos;Yes&apos;]);
+	};
+
+	function popHistory(event){
+		if(event.state == null){
+			openDirectory(null);
+		}
+		else{
+			openDirectory(event.state.id);
+		}
+	}
+	$window.addEventListener(&apos;popstate&apos;, popHistory);
+	// Cleanup listeners
+	$scope.$on(&apos;$destroy&apos;, function () {
+		$window.removeEventListener(&apos;popstate&apos;, popHistory);
+	});
+
+	openDirectory(null);
+};
+ResourcesCtrl.$inject = [&apos;$scope&apos;, &apos;$filter&apos;, &apos;$rootScope&apos;, &apos;$routeParams&apos;, &apos;$window&apos;, &apos;$timeout&apos;, &apos;ResourcesService&apos;, &apos;DataService&apos;, &apos;SynthErrorHandler&apos;, &apos;SynthQLoop&apos;, &apos;SynthError&apos;];
+export default ResourcesCtrl;
+</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(0.4.6)</span></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

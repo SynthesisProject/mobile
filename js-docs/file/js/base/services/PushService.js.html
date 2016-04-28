@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../../../">
+  <title data-ice="title">js/base/services/PushService.js | API Document</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  
+  
+  <script src="script/manual.js"></script>
+</head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  <a data-ice="repoURL" href="https://github.com/SynthesisProject/mobile.git" class="repo-url-github">Repository</a>
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+</header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SynthMobile">SynthMobile</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">base</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-convertToObject">convertToObject</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-convertToString">convertToString</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generateUID">generateUID</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getNumberOfProperties">getNumberOfProperties</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Routes">Routes</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-base">base</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">base/boot</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-BootCtrl">BootCtrl</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">base/controllers</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/base/controllers/AppController.js~AppController.html">AppController</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">base/directives</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-animatedEllipse">animatedEllipse</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-bootSpinner">bootSpinner</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-currentModuleName">currentModuleName</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-moduleCollapse">moduleCollapse</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-moduleName">moduleName</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-overallSyncStatus">overallSyncStatus</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-synthAttachments">synthAttachments</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-synthFooter">synthFooter</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-synthMenu">synthMenu</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-toolName">toolName</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-toolSyncStatus">toolSyncStatus</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">base/factories</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/base/factories/AppSyncStatus.js~AppSyncStatus.html">AppSyncStatus</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/base/factories/Lock.js~Lock.html">Lock</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/base/factories/UserSession.js~UserSession.html">UserSession</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-AppSyncStatusFactory">AppSyncStatusFactory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-LockFactory">LockFactory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-UserSessionFactory">UserSessionFactory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SynthAuthenticateUser">SynthAuthenticateUser</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SynthCheckResponseError">SynthCheckResponseError</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SynthError">SynthError</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SynthErrorHandler">SynthErrorHandler</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SynthFail">SynthFail</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SynthQIfStatement">SynthQIfStatement</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SynthQLoop">SynthQLoop</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-safo">safo</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">base/filters</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-array2Object">array2Object</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-attachments">attachments</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-bytesToSize">bytesToSize</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-formatDate">formatDate</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-noEscape">noEscape</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-object2Array">object2Array</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">base/handlers</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-SynthAttachmentMinerProvider">SynthAttachmentMinerProvider</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-SynthDeleteHandlerProvider">SynthDeleteHandlerProvider</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-SynthEmbeddedImageHandlerProvider">SynthEmbeddedImageHandlerProvider</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-SynthLinkHandlerProvider">SynthLinkHandlerProvider</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-SynthAttachmentMinerProvider">SynthAttachmentMinerProvider</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">base/home</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-HomeCtrl">HomeCtrl</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-HomeService">HomeService</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">base/register</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-RegisterCtrl">RegisterCtrl</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-RegisterModuleRegistrationCtrl">RegisterModuleRegistrationCtrl</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-RegisterSelectModuleCtrl">RegisterSelectModuleCtrl</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-RegisterService">RegisterService</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">base/services</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-DataService">DataService</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-LoggerService">LoggerService</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ModuleService">ModuleService</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-PushService">PushService</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-RegistrationService">RegistrationService</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SyncAPIService">SyncAPIService</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SynthesisRESTClient">SynthesisRESTClient</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-UserService">UserService</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-UserSettings">UserSettings</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">base/settings</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SettingsCtrl">SettingsCtrl</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SettingsPushCtrl">SettingsPushCtrl</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">base/sync</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SyncConfigureCtrl">SyncConfigureCtrl</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SyncCtrl">SyncCtrl</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SyncProgressCtrl">SyncProgressCtrl</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SyncSelection">SyncSelection</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SyncService">SyncService</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">tools</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SynthesisTools">SynthesisTools</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">tools/announcements</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Config">Config</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-AnnouncementsTool">AnnouncementsTool</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">tools/announcements/controllers</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-AnnouncementDetailCtrl">AnnouncementDetailCtrl</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-AnnouncementListCtrl">AnnouncementListCtrl</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">tools/announcements/handlers</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-AnnouncementsDeleteHandler">AnnouncementsDeleteHandler</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-AnnouncementsImageHandler">AnnouncementsImageHandler</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-AnnouncementsLinkHandler">AnnouncementsLinkHandler</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">tools/announcements/services</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-AnnouncementService">AnnouncementService</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">tools/resources</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Config">Config</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ResourcesTool">ResourcesTool</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">tools/resources/controllers</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ResourcesCtrl">ResourcesCtrl</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">tools/resources/directives</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-resourceImg">resourceImg</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-resourceListItem">resourceListItem</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">tools/resources/factories</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ResourcesService">ResourcesService</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">tools/resources/handlers</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ResourcesDeleteHandler">ResourcesDeleteHandler</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">tools/schedule</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Config">Config</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ScheduleTool">ScheduleTool</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">tools/schedule/controllers</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ScheduleCtrl">ScheduleCtrl</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">tools/schedule/factories</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ScheduleService">ScheduleService</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">tools/schedule/handlers</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ScheduleLinkHandler">ScheduleLinkHandler</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">js/base/services/PushService.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">&apos;use strict&apos;;
+
+var PushService = ($q, $http, LoggerService, DataService, ModuleService, RegistrationService, SynthError, UserSession, SynthConfig, SynthQLoop, CheckError, $window, SynthesisRESTClient) =&gt; {
+
+	var LOG = LoggerService(&apos;PushService&apos;);
+	/**
+	 * Constructor
+	 */
+	class PushServiceImpl{
+
+		constructor() {
+			this.deviceReady = false;
+			this.push = null;
+		}
+
+		/**
+		 * Invoked from the Push Cordova plugin when a notification is received
+		 */
+		_onNotificationReceived(data){
+			SynthesisRESTClient.getPushMessage(data.additionalData.id).then((pushMessage) =&gt; {
+				// A test message
+				if(pushMessage.messageType === 1){
+					navigator.notification.confirm(pushMessage.message, angular.noop, pushMessage.title, [&apos;Ok&apos;]);
+				/**
+				 * If we are in the foreground and the message is an important one
+				 * we will interupt the user with a dialog
+				 */
+				}
+				else if(pushMessage.emergency === true || data.additionalData.foreground === false){
+					// A tool update
+					if(pushMessage.messageType === 2){
+						var buttons = [&apos;Ok&apos;, &apos;Cancel&apos;],
+							callback = (option) =&gt; {
+								if(option == 1){
+									$window.location = &apos;#/sync&apos;;
+								}
+							};
+
+						navigator.notification.confirm(pushMessage.message, callback, pushMessage.title, buttons);
+					}
+				}
+			});
+		}
+
+		/**
+		 * Invoked from the Push Cordova plugin when the registration is received
+		 */
+		_onRegistrationReceived(pushRegistration){
+			LOG.debug(&apos;Registered! &apos; + pushRegistration.registrationId);
+			var data = {
+				&apos;device&apos; : {
+					&apos;platform&apos; : device.platform,
+					&apos;model&apos; : device.model,
+					&apos;uuid&apos; : device.uuid,
+					&apos;regId&apos; : pushRegistration.registrationId
+				}
+			};
+			return this._sendRequest(&apos;register&apos;, &apos;POST&apos;, data, true);
+		}
+
+		/**
+		 * Returns a promise that will be resolved when the cordova
+		 * thinks the device is ready and you can use the API
+		 */
+		cordovaReady() {
+			var deferred = $q.defer();
+			const self = this;
+			if (this.deviceReady === true) {
+				deferred.resolve();
+			}
+			else {
+				document.addEventListener(&apos;deviceready&apos;, () =&gt; {
+					self.deviceReady = true;
+					deferred.resolve();
+				}, false);
+			}
+			return deferred.promise;
+		}
+
+		_sendRequest(url, method, requestData, appendAuthentication = false){
+			return SynthesisRESTClient._doRequest(`/service-push/${url}`, method, requestData, appendAuthentication)
+				.then((response) =&gt; {
+					var responseData = response.data;
+					// Check if there is an error
+					if (CheckError(null, responseData)){
+						return $q.reject(SynthError(responseData));
+					}
+					return responseData;
+				},
+				() =&gt; {
+					return $q.reject(SynthError(1000));
+				});
+		}
+
+
+		/**
+		 * Register the device for push notifications.
+		 * If notifications are not enabled for this application, it will just return.
+		 * If the device is offline - ??
+		 * If the device is online, this method will request a registration token and send
+		 * it to the server.
+		 */
+		registerDevice() {
+
+			// If push notifications are not enable we return
+			if(!SynthConfig.pushEnabled){
+				return $q.when(true);
+			}
+			return this.cordovaReady().then(() =&gt; {
+				if(this.push == null){
+					this.push = PushNotification.init({ &apos;android&apos; : {&apos;senderID&apos; : SynthConfig.androidSenderID, &apos;image&apos; : &apos;icon&apos;}, &apos;ios&apos; : {}});
+
+					// Registration to GCM/APNS is completed and we received a token
+					this.push.on(&apos;registration&apos;, (registrationData) =&gt; {
+						this._onRegistrationReceived(registrationData);
+					});
+
+					// A notification message is received
+					this.push.on(&apos;notification&apos;, (notificationData) =&gt; {
+						this._onNotificationReceived(notificationData);
+					});
+
+					// Something went wrong
+					this.push.on(&apos;error&apos;, (e) =&gt; {
+						LOG.error(`Error Registering for PushNotifications: ${e.message}`);
+					});
+				}
+			});
+		}
+
+
+		/**
+		 * Get the current preferences saved locally
+		 * When we get the preferences we need to delete the onces from the Server
+		 * that are unknown to us
+		 * Object format:
+		 *  {
+		 *		&apos;moduleId1&apos;: {
+		 *		    &apos;announcements&apos;: false,
+		 *		    &apos;faq&apos;: false,
+		 *		    &apos;forums&apos;: false,
+		 *		    &apos;welcome&apos;: false,
+		 *		    &apos;schedule&apos;: false,
+		 *		    &apos;learning_units&apos;: false,
+		 *		    &apos;resources&apos;: false
+		 *		  },
+		 *		&apos;moduleId1&apos;: {
+		 *		    &apos;announcements&apos;: false,
+		 *		    &apos;faq&apos;: false,
+		 *		    &apos;forums&apos;: false,
+		 *		    &apos;welcome&apos;: false,
+		 *		    &apos;schedule&apos;: false,
+		 *		    &apos;learning_units&apos;: false,
+		 *		    &apos;resources&apos;: false
+		 *		  }
+		 *	}
+		 * }
+		 */
+		getPushToolPreferences(){
+			// The preferences we are working with
+			var preferences = {}, // What we are going to return
+				// Preferences that we need to delete
+				// This object will start off with all the preferences that are
+				// on the server. As we detect known ones, it is removed from
+				// the object. In the end this object will contain all the ones
+				// we need to delete
+				unkownPreferences;
+			const self = this;
+			function getServerPreferences(){
+				return self._getToolPushPreferencesServer().then((sPreferences) =&gt; {
+					unkownPreferences = sPreferences;
+				});
+			}
+
+			// Get registered modules
+			function getModules(){
+				return ModuleService.getLinkedModules().then((mdls) =&gt; {
+					return mdls;
+				});
+			}
+
+			// Loop through each module
+			function loopModules(modules){
+				var idx = 0, currentModuleId;
+
+				// Callback function to get the preferences for the next module
+				function getNextModulePreference(){
+					if(idx &lt; modules.length){
+						currentModuleId = modules[idx++].id;
+
+						// Get the module preferences and add to our overall list
+						return checkModulePreferences(currentModuleId);
+					}
+
+					// Return null when there is no more to loop
+					return null;
+				}
+
+				// Start the loop for each of the registered modules
+				return SynthQLoop(getNextModulePreference);
+			}
+
+			// Get tool preferences for module
+			function checkModulePreferences(moduleId){
+				preferences[moduleId] = {};
+
+				return ModuleService.getModuleData(moduleId).then((moduleData) =&gt; {
+					// Tool description object from module.json
+					var toolDescriptions = moduleData.toolDescriptions;
+
+					// Get the preference for each tool
+					for (var toolId in toolDescriptions) {
+						if (toolDescriptions.hasOwnProperty(toolId)) {
+							var tool = toolDescriptions[toolId];
+
+							// Skip tools that are not displayed on the menu
+							if(!tool.menu){
+								continue;
+							}
+
+							if(unkownPreferences[moduleId] &amp;&amp; unkownPreferences[moduleId][toolId] !== undefined){
+								preferences[moduleId][toolId] = unkownPreferences[moduleId][toolId];
+								delete unkownPreferences[moduleId][toolId];
+								if(Object.keys(unkownPreferences[moduleId]).length === 0){
+									delete unkownPreferences[moduleId];
+								}
+							}
+
+							// The preference will be null if it is a
+							// preference not yet set on the server
+							if(preferences[moduleId][toolId] == null){
+								preferences[moduleId][toolId] = false;
+							}
+						}
+					}
+				});
+			}
+
+			/**
+			 * Sends requests to the server to delete the unkown preferences
+			*/
+			function deleteUnknownPreferences(){
+				if(Object.keys(unkownPreferences).length === 0){
+					return $q.when(true);
+				}
+				else{
+					return self._sendRequest(`preferences/${device.uuid}`, &apos;DELETE&apos;, {toolPreferences : unkownPreferences}, true);
+				}
+			}
+
+			return getServerPreferences()
+				.then(getModules)
+				.then(loopModules)
+				.then(deleteUnknownPreferences)
+				.then(() =&gt; {
+					return preferences;
+				});
+		}
+
+		/**
+		 * Gets the push preferences from the server
+		 */
+		_getToolPushPreferencesServer(){
+			return this._sendRequest(`preferences/${device.uuid}`, &apos;GET&apos;)
+				.then((data) =&gt; {
+					return data.map.toolPreferences;
+				});
+		}
+
+		/**
+		 * Update the push preferences for this devices.
+		 * It first attempts to update on the Synthesis Server
+		 * then persists locally
+		 *
+		 * Object format:
+		 * {
+		 * 		&apos;moduleId&apos; : {
+		 * 			&apos;toolId&apos; : true/false,
+		 * 			&apos;toolId&apos; : true/false,
+		 * 			etc ...
+		 * 		},
+		 *      etc ...
+		 *
+		 * }
+		 *
+		 */
+		updatePushPreferences(preferences) {
+			var sendData = {
+				&apos;toolPreferences&apos; : preferences
+			};
+
+			return this._sendRequest(`preferences/${device.uuid}`, &apos;POST&apos;, sendData, true)
+			.then((data) =&gt; {
+
+				// Check if there is an error
+				if (CheckError(null, data)){
+					return $q.reject(SynthError(data));
+				}
+
+				return data.map.toolPreferences;
+			});
+		}
+
+		/**
+		 *
+		 */
+		enablePushForModule(moduleId) {
+			return this.setPushPreferenceForModule(moduleId, true);
+		}
+
+		disablePushForModule(moduleId) {
+			return this.setPushPreferenceForModule(moduleId, false);
+		}
+
+		/**
+		 * Enable push notifications for a module
+		 */
+		setPushPreferenceForModule(moduleId, enabled) {
+			const self = this;
+			function updateRegistrationDataPromise(){
+				// Update in the settings
+				var mergeData = { &apos;modules&apos; : {} };
+				mergeData.modules[moduleId] = { &apos;pushEnabled&apos; : true };
+				return RegistrationService.mergeRegistration(mergeData);
+			}
+
+
+			function updatePushSettingToServerPromise(){
+				var data = {
+					&apos;uuid&apos; : device.uuid,
+					&apos;sender&apos; : `module.${moduleId}`,
+					&apos;enabled&apos; : enabled
+				};
+				return self._sendRequest(&apos;preference&apos;, &apos;POST&apos;, data, true);
+			}
+
+			// Send request to the server
+			return updateRegistrationDataPromise()
+				.then(updatePushSettingToServerPromise);
+		}
+
+	}
+
+	return new PushServiceImpl();
+};
+PushService.$inject = [&apos;$q&apos;, &apos;$http&apos;, &apos;LoggerService&apos;, &apos;DataService&apos;, &apos;ModuleService&apos;, &apos;RegistrationService&apos;, &apos;SynthError&apos;, &apos;UserSession&apos;, &apos;SynthConfig&apos;, &apos;SynthQLoop&apos;, &apos;SynthCheckResponseError&apos;, &apos;$window&apos;, &apos;SynthesisRESTClient&apos;];
+export default PushService;
+</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(0.4.6)</span></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>
