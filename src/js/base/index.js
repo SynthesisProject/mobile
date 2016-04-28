@@ -59,15 +59,15 @@ import SynthUploadResponseHandlerProvider from './handlers/SynthUploadResponseHa
 import synthMenu from './directives/synthMenu';
 import synthFooter from './directives/synthFooter';
 import toolSyncStatus from './directives/toolSyncStatus';
-import overallSyncStatus from './directives/overallSyncStatus';
+import OverallSyncStatus from './directives/OverallSyncStatus';
 import synthAttachments from './directives/synthAttachments';
-import moduleCollapse from './directives/moduleCollapse';
-import animatedEllipse from './directives/animatedEllipse';
-import currentModuleName from './directives/currentModuleName';
-import moduleName from './directives/moduleName';
-import toolName from './directives/toolName';
+import ModuleCollapse from './directives/ModuleCollapse';
+import AnimatedEllipse from './directives/AnimatedEllipse';
+import CurrentModuleName from './directives/CurrentModuleName';
+import ModuleName from './directives/ModuleName';
+import ToolName from './directives/ToolName';
 
-import bootSpinner from './directives/bootSpinner';
+import BootSpinner from './directives/BootSpinner';
 
 import Routes from './Routes';
 
@@ -132,14 +132,14 @@ angular.module(directives, [])
 	.directive('synthMenu', synthMenu)
 	.directive('synthFooter', synthFooter)
 	.directive('toolSyncStatus', toolSyncStatus)
-	.directive('overallSyncStatus', overallSyncStatus)
+	.directive('overallSyncStatus', OverallSyncStatus)
 	.directive('synthAttachments', synthAttachments)
-	.directive('bootSpinner', bootSpinner)
-	.directive('moduleCollapse', moduleCollapse)
-	.directive('animatedEllipse', animatedEllipse)
-	.directive('currentModuleName', currentModuleName)
-	.directive('moduleName', moduleName)
-	.directive('toolName', toolName);
+	.directive('bootSpinner', BootSpinner)
+	.directive('moduleCollapse', ModuleCollapse)
+	.directive('animatedEllipse', AnimatedEllipse)
+	.directive('currentModuleName', CurrentModuleName)
+	.directive('moduleName', ModuleName)
+	.directive('toolName', ToolName);
 
 // Register providers
 angular.module(providers, [])

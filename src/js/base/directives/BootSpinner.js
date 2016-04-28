@@ -35,6 +35,9 @@ class BootSpinner {
 	}
 }
 
+/**
+ * Factory to create an instance of a BootSpinner.
+ */
 export default function BootSpinnerFactory(){
 	return new BootSpinner();
 }
