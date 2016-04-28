@@ -20,4 +20,9 @@ if [ "$TRAVIS_REPO_SLUG" == "$SYNTHESIS_MOBILE_REPO" ] && [ "$TRAVIS_PULL_REQUES
 
   echo -e "Published js-docs to gh-pages.\n"
 
+else
+	echo -e "$TRAVIS_REPO_SLUG";
+	echo -e "$TRAVIS_PULL_REQUEST";
+	echo -e "$TRAVIS_BRANCH";
+	echo -e "Not running script";
 fi
