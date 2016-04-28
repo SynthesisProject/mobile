@@ -1,0 +1,565 @@
+{
+  "coverage": "45.61%",
+  "expectCount": 171,
+  "actualCount": 78,
+  "files": {
+    "js/base/services/SynthesisRESTClient.js": {
+      "expectCount": 13,
+      "actualCount": 4,
+      "undocumentLines": [
+        7,
+        6,
+        3,
+        10,
+        5,
+        8,
+        12,
+        9,
+        11
+      ]
+    },
+    "js/base/services/RegistrationService.js": {
+      "expectCount": 9,
+      "actualCount": 2,
+      "undocumentLines": [
+        6,
+        7,
+        3,
+        58,
+        5,
+        8,
+        22
+      ]
+    },
+    "js/base/factories/Lock.js": {
+      "expectCount": 8,
+      "actualCount": 4,
+      "undocumentLines": [
+        9,
+        10,
+        8,
+        11
+      ]
+    },
+    "js/base/services/UserSettings.js": {
+      "expectCount": 11,
+      "actualCount": 4,
+      "undocumentLines": [
+        9,
+        10,
+        15,
+        8,
+        11,
+        21,
+        89
+      ]
+    },
+    "js/tools/announcements/controllers/AnnouncementDetailCtrl.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "js/tools/announcements/controllers/AnnouncementListCtrl.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "js/tools/announcements/services/AnnouncementService.js": {
+      "expectCount": 6,
+      "actualCount": 3,
+      "undocumentLines": [
+        29,
+        7,
+        8
+      ]
+    },
+    "js/tools/announcements/handlers/AnnouncementsDeleteHandler.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        2
+      ]
+    },
+    "js/tools/announcements/handlers/AnnouncementsImageHandler.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        3
+      ]
+    },
+    "js/tools/announcements/handlers/AnnouncementsLinkHandler.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        2
+      ]
+    },
+    "js/tools/announcements/index.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        15
+      ]
+    },
+    "js/base/controllers/AppController.js": {
+      "expectCount": 2,
+      "actualCount": 0,
+      "undocumentLines": [
+        2,
+        4
+      ]
+    },
+    "js/base/factories/AppSyncStatus.js": {
+      "expectCount": 8,
+      "actualCount": 2,
+      "undocumentLines": [
+        16,
+        8,
+        10,
+        12,
+        25,
+        37
+      ]
+    },
+    "js/base/boot/BootCtrl.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        2
+      ]
+    },
+    "js/tools/resources/config.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        2
+      ]
+    },
+    "js/tools/announcements/config.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "js/tools/schedule/config.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        2
+      ]
+    },
+    "js/base/services/DataService.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        8
+      ]
+    },
+    "js/base/home/HomeCtrl.js": {
+      "expectCount": 2,
+      "actualCount": 1,
+      "undocumentLines": [
+        6
+      ]
+    },
+    "js/base/home/HomeService.js": {
+      "expectCount": 5,
+      "actualCount": 3,
+      "undocumentLines": [
+        6,
+        7
+      ]
+    },
+    "js/base/services/LoggerService.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        5
+      ]
+    },
+    "js/base/services/ModuleService.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        3
+      ]
+    },
+    "js/base/services/UserService.js": {
+      "expectCount": 10,
+      "actualCount": 6,
+      "undocumentLines": [
+        3,
+        79,
+        5,
+        6
+      ]
+    },
+    "js/base/services/PushService.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        3
+      ]
+    },
+    "js/base/register/RegisterCtrl.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        4
+      ]
+    },
+    "js/base/register/RegisterModuleRegistrationCtrl.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "js/base/register/RegisterSelectModuleCtrl.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "js/base/register/RegisterService.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "js/tools/resources/controllers/ResourcesCtrl.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        2
+      ]
+    },
+    "js/tools/resources/handlers/ResourcesDeleteHandler.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        2
+      ]
+    },
+    "js/tools/resources/factories/ResourcesService.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        2
+      ]
+    },
+    "js/tools/resources/index.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        14
+      ]
+    },
+    "js/base/Routes.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "js/tools/schedule/controllers/ScheduleCtrl.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        2
+      ]
+    },
+    "js/tools/schedule/handlers/ScheduleLinkHandler.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        3
+      ]
+    },
+    "js/tools/schedule/factories/ScheduleService.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        2
+      ]
+    },
+    "js/tools/schedule/index.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        9
+      ]
+    },
+    "js/base/settings/SettingsCtrl.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        3
+      ]
+    },
+    "js/base/settings/SettingsPushCtrl.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        2
+      ]
+    },
+    "js/base/services/SyncAPIService.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        4
+      ]
+    },
+    "js/base/sync/SyncConfigureCtrl.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        2
+      ]
+    },
+    "js/base/sync/SyncCtrl.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        5
+      ]
+    },
+    "js/base/sync/SyncProgressCtrl.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        2
+      ]
+    },
+    "js/base/sync/SyncSelection.js": {
+      "expectCount": 14,
+      "actualCount": 11,
+      "undocumentLines": [
+        123,
+        9,
+        10
+      ]
+    },
+    "js/base/sync/SyncService.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        3
+      ]
+    },
+    "js/base/handlers/SynthAttachmentMinerProvider.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "js/base/handlers/SynthUploadResponseHandlerProvider.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "js/base/factories/SynthAuthenticateUser.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "js/base/factories/SynthCheckResponseError.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "js/base/handlers/SynthDeleteHandlerProvider.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "js/base/handlers/SynthEmbeddedImageHandlerProvider.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "js/base/factories/SynthError.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "js/base/factories/SynthErrorHandler.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "js/base/factories/SynthFail.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "js/base/handlers/SynthLinkHandlerProvider.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "js/init.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        6
+      ]
+    },
+    "js/base/factories/SynthQIfStatement.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        2
+      ]
+    },
+    "js/base/factories/SynthQLoop.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "js/tools/index.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        6
+      ]
+    },
+    "js/base/factories/UserSession.js": {
+      "expectCount": 10,
+      "actualCount": 8,
+      "undocumentLines": [
+        46,
+        7
+      ]
+    },
+    "js/base/directives/animatedEllipse.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        2
+      ]
+    },
+    "js/base/filters/array2Object.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "js/base/filters/attachments.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "js/base/index.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        74
+      ]
+    },
+    "js/base/directives/bootSpinner.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        2
+      ]
+    },
+    "js/base/filters/bytesToSize.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "js/base/Utilities.js": {
+      "expectCount": 4,
+      "actualCount": 4,
+      "undocumentLines": []
+    },
+    "js/base/directives/currentModuleName.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "js/base/filters/formatDate.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        2
+      ]
+    },
+    "js/base/directives/moduleCollapse.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        2
+      ]
+    },
+    "js/base/directives/moduleName.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "js/base/filters/noEscape.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        2
+      ]
+    },
+    "js/base/filters/object2Array.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        2
+      ]
+    },
+    "js/base/directives/overallSyncStatus.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        2
+      ]
+    },
+    "js/tools/resources/directives/resourceImg.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        2
+      ]
+    },
+    "js/tools/resources/directives/resourceListItem.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        2
+      ]
+    },
+    "js/base/factories/safo.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "js/base/directives/synthAttachments.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "js/base/directives/synthFooter.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "js/base/directives/synthMenu.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        2
+      ]
+    },
+    "js/base/directives/toolName.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        2
+      ]
+    },
+    "js/base/directives/toolSyncStatus.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        2
+      ]
+    }
+  }
+}

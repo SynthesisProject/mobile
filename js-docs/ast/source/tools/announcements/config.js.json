@@ -1,0 +1,2448 @@
+{
+  "type": "Program",
+  "body": [
+    {
+      "type": "ExpressionStatement",
+      "expression": {
+        "type": "Literal",
+        "value": "use strict",
+        "raw": "'use strict'",
+        "range": [
+          0,
+          12
+        ],
+        "loc": {
+          "start": {
+            "line": 1,
+            "column": 0
+          },
+          "end": {
+            "line": 1,
+            "column": 12
+          }
+        }
+      },
+      "range": [
+        0,
+        13
+      ],
+      "loc": {
+        "start": {
+          "line": 1,
+          "column": 0
+        },
+        "end": {
+          "line": 1,
+          "column": 13
+        }
+      },
+      "trailingComments": [
+        {
+          "type": "Block",
+          "value": "*\r\n* Configure routes for announcements\r\n",
+          "range": [
+            17,
+            62
+          ],
+          "loc": {
+            "start": {
+              "line": 3,
+              "column": 0
+            },
+            "end": {
+              "line": 5,
+              "column": 2
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "Identifier",
+      "declarations": [
+        {
+          "type": "VariableDeclarator",
+          "id": {
+            "type": "Identifier",
+            "name": "Config",
+            "range": [
+              68,
+              74
+            ],
+            "loc": {
+              "start": {
+                "line": 6,
+                "column": 4
+              },
+              "end": {
+                "line": 6,
+                "column": 10
+              }
+            }
+          },
+          "init": {
+            "type": "ArrowFunctionExpression",
+            "id": null,
+            "params": [
+              {
+                "type": "Identifier",
+                "name": "$routeProvider",
+                "range": [
+                  78,
+                  92
+                ],
+                "loc": {
+                  "start": {
+                    "line": 6,
+                    "column": 14
+                  },
+                  "end": {
+                    "line": 6,
+                    "column": 28
+                  }
+                }
+              },
+              {
+                "type": "Identifier",
+                "name": "SynthAttachmentMinerProvider",
+                "range": [
+                  94,
+                  122
+                ],
+                "loc": {
+                  "start": {
+                    "line": 6,
+                    "column": 30
+                  },
+                  "end": {
+                    "line": 6,
+                    "column": 58
+                  }
+                }
+              },
+              {
+                "type": "Identifier",
+                "name": "SynthEmbeddedImageHandlerProvider",
+                "range": [
+                  124,
+                  157
+                ],
+                "loc": {
+                  "start": {
+                    "line": 6,
+                    "column": 60
+                  },
+                  "end": {
+                    "line": 6,
+                    "column": 93
+                  }
+                }
+              },
+              {
+                "type": "Identifier",
+                "name": "SynthDeleteHandlerProvider",
+                "range": [
+                  159,
+                  185
+                ],
+                "loc": {
+                  "start": {
+                    "line": 6,
+                    "column": 95
+                  },
+                  "end": {
+                    "line": 6,
+                    "column": 121
+                  }
+                }
+              },
+              {
+                "type": "Identifier",
+                "name": "SynthLinkHandlerProvider",
+                "range": [
+                  187,
+                  211
+                ],
+                "loc": {
+                  "start": {
+                    "line": 6,
+                    "column": 123
+                  },
+                  "end": {
+                    "line": 6,
+                    "column": 147
+                  }
+                }
+              }
+            ],
+            "body": {
+              "type": "BlockStatement",
+              "body": [
+                {
+                  "type": "ExpressionStatement",
+                  "expression": {
+                    "type": "CallExpression",
+                    "callee": {
+                      "type": "MemberExpression",
+                      "computed": false,
+                      "object": {
+                        "type": "Identifier",
+                        "name": "SynthAttachmentMinerProvider",
+                        "range": [
+                          222,
+                          250
+                        ],
+                        "loc": {
+                          "start": {
+                            "line": 8,
+                            "column": 1
+                          },
+                          "end": {
+                            "line": 8,
+                            "column": 29
+                          }
+                        }
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "addHandler",
+                        "range": [
+                          251,
+                          261
+                        ],
+                        "loc": {
+                          "start": {
+                            "line": 8,
+                            "column": 30
+                          },
+                          "end": {
+                            "line": 8,
+                            "column": 40
+                          }
+                        }
+                      },
+                      "range": [
+                        222,
+                        261
+                      ],
+                      "loc": {
+                        "start": {
+                          "line": 8,
+                          "column": 1
+                        },
+                        "end": {
+                          "line": 8,
+                          "column": 40
+                        }
+                      }
+                    },
+                    "arguments": [
+                      {
+                        "type": "Literal",
+                        "value": "announcements",
+                        "raw": "'announcements'",
+                        "range": [
+                          262,
+                          277
+                        ],
+                        "loc": {
+                          "start": {
+                            "line": 8,
+                            "column": 41
+                          },
+                          "end": {
+                            "line": 8,
+                            "column": 56
+                          }
+                        }
+                      },
+                      {
+                        "type": "Literal",
+                        "value": "default",
+                        "raw": "'default'",
+                        "range": [
+                          279,
+                          288
+                        ],
+                        "loc": {
+                          "start": {
+                            "line": 8,
+                            "column": 58
+                          },
+                          "end": {
+                            "line": 8,
+                            "column": 67
+                          }
+                        }
+                      }
+                    ],
+                    "range": [
+                      222,
+                      289
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 8,
+                        "column": 1
+                      },
+                      "end": {
+                        "line": 8,
+                        "column": 68
+                      }
+                    }
+                  },
+                  "range": [
+                    222,
+                    290
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 8,
+                      "column": 1
+                    },
+                    "end": {
+                      "line": 8,
+                      "column": 69
+                    }
+                  }
+                },
+                {
+                  "type": "ExpressionStatement",
+                  "expression": {
+                    "type": "CallExpression",
+                    "callee": {
+                      "type": "MemberExpression",
+                      "computed": false,
+                      "object": {
+                        "type": "Identifier",
+                        "name": "SynthEmbeddedImageHandlerProvider",
+                        "range": [
+                          293,
+                          326
+                        ],
+                        "loc": {
+                          "start": {
+                            "line": 9,
+                            "column": 1
+                          },
+                          "end": {
+                            "line": 9,
+                            "column": 34
+                          }
+                        }
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "addHandler",
+                        "range": [
+                          327,
+                          337
+                        ],
+                        "loc": {
+                          "start": {
+                            "line": 9,
+                            "column": 35
+                          },
+                          "end": {
+                            "line": 9,
+                            "column": 45
+                          }
+                        }
+                      },
+                      "range": [
+                        293,
+                        337
+                      ],
+                      "loc": {
+                        "start": {
+                          "line": 9,
+                          "column": 1
+                        },
+                        "end": {
+                          "line": 9,
+                          "column": 45
+                        }
+                      }
+                    },
+                    "arguments": [
+                      {
+                        "type": "Literal",
+                        "value": "announcements",
+                        "raw": "'announcements'",
+                        "range": [
+                          338,
+                          353
+                        ],
+                        "loc": {
+                          "start": {
+                            "line": 9,
+                            "column": 46
+                          },
+                          "end": {
+                            "line": 9,
+                            "column": 61
+                          }
+                        }
+                      },
+                      {
+                        "type": "Literal",
+                        "value": "AnnouncementsImageHandler",
+                        "raw": "'AnnouncementsImageHandler'",
+                        "range": [
+                          355,
+                          382
+                        ],
+                        "loc": {
+                          "start": {
+                            "line": 9,
+                            "column": 63
+                          },
+                          "end": {
+                            "line": 9,
+                            "column": 90
+                          }
+                        }
+                      }
+                    ],
+                    "range": [
+                      293,
+                      383
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 9,
+                        "column": 1
+                      },
+                      "end": {
+                        "line": 9,
+                        "column": 91
+                      }
+                    }
+                  },
+                  "range": [
+                    293,
+                    384
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 9,
+                      "column": 1
+                    },
+                    "end": {
+                      "line": 9,
+                      "column": 92
+                    }
+                  }
+                },
+                {
+                  "type": "ExpressionStatement",
+                  "expression": {
+                    "type": "CallExpression",
+                    "callee": {
+                      "type": "MemberExpression",
+                      "computed": false,
+                      "object": {
+                        "type": "Identifier",
+                        "name": "SynthDeleteHandlerProvider",
+                        "range": [
+                          387,
+                          413
+                        ],
+                        "loc": {
+                          "start": {
+                            "line": 10,
+                            "column": 1
+                          },
+                          "end": {
+                            "line": 10,
+                            "column": 27
+                          }
+                        }
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "addHandler",
+                        "range": [
+                          414,
+                          424
+                        ],
+                        "loc": {
+                          "start": {
+                            "line": 10,
+                            "column": 28
+                          },
+                          "end": {
+                            "line": 10,
+                            "column": 38
+                          }
+                        }
+                      },
+                      "range": [
+                        387,
+                        424
+                      ],
+                      "loc": {
+                        "start": {
+                          "line": 10,
+                          "column": 1
+                        },
+                        "end": {
+                          "line": 10,
+                          "column": 38
+                        }
+                      }
+                    },
+                    "arguments": [
+                      {
+                        "type": "Literal",
+                        "value": "announcements",
+                        "raw": "'announcements'",
+                        "range": [
+                          425,
+                          440
+                        ],
+                        "loc": {
+                          "start": {
+                            "line": 10,
+                            "column": 39
+                          },
+                          "end": {
+                            "line": 10,
+                            "column": 54
+                          }
+                        }
+                      },
+                      {
+                        "type": "Literal",
+                        "value": "AnnouncementsDeleteHandler",
+                        "raw": "'AnnouncementsDeleteHandler'",
+                        "range": [
+                          442,
+                          470
+                        ],
+                        "loc": {
+                          "start": {
+                            "line": 10,
+                            "column": 56
+                          },
+                          "end": {
+                            "line": 10,
+                            "column": 84
+                          }
+                        }
+                      }
+                    ],
+                    "range": [
+                      387,
+                      471
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 10,
+                        "column": 1
+                      },
+                      "end": {
+                        "line": 10,
+                        "column": 85
+                      }
+                    }
+                  },
+                  "range": [
+                    387,
+                    472
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 10,
+                      "column": 1
+                    },
+                    "end": {
+                      "line": 10,
+                      "column": 86
+                    }
+                  }
+                },
+                {
+                  "type": "ExpressionStatement",
+                  "expression": {
+                    "type": "CallExpression",
+                    "callee": {
+                      "type": "MemberExpression",
+                      "computed": false,
+                      "object": {
+                        "type": "Identifier",
+                        "name": "SynthLinkHandlerProvider",
+                        "range": [
+                          475,
+                          499
+                        ],
+                        "loc": {
+                          "start": {
+                            "line": 11,
+                            "column": 1
+                          },
+                          "end": {
+                            "line": 11,
+                            "column": 25
+                          }
+                        }
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "addHandler",
+                        "range": [
+                          500,
+                          510
+                        ],
+                        "loc": {
+                          "start": {
+                            "line": 11,
+                            "column": 26
+                          },
+                          "end": {
+                            "line": 11,
+                            "column": 36
+                          }
+                        }
+                      },
+                      "range": [
+                        475,
+                        510
+                      ],
+                      "loc": {
+                        "start": {
+                          "line": 11,
+                          "column": 1
+                        },
+                        "end": {
+                          "line": 11,
+                          "column": 36
+                        }
+                      }
+                    },
+                    "arguments": [
+                      {
+                        "type": "Literal",
+                        "value": "announcements",
+                        "raw": "'announcements'",
+                        "range": [
+                          511,
+                          526
+                        ],
+                        "loc": {
+                          "start": {
+                            "line": 11,
+                            "column": 37
+                          },
+                          "end": {
+                            "line": 11,
+                            "column": 52
+                          }
+                        }
+                      },
+                      {
+                        "type": "Literal",
+                        "value": "AnnouncementsLinkHandler",
+                        "raw": "'AnnouncementsLinkHandler'",
+                        "range": [
+                          528,
+                          554
+                        ],
+                        "loc": {
+                          "start": {
+                            "line": 11,
+                            "column": 54
+                          },
+                          "end": {
+                            "line": 11,
+                            "column": 80
+                          }
+                        }
+                      }
+                    ],
+                    "range": [
+                      475,
+                      555
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 11,
+                        "column": 1
+                      },
+                      "end": {
+                        "line": 11,
+                        "column": 81
+                      }
+                    }
+                  },
+                  "range": [
+                    475,
+                    556
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 11,
+                      "column": 1
+                    },
+                    "end": {
+                      "line": 11,
+                      "column": 82
+                    }
+                  }
+                },
+                {
+                  "type": "ExpressionStatement",
+                  "expression": {
+                    "type": "CallExpression",
+                    "callee": {
+                      "type": "MemberExpression",
+                      "computed": false,
+                      "object": {
+                        "type": "CallExpression",
+                        "callee": {
+                          "type": "MemberExpression",
+                          "computed": false,
+                          "object": {
+                            "type": "Identifier",
+                            "name": "$routeProvider",
+                            "range": [
+                              561,
+                              575
+                            ],
+                            "loc": {
+                              "start": {
+                                "line": 13,
+                                "column": 1
+                              },
+                              "end": {
+                                "line": 13,
+                                "column": 15
+                              }
+                            }
+                          },
+                          "property": {
+                            "type": "Identifier",
+                            "name": "when",
+                            "range": [
+                              580,
+                              584
+                            ],
+                            "loc": {
+                              "start": {
+                                "line": 14,
+                                "column": 3
+                              },
+                              "end": {
+                                "line": 14,
+                                "column": 7
+                              }
+                            }
+                          },
+                          "range": [
+                            561,
+                            584
+                          ],
+                          "loc": {
+                            "start": {
+                              "line": 13,
+                              "column": 1
+                            },
+                            "end": {
+                              "line": 14,
+                              "column": 7
+                            }
+                          }
+                        },
+                        "arguments": [
+                          {
+                            "type": "Literal",
+                            "value": "/tool/announcements/:moduleId",
+                            "raw": "'/tool/announcements/:moduleId'",
+                            "range": [
+                              585,
+                              616
+                            ],
+                            "loc": {
+                              "start": {
+                                "line": 14,
+                                "column": 8
+                              },
+                              "end": {
+                                "line": 14,
+                                "column": 39
+                              }
+                            }
+                          },
+                          {
+                            "type": "ObjectExpression",
+                            "properties": [
+                              {
+                                "type": "Property",
+                                "key": {
+                                  "type": "Identifier",
+                                  "name": "templateUrl",
+                                  "range": [
+                                    619,
+                                    630
+                                  ],
+                                  "loc": {
+                                    "start": {
+                                      "line": 14,
+                                      "column": 42
+                                    },
+                                    "end": {
+                                      "line": 14,
+                                      "column": 53
+                                    }
+                                  }
+                                },
+                                "value": {
+                                  "type": "Literal",
+                                  "value": "tools/announcements/partials/announcements-list.html",
+                                  "raw": "'tools/announcements/partials/announcements-list.html'",
+                                  "range": [
+                                    633,
+                                    687
+                                  ],
+                                  "loc": {
+                                    "start": {
+                                      "line": 14,
+                                      "column": 56
+                                    },
+                                    "end": {
+                                      "line": 14,
+                                      "column": 110
+                                    }
+                                  }
+                                },
+                                "kind": "init",
+                                "method": false,
+                                "shorthand": false,
+                                "computed": false,
+                                "range": [
+                                  619,
+                                  687
+                                ],
+                                "loc": {
+                                  "start": {
+                                    "line": 14,
+                                    "column": 42
+                                  },
+                                  "end": {
+                                    "line": 14,
+                                    "column": 110
+                                  }
+                                }
+                              }
+                            ],
+                            "range": [
+                              618,
+                              688
+                            ],
+                            "loc": {
+                              "start": {
+                                "line": 14,
+                                "column": 41
+                              },
+                              "end": {
+                                "line": 14,
+                                "column": 111
+                              }
+                            }
+                          }
+                        ],
+                        "range": [
+                          561,
+                          689
+                        ],
+                        "loc": {
+                          "start": {
+                            "line": 13,
+                            "column": 1
+                          },
+                          "end": {
+                            "line": 14,
+                            "column": 112
+                          }
+                        }
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "when",
+                        "range": [
+                          694,
+                          698
+                        ],
+                        "loc": {
+                          "start": {
+                            "line": 15,
+                            "column": 3
+                          },
+                          "end": {
+                            "line": 15,
+                            "column": 7
+                          }
+                        }
+                      },
+                      "range": [
+                        561,
+                        698
+                      ],
+                      "loc": {
+                        "start": {
+                          "line": 13,
+                          "column": 1
+                        },
+                        "end": {
+                          "line": 15,
+                          "column": 7
+                        }
+                      }
+                    },
+                    "arguments": [
+                      {
+                        "type": "Literal",
+                        "value": "/tool/announcements/:moduleId/:announcementId",
+                        "raw": "'/tool/announcements/:moduleId/:announcementId'",
+                        "range": [
+                          699,
+                          746
+                        ],
+                        "loc": {
+                          "start": {
+                            "line": 15,
+                            "column": 8
+                          },
+                          "end": {
+                            "line": 15,
+                            "column": 55
+                          }
+                        }
+                      },
+                      {
+                        "type": "ObjectExpression",
+                        "properties": [
+                          {
+                            "type": "Property",
+                            "key": {
+                              "type": "Identifier",
+                              "name": "templateUrl",
+                              "range": [
+                                749,
+                                760
+                              ],
+                              "loc": {
+                                "start": {
+                                  "line": 15,
+                                  "column": 58
+                                },
+                                "end": {
+                                  "line": 15,
+                                  "column": 69
+                                }
+                              }
+                            },
+                            "value": {
+                              "type": "Literal",
+                              "value": "tools/announcements/partials/announcements-detail.html",
+                              "raw": "'tools/announcements/partials/announcements-detail.html'",
+                              "range": [
+                                763,
+                                819
+                              ],
+                              "loc": {
+                                "start": {
+                                  "line": 15,
+                                  "column": 72
+                                },
+                                "end": {
+                                  "line": 15,
+                                  "column": 128
+                                }
+                              }
+                            },
+                            "kind": "init",
+                            "method": false,
+                            "shorthand": false,
+                            "computed": false,
+                            "range": [
+                              749,
+                              819
+                            ],
+                            "loc": {
+                              "start": {
+                                "line": 15,
+                                "column": 58
+                              },
+                              "end": {
+                                "line": 15,
+                                "column": 128
+                              }
+                            }
+                          }
+                        ],
+                        "range": [
+                          748,
+                          820
+                        ],
+                        "loc": {
+                          "start": {
+                            "line": 15,
+                            "column": 57
+                          },
+                          "end": {
+                            "line": 15,
+                            "column": 129
+                          }
+                        }
+                      }
+                    ],
+                    "range": [
+                      561,
+                      821
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 13,
+                        "column": 1
+                      },
+                      "end": {
+                        "line": 15,
+                        "column": 130
+                      }
+                    }
+                  },
+                  "range": [
+                    561,
+                    822
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 13,
+                      "column": 1
+                    },
+                    "end": {
+                      "line": 15,
+                      "column": 131
+                    }
+                  }
+                }
+              ],
+              "range": [
+                216,
+                825
+              ],
+              "loc": {
+                "start": {
+                  "line": 6,
+                  "column": 152
+                },
+                "end": {
+                  "line": 16,
+                  "column": 1
+                }
+              }
+            },
+            "generator": false,
+            "expression": false,
+            "range": [
+              77,
+              825
+            ],
+            "loc": {
+              "start": {
+                "line": 6,
+                "column": 13
+              },
+              "end": {
+                "line": 16,
+                "column": 1
+              }
+            }
+          },
+          "range": [
+            68,
+            825
+          ],
+          "loc": {
+            "start": {
+              "line": 6,
+              "column": 4
+            },
+            "end": {
+              "line": 16,
+              "column": 1
+            }
+          }
+        }
+      ],
+      "kind": "var",
+      "range": [
+        64,
+        826
+      ],
+      "loc": {
+        "start": {
+          "line": 6,
+          "column": 0
+        },
+        "end": {
+          "line": 16,
+          "column": 2
+        }
+      },
+      "leadingComments": [],
+      "name": "_",
+      "trailingComments": []
+    },
+    {
+      "type": "ExpressionStatement",
+      "expression": {
+        "type": "AssignmentExpression",
+        "operator": "=",
+        "left": {
+          "type": "MemberExpression",
+          "computed": false,
+          "object": {
+            "type": "Identifier",
+            "name": "Config",
+            "range": [
+              828,
+              834
+            ],
+            "loc": {
+              "start": {
+                "line": 17,
+                "column": 0
+              },
+              "end": {
+                "line": 17,
+                "column": 6
+              }
+            }
+          },
+          "property": {
+            "type": "Identifier",
+            "name": "$inject",
+            "range": [
+              835,
+              842
+            ],
+            "loc": {
+              "start": {
+                "line": 17,
+                "column": 7
+              },
+              "end": {
+                "line": 17,
+                "column": 14
+              }
+            }
+          },
+          "range": [
+            828,
+            842
+          ],
+          "loc": {
+            "start": {
+              "line": 17,
+              "column": 0
+            },
+            "end": {
+              "line": 17,
+              "column": 14
+            }
+          }
+        },
+        "right": {
+          "type": "ArrayExpression",
+          "elements": [
+            {
+              "type": "Literal",
+              "value": "$routeProvider",
+              "raw": "'$routeProvider'",
+              "range": [
+                846,
+                862
+              ],
+              "loc": {
+                "start": {
+                  "line": 17,
+                  "column": 18
+                },
+                "end": {
+                  "line": 17,
+                  "column": 34
+                }
+              }
+            },
+            {
+              "type": "Literal",
+              "value": "SynthAttachmentMinerProvider",
+              "raw": "'SynthAttachmentMinerProvider'",
+              "range": [
+                864,
+                894
+              ],
+              "loc": {
+                "start": {
+                  "line": 17,
+                  "column": 36
+                },
+                "end": {
+                  "line": 17,
+                  "column": 66
+                }
+              }
+            },
+            {
+              "type": "Literal",
+              "value": "SynthEmbeddedImageHandlerProvider",
+              "raw": "'SynthEmbeddedImageHandlerProvider'",
+              "range": [
+                896,
+                931
+              ],
+              "loc": {
+                "start": {
+                  "line": 17,
+                  "column": 68
+                },
+                "end": {
+                  "line": 17,
+                  "column": 103
+                }
+              }
+            },
+            {
+              "type": "Literal",
+              "value": "SynthDeleteHandlerProvider",
+              "raw": "'SynthDeleteHandlerProvider'",
+              "range": [
+                933,
+                961
+              ],
+              "loc": {
+                "start": {
+                  "line": 17,
+                  "column": 105
+                },
+                "end": {
+                  "line": 17,
+                  "column": 133
+                }
+              }
+            },
+            {
+              "type": "Literal",
+              "value": "SynthLinkHandlerProvider",
+              "raw": "'SynthLinkHandlerProvider'",
+              "range": [
+                963,
+                989
+              ],
+              "loc": {
+                "start": {
+                  "line": 17,
+                  "column": 135
+                },
+                "end": {
+                  "line": 17,
+                  "column": 161
+                }
+              }
+            }
+          ],
+          "range": [
+            845,
+            990
+          ],
+          "loc": {
+            "start": {
+              "line": 17,
+              "column": 17
+            },
+            "end": {
+              "line": 17,
+              "column": 162
+            }
+          }
+        },
+        "range": [
+          828,
+          990
+        ],
+        "loc": {
+          "start": {
+            "line": 17,
+            "column": 0
+          },
+          "end": {
+            "line": 17,
+            "column": 162
+          }
+        }
+      },
+      "range": [
+        828,
+        991
+      ],
+      "loc": {
+        "start": {
+          "line": 17,
+          "column": 0
+        },
+        "end": {
+          "line": 17,
+          "column": 163
+        }
+      }
+    },
+    {
+      "type": "Identifier",
+      "declaration": {
+        "type": "Identifier",
+        "name": "Config",
+        "range": [
+          1008,
+          1014
+        ],
+        "loc": {
+          "start": {
+            "line": 18,
+            "column": 15
+          },
+          "end": {
+            "line": 18,
+            "column": 21
+          }
+        }
+      },
+      "range": [
+        993,
+        1015
+      ],
+      "loc": {
+        "start": {
+          "line": 18,
+          "column": 0
+        },
+        "end": {
+          "line": 18,
+          "column": 22
+        }
+      },
+      "name": "_",
+      "leadingComments": [],
+      "trailingComments": []
+    },
+    {
+      "type": "ExportDefaultDeclaration",
+      "declaration": {
+        "type": "VariableDeclaration",
+        "declarations": [
+          {
+            "type": "VariableDeclarator",
+            "id": {
+              "type": "Identifier",
+              "name": "Config",
+              "range": [
+                68,
+                74
+              ],
+              "loc": {
+                "start": {
+                  "line": 6,
+                  "column": 4
+                },
+                "end": {
+                  "line": 6,
+                  "column": 10
+                }
+              }
+            },
+            "init": {
+              "type": "ArrowFunctionExpression",
+              "id": null,
+              "params": [
+                {
+                  "type": "Identifier",
+                  "name": "$routeProvider",
+                  "range": [
+                    78,
+                    92
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 6,
+                      "column": 14
+                    },
+                    "end": {
+                      "line": 6,
+                      "column": 28
+                    }
+                  }
+                },
+                {
+                  "type": "Identifier",
+                  "name": "SynthAttachmentMinerProvider",
+                  "range": [
+                    94,
+                    122
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 6,
+                      "column": 30
+                    },
+                    "end": {
+                      "line": 6,
+                      "column": 58
+                    }
+                  }
+                },
+                {
+                  "type": "Identifier",
+                  "name": "SynthEmbeddedImageHandlerProvider",
+                  "range": [
+                    124,
+                    157
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 6,
+                      "column": 60
+                    },
+                    "end": {
+                      "line": 6,
+                      "column": 93
+                    }
+                  }
+                },
+                {
+                  "type": "Identifier",
+                  "name": "SynthDeleteHandlerProvider",
+                  "range": [
+                    159,
+                    185
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 6,
+                      "column": 95
+                    },
+                    "end": {
+                      "line": 6,
+                      "column": 121
+                    }
+                  }
+                },
+                {
+                  "type": "Identifier",
+                  "name": "SynthLinkHandlerProvider",
+                  "range": [
+                    187,
+                    211
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 6,
+                      "column": 123
+                    },
+                    "end": {
+                      "line": 6,
+                      "column": 147
+                    }
+                  }
+                }
+              ],
+              "body": {
+                "type": "BlockStatement",
+                "body": [
+                  {
+                    "type": "ExpressionStatement",
+                    "expression": {
+                      "type": "CallExpression",
+                      "callee": {
+                        "type": "MemberExpression",
+                        "computed": false,
+                        "object": {
+                          "type": "Identifier",
+                          "name": "SynthAttachmentMinerProvider",
+                          "range": [
+                            222,
+                            250
+                          ],
+                          "loc": {
+                            "start": {
+                              "line": 8,
+                              "column": 1
+                            },
+                            "end": {
+                              "line": 8,
+                              "column": 29
+                            }
+                          }
+                        },
+                        "property": {
+                          "type": "Identifier",
+                          "name": "addHandler",
+                          "range": [
+                            251,
+                            261
+                          ],
+                          "loc": {
+                            "start": {
+                              "line": 8,
+                              "column": 30
+                            },
+                            "end": {
+                              "line": 8,
+                              "column": 40
+                            }
+                          }
+                        },
+                        "range": [
+                          222,
+                          261
+                        ],
+                        "loc": {
+                          "start": {
+                            "line": 8,
+                            "column": 1
+                          },
+                          "end": {
+                            "line": 8,
+                            "column": 40
+                          }
+                        }
+                      },
+                      "arguments": [
+                        {
+                          "type": "Literal",
+                          "value": "announcements",
+                          "raw": "'announcements'",
+                          "range": [
+                            262,
+                            277
+                          ],
+                          "loc": {
+                            "start": {
+                              "line": 8,
+                              "column": 41
+                            },
+                            "end": {
+                              "line": 8,
+                              "column": 56
+                            }
+                          }
+                        },
+                        {
+                          "type": "Literal",
+                          "value": "default",
+                          "raw": "'default'",
+                          "range": [
+                            279,
+                            288
+                          ],
+                          "loc": {
+                            "start": {
+                              "line": 8,
+                              "column": 58
+                            },
+                            "end": {
+                              "line": 8,
+                              "column": 67
+                            }
+                          }
+                        }
+                      ],
+                      "range": [
+                        222,
+                        289
+                      ],
+                      "loc": {
+                        "start": {
+                          "line": 8,
+                          "column": 1
+                        },
+                        "end": {
+                          "line": 8,
+                          "column": 68
+                        }
+                      }
+                    },
+                    "range": [
+                      222,
+                      290
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 8,
+                        "column": 1
+                      },
+                      "end": {
+                        "line": 8,
+                        "column": 69
+                      }
+                    }
+                  },
+                  {
+                    "type": "ExpressionStatement",
+                    "expression": {
+                      "type": "CallExpression",
+                      "callee": {
+                        "type": "MemberExpression",
+                        "computed": false,
+                        "object": {
+                          "type": "Identifier",
+                          "name": "SynthEmbeddedImageHandlerProvider",
+                          "range": [
+                            293,
+                            326
+                          ],
+                          "loc": {
+                            "start": {
+                              "line": 9,
+                              "column": 1
+                            },
+                            "end": {
+                              "line": 9,
+                              "column": 34
+                            }
+                          }
+                        },
+                        "property": {
+                          "type": "Identifier",
+                          "name": "addHandler",
+                          "range": [
+                            327,
+                            337
+                          ],
+                          "loc": {
+                            "start": {
+                              "line": 9,
+                              "column": 35
+                            },
+                            "end": {
+                              "line": 9,
+                              "column": 45
+                            }
+                          }
+                        },
+                        "range": [
+                          293,
+                          337
+                        ],
+                        "loc": {
+                          "start": {
+                            "line": 9,
+                            "column": 1
+                          },
+                          "end": {
+                            "line": 9,
+                            "column": 45
+                          }
+                        }
+                      },
+                      "arguments": [
+                        {
+                          "type": "Literal",
+                          "value": "announcements",
+                          "raw": "'announcements'",
+                          "range": [
+                            338,
+                            353
+                          ],
+                          "loc": {
+                            "start": {
+                              "line": 9,
+                              "column": 46
+                            },
+                            "end": {
+                              "line": 9,
+                              "column": 61
+                            }
+                          }
+                        },
+                        {
+                          "type": "Literal",
+                          "value": "AnnouncementsImageHandler",
+                          "raw": "'AnnouncementsImageHandler'",
+                          "range": [
+                            355,
+                            382
+                          ],
+                          "loc": {
+                            "start": {
+                              "line": 9,
+                              "column": 63
+                            },
+                            "end": {
+                              "line": 9,
+                              "column": 90
+                            }
+                          }
+                        }
+                      ],
+                      "range": [
+                        293,
+                        383
+                      ],
+                      "loc": {
+                        "start": {
+                          "line": 9,
+                          "column": 1
+                        },
+                        "end": {
+                          "line": 9,
+                          "column": 91
+                        }
+                      }
+                    },
+                    "range": [
+                      293,
+                      384
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 9,
+                        "column": 1
+                      },
+                      "end": {
+                        "line": 9,
+                        "column": 92
+                      }
+                    }
+                  },
+                  {
+                    "type": "ExpressionStatement",
+                    "expression": {
+                      "type": "CallExpression",
+                      "callee": {
+                        "type": "MemberExpression",
+                        "computed": false,
+                        "object": {
+                          "type": "Identifier",
+                          "name": "SynthDeleteHandlerProvider",
+                          "range": [
+                            387,
+                            413
+                          ],
+                          "loc": {
+                            "start": {
+                              "line": 10,
+                              "column": 1
+                            },
+                            "end": {
+                              "line": 10,
+                              "column": 27
+                            }
+                          }
+                        },
+                        "property": {
+                          "type": "Identifier",
+                          "name": "addHandler",
+                          "range": [
+                            414,
+                            424
+                          ],
+                          "loc": {
+                            "start": {
+                              "line": 10,
+                              "column": 28
+                            },
+                            "end": {
+                              "line": 10,
+                              "column": 38
+                            }
+                          }
+                        },
+                        "range": [
+                          387,
+                          424
+                        ],
+                        "loc": {
+                          "start": {
+                            "line": 10,
+                            "column": 1
+                          },
+                          "end": {
+                            "line": 10,
+                            "column": 38
+                          }
+                        }
+                      },
+                      "arguments": [
+                        {
+                          "type": "Literal",
+                          "value": "announcements",
+                          "raw": "'announcements'",
+                          "range": [
+                            425,
+                            440
+                          ],
+                          "loc": {
+                            "start": {
+                              "line": 10,
+                              "column": 39
+                            },
+                            "end": {
+                              "line": 10,
+                              "column": 54
+                            }
+                          }
+                        },
+                        {
+                          "type": "Literal",
+                          "value": "AnnouncementsDeleteHandler",
+                          "raw": "'AnnouncementsDeleteHandler'",
+                          "range": [
+                            442,
+                            470
+                          ],
+                          "loc": {
+                            "start": {
+                              "line": 10,
+                              "column": 56
+                            },
+                            "end": {
+                              "line": 10,
+                              "column": 84
+                            }
+                          }
+                        }
+                      ],
+                      "range": [
+                        387,
+                        471
+                      ],
+                      "loc": {
+                        "start": {
+                          "line": 10,
+                          "column": 1
+                        },
+                        "end": {
+                          "line": 10,
+                          "column": 85
+                        }
+                      }
+                    },
+                    "range": [
+                      387,
+                      472
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 10,
+                        "column": 1
+                      },
+                      "end": {
+                        "line": 10,
+                        "column": 86
+                      }
+                    }
+                  },
+                  {
+                    "type": "ExpressionStatement",
+                    "expression": {
+                      "type": "CallExpression",
+                      "callee": {
+                        "type": "MemberExpression",
+                        "computed": false,
+                        "object": {
+                          "type": "Identifier",
+                          "name": "SynthLinkHandlerProvider",
+                          "range": [
+                            475,
+                            499
+                          ],
+                          "loc": {
+                            "start": {
+                              "line": 11,
+                              "column": 1
+                            },
+                            "end": {
+                              "line": 11,
+                              "column": 25
+                            }
+                          }
+                        },
+                        "property": {
+                          "type": "Identifier",
+                          "name": "addHandler",
+                          "range": [
+                            500,
+                            510
+                          ],
+                          "loc": {
+                            "start": {
+                              "line": 11,
+                              "column": 26
+                            },
+                            "end": {
+                              "line": 11,
+                              "column": 36
+                            }
+                          }
+                        },
+                        "range": [
+                          475,
+                          510
+                        ],
+                        "loc": {
+                          "start": {
+                            "line": 11,
+                            "column": 1
+                          },
+                          "end": {
+                            "line": 11,
+                            "column": 36
+                          }
+                        }
+                      },
+                      "arguments": [
+                        {
+                          "type": "Literal",
+                          "value": "announcements",
+                          "raw": "'announcements'",
+                          "range": [
+                            511,
+                            526
+                          ],
+                          "loc": {
+                            "start": {
+                              "line": 11,
+                              "column": 37
+                            },
+                            "end": {
+                              "line": 11,
+                              "column": 52
+                            }
+                          }
+                        },
+                        {
+                          "type": "Literal",
+                          "value": "AnnouncementsLinkHandler",
+                          "raw": "'AnnouncementsLinkHandler'",
+                          "range": [
+                            528,
+                            554
+                          ],
+                          "loc": {
+                            "start": {
+                              "line": 11,
+                              "column": 54
+                            },
+                            "end": {
+                              "line": 11,
+                              "column": 80
+                            }
+                          }
+                        }
+                      ],
+                      "range": [
+                        475,
+                        555
+                      ],
+                      "loc": {
+                        "start": {
+                          "line": 11,
+                          "column": 1
+                        },
+                        "end": {
+                          "line": 11,
+                          "column": 81
+                        }
+                      }
+                    },
+                    "range": [
+                      475,
+                      556
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 11,
+                        "column": 1
+                      },
+                      "end": {
+                        "line": 11,
+                        "column": 82
+                      }
+                    }
+                  },
+                  {
+                    "type": "ExpressionStatement",
+                    "expression": {
+                      "type": "CallExpression",
+                      "callee": {
+                        "type": "MemberExpression",
+                        "computed": false,
+                        "object": {
+                          "type": "CallExpression",
+                          "callee": {
+                            "type": "MemberExpression",
+                            "computed": false,
+                            "object": {
+                              "type": "Identifier",
+                              "name": "$routeProvider",
+                              "range": [
+                                561,
+                                575
+                              ],
+                              "loc": {
+                                "start": {
+                                  "line": 13,
+                                  "column": 1
+                                },
+                                "end": {
+                                  "line": 13,
+                                  "column": 15
+                                }
+                              }
+                            },
+                            "property": {
+                              "type": "Identifier",
+                              "name": "when",
+                              "range": [
+                                580,
+                                584
+                              ],
+                              "loc": {
+                                "start": {
+                                  "line": 14,
+                                  "column": 3
+                                },
+                                "end": {
+                                  "line": 14,
+                                  "column": 7
+                                }
+                              }
+                            },
+                            "range": [
+                              561,
+                              584
+                            ],
+                            "loc": {
+                              "start": {
+                                "line": 13,
+                                "column": 1
+                              },
+                              "end": {
+                                "line": 14,
+                                "column": 7
+                              }
+                            }
+                          },
+                          "arguments": [
+                            {
+                              "type": "Literal",
+                              "value": "/tool/announcements/:moduleId",
+                              "raw": "'/tool/announcements/:moduleId'",
+                              "range": [
+                                585,
+                                616
+                              ],
+                              "loc": {
+                                "start": {
+                                  "line": 14,
+                                  "column": 8
+                                },
+                                "end": {
+                                  "line": 14,
+                                  "column": 39
+                                }
+                              }
+                            },
+                            {
+                              "type": "ObjectExpression",
+                              "properties": [
+                                {
+                                  "type": "Property",
+                                  "key": {
+                                    "type": "Identifier",
+                                    "name": "templateUrl",
+                                    "range": [
+                                      619,
+                                      630
+                                    ],
+                                    "loc": {
+                                      "start": {
+                                        "line": 14,
+                                        "column": 42
+                                      },
+                                      "end": {
+                                        "line": 14,
+                                        "column": 53
+                                      }
+                                    }
+                                  },
+                                  "value": {
+                                    "type": "Literal",
+                                    "value": "tools/announcements/partials/announcements-list.html",
+                                    "raw": "'tools/announcements/partials/announcements-list.html'",
+                                    "range": [
+                                      633,
+                                      687
+                                    ],
+                                    "loc": {
+                                      "start": {
+                                        "line": 14,
+                                        "column": 56
+                                      },
+                                      "end": {
+                                        "line": 14,
+                                        "column": 110
+                                      }
+                                    }
+                                  },
+                                  "kind": "init",
+                                  "method": false,
+                                  "shorthand": false,
+                                  "computed": false,
+                                  "range": [
+                                    619,
+                                    687
+                                  ],
+                                  "loc": {
+                                    "start": {
+                                      "line": 14,
+                                      "column": 42
+                                    },
+                                    "end": {
+                                      "line": 14,
+                                      "column": 110
+                                    }
+                                  }
+                                }
+                              ],
+                              "range": [
+                                618,
+                                688
+                              ],
+                              "loc": {
+                                "start": {
+                                  "line": 14,
+                                  "column": 41
+                                },
+                                "end": {
+                                  "line": 14,
+                                  "column": 111
+                                }
+                              }
+                            }
+                          ],
+                          "range": [
+                            561,
+                            689
+                          ],
+                          "loc": {
+                            "start": {
+                              "line": 13,
+                              "column": 1
+                            },
+                            "end": {
+                              "line": 14,
+                              "column": 112
+                            }
+                          }
+                        },
+                        "property": {
+                          "type": "Identifier",
+                          "name": "when",
+                          "range": [
+                            694,
+                            698
+                          ],
+                          "loc": {
+                            "start": {
+                              "line": 15,
+                              "column": 3
+                            },
+                            "end": {
+                              "line": 15,
+                              "column": 7
+                            }
+                          }
+                        },
+                        "range": [
+                          561,
+                          698
+                        ],
+                        "loc": {
+                          "start": {
+                            "line": 13,
+                            "column": 1
+                          },
+                          "end": {
+                            "line": 15,
+                            "column": 7
+                          }
+                        }
+                      },
+                      "arguments": [
+                        {
+                          "type": "Literal",
+                          "value": "/tool/announcements/:moduleId/:announcementId",
+                          "raw": "'/tool/announcements/:moduleId/:announcementId'",
+                          "range": [
+                            699,
+                            746
+                          ],
+                          "loc": {
+                            "start": {
+                              "line": 15,
+                              "column": 8
+                            },
+                            "end": {
+                              "line": 15,
+                              "column": 55
+                            }
+                          }
+                        },
+                        {
+                          "type": "ObjectExpression",
+                          "properties": [
+                            {
+                              "type": "Property",
+                              "key": {
+                                "type": "Identifier",
+                                "name": "templateUrl",
+                                "range": [
+                                  749,
+                                  760
+                                ],
+                                "loc": {
+                                  "start": {
+                                    "line": 15,
+                                    "column": 58
+                                  },
+                                  "end": {
+                                    "line": 15,
+                                    "column": 69
+                                  }
+                                }
+                              },
+                              "value": {
+                                "type": "Literal",
+                                "value": "tools/announcements/partials/announcements-detail.html",
+                                "raw": "'tools/announcements/partials/announcements-detail.html'",
+                                "range": [
+                                  763,
+                                  819
+                                ],
+                                "loc": {
+                                  "start": {
+                                    "line": 15,
+                                    "column": 72
+                                  },
+                                  "end": {
+                                    "line": 15,
+                                    "column": 128
+                                  }
+                                }
+                              },
+                              "kind": "init",
+                              "method": false,
+                              "shorthand": false,
+                              "computed": false,
+                              "range": [
+                                749,
+                                819
+                              ],
+                              "loc": {
+                                "start": {
+                                  "line": 15,
+                                  "column": 58
+                                },
+                                "end": {
+                                  "line": 15,
+                                  "column": 128
+                                }
+                              }
+                            }
+                          ],
+                          "range": [
+                            748,
+                            820
+                          ],
+                          "loc": {
+                            "start": {
+                              "line": 15,
+                              "column": 57
+                            },
+                            "end": {
+                              "line": 15,
+                              "column": 129
+                            }
+                          }
+                        }
+                      ],
+                      "range": [
+                        561,
+                        821
+                      ],
+                      "loc": {
+                        "start": {
+                          "line": 13,
+                          "column": 1
+                        },
+                        "end": {
+                          "line": 15,
+                          "column": 130
+                        }
+                      }
+                    },
+                    "range": [
+                      561,
+                      822
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 13,
+                        "column": 1
+                      },
+                      "end": {
+                        "line": 15,
+                        "column": 131
+                      }
+                    }
+                  }
+                ],
+                "range": [
+                  216,
+                  825
+                ],
+                "loc": {
+                  "start": {
+                    "line": 6,
+                    "column": 152
+                  },
+                  "end": {
+                    "line": 16,
+                    "column": 1
+                  }
+                }
+              },
+              "generator": false,
+              "expression": false,
+              "range": [
+                77,
+                825
+              ],
+              "loc": {
+                "start": {
+                  "line": 6,
+                  "column": 13
+                },
+                "end": {
+                  "line": 16,
+                  "column": 1
+                }
+              }
+            },
+            "range": [
+              68,
+              825
+            ],
+            "loc": {
+              "start": {
+                "line": 6,
+                "column": 4
+              },
+              "end": {
+                "line": 16,
+                "column": 1
+              }
+            }
+          }
+        ],
+        "kind": "var",
+        "range": [
+          64,
+          826
+        ],
+        "loc": {
+          "start": {
+            "line": 6,
+            "column": 0
+          },
+          "end": {
+            "line": 16,
+            "column": 2
+          }
+        },
+        "leadingComments": [
+          {
+            "type": "Block",
+            "value": "*\r\n* Configure routes for announcements\r\n",
+            "range": [
+              17,
+              62
+            ],
+            "loc": {
+              "start": {
+                "line": 3,
+                "column": 0
+              },
+              "end": {
+                "line": 5,
+                "column": 2
+              }
+            }
+          }
+        ],
+        "trailingComments": []
+      },
+      "range": [
+        993,
+        1015
+      ],
+      "loc": {
+        "start": {
+          "line": 18,
+          "column": 0
+        },
+        "end": {
+          "line": 18,
+          "column": 22
+        }
+      }
+    }
+  ],
+  "sourceType": "module",
+  "range": [
+    0,
+    1015
+  ],
+  "loc": {
+    "start": {
+      "line": 1,
+      "column": 0
+    },
+    "end": {
+      "line": 18,
+      "column": 22
+    }
+  },
+  "comments": [
+    {
+      "type": "Block",
+      "value": "*\r\n* Configure routes for announcements\r\n",
+      "range": [
+        17,
+        62
+      ],
+      "loc": {
+        "start": {
+          "line": 3,
+          "column": 0
+        },
+        "end": {
+          "line": 5,
+          "column": 2
+        }
+      }
+    }
+  ]
+}

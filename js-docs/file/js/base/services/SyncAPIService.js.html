@@ -1,0 +1,1053 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../../../">
+  <title data-ice="title">js/base/services/SyncAPIService.js | API Document</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  
+  
+  <script src="script/manual.js"></script>
+</head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  <a data-ice="repoURL" href="https://github.com/SynthesisProject/mobile.git" class="repo-url-github">Repository</a>
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+</header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SynthMobile">SynthMobile</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">base</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-convertToObject">convertToObject</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-convertToString">convertToString</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generateUID">generateUID</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getNumberOfProperties">getNumberOfProperties</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Routes">Routes</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-base">base</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">base/boot</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-BootCtrl">BootCtrl</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">base/controllers</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/base/controllers/AppController.js~AppController.html">AppController</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">base/directives</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-animatedEllipse">animatedEllipse</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-bootSpinner">bootSpinner</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-currentModuleName">currentModuleName</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-moduleCollapse">moduleCollapse</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-moduleName">moduleName</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-overallSyncStatus">overallSyncStatus</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-synthAttachments">synthAttachments</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-synthFooter">synthFooter</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-synthMenu">synthMenu</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-toolName">toolName</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-toolSyncStatus">toolSyncStatus</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">base/factories</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/base/factories/AppSyncStatus.js~AppSyncStatus.html">AppSyncStatus</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/base/factories/Lock.js~Lock.html">Lock</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/base/factories/UserSession.js~UserSession.html">UserSession</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-AppSyncStatusFactory">AppSyncStatusFactory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-LockFactory">LockFactory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-UserSessionFactory">UserSessionFactory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SynthAuthenticateUser">SynthAuthenticateUser</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SynthCheckResponseError">SynthCheckResponseError</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SynthError">SynthError</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SynthErrorHandler">SynthErrorHandler</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SynthFail">SynthFail</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SynthQIfStatement">SynthQIfStatement</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SynthQLoop">SynthQLoop</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-safo">safo</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">base/filters</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-array2Object">array2Object</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-attachments">attachments</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-bytesToSize">bytesToSize</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-formatDate">formatDate</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-noEscape">noEscape</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-object2Array">object2Array</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">base/handlers</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-SynthAttachmentMinerProvider">SynthAttachmentMinerProvider</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-SynthDeleteHandlerProvider">SynthDeleteHandlerProvider</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-SynthEmbeddedImageHandlerProvider">SynthEmbeddedImageHandlerProvider</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-SynthLinkHandlerProvider">SynthLinkHandlerProvider</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-SynthAttachmentMinerProvider">SynthAttachmentMinerProvider</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">base/home</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/base/home/HomeCtrl.js~HomeCtrl.html">HomeCtrl</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/base/home/HomeService.js~HomeService.html">HomeService</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-HomeServiceFactory">HomeServiceFactory</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">base/register</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-RegisterCtrl">RegisterCtrl</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-RegisterModuleRegistrationCtrl">RegisterModuleRegistrationCtrl</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-RegisterSelectModuleCtrl">RegisterSelectModuleCtrl</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-RegisterService">RegisterService</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">base/services</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/base/services/RegistrationService.js~RegistrationService.html">RegistrationService</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/base/services/SynthesisRESTClient.js~SynthesisRESTClient.html">SynthesisRESTClient</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/base/services/UserService.js~UserService.html">UserService</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/base/services/UserSettings.js~UserSettings.html">UserSettings</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-RegistrationServiceFactory">RegistrationServiceFactory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-SynthesisRESTClientFactory">SynthesisRESTClientFactory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-UserServiceFactory">UserServiceFactory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-UserSettingsFactory">UserSettingsFactory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-DataService">DataService</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-LoggerService">LoggerService</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ModuleService">ModuleService</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-PushService">PushService</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SyncAPIService">SyncAPIService</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">base/settings</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SettingsCtrl">SettingsCtrl</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SettingsPushCtrl">SettingsPushCtrl</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">base/sync</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/base/sync/SyncSelection.js~SyncSelection.html">SyncSelection</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-SyncSelectionFactory">SyncSelectionFactory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SyncConfigureCtrl">SyncConfigureCtrl</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SyncCtrl">SyncCtrl</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SyncProgressCtrl">SyncProgressCtrl</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SyncService">SyncService</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">tools</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SynthesisTools">SynthesisTools</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">tools/announcements</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Config">Config</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-AnnouncementsTool">AnnouncementsTool</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">tools/announcements/controllers</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-AnnouncementDetailCtrl">AnnouncementDetailCtrl</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-AnnouncementListCtrl">AnnouncementListCtrl</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">tools/announcements/handlers</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-AnnouncementsDeleteHandler">AnnouncementsDeleteHandler</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-AnnouncementsImageHandler">AnnouncementsImageHandler</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-AnnouncementsLinkHandler">AnnouncementsLinkHandler</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">tools/announcements/services</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/tools/announcements/services/AnnouncementService.js~AnnouncementService.html">AnnouncementService</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-AnnouncementServiceFactory">AnnouncementServiceFactory</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">tools/resources</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Config">Config</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ResourcesTool">ResourcesTool</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">tools/resources/controllers</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ResourcesCtrl">ResourcesCtrl</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">tools/resources/directives</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-resourceImg">resourceImg</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-resourceListItem">resourceListItem</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">tools/resources/factories</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ResourcesService">ResourcesService</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">tools/resources/handlers</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ResourcesDeleteHandler">ResourcesDeleteHandler</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">tools/schedule</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Config">Config</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ScheduleTool">ScheduleTool</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">tools/schedule/controllers</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ScheduleCtrl">ScheduleCtrl</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">tools/schedule/factories</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ScheduleService">ScheduleService</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">tools/schedule/handlers</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ScheduleLinkHandler">ScheduleLinkHandler</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">js/base/services/SyncAPIService.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">&apos;use strict&apos;;
+
+// TODO all the rest calls should move to SynthesisRESTClient
+var SyncAPIService = ($q, $http, $filter, $rootScope, base64, DataService,
+	LoggerService, SynthError, _SF, CheckError,
+	SynthConfig, SynthQLoop, ModuleService, RegistrationService, SynthAttachmentMiner,
+	SynthEmbeddedImageHandler, SynthDeleteHandler, SynthLinkHandler, SynthUploadResponseHandler) =&gt; {
+
+	var LOG = LoggerService(&apos;SyncAPIService&apos;);
+
+
+	function mapTool(toolname){
+		//LOG.debug(&apos;Getting mapped name for : &apos; + toolname + &apos; : &apos; + TOOLMAP[toolname] || toolname);
+		return SynthConfig.toolMapping[toolname] || toolname;
+	}
+
+	/**
+	 * Constructor
+	 */
+	function SyncAPIServiceImpl(){
+	}
+
+
+	/**
+	 * Get the offline sync status for a specific tool
+	 * Resolves with an object:
+	 *
+	 * {
+			&apos;toolId&apos; : &apos;resources&apos;,
+			&apos;moduleId&apos; : &apos;biology&apos;,
+			&apos;contentUploadSize&apos; : 1024,
+			&apos;contentDownloadSize&apos; : 1024,
+			&apos;total&apos; : 0,
+			&apos;inSync&apos;: false,
+			&apos;label&apos;: &apos;Announcement&apos;
+		}
+	 */
+	SyncAPIServiceImpl.prototype.getSyncStatusToolOffline = function(moduleId, toolId){
+		var self = this,
+			syncStatus = {
+				&apos;toolId&apos; : toolId,
+				&apos;moduleId&apos; : moduleId,
+				&apos;contentUploadSize&apos; : 0,
+				&apos;contentDownloadSize&apos; : 0,
+				&apos;total&apos; : 0,
+				&apos;inSync&apos; : true,
+				&apos;label&apos; : null
+			};
+
+		return ModuleService.getModuleData(moduleId).then((moduleData) =&gt; {
+			var toolLocal = moduleData.toolsLocal[toolId];
+			var toolRemote = moduleData.tools[toolId];
+			syncStatus.label = moduleData.toolDescriptions[toolId].label;
+
+			// If there is no remote entry for the tool, we don&apos;t know if its out of sync. Lets assume it&apos;s out
+			if (toolRemote == null){
+
+				syncStatus.inSync = false;
+				syncStatus.contentDownloadSize = 0; // We actually don&apos;t know the size
+			}
+			// Check for content download
+			else if(toolLocal.clientContentVersion !== toolRemote.currentContentVersion){
+				syncStatus.contentDownloadSize = toolRemote.contentSynchSize;
+				syncStatus.inSync = false;
+			}
+
+			// Check for local change
+			return self.getToolUploadSize(moduleId, toolId).then((size) =&gt; {
+				if(size !== 0){
+					syncStatus.contentUploadSize = size;
+					syncStatus.inSync = false;
+				}
+
+				// Add up the totals for download and upload
+				syncStatus.total = syncStatus.contentDownloadSize + syncStatus.contentUploadSize;
+
+				return syncStatus;
+			});
+
+		});
+
+	};
+
+	/**
+	 * Get the offline sync status for a ALL modules without going online
+	 * Resolves with an object:
+	 *
+	 * {
+			&apos;inSync&apos; : true,
+			&apos;contentDownloadSize&apos;: 0,
+			&apos;contentUploadSize&apos;: 0,
+			&apos;total&apos;: 0,
+			&apos;modules&apos;: {
+				&apos;biology&apos; : {
+					&apos;inSync&apos; : true,
+					&apos;contentDownloadSize&apos;: 0,
+					&apos;contentUploadSize&apos;: 0,
+					&apos;total&apos;: 0,
+					&apos;tools&apos; : {
+						&apos;resources&apos; : {
+							&apos;toolId&apos; : &apos;resources&apos;,
+							&apos;moduleId&apos; : &apos;biology&apos;,
+							&apos;contentDownloadSize&apos; : 1024,
+							&apos;contentUploadSize&apos; : 1024,
+							&apos;inSync&apos;: false,
+							&apos;label&apos;: &apos;Announcement&apos;
+						}
+					}
+				}
+
+			}
+		}
+	 */
+	SyncAPIServiceImpl.prototype.getSyncStatusModulesOffline = function(){
+		var modules, // Array of modules we have to get statuses for
+			self = this,
+			syncStatus = {
+				&apos;inSync&apos; : true,
+				&apos;contentDownloadSize&apos; : 0,
+				&apos;contentUploadSize&apos; : 0,
+				&apos;total&apos; : 0,
+				&apos;modules&apos; : {}
+			},
+			idx = 0;
+
+		/**
+		 * Returns a promise to get the Sync Status of the next module in a list.
+		 * If there is no more modules in the list, it return null
+		 */
+		function getSyncStatusPromise(){
+			// Check if we have any more modules to work with
+			if(modules == null || idx &gt;= modules.length){
+				return null;
+			}
+
+			// Get the next module and increment the index
+			var module = modules[idx++];
+
+			// Get the sync details for the current item in the list
+			return self.getSyncStatusModuleOffline(module.id)
+				.then((moduleSyncStatus) =&gt; {
+
+					// Add the module to the modules map
+					syncStatus.modules[module.id] = moduleSyncStatus;
+
+					// Update the overall sync status to include the totals of the module
+					syncStatus.inSync &amp;= moduleSyncStatus.inSync;
+					syncStatus.contentDownloadSize += moduleSyncStatus.contentDownloadSize;
+					syncStatus.contentUploadSize += moduleSyncStatus.contentUploadSize;
+					syncStatus.total += moduleSyncStatus.total;
+					return syncStatus;
+				});
+		}
+
+		/**
+		 * Returns a promise to loop through all the modules to get their sync status
+		 */
+		function getLoopModulesPromise(linkedModules){
+			modules = linkedModules;
+			return SynthQLoop(getSyncStatusPromise).then(() =&gt; {
+				return syncStatus;
+			});
+		}
+
+
+		return ModuleService.getLinkedModules()
+			.then(getLoopModulesPromise);
+
+	};
+
+	/**
+	 * Get the offline sync status for a specific module without going online
+	 * Resolves with an object:
+	 *
+	 * {
+	 *		&apos;inSync&apos; : true,
+			&apos;contentDownloadSize&apos;: 0,
+			&apos;contentUploadSize&apos;: 0,
+			&apos;total&apos;: 0,
+			&apos;moduleId&apos; : &apos;biology&apos;,
+			&apos;tools&apos; : {
+				&apos;resources&apos; : {
+					&apos;toolId&apos; : &apos;resources&apos;,
+					&apos;moduleId&apos; : &apos;biology&apos;,
+					&apos;contentUploadSize&apos; : 1024,
+					&apos;contentDownloadSize&apos; : 1024,
+					&apos;isDownload&apos; : true,
+					&apos;label&apos;: &apos;Announcement&apos;
+				}
+			}
+		}
+	 */
+	SyncAPIServiceImpl.prototype.getSyncStatusModuleOffline = function(moduleId){
+		var deferred = $q.defer();
+
+
+		var errorHandler = _SF(deferred);
+		var self = this;
+		var moduleData = {};
+		// The response object that will be sent to the caller of this function
+		var syncStatus = {
+			&apos;inSync&apos; : true,
+			&apos;download&apos; : 0,
+			&apos;upload&apos; : 0,
+			&apos;total&apos; : 0,
+			&apos;moduleId&apos; : moduleId,
+			&apos;tools&apos; : {}
+		};
+
+
+		var funcUpdateTool = function(toolId){
+			return self.getSyncStatusToolOffline(moduleId, toolId).then((toolSyncStatus) =&gt; {
+				// Add the tool&apos;s sync status to the module&apos;s map of tools
+				syncStatus.tools[toolId] = toolSyncStatus;
+
+				// Update the module sync status to include the totals of the tools
+				syncStatus.inSync &amp;= toolSyncStatus.inSync;
+				syncStatus.download += toolSyncStatus.download;
+				syncStatus.upload += toolSyncStatus.upload;
+				syncStatus.total += toolSyncStatus.total;
+
+			});
+		};
+
+		ModuleService.getModuleData(moduleId).then((data) =&gt; {
+			moduleData = data;
+			// If we don&apos;t have tool we must be out of sync
+			if(moduleData == null || moduleData.tools == null){
+				syncStatus.inSync = false;
+				deferred.resolve(syncStatus);
+			}
+			else{
+				var idx = 0;
+				var toolsArray = $filter(&apos;object2Array&apos;)(moduleData.toolsLocal);
+				SynthQLoop(() =&gt; {
+					var promise;
+					// We have no more promises to update
+					if (idx &gt;= toolsArray.length){
+						promise = null;
+					}
+					else{
+						promise = funcUpdateTool(toolsArray[idx++].key);
+					}
+					return promise;
+				}).then(() =&gt; {
+					deferred.resolve(syncStatus);
+				});
+			}
+		}, errorHandler);
+		return deferred.promise;
+	};
+
+	/**
+	 * Get the module upload size and save it to module.json
+	 */
+	SyncAPIServiceImpl.prototype.getToolUploadSize = function(moduleId, toolId){
+
+		// Get promise to merge tool upload size to module.json
+		function getMergeModuleDataPromise(size){
+			// We also need to update our local file about the possible change of upload content
+			var mergeData = { &apos;toolsLocal&apos; : {} };
+			mergeData.toolsLocal[toolId] = {
+				&apos;localChange&apos; : (size !== 0),
+				&apos;localChangeSize&apos; : size
+			};
+			return ModuleService
+				.mergeToModuleData(moduleId, mergeData)
+				.then(() =&gt; {
+					return size;
+				});
+		}
+
+		return DataService
+			.getToolUploadDataSize(moduleId, toolId)
+			.then(getMergeModuleDataPromise);
+	};
+
+	/**
+	 * Update the sync status
+	 */
+	SyncAPIServiceImpl.prototype.getSyncStatus = function(moduleId){
+
+		// The response object that will be sent to the caller of this function
+		var syncStatus = {
+			&apos;inSync&apos; : true,
+			&apos;tools&apos; : {}
+		};
+
+		if(moduleId == null){
+			return $q.when(syncStatus);
+		}
+		var moduleData = null, registration, self = this;
+
+		function getRegistrationData(){
+			return RegistrationService.getRegistration()
+				.then((registrationData) =&gt; {
+					registration = registrationData;
+				});
+		}
+
+		// Returns a promise to get the module data
+		function getModuleDataPromise(){
+			return ModuleService
+				.getModuleData(moduleId)
+				.then((mData) =&gt; {
+					moduleData = mData;
+				});
+		}
+
+		// Returns a promise to get the sync status from the remote server
+		function getRequestSyncStatusPromise(){
+			var deferred = $q.defer();
+			// Data that will be sent with the sync status request
+			var reqData = {
+				&apos;tools&apos; : {}
+			};
+			// Map mobile app tools to remote server tool names and add current versions
+			for(var key in moduleData.toolsLocal){
+				var mappedKey = mapTool(key);
+				reqData.tools[mappedKey] = {
+					&apos;clientCodeVersion&apos; : moduleData.toolsLocal[key].clientCodeVersion,
+					&apos;clientContentVersion&apos; : moduleData.toolsLocal[key].clientContentVersion
+				};
+			}
+
+			// Request changes from remote server
+			var restURL = SynthConfig.baseURL + &apos;/service-synch/synchStatus/&apos; + registration.username + &apos;/&apos; + moduleId;
+			LOG.debug(&apos;Getting sync status calling REST URL : &apos; + restURL);
+			$http({
+				method : &apos;POST&apos;,
+				url : restURL,
+				data : reqData})
+				.then((response) =&gt; {
+					// Check if there is an error
+					if (CheckError(deferred, response.data)){
+						return;
+					}
+
+					deferred.resolve(response.data.tools);
+				}, () =&gt; {
+					deferred.reject(SynthError(1000));
+				});
+			return deferred.promise;
+		}
+
+		// Returns a promise to write the response data to the module.json file
+		function getWriteDownloadResponsePromise(responseTools){
+			var fileData = { &apos;tools&apos; : {}};
+			// Map service tools to local tool names
+			for(var remoteKey in responseTools){
+				var localKey = mapTool(remoteKey);
+
+				// Only if the tool is in our list of active tool
+				if(moduleData.toolDescriptions[localKey] != null){
+
+					// Data to write to file
+					fileData.tools[localKey] = {
+						&apos;clientContentVersion&apos; : responseTools[remoteKey].clientContentVersion,
+						&apos;currentContentVersion&apos; : (responseTools[remoteKey].currentContentVersion === &apos;No Content&apos; ? &apos;0&apos; : responseTools[remoteKey].currentContentVersion),
+						&apos;contentSynchSize&apos; : responseTools[remoteKey].contentSynchSize
+					};
+
+					// Data to send back caller of this function
+					syncStatus.tools[localKey] = {
+						&apos;label&apos; : moduleData.toolDescriptions[localKey].label,
+						&apos;contentDownloadSize&apos; : responseTools[remoteKey].contentSynchSize,
+						&apos;contentUploadSize&apos; : 0,
+						&apos;inSync&apos; : (responseTools[remoteKey].contentSynchSize === 0) // Ignoring code sync for mobile
+					};
+					syncStatus.download = ((syncStatus.download ? syncStatus.download : 0) + responseTools[remoteKey].contentSynchSize);// Ignoring code sync for mobile
+					// If any tool has downloads, we are overall out of sync
+					if (!syncStatus.tools[localKey].inSync){
+						syncStatus.inSync = false;
+					}
+				}
+			}
+			return ModuleService.mergeToModuleData(moduleId, fileData);
+		}
+
+		/**
+		 * Gets a promise to check the upload size for a tool
+		 */
+		var uIdx = 0;
+		var toolsArray = null;
+		function getUploadSizePromise(){
+
+			// Create the array if we don&apos;t have it
+			if(toolsArray == null){
+				toolsArray = $filter(&apos;object2Array&apos;)(syncStatus.tools);
+			}
+
+			// If there are no more tools return null
+			if(uIdx == toolsArray.length) {
+				return null;
+			}
+
+			// Get the next tool id
+			var toolId = toolsArray[uIdx++].key;
+
+			syncStatus.tools[toolId] = syncStatus.tools[toolId] || {
+				&apos;codeDownloadSize&apos; : 0,
+				&apos;contentDownloadSize&apos; : 0,
+				&apos;contentUploadSize&apos; : 0,
+				&apos;inSync&apos; : true
+			};
+			syncStatus.tools[toolId].label = moduleData.toolDescriptions[toolId].label;
+
+			return self
+				.getToolUploadSize(moduleId, toolId)
+				.then((size) =&gt; {
+					syncStatus.tools[toolId].contentUploadSize = size;
+					syncStatus.tools[toolId].inSync = (syncStatus.tools[toolId].inSync &amp;&amp; (size === 0));
+					syncStatus.upload = ((syncStatus.upload ? syncStatus.upload : 0) + size);
+					syncStatus.inSync = (syncStatus.inSync &amp;&amp; syncStatus.tools[toolId].inSync);
+				});
+		}
+
+
+		return getRegistrationData()
+			// Get the module data
+			.then(getModuleDataPromise)
+			// Get sync status from remote server
+			.then(getRequestSyncStatusPromise)
+			// Write the response to the module file
+			.then(getWriteDownloadResponsePromise)
+			// Get the upload size
+			.then(() =&gt; {
+				return SynthQLoop(getUploadSizePromise);
+			})
+			.then(() =&gt; {
+				syncStatus.total = ((syncStatus.download ? syncStatus.download : 0) + (syncStatus.upload ? syncStatus.upload : 0));
+				return syncStatus; // Finally we are done!
+			});
+	};
+
+	/**
+	 * Updates a specific tool
+	 */
+	SyncAPIServiceImpl.prototype.syncDownloadTool = function(moduleId, toolname){
+		var moduleData = null,
+			self = this,
+			toolSyncResponse = {},
+			toolDataObject = {}, // The data synced for this tool
+			toolAttachments = [], // Attachments that has to be downloaded
+			registration = null;
+
+		$rootScope.$broadcast(&apos;syncStatusChanged&apos;, {&apos;action&apos; : &apos;downloading&apos;});
+
+		function getRegistrationData(){
+			return RegistrationService.getRegistration()
+				.then((registrationData) =&gt; {
+					registration = registrationData;
+				});
+		}
+
+		// Returns a promise to get the module data
+		function getModuleDataPromise(){
+			return ModuleService
+				.getModuleData(moduleId)
+				.then((mData) =&gt; {
+					moduleData = mData;
+				});
+		}
+
+		/*
+		 * When we update client base, we need to make sure that we only
+		 * include the tools that was configured to be enabled on the mobile application
+		 */
+		function filterBaseTools(toolList){
+			var filteredData = {&apos;toolDescriptions&apos; : {} };
+			var toolDescriptions = toolList == null ? {} : toolList.toolDescriptions;
+			for(var serverToolId in toolDescriptions){
+				var localToolId = mapTool(serverToolId);
+				/*
+				 * Only if the current module data contains a tool description, should the
+				 * tool be included in the updated data.
+				 */
+				if(moduleData.toolDescriptions[localToolId] !== undefined){
+					filteredData.toolDescriptions[localToolId] = toolDescriptions[serverToolId];
+				}
+			}
+			return filteredData;
+		}
+
+		/*
+		 * Returns a promise to get the tool&apos;s data
+		 */
+		function getToolDataPromise(){
+			var deferredData = $q.defer();
+			var toolVersion = moduleData.toolsLocal[toolname].clientContentVersion;
+			var _toolname = mapTool(toolname);
+			var restURL = `${SynthConfig.baseURL}/service-synch/contentUpdateString/${registration.username}/${moduleId}/${_toolname}/${toolVersion}`;
+
+			$http({
+				method : &apos;POST&apos;,
+				url : restURL,
+				data : {&apos;authToken&apos; : registration.authToken}})
+				.success((data) =&gt; {
+					// Check if there is an error
+					if (CheckError(deferredData, data)){
+						return;
+					}
+
+					toolSyncResponse = data;
+					deferredData.resolve(data);
+				})
+				.error(() =&gt; {
+					deferredData.reject(SynthError(1000));
+				});
+			return deferredData.promise;
+		}
+
+
+		/*
+		 * When we get data from the server it is in base 64,
+		 * this function will convert it to json format string
+		 */
+		function getConvertFromBase64Promise (base64Data){
+			try{
+				toolDataObject = base64.decode(base64Data.content);
+				LOG.debug(`Got data for tool ${toolname}\n${toolDataObject}`);
+				toolDataObject = JSON.parse(toolDataObject);
+				$q.when(toolDataObject);
+			}
+			catch(e){
+				$q.reject(SynthError(1000));
+			}
+		}
+
+		/*
+		 * Replace the inline images with links to the downloaded content
+		 * This function will use the registered SynthEmbeddedImageHandler for the tool if
+		 * there was on registered
+		 */
+		function getFixImagesPromise(){
+			var imageHandler = SynthEmbeddedImageHandler.getHandler(toolname);
+			if (imageHandler){
+				return imageHandler(toolDataObject);
+			}
+			else{
+				return $q.when([]);
+			}
+		}
+
+		/*
+		 * Replace all the embedded links with links that will open externally
+		 */
+		function getFixLinksPromise(){
+			var linkHandler = SynthLinkHandler.getHandler(toolname);
+			if (linkHandler){
+				return linkHandler(toolDataObject).then((fixedContent)=&gt;{
+					toolDataObject = fixedContent;
+				});
+			}
+			return $q.when([]);
+		}
+
+		/*
+		 * Mine for attachments in the tool data
+		 */
+		function getMineAttachementsPromise(){
+			var attachmentHandler = SynthAttachmentMiner.getHandler(toolname);
+			if (attachmentHandler){
+				return attachmentHandler(toolDataObject).then((attachments) =&gt; {
+					toolAttachments = attachments;
+				});
+			}
+			else{
+				return $.when([]);
+			}
+		}
+		/*
+		 * Merge the tool data to the tool&apos;s data file
+		 */
+		function getMergeToolDataPromise(){
+			if(toolname == &apos;base&apos;){
+				toolDataObject = filterBaseTools(toolDataObject);
+				return ModuleService.mergeToModuleData(moduleId, toolDataObject);
+			}
+			else{
+				return ModuleService.mergeToToolData(moduleId, toolname, toolDataObject);
+			}
+		}
+
+
+		/*
+		 * Download the attachments
+		 */
+		function getDownloadAttachmentsPromise(){
+			return self.getAttachementsFromServer(toolAttachments);
+		}
+		/*
+		 * Update the tool version
+		 */
+		function getUpdateToolVersionPromise(){
+			var versionData = {
+				&apos;toolsLocal&apos; : {},
+				&apos;tools&apos; : {}
+			};
+			versionData.toolsLocal[toolname] = { &apos;clientContentVersion&apos; : toolSyncResponse.version };
+			versionData.tools[toolname] = {
+				&apos;currentContentVersion&apos; : toolSyncResponse.version,
+				&apos;clientContentVersion&apos; : toolSyncResponse.version,
+				&apos;contentSynchSize&apos; : 0
+			};
+			return ModuleService.mergeToModuleData(moduleId, versionData);
+		}
+
+		/*
+		 * Returns a promise to delete all the content (including actual files)
+		 */
+		function getCheckDeletedContentPromise(toolData){
+			// Get the handler if there was one
+			var deleteHandler = SynthDeleteHandler.getHandler(toolname);
+			var handlerData;		// Data that the handler returned after processing
+			if (deleteHandler){
+				return deleteHandler(toolData)
+					.then((hData) =&gt; {
+						handlerData = hData;
+						return DataService.deleteCDVFiles(handlerData.deleted);
+					})
+					// Now save the new data that the handler processed
+					.then(() =&gt; {
+						return DataService.writeToolData(moduleId, toolname, handlerData.data, false);
+					});
+			}
+			else{
+				return $.when([]);
+			}
+		}
+
+		function fail(error){
+			$rootScope.$broadcast(&apos;syncStatusChanged&apos;, {&apos;action&apos; : &apos;none&apos;});
+			return $q.reject(error);
+		}
+
+
+		// Lets start the sync process
+		return getRegistrationData()
+			.then(getModuleDataPromise)
+			.then(getToolDataPromise)
+			.then(getConvertFromBase64Promise)
+			.then(getMineAttachementsPromise)
+			.then(getDownloadAttachmentsPromise)
+			.then(getFixImagesPromise)
+			.then(getFixLinksPromise)
+			.then(getMergeToolDataPromise)
+			.then(getCheckDeletedContentPromise)
+			.then(getUpdateToolVersionPromise)
+			.then(() =&gt; {
+				$rootScope.$broadcast(&apos;syncStatusChanged&apos;, {&apos;action&apos; : &apos;none&apos;});
+			}, fail);
+
+
+	};
+
+	/**
+	 * Updates a specific tool
+	 */
+	SyncAPIServiceImpl.prototype.syncUploadTool = function(moduleId, toolname){
+		var toolUploadRequest = {}, // Data to upload for the tool
+			toolUploadResponse = {}, // Response for the upload
+			registrationData = {};
+
+		// Broadcast that we are busy uploading
+		$rootScope.$broadcast(&apos;syncStatusChanged&apos;, {&apos;action&apos; : &apos;uploading&apos;});
+		/*
+		 * Get the registration data for the user to get
+		 * the device ID and username
+		 */
+		var funcGetRegistrationData = function(){
+				return RegistrationService.getRegistration()
+					.then((data) =&gt; {
+						registrationData = data;
+					});
+			},
+		/*
+		 * Get the data for the tool that should get uploaded
+		 */
+			funcGetToolUploadData = function(){
+				return DataService
+					.getToolData(moduleId, toolname, true)
+					.then((uploadData) =&gt; {
+						toolUploadRequest = uploadData;
+					});
+			},
+		/*
+		 * Upload the data to the SynthEngine
+		 */
+			funcUploadToolData = function(){
+				var uploadDeferred = $q.defer();
+				var restURL = SynthConfig.baseURL + &apos;/service-synch/content/&apos; + registrationData.username + &apos;/&apos; + moduleId + &apos;/&apos; + mapTool(toolname);
+				$http({
+					&apos;method&apos; : &apos;PUT&apos;,
+					&apos;url&apos; : restURL,
+					&apos;data&apos; : {&apos;authToken&apos; : registrationData.authToken, &apos;content&apos; : toolUploadRequest}
+				})
+					.success((responseData) =&gt; {
+						// Check if there is an error
+						if (CheckError(uploadDeferred, responseData)){
+							return;
+						}
+						toolUploadResponse = responseData.responseContent;
+						uploadDeferred.resolve(toolUploadResponse);
+					})
+					.error(() =&gt; {
+						uploadDeferred.reject(SynthError(1000));
+					});
+
+				return uploadDeferred.promise;
+			},
+		/*
+		 * Delete the file containing the upload data.
+		 */
+			funcDeleteToolUploadData = function(){
+				return DataService.deleteToolUploadData(moduleId, toolname);
+			},
+		/*
+		 * Merge the data we uploaded with our current data file for the tool.
+		 * If there is a handler that needs work with the upload data and the
+		 * upload response, we will use that before merging the data
+		 */
+			funcMergeToolData = function(){
+				// Check if there is an upload handler and use it
+				var uploadResponseHandler = SynthUploadResponseHandler.getHandler(toolname);
+				if(uploadResponseHandler){
+					toolUploadRequest = uploadResponseHandler(toolUploadRequest, toolUploadResponse);
+				}
+				return ModuleService.mergeToToolData(moduleId, toolname, toolUploadRequest, false);
+			};
+
+		function fail(error){
+			$rootScope.$broadcast(&apos;syncStatusChanged&apos;, {&apos;action&apos; : &apos;none&apos;});
+			return $q.reject(error);
+		}
+
+		// Kick off the upload process
+		return funcGetRegistrationData()
+			.then(funcGetToolUploadData)
+			.then(funcUploadToolData)
+			.then(funcDeleteToolUploadData)
+			.then(funcMergeToolData)
+			.then(() =&gt; {
+				$rootScope.$broadcast(&apos;syncStatusChanged&apos;, {&apos;action&apos; : &apos;none&apos;});
+			}, fail);
+	};
+
+
+	/**
+	 * Update the Modules data file with the content from the remote server.
+	 * This should only be called once per module, and only when the user
+	 * registers for a module.
+	 *
+	 * This function will also check that the tools returned are supported by
+	 * this client, therefor it might only use a subset of the returned data.
+	 * The allowed tools are determined by the base.json file which is used for
+	 * the base data file for each module (looking at the toolsLocal ids)
+	 *
+	 */
+	SyncAPIServiceImpl.prototype.updateModuleData = function(moduleId){
+		var deferred = $q.defer();
+
+		var restURL = SynthConfig.baseURL + &apos;/service-creator/tools/&apos; + moduleId;
+		LOG.debug(&apos;Getting module data using REST URL : &apos; + restURL);
+		$http({
+			method : &apos;GET&apos;,
+			url : restURL})
+			.success((data) =&gt; {
+				if(LOG.isDEBUG()){
+					LOG.debug(&apos;Got response for module data : &apos; + JSON.stringify(data, &apos;\t&apos;, 4));
+				}
+
+				// Check if there is an error
+				if (CheckError(deferred, data)) {
+					return;
+				}
+
+				ModuleService.getModuleData(moduleId).then(
+					function(moduleData){
+						if(LOG.isDEBUG()){
+							LOG.debug(&apos;Got current module data : &apos; + JSON.stringify(moduleData, &apos;\t&apos;, 4));
+						}
+						var mergeData = { &apos;toolDescriptions&apos; : {}, &apos;tools&apos; : {}};
+
+						// Loop through the data in the response
+						for(var idx in data){
+							var toolInfo = data[idx];
+							var toolKeyLocal = mapTool(toolInfo.name);
+
+
+							// Only use the tool if it is a tool we support
+							if(moduleData.toolDescriptions[toolKeyLocal] !== undefined){
+								mergeData.toolDescriptions[toolKeyLocal] = {};
+								mergeData.toolDescriptions[toolKeyLocal].label = toolInfo.title;
+								//mergeData.toolDescriptions[toolKeyLocal].description = data.toolDescriptions[toolKey].description;
+								mergeData.toolDescriptions[toolKeyLocal].menu = toolInfo.onMenu;
+							}
+						}
+
+						// Now merge the resulting data to our local file
+						LOG.debug(&apos;We will now merge these : &apos; + JSON.stringify(mergeData, &apos;\t&apos;, 4));
+
+						ModuleService.mergeToModuleData(moduleId, mergeData).then(
+							// Success
+							() =&gt; {
+								deferred.resolve();
+							},
+							_SF(deferred));
+					}, _SF(deferred));
+
+
+			})
+			.error(() =&gt; {
+				LOG.warn(&apos;Failed to get module data from remote server&apos;);
+				deferred.reject(SynthError(1000));
+			});
+		return deferred.promise;
+	};
+
+	/**
+	 * Download an array of files from the remote server for a specific tool
+	 */
+	SyncAPIServiceImpl.prototype.getAttachementsFromServer = function(attachments) {
+		var self = this;
+		let idx = 0;
+		if (!attachments || attachments.length === 0){
+			LOG.info(&apos;No need to download any attachments, an empty array was given&apos;);
+			return $q.when({});
+		}
+
+		function downloadFile(){
+			return self.getFileFromServer(attachments[idx].downloadKey, attachments[idx].downloadPath);
+		}
+
+		function getAttachment(){
+			// if there is no more to get return null
+			if(attachments.length === idx){
+				return null;
+			}
+			var promise = downloadFile()
+				.then(function(returnData){
+					idx++;
+					return returnData;
+				});
+			return promise;
+		}
+
+		return SynthQLoop(getAttachment);
+	};
+
+
+	/**
+	 * Download a single file from the remote server.
+	 *
+	 * @param {type} downloadKey - Key of the file to download from the remote server
+	 * @param {type} localPath - Full path to where the file should be saved locally on the device
+	 */
+	SyncAPIServiceImpl.prototype.getFileFromServer = function (downloadKey, localPath) {
+		var deferred = $q.defer();
+
+		// First make sure that the local path exists
+		var fileTransfer = new FileTransfer();
+		var uri = encodeURI(SynthConfig.baseURL + &apos;/service-creator/download/file/&apos; + downloadKey);
+		LOG.debug(&apos;Downloading file with URL &apos; + uri);
+
+		// Send back progress
+		fileTransfer.onprogress = function(progressEvent) {
+			deferred.notify(progressEvent);
+		};
+
+		fileTransfer.download(
+			uri,
+			localPath,
+			function() {
+				LOG.debug(&apos;Download is complete&apos;);
+				deferred.resolve();
+			},
+			function(error) {
+				LOG.warn(&apos;Failed to download file!&apos;);
+				LOG.warn(&apos;download error source &apos; + error.source);
+				LOG.warn(&apos;download error target &apos; + error.target);
+				LOG.warn(&apos;download error code &apos; + error.code);
+				deferred.reject(SynthError(1004));
+			},
+			false,
+			{
+				// No options
+			}
+		);
+
+		return deferred.promise;
+	};
+
+	return new SyncAPIServiceImpl();
+
+};
+SyncAPIService.$inject = [&apos;$q&apos;, &apos;$http&apos;, &apos;$filter&apos;, &apos;$rootScope&apos;, &apos;base64&apos;, &apos;DataService&apos;,
+	&apos;LoggerService&apos;, &apos;SynthError&apos;, &apos;SynthFail&apos;, &apos;SynthCheckResponseError&apos;,
+	&apos;SynthConfig&apos;, &apos;SynthQLoop&apos;, &apos;ModuleService&apos;, &apos;RegistrationService&apos;, &apos;SynthAttachmentMiner&apos;,
+	&apos;SynthEmbeddedImageHandler&apos;, &apos;SynthDeleteHandler&apos;, &apos;SynthLinkHandler&apos;, &apos;SynthUploadResponseHandler&apos;];
+
+export default SyncAPIService;
+</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(0.4.6)</span></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

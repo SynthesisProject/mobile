@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../../../">
+  <title data-ice="title">js/base/factories/SynthError.js | API Document</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  
+  
+  <script src="script/manual.js"></script>
+</head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  <a data-ice="repoURL" href="https://github.com/SynthesisProject/mobile.git" class="repo-url-github">Repository</a>
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+</header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SynthMobile">SynthMobile</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">base</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-convertToObject">convertToObject</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-convertToString">convertToString</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generateUID">generateUID</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getNumberOfProperties">getNumberOfProperties</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Routes">Routes</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-base">base</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">base/boot</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-BootCtrl">BootCtrl</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">base/controllers</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/base/controllers/AppController.js~AppController.html">AppController</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">base/directives</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-animatedEllipse">animatedEllipse</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-bootSpinner">bootSpinner</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-currentModuleName">currentModuleName</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-moduleCollapse">moduleCollapse</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-moduleName">moduleName</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-overallSyncStatus">overallSyncStatus</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-synthAttachments">synthAttachments</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-synthFooter">synthFooter</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-synthMenu">synthMenu</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-toolName">toolName</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-toolSyncStatus">toolSyncStatus</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">base/factories</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/base/factories/AppSyncStatus.js~AppSyncStatus.html">AppSyncStatus</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/base/factories/Lock.js~Lock.html">Lock</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/base/factories/UserSession.js~UserSession.html">UserSession</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-AppSyncStatusFactory">AppSyncStatusFactory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-LockFactory">LockFactory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-UserSessionFactory">UserSessionFactory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SynthAuthenticateUser">SynthAuthenticateUser</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SynthCheckResponseError">SynthCheckResponseError</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SynthError">SynthError</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SynthErrorHandler">SynthErrorHandler</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SynthFail">SynthFail</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SynthQIfStatement">SynthQIfStatement</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SynthQLoop">SynthQLoop</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-safo">safo</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">base/filters</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-array2Object">array2Object</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-attachments">attachments</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-bytesToSize">bytesToSize</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-formatDate">formatDate</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-noEscape">noEscape</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-object2Array">object2Array</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">base/handlers</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-SynthAttachmentMinerProvider">SynthAttachmentMinerProvider</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-SynthDeleteHandlerProvider">SynthDeleteHandlerProvider</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-SynthEmbeddedImageHandlerProvider">SynthEmbeddedImageHandlerProvider</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-SynthLinkHandlerProvider">SynthLinkHandlerProvider</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-SynthAttachmentMinerProvider">SynthAttachmentMinerProvider</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">base/home</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/base/home/HomeCtrl.js~HomeCtrl.html">HomeCtrl</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/base/home/HomeService.js~HomeService.html">HomeService</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-HomeServiceFactory">HomeServiceFactory</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">base/register</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-RegisterCtrl">RegisterCtrl</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-RegisterModuleRegistrationCtrl">RegisterModuleRegistrationCtrl</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-RegisterSelectModuleCtrl">RegisterSelectModuleCtrl</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-RegisterService">RegisterService</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">base/services</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/base/services/RegistrationService.js~RegistrationService.html">RegistrationService</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/base/services/SynthesisRESTClient.js~SynthesisRESTClient.html">SynthesisRESTClient</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/base/services/UserService.js~UserService.html">UserService</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/base/services/UserSettings.js~UserSettings.html">UserSettings</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-RegistrationServiceFactory">RegistrationServiceFactory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-SynthesisRESTClientFactory">SynthesisRESTClientFactory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-UserServiceFactory">UserServiceFactory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-UserSettingsFactory">UserSettingsFactory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-DataService">DataService</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-LoggerService">LoggerService</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ModuleService">ModuleService</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-PushService">PushService</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SyncAPIService">SyncAPIService</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">base/settings</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SettingsCtrl">SettingsCtrl</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SettingsPushCtrl">SettingsPushCtrl</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">base/sync</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/base/sync/SyncSelection.js~SyncSelection.html">SyncSelection</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-SyncSelectionFactory">SyncSelectionFactory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SyncConfigureCtrl">SyncConfigureCtrl</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SyncCtrl">SyncCtrl</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SyncProgressCtrl">SyncProgressCtrl</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SyncService">SyncService</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">tools</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SynthesisTools">SynthesisTools</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">tools/announcements</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Config">Config</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-AnnouncementsTool">AnnouncementsTool</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">tools/announcements/controllers</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-AnnouncementDetailCtrl">AnnouncementDetailCtrl</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-AnnouncementListCtrl">AnnouncementListCtrl</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">tools/announcements/handlers</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-AnnouncementsDeleteHandler">AnnouncementsDeleteHandler</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-AnnouncementsImageHandler">AnnouncementsImageHandler</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-AnnouncementsLinkHandler">AnnouncementsLinkHandler</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">tools/announcements/services</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/tools/announcements/services/AnnouncementService.js~AnnouncementService.html">AnnouncementService</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-AnnouncementServiceFactory">AnnouncementServiceFactory</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">tools/resources</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Config">Config</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ResourcesTool">ResourcesTool</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">tools/resources/controllers</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ResourcesCtrl">ResourcesCtrl</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">tools/resources/directives</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-resourceImg">resourceImg</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-resourceListItem">resourceListItem</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">tools/resources/factories</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ResourcesService">ResourcesService</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">tools/resources/handlers</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ResourcesDeleteHandler">ResourcesDeleteHandler</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">tools/schedule</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Config">Config</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ScheduleTool">ScheduleTool</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">tools/schedule/controllers</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ScheduleCtrl">ScheduleCtrl</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">tools/schedule/factories</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ScheduleService">ScheduleService</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">tools/schedule/handlers</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ScheduleLinkHandler">ScheduleLinkHandler</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">js/base/factories/SynthError.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">&apos;use strict&apos;;
+
+/**
+* Factory to create error with
+*/
+var SynthError = () =&gt; {
+
+	// Map of errors
+	var errors = {
+		&apos;1000&apos; : {
+			&apos;id&apos; : 1000,
+			&apos;errorMessage&apos; : &apos;Exception occurred&apos;,
+			&apos;errorDescription&apos; : &apos;Your request could not be completed. Something unexpected had happened&apos;,
+			&apos;errorInstructions&apos; : &apos;Please contact your administrator&apos;
+		},
+		&apos;1001&apos; : {
+			&apos;id&apos; : 1001,
+			&apos;errorMessage&apos; : &apos;Error parsing json object&apos;,
+			&apos;errorDescription&apos; : &apos;An error occurred while trying to parse a json object. These could be the possible causes: &lt;ul&gt;&lt;li&gt;Character encoding is not supported&lt;/li&gt;&lt;li&gt;Invalid content mapping&lt;/li&gt;&lt;li&gt;Content could not be parsed&lt;/li&gt;&lt;li&gt;Could not write to an object&lt;/li&gt;&lt;/ul&gt;&apos;,
+			&apos;errorInstruction&apos; : &apos;Please contact your administrator&apos;
+		},
+		&apos;1002&apos; : {
+			&apos;id&apos; : 1002,
+			&apos;errorMessage&apos; : &apos;Error parsing json object&apos;,
+			&apos;errorDescription&apos; : &apos;An error occurred while trying to parse a json object. These could be the possible causes:&lt;ul&gt;&lt;li&gt;Invalid content mapping&lt;/li&gt;&lt;li&gt;Could not write content to json file&lt;/li&gt;&lt;li&gt;Could not write object to json file&lt;/li&gt;&lt;/ul&gt;&apos;,
+			&apos;errorInstruction&apos; : &apos;Please contact your administrator&apos;
+		},
+		&apos;1003&apos; : {
+			&apos;id&apos; : 1003,
+			&apos;errorMessage&apos; : &apos;Could not post event&apos;,
+			&apos;errorDescription&apos; : &apos;Could not post the event. These could be the possible causes:&lt;ul&gt;&lt;li&gt;The LMS service is down&lt;/li&gt;&lt;li&gt;Your login credentials are invalid&lt;/li&gt;&lt;/u;&gt;&apos;,
+			&apos;errorInstruction&apos; : &apos;Please ensure that the LMS service is up and running and that your log in credentials are valid&apos;
+		},
+		&apos;1004&apos; : {
+			&apos;id&apos; : 1004,
+			&apos;errorMessage&apos; : &apos;File manipulation failed&apos;,
+			&apos;errorDescription&apos; : &apos;File manipulation failed. These could be the possible causes:&lt;ul&gt;&lt;li&gt;Could not create the directory structure for the code location&lt;/li&gt;&lt;li&gt;Could not copy the tool code to the code location&lt;/li&gt;&lt;/ul&gt;&apos;,
+			&apos;errorInstruction&apos; : &apos;Check that the code location property is correct&apos;
+		},
+		&apos;1005&apos; : {
+			&apos;id&apos; : 1005,
+			&apos;errorMessage&apos; : &apos;Log in failed&apos;,
+			&apos;errorDescription&apos; : &apos;Could not log in to LMS for user. These could be the posible causes: &lt;ul&gt;&lt;li&gt;The Sakia service is down&lt;/li&gt;&lt;li&gt;Your log in credentials are invalid&lt;/li&gt;&lt;/ul&gt;&apos;,
+			&apos;errorInstruction&apos; : &apos;Check that the Sakia service is running and that your log in credentials are valid.&apos;
+		},
+		&apos;1006&apos; : {
+			&apos;id&apos; : 1006,
+			&apos;errorMessage&apos; : &apos;Retrieval failed&apos;,
+			&apos;errorDescription&apos; : &apos;Could not retrieve modules from the LMS service. These could be the possible causes:&lt;ul&gt;&lt;li&gt;The LMS service is down&lt;/li&gt;&lt;li&gt;There was a problem retrieving modules&lt;/li&gt;&lt;/ul&gt;&apos;,
+			&apos;errorInstruction&apos; : &apos;Check that the LMS service is running.&apos;
+		},
+		&apos;1007&apos; : {
+			&apos;id&apos; : 1007,
+			&apos;errorMessage&apos; : &apos;Problem reading the sites xml&apos;,
+			&apos;errorDescription&apos; : &apos;There was a problem reading the sites xml. These could be the possible causes:&lt;ul&gt;&lt;li&gt;Could not compile the xpath expression&lt;/li&gt;&lt;li&gt;No data was found for the site&lt;/li&gt;&lt;/ul&gt;&apos;,
+			&apos;errorInstruction&apos; : &apos;Please contact your administrator&apos;
+		},
+		&apos;1008&apos; : {
+			&apos;id&apos; : 1008,
+			&apos;errorMessage&apos; : &apos;Retrieval failed&apos;,
+			&apos;errorDescription&apos; : &apos;The pages and tools could not be retreived from the LMS engine&apos;,
+			&apos;errorInstruction&apos; : &apos;Please ensure that the LMS engine is up and running&apos;
+		},
+		&apos;1009&apos; : {
+			&apos;id&apos; : 1009,
+			&apos;errorMessage&apos; : &apos;Configuration failure&apos;,
+			&apos;errorDescription&apos; : &apos;The sax parser could not be configured&apos;,
+			&apos;errorInstruction&apos; : &apos;Please contact the administrator&apos;
+		},
+		&apos;1010&apos; : {
+			&apos;id&apos; : 1010,
+			&apos;errorMessage&apos; : &apos;Invalid xml document&apos;,
+			&apos;errorDescription&apos; : &apos;The xml doucment returned from the LMS service is invalid&apos;,
+			&apos;errorInstruction&apos; : &apos;Please contact administrator&apos;
+		},
+		&apos;1011&apos; : {
+			&apos;id&apos; : 1011,
+			&apos;errorMessage&apos; : &apos;Device not recognised&apos;,
+			&apos;errorDescription&apos; : &apos;The is no data in the database for this device&apos;,
+			&apos;errorInstruction&apos; : &apos;Check that the device is registered and valid on the Unipoole service.&apos;
+		},
+		&apos;1012&apos; : {
+			&apos;id&apos; : 1012,
+			&apos;errorMessage&apos; : &apos;Registration tool not found&apos;,
+			&apos;errorDescription&apos; : &apos;The is no registration tool found. The device is registered but the tool is not&apos;,
+			&apos;errorInstruction&apos; : &apos;Check that the tool is registered  and valid on the Unipoole service.&apos;
+		},
+		&apos;1013&apos; : {
+			&apos;id&apos; : 1013,
+			&apos;errorMessage&apos; : &apos;Module Registration not found&apos;,
+			&apos;errorDescription&apos; : &apos;The module registration could not be found. The device is registered but the module for the device is not&apos;,
+			&apos;errorInstruction&apos; : &apos;Check that the module is registered and valid on the Unipoole service.&apos;
+		},
+		&apos;1014&apos; : {
+			&apos;id&apos; : 1014,
+			&apos;errorMessage&apos; : &apos;Invalid location&apos;,
+			&apos;errorDescription&apos; : &apos;The location is not valid&apos;,
+			&apos;errorInstruction&apos; : &apos;The location must be a directory or zip file containing the tool code in the root.&apos;
+		},
+		&apos;2002&apos; : {
+			&apos;id&apos; : 2002,
+			&apos;errorMessage&apos; : &apos;Invalid login&apos;,
+			&apos;errorDescription&apos; : &apos;The log in credentials provided are invalid.&apos;,
+			&apos;errorInstruction&apos; : &apos;Please provide valid credentials&apos;
+		},
+		&apos;2003&apos; : {
+			&apos;id&apos; : 2003,
+			&apos;errorMessage&apos; : &apos;Invalid session&apos;,
+			&apos;errorDescription&apos; : &apos;The session is invalid. These could be the possible causes:&lt;ul&gt;&lt;li&gt;The session does not exist&lt;/li&gt;&lt;li&gt;The session was not valid&lt;/li&gt;&lt;/ul&gt;&apos;,
+			&apos;errorInstruction&apos; : &apos;&apos;
+		},
+		&apos;2004&apos; : {
+			&apos;id&apos; : 2004,
+			&apos;errorMessage&apos; : &apos;No tools found&apos;,
+			&apos;errorDescription&apos; : &apos;&apos;,
+			&apos;errorInstruction&apos; : &apos;&apos;
+		},
+		&apos;3000&apos; : {
+			&apos;id&apos; : 3000,
+			&apos;errorMessage&apos; : &apos;You need to authenticate to perform this action&apos;,
+			&apos;errorDescription&apos; : &apos;The action your requested cannot be performed without authentications&apos;,
+			&apos;errorInstruction&apos; : &apos;Please authenticate, and try again&apos;
+		},
+		&apos;4001&apos; : {
+			&apos;id&apos; : 4001,
+			&apos;errorMessage&apos; : &apos;No application available&apos;,
+			&apos;errorDescription&apos; : &apos;You do not have an application installed that can open the requested file&apos;,
+			&apos;errorInstruction&apos; : &apos;Please install an application supporting the file.&apos;
+		},
+		&apos;4002&apos; : {
+			&apos;id&apos; : 4002,
+			&apos;errorMessage&apos; : &apos;Failed to open file&apos;,
+			&apos;errorDescription&apos; : &apos;The requested file could not be opened by an application&apos;,
+			&apos;errorInstruction&apos; : &apos;Please make sure a supported application is installed&apos;
+		}
+	};
+
+	/*
+	* Return a function that will create an error that
+	* can be used by the SynthErrorHandler.
+	*
+	* Params:
+	* errorCode - an int representing the error code, or an object that represent the error
+	* additional (optional) - a string with additional info about the error.
+	*/
+	return function(errorCode, additional){
+
+		/*
+		* Check if the error is an exception
+		*/
+		if(errorCode instanceof Error){
+			let error = angular.copy(errors[1000]);
+			error.additional = errorCode.message;
+			return error;
+		}
+		/* Check if the error Code is an object.
+		* if it is an object, it is a error like response from
+		* a server, we will then create a proper error from it */
+		else if (typeof(errorCode) === &apos;object&apos;){
+			return {
+				&apos;id&apos; : errorCode.errorCode,
+				&apos;errorMessage&apos; : errorCode.message,
+				&apos;errorInstruction&apos; : errorCode.instruction,
+				&apos;additional&apos; : additional
+			};
+		}
+		else{
+			let error = angular.copy(errors[errorCode]);
+			// This will only happen if an error happened before the ajax to get
+			// the error list was completed
+			if(error == null){
+				error = {
+					&apos;id&apos; : 1000,
+					&apos;errorMessage&apos; : &apos;Exception occurred&apos;,
+					&apos;errorDescription&apos; : &apos;Your request could not be completed. Something unexpected had happened&apos;,
+					&apos;errorInstructions&apos; : &apos;Please contact your administrator&apos;
+				};
+			}
+			if (additional){
+				error.additional = additional;
+			}
+			return error;
+		}
+
+	};
+};
+SynthError.$inject = [];
+export default SynthError;
+</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(0.4.6)</span></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>
