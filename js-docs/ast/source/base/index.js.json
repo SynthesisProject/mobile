@@ -3748,7 +3748,7 @@
           "type": "ImportDefaultSpecifier",
           "local": {
             "type": "Identifier",
-            "name": "overallSyncStatus",
+            "name": "OverallSyncStatus",
             "range": [
               2947,
               2964
@@ -3782,8 +3782,8 @@
       ],
       "source": {
         "type": "Literal",
-        "value": "./directives/overallSyncStatus",
-        "raw": "'./directives/overallSyncStatus'",
+        "value": "./directives/OverallSyncStatus",
+        "raw": "'./directives/OverallSyncStatus'",
         "range": [
           2970,
           3002
@@ -3894,7 +3894,7 @@
           "type": "ImportDefaultSpecifier",
           "local": {
             "type": "Identifier",
-            "name": "moduleCollapse",
+            "name": "ModuleCollapse",
             "range": [
               3075,
               3089
@@ -3928,8 +3928,8 @@
       ],
       "source": {
         "type": "Literal",
-        "value": "./directives/moduleCollapse",
-        "raw": "'./directives/moduleCollapse'",
+        "value": "./directives/ModuleCollapse",
+        "raw": "'./directives/ModuleCollapse'",
         "range": [
           3095,
           3124
@@ -3967,7 +3967,7 @@
           "type": "ImportDefaultSpecifier",
           "local": {
             "type": "Identifier",
-            "name": "animatedEllipse",
+            "name": "AnimatedEllipse",
             "range": [
               3134,
               3149
@@ -4001,8 +4001,8 @@
       ],
       "source": {
         "type": "Literal",
-        "value": "./directives/animatedEllipse",
-        "raw": "'./directives/animatedEllipse'",
+        "value": "./directives/AnimatedEllipse",
+        "raw": "'./directives/AnimatedEllipse'",
         "range": [
           3155,
           3185
@@ -4040,7 +4040,7 @@
           "type": "ImportDefaultSpecifier",
           "local": {
             "type": "Identifier",
-            "name": "currentModuleName",
+            "name": "CurrentModuleName",
             "range": [
               3195,
               3212
@@ -4074,8 +4074,8 @@
       ],
       "source": {
         "type": "Literal",
-        "value": "./directives/currentModuleName",
-        "raw": "'./directives/currentModuleName'",
+        "value": "./directives/CurrentModuleName",
+        "raw": "'./directives/CurrentModuleName'",
         "range": [
           3218,
           3250
@@ -4113,7 +4113,7 @@
           "type": "ImportDefaultSpecifier",
           "local": {
             "type": "Identifier",
-            "name": "moduleName",
+            "name": "ModuleName",
             "range": [
               3260,
               3270
@@ -4147,8 +4147,8 @@
       ],
       "source": {
         "type": "Literal",
-        "value": "./directives/moduleName",
-        "raw": "'./directives/moduleName'",
+        "value": "./directives/ModuleName",
+        "raw": "'./directives/ModuleName'",
         "range": [
           3276,
           3301
@@ -4186,7 +4186,7 @@
           "type": "ImportDefaultSpecifier",
           "local": {
             "type": "Identifier",
-            "name": "toolName",
+            "name": "ToolName",
             "range": [
               3311,
               3319
@@ -4220,8 +4220,8 @@
       ],
       "source": {
         "type": "Literal",
-        "value": "./directives/toolName",
-        "raw": "'./directives/toolName'",
+        "value": "./directives/ToolName",
+        "raw": "'./directives/ToolName'",
         "range": [
           3325,
           3348
@@ -4259,7 +4259,7 @@
           "type": "ImportDefaultSpecifier",
           "local": {
             "type": "Identifier",
-            "name": "bootSpinner",
+            "name": "BootSpinner",
             "range": [
               3360,
               3371
@@ -4293,8 +4293,8 @@
       ],
       "source": {
         "type": "Literal",
-        "value": "./directives/bootSpinner",
-        "raw": "'./directives/bootSpinner'",
+        "value": "./directives/BootSpinner",
+        "raw": "'./directives/BootSpinner'",
         "range": [
           3377,
           3403
@@ -9405,7 +9405,7 @@
                                       },
                                       {
                                         "type": "Identifier",
-                                        "name": "overallSyncStatus",
+                                        "name": "OverallSyncStatus",
                                         "range": [
                                           5807,
                                           5824
@@ -9579,7 +9579,7 @@
                               },
                               {
                                 "type": "Identifier",
-                                "name": "bootSpinner",
+                                "name": "BootSpinner",
                                 "range": [
                                   5905,
                                   5916
@@ -9666,7 +9666,7 @@
                           },
                           {
                             "type": "Identifier",
-                            "name": "moduleCollapse",
+                            "name": "ModuleCollapse",
                             "range": [
                               5949,
                               5963
@@ -9753,7 +9753,7 @@
                       },
                       {
                         "type": "Identifier",
-                        "name": "animatedEllipse",
+                        "name": "AnimatedEllipse",
                         "range": [
                           5997,
                           6012
@@ -9840,7 +9840,7 @@
                   },
                   {
                     "type": "Identifier",
-                    "name": "currentModuleName",
+                    "name": "CurrentModuleName",
                     "range": [
                       6048,
                       6065
@@ -9927,7 +9927,7 @@
               },
               {
                 "type": "Identifier",
-                "name": "moduleName",
+                "name": "ModuleName",
                 "range": [
                   6094,
                   6104
@@ -10014,7 +10014,7 @@
           },
           {
             "type": "Identifier",
-            "name": "toolName",
+            "name": "ToolName",
             "range": [
               6131,
               6139

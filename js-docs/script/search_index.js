@@ -1,5 +1,17 @@
 window.esdocSearchIndex = [
   [
+    "synthesis-mobile/js/base/directives/animatedellipse.js~animatedellipse",
+    "class/js/base/directives/AnimatedEllipse.js~AnimatedEllipse.html",
+    "<span>AnimatedEllipse</span> <span class=\"search-result-import-path\">synthesis-mobile/js/base/directives/AnimatedEllipse.js</span>",
+    "class"
+  ],
+  [
+    "synthesis-mobile/js/base/directives/animatedellipse.js~animatedellipsefactory",
+    "function/index.html#static-function-AnimatedEllipseFactory",
+    "<span>AnimatedEllipseFactory</span> <span class=\"search-result-import-path\">synthesis-mobile/js/base/directives/AnimatedEllipse.js</span>",
+    "function"
+  ],
+  [
     "synthesis-mobile/js/tools/announcements/controllers/announcementdetailctrl.js~announcementdetailctrl",
     "variable/index.html#static-variable-AnnouncementDetailCtrl",
     "<span>AnnouncementDetailCtrl</span> <span class=\"search-result-import-path\">synthesis-mobile/js/tools/announcements/controllers/AnnouncementDetailCtrl.js</span>",
@@ -72,6 +84,18 @@ window.esdocSearchIndex = [
     "variable"
   ],
   [
+    "synthesis-mobile/js/base/directives/bootspinner.js~bootspinner",
+    "class/js/base/directives/BootSpinner.js~BootSpinner.html",
+    "<span>BootSpinner</span> <span class=\"search-result-import-path\">synthesis-mobile/js/base/directives/BootSpinner.js</span>",
+    "class"
+  ],
+  [
+    "synthesis-mobile/js/base/directives/bootspinner.js~bootspinnerfactory",
+    "function/index.html#static-function-BootSpinnerFactory",
+    "<span>BootSpinnerFactory</span> <span class=\"search-result-import-path\">synthesis-mobile/js/base/directives/BootSpinner.js</span>",
+    "function"
+  ],
+  [
     "synthesis-mobile/js/tools/announcements/config.js~config",
     "variable/index.html#static-variable-Config",
     "<span>Config</span> <span class=\"search-result-import-path\">synthesis-mobile/js/tools/announcements/config.js</span>",
@@ -88,6 +112,18 @@ window.esdocSearchIndex = [
     "variable/index.html#static-variable-Config",
     "<span>Config</span> <span class=\"search-result-import-path\">synthesis-mobile/js/tools/schedule/config.js</span>",
     "variable"
+  ],
+  [
+    "synthesis-mobile/js/base/directives/currentmodulename.js~currentmodulename",
+    "class/js/base/directives/CurrentModuleName.js~CurrentModuleName.html",
+    "<span>CurrentModuleName</span> <span class=\"search-result-import-path\">synthesis-mobile/js/base/directives/CurrentModuleName.js</span>",
+    "class"
+  ],
+  [
+    "synthesis-mobile/js/base/directives/currentmodulename.js~currentmodulenamefactory",
+    "function/index.html#static-function-CurrentModuleNameFactory",
+    "<span>CurrentModuleNameFactory</span> <span class=\"search-result-import-path\">synthesis-mobile/js/base/directives/CurrentModuleName.js</span>",
+    "function"
   ],
   [
     "synthesis-mobile/js/base/services/dataservice.js~dataservice",
@@ -132,10 +168,46 @@ window.esdocSearchIndex = [
     "variable"
   ],
   [
+    "synthesis-mobile/js/base/directives/modulecollapse.js~modulecollapse",
+    "class/js/base/directives/ModuleCollapse.js~ModuleCollapse.html",
+    "<span>ModuleCollapse</span> <span class=\"search-result-import-path\">synthesis-mobile/js/base/directives/ModuleCollapse.js</span>",
+    "class"
+  ],
+  [
+    "synthesis-mobile/js/base/directives/modulecollapse.js~modulecollapsefactory",
+    "function/index.html#static-function-ModuleCollapseFactory",
+    "<span>ModuleCollapseFactory</span> <span class=\"search-result-import-path\">synthesis-mobile/js/base/directives/ModuleCollapse.js</span>",
+    "function"
+  ],
+  [
+    "synthesis-mobile/js/base/directives/modulename.js~modulename",
+    "class/js/base/directives/ModuleName.js~ModuleName.html",
+    "<span>ModuleName</span> <span class=\"search-result-import-path\">synthesis-mobile/js/base/directives/ModuleName.js</span>",
+    "class"
+  ],
+  [
+    "synthesis-mobile/js/base/directives/modulename.js~modulenamefactory",
+    "function/index.html#static-function-ModuleNameFactory",
+    "<span>ModuleNameFactory</span> <span class=\"search-result-import-path\">synthesis-mobile/js/base/directives/ModuleName.js</span>",
+    "function"
+  ],
+  [
     "synthesis-mobile/js/base/services/moduleservice.js~moduleservice",
     "variable/index.html#static-variable-ModuleService",
     "<span>ModuleService</span> <span class=\"search-result-import-path\">synthesis-mobile/js/base/services/ModuleService.js</span>",
     "variable"
+  ],
+  [
+    "synthesis-mobile/js/base/directives/overallsyncstatus.js~overallsyncstatus",
+    "class/js/base/directives/OverallSyncStatus.js~OverallSyncStatus.html",
+    "<span>OverallSyncStatus</span> <span class=\"search-result-import-path\">synthesis-mobile/js/base/directives/OverallSyncStatus.js</span>",
+    "class"
+  ],
+  [
+    "synthesis-mobile/js/base/directives/overallsyncstatus.js~overallsyncstatusfactory",
+    "function/index.html#static-function-OverallSyncStatusFactory",
+    "<span>OverallSyncStatusFactory</span> <span class=\"search-result-import-path\">synthesis-mobile/js/base/directives/OverallSyncStatus.js</span>",
+    "function"
   ],
   [
     "synthesis-mobile/js/base/services/pushservice.js~pushservice",
@@ -384,6 +456,18 @@ window.esdocSearchIndex = [
     "variable"
   ],
   [
+    "synthesis-mobile/js/base/directives/toolname.js~toolname",
+    "class/js/base/directives/ToolName.js~ToolName.html",
+    "<span>ToolName</span> <span class=\"search-result-import-path\">synthesis-mobile/js/base/directives/ToolName.js</span>",
+    "class"
+  ],
+  [
+    "synthesis-mobile/js/base/directives/toolname.js~toolnamefactory",
+    "function/index.html#static-function-ToolNameFactory",
+    "<span>ToolNameFactory</span> <span class=\"search-result-import-path\">synthesis-mobile/js/base/directives/ToolName.js</span>",
+    "function"
+  ],
+  [
     "synthesis-mobile/js/base/services/userservice.js~userservice",
     "class/js/base/services/UserService.js~UserService.html",
     "<span>UserService</span> <span class=\"search-result-import-path\">synthesis-mobile/js/base/services/UserService.js</span>",
@@ -420,12 +504,6 @@ window.esdocSearchIndex = [
     "function"
   ],
   [
-    "synthesis-mobile/js/base/directives/animatedellipse.js~animatedellipse",
-    "variable/index.html#static-variable-animatedEllipse",
-    "<span>animatedEllipse</span> <span class=\"search-result-import-path\">synthesis-mobile/js/base/directives/animatedEllipse.js</span>",
-    "variable"
-  ],
-  [
     "synthesis-mobile/js/base/filters/array2object.js~array2object",
     "variable/index.html#static-variable-array2Object",
     "<span>array2Object</span> <span class=\"search-result-import-path\">synthesis-mobile/js/base/filters/array2Object.js</span>",
@@ -441,12 +519,6 @@ window.esdocSearchIndex = [
     "synthesis-mobile/js/base/index.js~base",
     "variable/index.html#static-variable-base",
     "<span>base</span> <span class=\"search-result-import-path\">synthesis-mobile/js/base/index.js</span>",
-    "variable"
-  ],
-  [
-    "synthesis-mobile/js/base/directives/bootspinner.js~bootspinner",
-    "variable/index.html#static-variable-bootSpinner",
-    "<span>bootSpinner</span> <span class=\"search-result-import-path\">synthesis-mobile/js/base/directives/bootSpinner.js</span>",
     "variable"
   ],
   [
@@ -468,12 +540,6 @@ window.esdocSearchIndex = [
     "function"
   ],
   [
-    "synthesis-mobile/js/base/directives/currentmodulename.js~currentmodulename",
-    "variable/index.html#static-variable-currentModuleName",
-    "<span>currentModuleName</span> <span class=\"search-result-import-path\">synthesis-mobile/js/base/directives/currentModuleName.js</span>",
-    "variable"
-  ],
-  [
     "synthesis-mobile/js/base/filters/formatdate.js~formatdate",
     "variable/index.html#static-variable-formatDate",
     "<span>formatDate</span> <span class=\"search-result-import-path\">synthesis-mobile/js/base/filters/formatDate.js</span>",
@@ -492,18 +558,6 @@ window.esdocSearchIndex = [
     "function"
   ],
   [
-    "synthesis-mobile/js/base/directives/modulecollapse.js~modulecollapse",
-    "variable/index.html#static-variable-moduleCollapse",
-    "<span>moduleCollapse</span> <span class=\"search-result-import-path\">synthesis-mobile/js/base/directives/moduleCollapse.js</span>",
-    "variable"
-  ],
-  [
-    "synthesis-mobile/js/base/directives/modulename.js~modulename",
-    "variable/index.html#static-variable-moduleName",
-    "<span>moduleName</span> <span class=\"search-result-import-path\">synthesis-mobile/js/base/directives/moduleName.js</span>",
-    "variable"
-  ],
-  [
     "synthesis-mobile/js/base/filters/noescape.js~noescape",
     "variable/index.html#static-variable-noEscape",
     "<span>noEscape</span> <span class=\"search-result-import-path\">synthesis-mobile/js/base/filters/noEscape.js</span>",
@@ -513,12 +567,6 @@ window.esdocSearchIndex = [
     "synthesis-mobile/js/base/filters/object2array.js~object2array",
     "variable/index.html#static-variable-object2Array",
     "<span>object2Array</span> <span class=\"search-result-import-path\">synthesis-mobile/js/base/filters/object2Array.js</span>",
-    "variable"
-  ],
-  [
-    "synthesis-mobile/js/base/directives/overallsyncstatus.js~overallsyncstatus",
-    "variable/index.html#static-variable-overallSyncStatus",
-    "<span>overallSyncStatus</span> <span class=\"search-result-import-path\">synthesis-mobile/js/base/directives/overallSyncStatus.js</span>",
     "variable"
   ],
   [
@@ -555,12 +603,6 @@ window.esdocSearchIndex = [
     "synthesis-mobile/js/base/directives/synthmenu.js~synthmenu",
     "variable/index.html#static-variable-synthMenu",
     "<span>synthMenu</span> <span class=\"search-result-import-path\">synthesis-mobile/js/base/directives/synthMenu.js</span>",
-    "variable"
-  ],
-  [
-    "synthesis-mobile/js/base/directives/toolname.js~toolname",
-    "variable/index.html#static-variable-toolName",
-    "<span>toolName</span> <span class=\"search-result-import-path\">synthesis-mobile/js/base/directives/toolName.js</span>",
     "variable"
   ],
   [
@@ -931,39 +973,261 @@ window.esdocSearchIndex = [
   ],
   [
     "js/base/directives/animatedellipse.js",
-    "file/js/base/directives/animatedEllipse.js.html",
-    "js/base/directives/animatedEllipse.js",
+    "file/js/base/directives/AnimatedEllipse.js.html",
+    "js/base/directives/AnimatedEllipse.js",
     "file"
+  ],
+  [
+    "js/base/directives/animatedellipse.js~animatedellipse#$interval",
+    "class/js/base/directives/AnimatedEllipse.js~AnimatedEllipse.html#instance-member-$interval",
+    "js/base/directives/AnimatedEllipse.js~AnimatedEllipse#$interval",
+    "member"
+  ],
+  [
+    "js/base/directives/animatedellipse.js~animatedellipse#constructor",
+    "class/js/base/directives/AnimatedEllipse.js~AnimatedEllipse.html#instance-constructor-constructor",
+    "js/base/directives/AnimatedEllipse.js~AnimatedEllipse#constructor",
+    "method"
+  ],
+  [
+    "js/base/directives/animatedellipse.js~animatedellipse#link",
+    "class/js/base/directives/AnimatedEllipse.js~AnimatedEllipse.html#instance-method-link",
+    "js/base/directives/AnimatedEllipse.js~AnimatedEllipse#link",
+    "method"
+  ],
+  [
+    "js/base/directives/animatedellipse.js~animatedellipse#restrict",
+    "class/js/base/directives/AnimatedEllipse.js~AnimatedEllipse.html#instance-member-restrict",
+    "js/base/directives/AnimatedEllipse.js~AnimatedEllipse#restrict",
+    "member"
+  ],
+  [
+    "js/base/directives/animatedellipse.js~animatedellipse#scope",
+    "class/js/base/directives/AnimatedEllipse.js~AnimatedEllipse.html#instance-member-scope",
+    "js/base/directives/AnimatedEllipse.js~AnimatedEllipse#scope",
+    "member"
   ],
   [
     "js/base/directives/bootspinner.js",
-    "file/js/base/directives/bootSpinner.js.html",
-    "js/base/directives/bootSpinner.js",
+    "file/js/base/directives/BootSpinner.js.html",
+    "js/base/directives/BootSpinner.js",
     "file"
+  ],
+  [
+    "js/base/directives/bootspinner.js~bootspinner#constructor",
+    "class/js/base/directives/BootSpinner.js~BootSpinner.html#instance-constructor-constructor",
+    "js/base/directives/BootSpinner.js~BootSpinner#constructor",
+    "method"
+  ],
+  [
+    "js/base/directives/bootspinner.js~bootspinner#link",
+    "class/js/base/directives/BootSpinner.js~BootSpinner.html#instance-method-link",
+    "js/base/directives/BootSpinner.js~BootSpinner#link",
+    "method"
+  ],
+  [
+    "js/base/directives/bootspinner.js~bootspinner#restrict",
+    "class/js/base/directives/BootSpinner.js~BootSpinner.html#instance-member-restrict",
+    "js/base/directives/BootSpinner.js~BootSpinner#restrict",
+    "member"
+  ],
+  [
+    "js/base/directives/bootspinner.js~bootspinner#scope",
+    "class/js/base/directives/BootSpinner.js~BootSpinner.html#instance-member-scope",
+    "js/base/directives/BootSpinner.js~BootSpinner#scope",
+    "member"
   ],
   [
     "js/base/directives/currentmodulename.js",
-    "file/js/base/directives/currentModuleName.js.html",
-    "js/base/directives/currentModuleName.js",
+    "file/js/base/directives/CurrentModuleName.js.html",
+    "js/base/directives/CurrentModuleName.js",
     "file"
+  ],
+  [
+    "js/base/directives/currentmodulename.js~currentmodulename#$rootscope",
+    "class/js/base/directives/CurrentModuleName.js~CurrentModuleName.html#instance-member-$rootScope",
+    "js/base/directives/CurrentModuleName.js~CurrentModuleName#$rootScope",
+    "member"
+  ],
+  [
+    "js/base/directives/currentmodulename.js~currentmodulename#$route",
+    "class/js/base/directives/CurrentModuleName.js~CurrentModuleName.html#instance-member-$route",
+    "js/base/directives/CurrentModuleName.js~CurrentModuleName#$route",
+    "member"
+  ],
+  [
+    "js/base/directives/currentmodulename.js~currentmodulename#constructor",
+    "class/js/base/directives/CurrentModuleName.js~CurrentModuleName.html#instance-constructor-constructor",
+    "js/base/directives/CurrentModuleName.js~CurrentModuleName#constructor",
+    "method"
+  ],
+  [
+    "js/base/directives/currentmodulename.js~currentmodulename#link",
+    "class/js/base/directives/CurrentModuleName.js~CurrentModuleName.html#instance-method-link",
+    "js/base/directives/CurrentModuleName.js~CurrentModuleName#link",
+    "method"
+  ],
+  [
+    "js/base/directives/currentmodulename.js~currentmodulename#registrationservice",
+    "class/js/base/directives/CurrentModuleName.js~CurrentModuleName.html#instance-member-registrationService",
+    "js/base/directives/CurrentModuleName.js~CurrentModuleName#registrationService",
+    "member"
+  ],
+  [
+    "js/base/directives/currentmodulename.js~currentmodulename#restrict",
+    "class/js/base/directives/CurrentModuleName.js~CurrentModuleName.html#instance-member-restrict",
+    "js/base/directives/CurrentModuleName.js~CurrentModuleName#restrict",
+    "member"
+  ],
+  [
+    "js/base/directives/currentmodulename.js~currentmodulename#scope",
+    "class/js/base/directives/CurrentModuleName.js~CurrentModuleName.html#instance-member-scope",
+    "js/base/directives/CurrentModuleName.js~CurrentModuleName#scope",
+    "member"
   ],
   [
     "js/base/directives/modulecollapse.js",
-    "file/js/base/directives/moduleCollapse.js.html",
-    "js/base/directives/moduleCollapse.js",
+    "file/js/base/directives/ModuleCollapse.js.html",
+    "js/base/directives/ModuleCollapse.js",
     "file"
+  ],
+  [
+    "js/base/directives/modulecollapse.js~modulecollapse#$rootscope",
+    "class/js/base/directives/ModuleCollapse.js~ModuleCollapse.html#instance-member-$rootScope",
+    "js/base/directives/ModuleCollapse.js~ModuleCollapse#$rootScope",
+    "member"
+  ],
+  [
+    "js/base/directives/modulecollapse.js~modulecollapse#constructor",
+    "class/js/base/directives/ModuleCollapse.js~ModuleCollapse.html#instance-constructor-constructor",
+    "js/base/directives/ModuleCollapse.js~ModuleCollapse#constructor",
+    "method"
+  ],
+  [
+    "js/base/directives/modulecollapse.js~modulecollapse#link",
+    "class/js/base/directives/ModuleCollapse.js~ModuleCollapse.html#instance-method-link",
+    "js/base/directives/ModuleCollapse.js~ModuleCollapse#link",
+    "method"
+  ],
+  [
+    "js/base/directives/modulecollapse.js~modulecollapse#restrict",
+    "class/js/base/directives/ModuleCollapse.js~ModuleCollapse.html#instance-member-restrict",
+    "js/base/directives/ModuleCollapse.js~ModuleCollapse#restrict",
+    "member"
+  ],
+  [
+    "js/base/directives/modulecollapse.js~modulecollapse#scope",
+    "class/js/base/directives/ModuleCollapse.js~ModuleCollapse.html#instance-member-scope",
+    "js/base/directives/ModuleCollapse.js~ModuleCollapse#scope",
+    "member"
   ],
   [
     "js/base/directives/modulename.js",
-    "file/js/base/directives/moduleName.js.html",
-    "js/base/directives/moduleName.js",
+    "file/js/base/directives/ModuleName.js.html",
+    "js/base/directives/ModuleName.js",
     "file"
   ],
   [
+    "js/base/directives/modulename.js~modulename#constructor",
+    "class/js/base/directives/ModuleName.js~ModuleName.html#instance-constructor-constructor",
+    "js/base/directives/ModuleName.js~ModuleName#constructor",
+    "method"
+  ],
+  [
+    "js/base/directives/modulename.js~modulename#link",
+    "class/js/base/directives/ModuleName.js~ModuleName.html#instance-method-link",
+    "js/base/directives/ModuleName.js~ModuleName#link",
+    "method"
+  ],
+  [
+    "js/base/directives/modulename.js~modulename#moduleservice",
+    "class/js/base/directives/ModuleName.js~ModuleName.html#instance-member-moduleService",
+    "js/base/directives/ModuleName.js~ModuleName#moduleService",
+    "member"
+  ],
+  [
+    "js/base/directives/modulename.js~modulename#restrict",
+    "class/js/base/directives/ModuleName.js~ModuleName.html#instance-member-restrict",
+    "js/base/directives/ModuleName.js~ModuleName#restrict",
+    "member"
+  ],
+  [
+    "js/base/directives/modulename.js~modulename#scope",
+    "class/js/base/directives/ModuleName.js~ModuleName.html#instance-member-scope",
+    "js/base/directives/ModuleName.js~ModuleName#scope",
+    "member"
+  ],
+  [
     "js/base/directives/overallsyncstatus.js",
-    "file/js/base/directives/overallSyncStatus.js.html",
-    "js/base/directives/overallSyncStatus.js",
+    "file/js/base/directives/OverallSyncStatus.js.html",
+    "js/base/directives/OverallSyncStatus.js",
     "file"
+  ],
+  [
+    "js/base/directives/overallsyncstatus.js~overallsyncstatus#constructor",
+    "class/js/base/directives/OverallSyncStatus.js~OverallSyncStatus.html#instance-constructor-constructor",
+    "js/base/directives/OverallSyncStatus.js~OverallSyncStatus#constructor",
+    "method"
+  ],
+  [
+    "js/base/directives/overallsyncstatus.js~overallsyncstatus#link",
+    "class/js/base/directives/OverallSyncStatus.js~OverallSyncStatus.html#instance-method-link",
+    "js/base/directives/OverallSyncStatus.js~OverallSyncStatus#link",
+    "method"
+  ],
+  [
+    "js/base/directives/overallsyncstatus.js~overallsyncstatus#restrict",
+    "class/js/base/directives/OverallSyncStatus.js~OverallSyncStatus.html#instance-member-restrict",
+    "js/base/directives/OverallSyncStatus.js~OverallSyncStatus#restrict",
+    "member"
+  ],
+  [
+    "js/base/directives/overallsyncstatus.js~overallsyncstatus#scope",
+    "class/js/base/directives/OverallSyncStatus.js~OverallSyncStatus.html#instance-member-scope",
+    "js/base/directives/OverallSyncStatus.js~OverallSyncStatus#scope",
+    "member"
+  ],
+  [
+    "js/base/directives/overallsyncstatus.js~overallsyncstatus#syncapiservice",
+    "class/js/base/directives/OverallSyncStatus.js~OverallSyncStatus.html#instance-member-syncAPIService",
+    "js/base/directives/OverallSyncStatus.js~OverallSyncStatus#syncAPIService",
+    "member"
+  ],
+  [
+    "js/base/directives/toolname.js",
+    "file/js/base/directives/ToolName.js.html",
+    "js/base/directives/ToolName.js",
+    "file"
+  ],
+  [
+    "js/base/directives/toolname.js~toolname#constructor",
+    "class/js/base/directives/ToolName.js~ToolName.html#instance-constructor-constructor",
+    "js/base/directives/ToolName.js~ToolName#constructor",
+    "method"
+  ],
+  [
+    "js/base/directives/toolname.js~toolname#link",
+    "class/js/base/directives/ToolName.js~ToolName.html#instance-method-link",
+    "js/base/directives/ToolName.js~ToolName#link",
+    "method"
+  ],
+  [
+    "js/base/directives/toolname.js~toolname#moduleservice",
+    "class/js/base/directives/ToolName.js~ToolName.html#instance-member-moduleService",
+    "js/base/directives/ToolName.js~ToolName#moduleService",
+    "member"
+  ],
+  [
+    "js/base/directives/toolname.js~toolname#restrict",
+    "class/js/base/directives/ToolName.js~ToolName.html#instance-member-restrict",
+    "js/base/directives/ToolName.js~ToolName#restrict",
+    "member"
+  ],
+  [
+    "js/base/directives/toolname.js~toolname#scope",
+    "class/js/base/directives/ToolName.js~ToolName.html#instance-member-scope",
+    "js/base/directives/ToolName.js~ToolName#scope",
+    "member"
   ],
   [
     "js/base/directives/synthattachments.js",
@@ -981,12 +1245,6 @@ window.esdocSearchIndex = [
     "js/base/directives/synthmenu.js",
     "file/js/base/directives/synthMenu.js.html",
     "js/base/directives/synthMenu.js",
-    "file"
-  ],
-  [
-    "js/base/directives/toolname.js",
-    "file/js/base/directives/toolName.js.html",
-    "js/base/directives/toolName.js",
     "file"
   ],
   [
