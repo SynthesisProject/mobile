@@ -4,23 +4,15 @@ var fs = require('fs'),
 	pkg = require('../package.json'),
 	extend = require('extend');
 
-var cordovaAppendXml;
-try{
-	cordovaAppendXml = fs.readFileSync(path.resolve(__dirname, 'cordova-append.xml'), 'utf8');
-}
-catch(error){
-	console.log('Failed to read cordova-append.xml');
-	console.log(error);
-	throw error;
-}
-
 var buildConfig = {
 	'cordova' : {
 		'dir' : 'cordova',
 		'packageId' : 'coza.opencollab.synthesis.mobile',
 		'authorName' : 'Charl Thiem',
 		'authorEmail' : 'charl@opencollab.co.za',
-		'xml' : cordovaAppendXml,
+		'iconsAndroidXml' : path.resolve(__dirname, 'icons-android.xml'),
+		'iconsIosXml' : path.resolve(__dirname, 'icons-ios.xml'),
+		'iconsWindowsXml' : path.resolve(__dirname, 'icons-windows.xml'),
 		'platforms' : {
 			'android' : '5.1.1',
 			'ios' : '4.1.0',
@@ -149,4 +141,5 @@ catch(error){
 if(externalConfig != null){
 	buildConfig = extend(true, buildConfig, externalConfig);
 }
+
 module.exports = buildConfig;

@@ -3,6 +3,7 @@
 var gulp = require('gulp'),
 	pkg = require('./package.json'),
 	buildConfig = require('./config/build.config'),
+	fs = require('fs'),
 // Cordova
 	create = require('gulp-cordova-create'),
 	plugin = require('gulp-cordova-plugin'),
@@ -151,6 +152,19 @@ gulp.task('pipeline', ['usemin', 'copy-html', 'generate-config', 'copy-bootstrap
 
 
 function createCordova(){
+	//
+	var additionalXmls = [];
+	function appendXml(filePath){
+		if(filePath != null){
+			var xmlContent = fs.readFileSync(filePath, 'utf8');
+			additionalXmls.push(xmlContent);
+		}
+	}
+
+	appendXml(buildConfig.cordova.iconsAndroidXml);
+	appendXml(buildConfig.cordova.iconsIosXml);
+	appendXml(buildConfig.cordova.iconsWindowsXml);
+
 	return gulp.src(workPipeline + '/www')
 		.pipe(create({
 			dir : workCordova,
@@ -165,7 +179,7 @@ function createCordova(){
 		.pipe(access(buildConfig.serverBaseUrl + '/*'))
 		.pipe(access('cdvfile://*'))
 		.pipe(plugin(buildConfig.cordova.plugins))
-		.pipe(xml(buildConfig.cordova.xml))
+		.pipe(xml(additionalXmls))
 		.pipe(xml('<allow-navigation href="' + buildConfig.serverBaseUrl + '/*" />'));
 }
 

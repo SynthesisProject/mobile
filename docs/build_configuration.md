@@ -8,7 +8,9 @@ The build configuration is used to set parameters of the build, as well as some 
 		"packageId" : "coza.opencollab.synthesis.mobile",
 		"authorName" : "John Doe",
 		"authorEmail" : "john.doe@yourdomain.com",
-		"xml" : "",
+		"iconsAndroidXml" : "config/icons-android.xml",
+		"iconsIosXml" : "config/icons-ios.xml",
+		"iconsWindowsXml" : "config/icons-windows.xml",
 		"platforms" : {
 			"android" : "5.1.1",
 			"ios" : "4.1.0",
@@ -89,8 +91,14 @@ The author name that must appear in the application meta data.
 ### cordova.authorEmail
 The author email that must appear in the application meta data.
 
-### cordova.xml
-Additional XML to append to the cordova config.xml file
+### cordova.iconsAndroidXml
+Path to a file containing xml for Android icon configuration
+
+### cordova.iconsIosXml
+Path to a file containing xml for iOS icon configuration
+
+### cordova.iconsWindowsXml
+Path to a file containing xml for Windows icon configuration
 
 ### cordova.platforms
 The versions of the platforms to use. Supported platforms are `android`, `ios` and `windows` (still in development)
