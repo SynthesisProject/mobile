@@ -4,3 +4,11 @@ node_js:
 before_script:
   - "npm install -g gulp"
 script: "gulp pipeline"
+addons:
+  coverity_scan:
+    project:
+      name: "SynthesisProject/mobile"
+      description: "Build submitted via Travis CI"
+    notification_email: charl@opencollab.co.za
+    build_command:   "gulp pipeline"
+    branch_pattern: coverity_scan

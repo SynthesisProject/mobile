@@ -1,3 +1,4 @@
+[![epub-creator version](https://img.shields.io/badge/synthesis--mobile-v1.0.0-green.svg?style=flat)](http://semver.org) 
 [![Build Status](https://travis-ci.org/SynthesisProject/mobile.svg?branch=master)](https://travis-ci.org/SynthesisProject/mobile)
 [![Dependencies Status](https://david-dm.org/SynthesisProject/mobile.svg)](https://david-dm.org/SynthesisProject/mobile)
 [![License](https://img.shields.io/badge/License-AGPLv3-blue.svg)](https://en.wikipedia.org/wiki/Affero_General_Public_License)
