@@ -10,6 +10,11 @@ insert_final_newline = true
 [*.sh]
 end_of_line = lf
 
+
+[*.yml]
+indent_style = spaces
+tab_width = 2
+
 [package.json]
 indent_style = spaces
 tab_width = 2
