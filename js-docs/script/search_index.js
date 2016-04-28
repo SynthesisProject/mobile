@@ -13,9 +13,15 @@ window.esdocSearchIndex = [
   ],
   [
     "synthesis-mobile/js/tools/announcements/services/announcementservice.js~announcementservice",
-    "variable/index.html#static-variable-AnnouncementService",
+    "class/js/tools/announcements/services/AnnouncementService.js~AnnouncementService.html",
     "<span>AnnouncementService</span> <span class=\"search-result-import-path\">synthesis-mobile/js/tools/announcements/services/AnnouncementService.js</span>",
-    "variable"
+    "class"
+  ],
+  [
+    "synthesis-mobile/js/tools/announcements/services/announcementservice.js~announcementservicefactory",
+    "function/index.html#static-function-AnnouncementServiceFactory",
+    "<span>AnnouncementServiceFactory</span> <span class=\"search-result-import-path\">synthesis-mobile/js/tools/announcements/services/AnnouncementService.js</span>",
+    "function"
   ],
   [
     "synthesis-mobile/js/tools/announcements/handlers/announcementsdeletehandler.js~announcementsdeletehandler",
@@ -91,15 +97,21 @@ window.esdocSearchIndex = [
   ],
   [
     "synthesis-mobile/js/base/home/homectrl.js~homectrl",
-    "variable/index.html#static-variable-HomeCtrl",
+    "class/js/base/home/HomeCtrl.js~HomeCtrl.html",
     "<span>HomeCtrl</span> <span class=\"search-result-import-path\">synthesis-mobile/js/base/home/HomeCtrl.js</span>",
-    "variable"
+    "class"
   ],
   [
     "synthesis-mobile/js/base/home/homeservice.js~homeservice",
-    "variable/index.html#static-variable-HomeService",
+    "class/js/base/home/HomeService.js~HomeService.html",
     "<span>HomeService</span> <span class=\"search-result-import-path\">synthesis-mobile/js/base/home/HomeService.js</span>",
-    "variable"
+    "class"
+  ],
+  [
+    "synthesis-mobile/js/base/home/homeservice.js~homeservicefactory",
+    "function/index.html#static-function-HomeServiceFactory",
+    "<span>HomeServiceFactory</span> <span class=\"search-result-import-path\">synthesis-mobile/js/base/home/HomeService.js</span>",
+    "function"
   ],
   [
     "synthesis-mobile/js/base/factories/lock.js~lock",
@@ -157,9 +169,15 @@ window.esdocSearchIndex = [
   ],
   [
     "synthesis-mobile/js/base/services/registrationservice.js~registrationservice",
-    "variable/index.html#static-variable-RegistrationService",
+    "class/js/base/services/RegistrationService.js~RegistrationService.html",
     "<span>RegistrationService</span> <span class=\"search-result-import-path\">synthesis-mobile/js/base/services/RegistrationService.js</span>",
-    "variable"
+    "class"
+  ],
+  [
+    "synthesis-mobile/js/base/services/registrationservice.js~registrationservicefactory",
+    "function/index.html#static-function-RegistrationServiceFactory",
+    "<span>RegistrationServiceFactory</span> <span class=\"search-result-import-path\">synthesis-mobile/js/base/services/RegistrationService.js</span>",
+    "function"
   ],
   [
     "synthesis-mobile/js/tools/resources/controllers/resourcesctrl.js~resourcesctrl",
@@ -253,9 +271,15 @@ window.esdocSearchIndex = [
   ],
   [
     "synthesis-mobile/js/base/sync/syncselection.js~syncselection",
-    "variable/index.html#static-variable-SyncSelection",
+    "class/js/base/sync/SyncSelection.js~SyncSelection.html",
     "<span>SyncSelection</span> <span class=\"search-result-import-path\">synthesis-mobile/js/base/sync/SyncSelection.js</span>",
-    "variable"
+    "class"
+  ],
+  [
+    "synthesis-mobile/js/base/sync/syncselection.js~syncselectionfactory",
+    "function/index.html#static-function-SyncSelectionFactory",
+    "<span>SyncSelectionFactory</span> <span class=\"search-result-import-path\">synthesis-mobile/js/base/sync/SyncSelection.js</span>",
+    "function"
   ],
   [
     "synthesis-mobile/js/base/sync/syncservice.js~syncservice",
@@ -343,9 +367,15 @@ window.esdocSearchIndex = [
   ],
   [
     "synthesis-mobile/js/base/services/synthesisrestclient.js~synthesisrestclient",
-    "variable/index.html#static-variable-SynthesisRESTClient",
+    "class/js/base/services/SynthesisRESTClient.js~SynthesisRESTClient.html",
     "<span>SynthesisRESTClient</span> <span class=\"search-result-import-path\">synthesis-mobile/js/base/services/SynthesisRESTClient.js</span>",
-    "variable"
+    "class"
+  ],
+  [
+    "synthesis-mobile/js/base/services/synthesisrestclient.js~synthesisrestclientfactory",
+    "function/index.html#static-function-SynthesisRESTClientFactory",
+    "<span>SynthesisRESTClientFactory</span> <span class=\"search-result-import-path\">synthesis-mobile/js/base/services/SynthesisRESTClient.js</span>",
+    "function"
   ],
   [
     "synthesis-mobile/js/tools/index.js~synthesistools",
@@ -355,9 +385,15 @@ window.esdocSearchIndex = [
   ],
   [
     "synthesis-mobile/js/base/services/userservice.js~userservice",
-    "variable/index.html#static-variable-UserService",
+    "class/js/base/services/UserService.js~UserService.html",
     "<span>UserService</span> <span class=\"search-result-import-path\">synthesis-mobile/js/base/services/UserService.js</span>",
-    "variable"
+    "class"
+  ],
+  [
+    "synthesis-mobile/js/base/services/userservice.js~userservicefactory",
+    "function/index.html#static-function-UserServiceFactory",
+    "<span>UserServiceFactory</span> <span class=\"search-result-import-path\">synthesis-mobile/js/base/services/UserService.js</span>",
+    "function"
   ],
   [
     "synthesis-mobile/js/base/factories/usersession.js~usersession",
@@ -373,9 +409,15 @@ window.esdocSearchIndex = [
   ],
   [
     "synthesis-mobile/js/base/services/usersettings.js~usersettings",
-    "variable/index.html#static-variable-UserSettings",
+    "class/js/base/services/UserSettings.js~UserSettings.html",
     "<span>UserSettings</span> <span class=\"search-result-import-path\">synthesis-mobile/js/base/services/UserSettings.js</span>",
-    "variable"
+    "class"
+  ],
+  [
+    "synthesis-mobile/js/base/services/usersettings.js~usersettingsfactory",
+    "function/index.html#static-function-UserSettingsFactory",
+    "<span>UserSettingsFactory</span> <span class=\"search-result-import-path\">synthesis-mobile/js/base/services/UserSettings.js</span>",
+    "function"
   ],
   [
     "synthesis-mobile/js/base/directives/animatedellipse.js~animatedellipse",
@@ -1212,10 +1254,34 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
+    "js/base/home/homectrl.js~homectrl#constructor",
+    "class/js/base/home/HomeCtrl.js~HomeCtrl.html#instance-constructor-constructor",
+    "js/base/home/HomeCtrl.js~HomeCtrl#constructor",
+    "method"
+  ],
+  [
     "js/base/home/homeservice.js",
     "file/js/base/home/HomeService.js.html",
     "js/base/home/HomeService.js",
     "file"
+  ],
+  [
+    "js/base/home/homeservice.js~homeservice#constructor",
+    "class/js/base/home/HomeService.js~HomeService.html#instance-constructor-constructor",
+    "js/base/home/HomeService.js~HomeService#constructor",
+    "method"
+  ],
+  [
+    "js/base/home/homeservice.js~homeservice#gethometools",
+    "class/js/base/home/HomeService.js~HomeService.html#instance-method-getHomeTools",
+    "js/base/home/HomeService.js~HomeService#getHomeTools",
+    "method"
+  ],
+  [
+    "js/base/home/homeservice.js~homeservice#moduleservice",
+    "class/js/base/home/HomeService.js~HomeService.html#instance-member-moduleService",
+    "js/base/home/HomeService.js~HomeService#moduleService",
+    "member"
   ],
   [
     "js/base/index.js",
@@ -1278,6 +1344,48 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
+    "js/base/services/registrationservice.js~registrationservice#$q",
+    "class/js/base/services/RegistrationService.js~RegistrationService.html#instance-member-$q",
+    "js/base/services/RegistrationService.js~RegistrationService#$q",
+    "member"
+  ],
+  [
+    "js/base/services/registrationservice.js~registrationservice#$rootscope",
+    "class/js/base/services/RegistrationService.js~RegistrationService.html#instance-member-$rootScope",
+    "js/base/services/RegistrationService.js~RegistrationService#$rootScope",
+    "member"
+  ],
+  [
+    "js/base/services/registrationservice.js~registrationservice#cachedregistration",
+    "class/js/base/services/RegistrationService.js~RegistrationService.html#instance-member-cachedRegistration",
+    "js/base/services/RegistrationService.js~RegistrationService#cachedRegistration",
+    "member"
+  ],
+  [
+    "js/base/services/registrationservice.js~registrationservice#constructor",
+    "class/js/base/services/RegistrationService.js~RegistrationService.html#instance-constructor-constructor",
+    "js/base/services/RegistrationService.js~RegistrationService#constructor",
+    "method"
+  ],
+  [
+    "js/base/services/registrationservice.js~registrationservice#dataservice",
+    "class/js/base/services/RegistrationService.js~RegistrationService.html#instance-member-dataService",
+    "js/base/services/RegistrationService.js~RegistrationService#dataService",
+    "member"
+  ],
+  [
+    "js/base/services/registrationservice.js~registrationservice#getregistration",
+    "class/js/base/services/RegistrationService.js~RegistrationService.html#instance-method-getRegistration",
+    "js/base/services/RegistrationService.js~RegistrationService#getRegistration",
+    "method"
+  ],
+  [
+    "js/base/services/registrationservice.js~registrationservice#mergeregistration",
+    "class/js/base/services/RegistrationService.js~RegistrationService.html#instance-method-mergeRegistration",
+    "js/base/services/RegistrationService.js~RegistrationService#mergeRegistration",
+    "method"
+  ],
+  [
     "js/base/services/syncapiservice.js",
     "file/js/base/services/SyncAPIService.js.html",
     "js/base/services/SyncAPIService.js",
@@ -1290,16 +1398,184 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
+    "js/base/services/synthesisrestclient.js~synthesisrestclient#$http",
+    "class/js/base/services/SynthesisRESTClient.js~SynthesisRESTClient.html#instance-member-$http",
+    "js/base/services/SynthesisRESTClient.js~SynthesisRESTClient#$http",
+    "member"
+  ],
+  [
+    "js/base/services/synthesisrestclient.js~synthesisrestclient#$q",
+    "class/js/base/services/SynthesisRESTClient.js~SynthesisRESTClient.html#instance-member-$q",
+    "js/base/services/SynthesisRESTClient.js~SynthesisRESTClient#$q",
+    "member"
+  ],
+  [
+    "js/base/services/synthesisrestclient.js~synthesisrestclient#authenticateuser",
+    "class/js/base/services/SynthesisRESTClient.js~SynthesisRESTClient.html#instance-method-authenticateUser",
+    "js/base/services/SynthesisRESTClient.js~SynthesisRESTClient#authenticateUser",
+    "method"
+  ],
+  [
+    "js/base/services/synthesisrestclient.js~synthesisrestclient#checkerror",
+    "class/js/base/services/SynthesisRESTClient.js~SynthesisRESTClient.html#instance-member-checkError",
+    "js/base/services/SynthesisRESTClient.js~SynthesisRESTClient#checkError",
+    "member"
+  ],
+  [
+    "js/base/services/synthesisrestclient.js~synthesisrestclient#constructor",
+    "class/js/base/services/SynthesisRESTClient.js~SynthesisRESTClient.html#instance-constructor-constructor",
+    "js/base/services/SynthesisRESTClient.js~SynthesisRESTClient#constructor",
+    "method"
+  ],
+  [
+    "js/base/services/synthesisrestclient.js~synthesisrestclient#getallowedsites",
+    "class/js/base/services/SynthesisRESTClient.js~SynthesisRESTClient.html#instance-method-getAllowedSites",
+    "js/base/services/SynthesisRESTClient.js~SynthesisRESTClient#getAllowedSites",
+    "method"
+  ],
+  [
+    "js/base/services/synthesisrestclient.js~synthesisrestclient#getpushmessage",
+    "class/js/base/services/SynthesisRESTClient.js~SynthesisRESTClient.html#instance-method-getPushMessage",
+    "js/base/services/SynthesisRESTClient.js~SynthesisRESTClient#getPushMessage",
+    "method"
+  ],
+  [
+    "js/base/services/synthesisrestclient.js~synthesisrestclient#registrationservice",
+    "class/js/base/services/SynthesisRESTClient.js~SynthesisRESTClient.html#instance-member-registrationService",
+    "js/base/services/SynthesisRESTClient.js~SynthesisRESTClient#registrationService",
+    "member"
+  ],
+  [
+    "js/base/services/synthesisrestclient.js~synthesisrestclient#synthauthenticateuser",
+    "class/js/base/services/SynthesisRESTClient.js~SynthesisRESTClient.html#instance-member-synthAuthenticateUser",
+    "js/base/services/SynthesisRESTClient.js~SynthesisRESTClient#synthAuthenticateUser",
+    "member"
+  ],
+  [
+    "js/base/services/synthesisrestclient.js~synthesisrestclient#synthconfig",
+    "class/js/base/services/SynthesisRESTClient.js~SynthesisRESTClient.html#instance-member-synthConfig",
+    "js/base/services/SynthesisRESTClient.js~SynthesisRESTClient#synthConfig",
+    "member"
+  ],
+  [
+    "js/base/services/synthesisrestclient.js~synthesisrestclient#syntherror",
+    "class/js/base/services/SynthesisRESTClient.js~SynthesisRESTClient.html#instance-member-synthError",
+    "js/base/services/SynthesisRESTClient.js~SynthesisRESTClient#synthError",
+    "member"
+  ],
+  [
     "js/base/services/userservice.js",
     "file/js/base/services/UserService.js.html",
     "js/base/services/UserService.js",
     "file"
   ],
   [
+    "js/base/services/userservice.js~userservice#progress_authenticate",
+    "class/js/base/services/UserService.js~UserService.html#instance-member-PROGRESS_AUTHENTICATE",
+    "js/base/services/UserService.js~UserService#PROGRESS_AUTHENTICATE",
+    "member"
+  ],
+  [
+    "js/base/services/userservice.js~userservice#progress_completed",
+    "class/js/base/services/UserService.js~UserService.html#instance-member-PROGRESS_COMPLETED",
+    "js/base/services/UserService.js~UserService#PROGRESS_COMPLETED",
+    "member"
+  ],
+  [
+    "js/base/services/userservice.js~userservice#progress_select_modules",
+    "class/js/base/services/UserService.js~UserService.html#instance-member-PROGRESS_SELECT_MODULES",
+    "js/base/services/UserService.js~UserService#PROGRESS_SELECT_MODULES",
+    "member"
+  ],
+  [
+    "js/base/services/userservice.js~userservice#constructor",
+    "class/js/base/services/UserService.js~UserService.html#instance-constructor-constructor",
+    "js/base/services/UserService.js~UserService#constructor",
+    "method"
+  ],
+  [
+    "js/base/services/userservice.js~userservice#getregistrationprogress",
+    "class/js/base/services/UserService.js~UserService.html#instance-method-getRegistrationProgress",
+    "js/base/services/UserService.js~UserService#getRegistrationProgress",
+    "method"
+  ],
+  [
+    "js/base/services/userservice.js~userservice#isregistered",
+    "class/js/base/services/UserService.js~UserService.html#instance-method-isRegistered",
+    "js/base/services/UserService.js~UserService#isRegistered",
+    "method"
+  ],
+  [
+    "js/base/services/userservice.js~userservice#isregistrationcomplete",
+    "class/js/base/services/UserService.js~UserService.html#instance-method-isRegistrationComplete",
+    "js/base/services/UserService.js~UserService#isRegistrationComplete",
+    "method"
+  ],
+  [
+    "js/base/services/userservice.js~userservice#registrationservice",
+    "class/js/base/services/UserService.js~UserService.html#instance-member-registrationService",
+    "js/base/services/UserService.js~UserService#registrationService",
+    "member"
+  ],
+  [
     "js/base/services/usersettings.js",
     "file/js/base/services/UserSettings.js.html",
     "js/base/services/UserSettings.js",
     "file"
+  ],
+  [
+    "js/base/services/usersettings.js~usersettings#$q",
+    "class/js/base/services/UserSettings.js~UserSettings.html#instance-member-$q",
+    "js/base/services/UserSettings.js~UserSettings#$q",
+    "member"
+  ],
+  [
+    "js/base/services/usersettings.js~usersettings#$rootscope",
+    "class/js/base/services/UserSettings.js~UserSettings.html#instance-member-$rootScope",
+    "js/base/services/UserSettings.js~UserSettings#$rootScope",
+    "member"
+  ],
+  [
+    "js/base/services/usersettings.js~usersettings#cachedsettings",
+    "class/js/base/services/UserSettings.js~UserSettings.html#instance-member-cachedSettings",
+    "js/base/services/UserSettings.js~UserSettings#cachedSettings",
+    "member"
+  ],
+  [
+    "js/base/services/usersettings.js~usersettings#constructor",
+    "class/js/base/services/UserSettings.js~UserSettings.html#instance-constructor-constructor",
+    "js/base/services/UserSettings.js~UserSettings#constructor",
+    "method"
+  ],
+  [
+    "js/base/services/usersettings.js~usersettings#dataservice",
+    "class/js/base/services/UserSettings.js~UserSettings.html#instance-member-dataService",
+    "js/base/services/UserSettings.js~UserSettings#dataService",
+    "member"
+  ],
+  [
+    "js/base/services/usersettings.js~usersettings#firstrun",
+    "class/js/base/services/UserSettings.js~UserSettings.html#instance-member-firstRun",
+    "js/base/services/UserSettings.js~UserSettings#firstRun",
+    "member"
+  ],
+  [
+    "js/base/services/usersettings.js~usersettings#getsettings",
+    "class/js/base/services/UserSettings.js~UserSettings.html#instance-method-getSettings",
+    "js/base/services/UserSettings.js~UserSettings#getSettings",
+    "method"
+  ],
+  [
+    "js/base/services/usersettings.js~usersettings#mergesettings",
+    "class/js/base/services/UserSettings.js~UserSettings.html#instance-method-mergeSettings",
+    "js/base/services/UserSettings.js~UserSettings#mergeSettings",
+    "method"
+  ],
+  [
+    "js/base/services/usersettings.js~usersettings#savesettings",
+    "class/js/base/services/UserSettings.js~UserSettings.html#instance-method-saveSettings",
+    "js/base/services/UserSettings.js~UserSettings#saveSettings",
+    "method"
   ],
   [
     "js/base/settings/settingsctrl.js",
@@ -1336,6 +1612,78 @@ window.esdocSearchIndex = [
     "file/js/base/sync/SyncSelection.js.html",
     "js/base/sync/SyncSelection.js",
     "file"
+  ],
+  [
+    "js/base/sync/syncselection.js~syncselection#constructor",
+    "class/js/base/sync/SyncSelection.js~SyncSelection.html#instance-constructor-constructor",
+    "js/base/sync/SyncSelection.js~SyncSelection#constructor",
+    "method"
+  ],
+  [
+    "js/base/sync/syncselection.js~syncselection#getdownloadarray",
+    "class/js/base/sync/SyncSelection.js~SyncSelection.html#instance-method-getDownloadArray",
+    "js/base/sync/SyncSelection.js~SyncSelection#getDownloadArray",
+    "method"
+  ],
+  [
+    "js/base/sync/syncselection.js~syncselection#getdownloadsize",
+    "class/js/base/sync/SyncSelection.js~SyncSelection.html#instance-method-getDownloadSize",
+    "js/base/sync/SyncSelection.js~SyncSelection#getDownloadSize",
+    "method"
+  ],
+  [
+    "js/base/sync/syncselection.js~syncselection#getsyncabletoolsarray",
+    "class/js/base/sync/SyncSelection.js~SyncSelection.html#instance-method-getSyncableToolsArray",
+    "js/base/sync/SyncSelection.js~SyncSelection#getSyncableToolsArray",
+    "method"
+  ],
+  [
+    "js/base/sync/syncselection.js~syncselection#gettotal",
+    "class/js/base/sync/SyncSelection.js~SyncSelection.html#instance-method-getTotal",
+    "js/base/sync/SyncSelection.js~SyncSelection#getTotal",
+    "method"
+  ],
+  [
+    "js/base/sync/syncselection.js~syncselection#getuploadarray",
+    "class/js/base/sync/SyncSelection.js~SyncSelection.html#instance-method-getUploadArray",
+    "js/base/sync/SyncSelection.js~SyncSelection#getUploadArray",
+    "method"
+  ],
+  [
+    "js/base/sync/syncselection.js~syncselection#getuploadsize",
+    "class/js/base/sync/SyncSelection.js~SyncSelection.html#instance-method-getUploadSize",
+    "js/base/sync/SyncSelection.js~SyncSelection#getUploadSize",
+    "method"
+  ],
+  [
+    "js/base/sync/syncselection.js~syncselection#newinstance",
+    "class/js/base/sync/SyncSelection.js~SyncSelection.html#instance-method-newInstance",
+    "js/base/sync/SyncSelection.js~SyncSelection#newInstance",
+    "method"
+  ],
+  [
+    "js/base/sync/syncselection.js~syncselection#selectall",
+    "class/js/base/sync/SyncSelection.js~SyncSelection.html#instance-method-selectAll",
+    "js/base/sync/SyncSelection.js~SyncSelection#selectAll",
+    "method"
+  ],
+  [
+    "js/base/sync/syncselection.js~syncselection#selectalldownloads",
+    "class/js/base/sync/SyncSelection.js~SyncSelection.html#instance-method-selectAllDownloads",
+    "js/base/sync/SyncSelection.js~SyncSelection#selectAllDownloads",
+    "method"
+  ],
+  [
+    "js/base/sync/syncselection.js~syncselection#selectalluploads",
+    "class/js/base/sync/SyncSelection.js~SyncSelection.html#instance-method-selectAllUploads",
+    "js/base/sync/SyncSelection.js~SyncSelection#selectAllUploads",
+    "method"
+  ],
+  [
+    "js/base/sync/syncselection.js~syncselection#tools",
+    "class/js/base/sync/SyncSelection.js~SyncSelection.html#instance-member-tools",
+    "js/base/sync/SyncSelection.js~SyncSelection#tools",
+    "member"
   ],
   [
     "js/base/sync/syncservice.js",
@@ -1396,6 +1744,30 @@ window.esdocSearchIndex = [
     "file/js/tools/announcements/services/AnnouncementService.js.html",
     "js/tools/announcements/services/AnnouncementService.js",
     "file"
+  ],
+  [
+    "js/tools/announcements/services/announcementservice.js~announcementservice#constructor",
+    "class/js/tools/announcements/services/AnnouncementService.js~AnnouncementService.html#instance-constructor-constructor",
+    "js/tools/announcements/services/AnnouncementService.js~AnnouncementService#constructor",
+    "method"
+  ],
+  [
+    "js/tools/announcements/services/announcementservice.js~announcementservice#getannouncement",
+    "class/js/tools/announcements/services/AnnouncementService.js~AnnouncementService.html#instance-method-getAnnouncement",
+    "js/tools/announcements/services/AnnouncementService.js~AnnouncementService#getAnnouncement",
+    "method"
+  ],
+  [
+    "js/tools/announcements/services/announcementservice.js~announcementservice#getannouncements",
+    "class/js/tools/announcements/services/AnnouncementService.js~AnnouncementService.html#instance-method-getAnnouncements",
+    "js/tools/announcements/services/AnnouncementService.js~AnnouncementService#getAnnouncements",
+    "method"
+  ],
+  [
+    "js/tools/announcements/services/announcementservice.js~announcementservice#moduleservice",
+    "class/js/tools/announcements/services/AnnouncementService.js~AnnouncementService.html#instance-member-moduleService",
+    "js/tools/announcements/services/AnnouncementService.js~AnnouncementService#moduleService",
+    "member"
   ],
   [
     "js/tools/index.js",
