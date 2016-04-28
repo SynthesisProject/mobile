@@ -25,7 +25,7 @@ if [ "$TRAVIS_REPO_SLUG" == "$SYNTHESIS_MOBILE_REPO" ] && [ "$TRAVIS_PULL_REQUES
   cd gh-pages
   # Remove previous esdocs
   git rm -rf $JS_DOCS_GIT
-  cp -Rf $JS_DOCS_DEST JS_DOCS_GIT
+  cp -Rf $JS_DOCS_DEST $JS_DOCS_GIT
   git add -f .
   git commit -m "Latest js-docs on successful travis build $TRAVIS_BUILD_NUMBER auto-pushed to gh-pages"
   git push -fq origin gh-pages > /dev/null
