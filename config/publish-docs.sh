@@ -1,9 +1,21 @@
 #!/bin/bash
+
+# Name of the repo for which this build must run
 SYNTHESIS_MOBILE_REPO="SynthesisProject/mobile";
+
+# Directory from which to get the generated js docs
+JS_DOCS_SRC="js-docs"
+
+# Directory to which the docs is copied before moving it into a git directory
+JS_DOCS_DEST="$HOME/js-docs-latest"
+
+# Directory within the gh-pages repo where the docs must be placed
+JS_DOCS_GIT="./js-docs"
+
 if [ "$TRAVIS_REPO_SLUG" == "$SYNTHESIS_MOBILE_REPO" ] && [ "$TRAVIS_PULL_REQUEST" == "false" ] && [ "$TRAVIS_BRANCH" == "master" ]; then
 
   echo -e "Publishing esdocs...\n"
-  cp -R js-docs $HOME/js-docs-latest
+  cp -R $JS_DOCS_SRC $JS_DOCS_DEST
 
   cd $HOME
   git config --global user.email "travis@travis-ci.org"
@@ -12,8 +24,8 @@ if [ "$TRAVIS_REPO_SLUG" == "$SYNTHESIS_MOBILE_REPO" ] && [ "$TRAVIS_PULL_REQUES
 
   cd gh-pages
   # Remove previous esdocs
-  git rm -rf ./js-docs
-  cp -Rf $HOME/js-docs-latest ./js-docs
+  git rm -rf $JS_DOCS_GIT
+  cp -Rf $JS_DOCS_DEST JS_DOCS_GIT
   git add -f .
   git commit -m "Latest js-docs on successful travis build $TRAVIS_BUILD_NUMBER auto-pushed to gh-pages"
   git push -fq origin gh-pages > /dev/null
