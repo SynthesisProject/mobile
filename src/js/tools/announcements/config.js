@@ -1,6 +1,5 @@
 'use strict';
 
-// import ImageHandler from './handlers/ImageHandler';
 /**
 * Configure routes for announcements
 */

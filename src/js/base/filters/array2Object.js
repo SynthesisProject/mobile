@@ -1,4 +1,7 @@
 'use strict';
+/**
+ * Filter to convert an array into a map
+ */
 var array2Object = () => {
 	/**
 	* @param input input Array

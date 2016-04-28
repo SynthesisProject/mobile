@@ -1,16 +1,25 @@
-/*
- * base/js/home/HomeService.js
+/**
+ * Service for the home screen
  */
-var HomeService = (ModuleService) => {
-	return {
-		/**
-		 * Get the tools to display on the home screen
-		 */
-		'getHomeTools' : function(){
-			return ModuleService.getAllHomeToolsSorted();
-		}
-	};
-};
-HomeService.$inject = ['ModuleService'];
+class HomeService{
 
-export default HomeService;
+	constructor(ModuleService){
+		this.moduleService = ModuleService;
+	}
+
+	/**
+	 * Get the tools to display on the home screen
+	 */
+	getHomeTools(){
+		return this.moduleService.getAllHomeToolsSorted();
+	}
+}
+
+/**
+ * Export a factory to create a new HomeService
+ */
+var HomeServiceFactory = function (){
+	return new HomeService(...arguments);
+};
+HomeServiceFactory.$inject = ['ModuleService'];
+export default HomeServiceFactory;

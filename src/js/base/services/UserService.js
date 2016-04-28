@@ -1,25 +1,35 @@
 'use strict';
 
-var UserService = (RegistrationService) =>{
+class UserService {
 
-	class UserServiceImpl{
-
-		constructor(){
-			this.PROGRESS_AUTHENTICATE = 0;		// The user hasn't been authenticated yet
-			this.PROGRESS_SELECT_MODULES = 1;	// The user still needs to register for at least one module
-			this.PROGRESS_COMPLETED = 2;		// The user registration is complete for at least on module
-		}
+	constructor(RegistrationService){
+		this.registrationService = RegistrationService;
 
 		/**
-		 * Gets the progress of the user registration. Posible returning values are
-		 * UserService.PROGRESS_AUTHENTICATE
-		 * UserService.PROGRESS_SELECT_MODULES
-		 * UserService.PROGRESS_COMPLETED
+		 * The user hasn't been authenticated yet
 		 */
-		getRegistrationProgress(){
-			var self = this;
-			return RegistrationService
-			.getRegistration()
+		this.PROGRESS_AUTHENTICATE = 0;
+
+		/**
+		 * The user still needs to register for at least one module
+		 */
+		this.PROGRESS_SELECT_MODULES = 1;
+
+		/**
+		 * The user registration is complete for at least on module
+		 */
+		this.PROGRESS_COMPLETED = 2;
+	}
+
+	/**
+	 * Gets the progress of the user registration. Posible returning values are
+	 * UserService.PROGRESS_AUTHENTICATE
+	 * UserService.PROGRESS_SELECT_MODULES
+	 * UserService.PROGRESS_COMPLETED
+	 */
+	getRegistrationProgress(){
+		var self = this;
+		return this.registrationService.getRegistration()
 			.then(function(data){
 				/*
 				 * If there isn't even a username and auth token yet
@@ -43,32 +53,31 @@ var UserService = (RegistrationService) =>{
 					return self.PROGRESS_COMPLETED;
 				}
 			});
-		}
-
-		/**
-		 * Returns true if the user is registered for atleast one module
-		 */
-		isRegistered(){
-			var self = this;
-			return self.getRegistrationProgress().then((progress) => {
-				return progress == self.PROGRESS_COMPLETED;
-			});
-		}
-
-		/**
-		 * Return true if the user is completely registered
-		 */
-		isRegistrationComplete(){
-			return this.getRegistrationProgress().then((progress) => {
-				return this.PROGRESS_COMPLETED == progress;
-			});
-		}
-
-
 	}
 
-	return new UserServiceImpl();
-};
+	/**
+	 * Returns true if the user is registered for atleast one module
+	 */
+	isRegistered(){
+		var self = this;
+		return self.getRegistrationProgress().then((progress) => {
+			return progress == self.PROGRESS_COMPLETED;
+		});
+	}
 
-UserService.$inject = ['RegistrationService'];
-export default UserService;
+	/**
+	 * Return true if the user is completely registered
+	 */
+	isRegistrationComplete(){
+		return this.getRegistrationProgress().then((progress) => {
+			return this.PROGRESS_COMPLETED == progress;
+		});
+	}
+
+}
+
+var UserServiceFactory = function(){
+	return new UserService(...arguments);
+};
+UserServiceFactory.$inject = ['RegistrationService'];
+export default UserServiceFactory;

@@ -1,24 +1,27 @@
-/*
- * base/js/home/HomeController.js
+/**
+ * Controller for the home screen
  */
-var HomeCtrl = (HomeService, $scope, $rootScope, SynthErrorHandler) => {
+class HomeCtrl{
 
-	$rootScope.activePage = 'home';
-	$rootScope.breadcrumbs = null;
-	$scope.searchText = '';
+	constructor(HomeService, $scope, $rootScope, SynthErrorHandler){
+		$rootScope.activePage = 'home';
+		$rootScope.breadcrumbs = null;
+		$scope.searchText = '';
 
-	// Add the tools to the UI
-	HomeService
-		.getHomeTools()
-		.then(
-		// Success
-		function(modules){
-			$scope.modules = modules;
-		},
-		// Failed
-		SynthErrorHandler
-	);
+		// Add the tools to the UI
+		HomeService
+			.getHomeTools()
+			.then(
+			// Success
+			function(modules){
+				$scope.modules = modules;
+			},
+			// Failed
+			SynthErrorHandler
+		);
+	}
 
-};
+
+}
 HomeCtrl.$inject = ['HomeService', '$scope', '$rootScope', 'SynthErrorHandler'];
 export default HomeCtrl;
