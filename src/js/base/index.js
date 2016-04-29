@@ -40,12 +40,12 @@ import Lock from './factories/Lock';
 
 
 // Import base filters
-import noEscape from './filters/noEscape';
-import object2Array from './filters/object2Array';
-import array2Object from './filters/array2Object';
-import formatDate from './filters/formatDate';
-import bytesToSize from './filters/bytesToSize';
-import attachments from './filters/attachments';
+import NoEscapeFilter from './filters/NoEscapeFilter';
+import Object2ArrayFilter from './filters/Object2ArrayFilter';
+import ArrayToObjectFilter from './filters/ArrayToObjectFilter';
+import FormatDateFilter from './filters/FormatDateFilter';
+import BytesToSizeFilter from './filters/BytesToSizeFilter';
+import AttachmentsFilter from './filters/AttachmentsFilter';
 
 // Import providers
 import SynthAttachmentMinerProvider from './handlers/SynthAttachmentMinerProvider';
@@ -120,12 +120,12 @@ angular.module(factories, [])
 
 // Register filters
 angular.module(filters, [])
-	.filter('noEscape', noEscape)
-	.filter('object2Array', object2Array)
-	.filter('array2Object', array2Object)
-	.filter('formatDate', formatDate)
-	.filter('bytesToSize', bytesToSize)
-	.filter('attachments', attachments);
+	.filter('noEscape', NoEscapeFilter)
+	.filter('object2Array', Object2ArrayFilter)
+	.filter('array2Object', ArrayToObjectFilter)
+	.filter('formatDate', FormatDateFilter)
+	.filter('bytesToSize', BytesToSizeFilter)
+	.filter('attachments', AttachmentsFilter);
 
 // Register directives
 angular.module(directives, [])
