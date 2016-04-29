@@ -47,18 +47,22 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/base/directives/ModuleCollapse.js~ModuleCollapse.html">ModuleCollapse</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/base/directives/ModuleName.js~ModuleName.html">ModuleName</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/base/directives/OverallSyncStatus.js~OverallSyncStatus.html">OverallSyncStatus</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/base/directives/SynthAttachments.js~SynthAttachments.html">SynthAttachments</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/base/directives/SynthFooter.js~SynthFooter.html">SynthFooter</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/base/directives/SynthMenu.js~SynthMenu.html">SynthMenu</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/base/directives/ToolName.js~ToolName.html">ToolName</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/base/directives/ToolSyncStatus.js~ToolSyncStatus.html">ToolSyncStatus</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-AnimatedEllipseFactory">AnimatedEllipseFactory</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-BootSpinnerFactory">BootSpinnerFactory</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-CurrentModuleNameFactory">CurrentModuleNameFactory</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ModuleCollapseFactory">ModuleCollapseFactory</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ModuleNameFactory">ModuleNameFactory</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-OverallSyncStatusFactory">OverallSyncStatusFactory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-SynthAttachmentsFactory">SynthAttachmentsFactory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-SynthMenuFactory">SynthMenuFactory</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ToolNameFactory">ToolNameFactory</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-synthAttachments">synthAttachments</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-synthFooter">synthFooter</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-synthMenu">synthMenu</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-toolSyncStatus">toolSyncStatus</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ToolSyncStatusFactory">ToolSyncStatusFactory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SynthFooterFactory">SynthFooterFactory</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">base/factories</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/base/factories/AppSyncStatus.js~AppSyncStatus.html">AppSyncStatus</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/base/factories/Lock.js~Lock.html">Lock</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/base/factories/UserSession.js~UserSession.html">UserSession</a></span></span></li>
@@ -197,11 +201,11 @@ import SynthUploadResponseHandlerProvider from &apos;./handlers/SynthUploadRespo
 
 
 // Import base directives
-import synthMenu from &apos;./directives/synthMenu&apos;;
-import synthFooter from &apos;./directives/synthFooter&apos;;
-import toolSyncStatus from &apos;./directives/toolSyncStatus&apos;;
+import SynthMenu from &apos;./directives/SynthMenu&apos;;
+import SynthFooter from &apos;./directives/SynthFooter&apos;;
+import ToolSyncStatus from &apos;./directives/ToolSyncStatus&apos;;
 import OverallSyncStatus from &apos;./directives/OverallSyncStatus&apos;;
-import synthAttachments from &apos;./directives/synthAttachments&apos;;
+import SynthAttachments from &apos;./directives/SynthAttachments&apos;;
 import ModuleCollapse from &apos;./directives/ModuleCollapse&apos;;
 import AnimatedEllipse from &apos;./directives/AnimatedEllipse&apos;;
 import CurrentModuleName from &apos;./directives/CurrentModuleName&apos;;
@@ -270,11 +274,11 @@ angular.module(filters, [])
 
 // Register directives
 angular.module(directives, [])
-	.directive(&apos;synthMenu&apos;, synthMenu)
-	.directive(&apos;synthFooter&apos;, synthFooter)
-	.directive(&apos;toolSyncStatus&apos;, toolSyncStatus)
+	.directive(&apos;synthMenu&apos;, SynthMenu)
+	.directive(&apos;synthFooter&apos;, SynthFooter)
+	.directive(&apos;toolSyncStatus&apos;, ToolSyncStatus)
 	.directive(&apos;overallSyncStatus&apos;, OverallSyncStatus)
-	.directive(&apos;synthAttachments&apos;, synthAttachments)
+	.directive(&apos;synthAttachments&apos;, SynthAttachments)
 	.directive(&apos;bootSpinner&apos;, BootSpinner)
 	.directive(&apos;moduleCollapse&apos;, ModuleCollapse)
 	.directive(&apos;animatedEllipse&apos;, AnimatedEllipse)

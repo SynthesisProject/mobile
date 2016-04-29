@@ -1,8 +1,13 @@
 {
-  "coverage": "41.12%",
-  "expectCount": 214,
-  "actualCount": 88,
+  "coverage": "62.76%",
+  "expectCount": 239,
+  "actualCount": 150,
   "files": {
+    "js/base/directives/SynthAttachments.js": {
+      "expectCount": 8,
+      "actualCount": 8,
+      "undocumentLines": []
+    },
     "js/base/services/SynthesisRESTClient.js": {
       "expectCount": 13,
       "actualCount": 4,
@@ -20,36 +25,14 @@
     },
     "js/base/directives/AnimatedEllipse.js": {
       "expectCount": 7,
-      "actualCount": 2,
-      "undocumentLines": [
-        9,
-        8,
-        15,
-        11,
-        12
-      ]
+      "actualCount": 7,
+      "undocumentLines": []
     },
-    "js/base/services/UserSettings.js": {
-      "expectCount": 11,
-      "actualCount": 4,
+    "js/base/directives/SynthMenu.js": {
+      "expectCount": 9,
+      "actualCount": 8,
       "undocumentLines": [
-        9,
-        10,
-        15,
-        8,
-        11,
-        21,
-        89
-      ]
-    },
-    "js/base/factories/Lock.js": {
-      "expectCount": 8,
-      "actualCount": 4,
-      "undocumentLines": [
-        9,
-        10,
-        8,
-        11
+        3
       ]
     },
     "js/base/services/RegistrationService.js": {
@@ -65,29 +48,38 @@
         22
       ]
     },
-    "js/base/directives/ModuleCollapse.js": {
-      "expectCount": 7,
-      "actualCount": 2,
-      "undocumentLines": [
-        9,
-        8,
-        15,
-        11,
-        12
-      ]
-    },
-    "js/base/directives/CurrentModuleName.js": {
-      "expectCount": 9,
-      "actualCount": 2,
+    "js/base/factories/Lock.js": {
+      "expectCount": 8,
+      "actualCount": 4,
       "undocumentLines": [
         9,
         10,
         8,
-        19,
-        11,
-        13,
-        14
+        11
       ]
+    },
+    "js/base/services/UserSettings.js": {
+      "expectCount": 11,
+      "actualCount": 4,
+      "undocumentLines": [
+        9,
+        10,
+        15,
+        8,
+        11,
+        21,
+        89
+      ]
+    },
+    "js/base/directives/CurrentModuleName.js": {
+      "expectCount": 9,
+      "actualCount": 9,
+      "undocumentLines": []
+    },
+    "js/base/directives/ModuleCollapse.js": {
+      "expectCount": 7,
+      "actualCount": 7,
+      "undocumentLines": []
     },
     "js/tools/announcements/controllers/AnnouncementDetailCtrl.js": {
       "expectCount": 1,
@@ -164,14 +156,9 @@
       ]
     },
     "js/base/directives/BootSpinner.js": {
-      "expectCount": 6,
-      "actualCount": 2,
-      "undocumentLines": [
-        8,
-        13,
-        9,
-        10
-      ]
+      "expectCount": 5,
+      "actualCount": 5,
+      "undocumentLines": []
     },
     "js/tools/resources/config.js": {
       "expectCount": 1,
@@ -223,14 +210,8 @@
     },
     "js/base/directives/ModuleName.js": {
       "expectCount": 7,
-      "actualCount": 2,
-      "undocumentLines": [
-        8,
-        16,
-        9,
-        10,
-        11
-      ]
+      "actualCount": 7,
+      "undocumentLines": []
     },
     "js/base/services/ModuleService.js": {
       "expectCount": 1,
@@ -241,14 +222,9 @@
     },
     "js/base/directives/OverallSyncStatus.js": {
       "expectCount": 7,
-      "actualCount": 1,
+      "actualCount": 6,
       "undocumentLines": [
-        3,
-        5,
-        13,
-        7,
-        8,
-        6
+        3
       ]
     },
     "js/base/services/UserService.js": {
@@ -454,6 +430,11 @@
       "actualCount": 1,
       "undocumentLines": []
     },
+    "js/base/directives/SynthFooter.js": {
+      "expectCount": 6,
+      "actualCount": 6,
+      "undocumentLines": []
+    },
     "js/base/handlers/SynthLinkHandlerProvider.js": {
       "expectCount": 1,
       "actualCount": 1,
@@ -487,15 +468,15 @@
     },
     "js/base/directives/ToolName.js": {
       "expectCount": 7,
-      "actualCount": 1,
+      "actualCount": 6,
       "undocumentLines": [
-        3,
-        5,
-        14,
-        6,
-        7,
-        8
+        3
       ]
+    },
+    "js/base/directives/ToolSyncStatus.js": {
+      "expectCount": 7,
+      "actualCount": 7,
+      "undocumentLines": []
     },
     "js/base/factories/UserSession.js": {
       "expectCount": 10,
@@ -571,30 +552,6 @@
       "expectCount": 1,
       "actualCount": 1,
       "undocumentLines": []
-    },
-    "js/base/directives/synthAttachments.js": {
-      "expectCount": 1,
-      "actualCount": 1,
-      "undocumentLines": []
-    },
-    "js/base/directives/synthFooter.js": {
-      "expectCount": 1,
-      "actualCount": 1,
-      "undocumentLines": []
-    },
-    "js/base/directives/synthMenu.js": {
-      "expectCount": 1,
-      "actualCount": 0,
-      "undocumentLines": [
-        2
-      ]
-    },
-    "js/base/directives/toolSyncStatus.js": {
-      "expectCount": 1,
-      "actualCount": 0,
-      "undocumentLines": [
-        2
-      ]
     }
   }
 }

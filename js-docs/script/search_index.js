@@ -372,6 +372,18 @@ window.esdocSearchIndex = [
     "function"
   ],
   [
+    "synthesis-mobile/js/base/directives/synthattachments.js~synthattachments",
+    "class/js/base/directives/SynthAttachments.js~SynthAttachments.html",
+    "<span>SynthAttachments</span> <span class=\"search-result-import-path\">synthesis-mobile/js/base/directives/SynthAttachments.js</span>",
+    "class"
+  ],
+  [
+    "synthesis-mobile/js/base/directives/synthattachments.js~synthattachmentsfactory",
+    "function/index.html#static-function-SynthAttachmentsFactory",
+    "<span>SynthAttachmentsFactory</span> <span class=\"search-result-import-path\">synthesis-mobile/js/base/directives/SynthAttachments.js</span>",
+    "function"
+  ],
+  [
     "synthesis-mobile/js/base/factories/synthauthenticateuser.js~synthauthenticateuser",
     "variable/index.html#static-variable-SynthAuthenticateUser",
     "<span>SynthAuthenticateUser</span> <span class=\"search-result-import-path\">synthesis-mobile/js/base/factories/SynthAuthenticateUser.js</span>",
@@ -414,9 +426,33 @@ window.esdocSearchIndex = [
     "variable"
   ],
   [
+    "synthesis-mobile/js/base/directives/synthfooter.js~synthfooter",
+    "class/js/base/directives/SynthFooter.js~SynthFooter.html",
+    "<span>SynthFooter</span> <span class=\"search-result-import-path\">synthesis-mobile/js/base/directives/SynthFooter.js</span>",
+    "class"
+  ],
+  [
+    "synthesis-mobile/js/base/directives/synthfooter.js~synthfooterfactory",
+    "variable/index.html#static-variable-SynthFooterFactory",
+    "<span>SynthFooterFactory</span> <span class=\"search-result-import-path\">synthesis-mobile/js/base/directives/SynthFooter.js</span>",
+    "variable"
+  ],
+  [
     "synthesis-mobile/js/base/handlers/synthlinkhandlerprovider.js~synthlinkhandlerprovider",
     "function/index.html#static-function-SynthLinkHandlerProvider",
     "<span>SynthLinkHandlerProvider</span> <span class=\"search-result-import-path\">synthesis-mobile/js/base/handlers/SynthLinkHandlerProvider.js</span>",
+    "function"
+  ],
+  [
+    "synthesis-mobile/js/base/directives/synthmenu.js~synthmenu",
+    "class/js/base/directives/SynthMenu.js~SynthMenu.html",
+    "<span>SynthMenu</span> <span class=\"search-result-import-path\">synthesis-mobile/js/base/directives/SynthMenu.js</span>",
+    "class"
+  ],
+  [
+    "synthesis-mobile/js/base/directives/synthmenu.js~synthmenufactory",
+    "function/index.html#static-function-SynthMenuFactory",
+    "<span>SynthMenuFactory</span> <span class=\"search-result-import-path\">synthesis-mobile/js/base/directives/SynthMenu.js</span>",
     "function"
   ],
   [
@@ -465,6 +501,18 @@ window.esdocSearchIndex = [
     "synthesis-mobile/js/base/directives/toolname.js~toolnamefactory",
     "function/index.html#static-function-ToolNameFactory",
     "<span>ToolNameFactory</span> <span class=\"search-result-import-path\">synthesis-mobile/js/base/directives/ToolName.js</span>",
+    "function"
+  ],
+  [
+    "synthesis-mobile/js/base/directives/toolsyncstatus.js~toolsyncstatus",
+    "class/js/base/directives/ToolSyncStatus.js~ToolSyncStatus.html",
+    "<span>ToolSyncStatus</span> <span class=\"search-result-import-path\">synthesis-mobile/js/base/directives/ToolSyncStatus.js</span>",
+    "class"
+  ],
+  [
+    "synthesis-mobile/js/base/directives/toolsyncstatus.js~toolsyncstatusfactory",
+    "function/index.html#static-function-ToolSyncStatusFactory",
+    "<span>ToolSyncStatusFactory</span> <span class=\"search-result-import-path\">synthesis-mobile/js/base/directives/ToolSyncStatus.js</span>",
     "function"
   ],
   [
@@ -585,30 +633,6 @@ window.esdocSearchIndex = [
     "synthesis-mobile/js/base/factories/safo.js~safo",
     "variable/index.html#static-variable-safo",
     "<span>safo</span> <span class=\"search-result-import-path\">synthesis-mobile/js/base/factories/safo.js</span>",
-    "variable"
-  ],
-  [
-    "synthesis-mobile/js/base/directives/synthattachments.js~synthattachments",
-    "variable/index.html#static-variable-synthAttachments",
-    "<span>synthAttachments</span> <span class=\"search-result-import-path\">synthesis-mobile/js/base/directives/synthAttachments.js</span>",
-    "variable"
-  ],
-  [
-    "synthesis-mobile/js/base/directives/synthfooter.js~synthfooter",
-    "variable/index.html#static-variable-synthFooter",
-    "<span>synthFooter</span> <span class=\"search-result-import-path\">synthesis-mobile/js/base/directives/synthFooter.js</span>",
-    "variable"
-  ],
-  [
-    "synthesis-mobile/js/base/directives/synthmenu.js~synthmenu",
-    "variable/index.html#static-variable-synthMenu",
-    "<span>synthMenu</span> <span class=\"search-result-import-path\">synthesis-mobile/js/base/directives/synthMenu.js</span>",
-    "variable"
-  ],
-  [
-    "synthesis-mobile/js/base/directives/toolsyncstatus.js~toolsyncstatus",
-    "variable/index.html#static-variable-toolSyncStatus",
-    "<span>toolSyncStatus</span> <span class=\"search-result-import-path\">synthesis-mobile/js/base/directives/toolSyncStatus.js</span>",
     "variable"
   ],
   [
@@ -990,9 +1014,9 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
-    "js/base/directives/animatedellipse.js~animatedellipse#link",
-    "class/js/base/directives/AnimatedEllipse.js~AnimatedEllipse.html#instance-method-link",
-    "js/base/directives/AnimatedEllipse.js~AnimatedEllipse#link",
+    "js/base/directives/animatedellipse.js~animatedellipse#linkdirective",
+    "class/js/base/directives/AnimatedEllipse.js~AnimatedEllipse.html#instance-method-linkDirective",
+    "js/base/directives/AnimatedEllipse.js~AnimatedEllipse#linkDirective",
     "method"
   ],
   [
@@ -1017,12 +1041,6 @@ window.esdocSearchIndex = [
     "js/base/directives/bootspinner.js~bootspinner#constructor",
     "class/js/base/directives/BootSpinner.js~BootSpinner.html#instance-constructor-constructor",
     "js/base/directives/BootSpinner.js~BootSpinner#constructor",
-    "method"
-  ],
-  [
-    "js/base/directives/bootspinner.js~bootspinner#link",
-    "class/js/base/directives/BootSpinner.js~BootSpinner.html#instance-method-link",
-    "js/base/directives/BootSpinner.js~BootSpinner#link",
     "method"
   ],
   [
@@ -1062,9 +1080,9 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
-    "js/base/directives/currentmodulename.js~currentmodulename#link",
-    "class/js/base/directives/CurrentModuleName.js~CurrentModuleName.html#instance-method-link",
-    "js/base/directives/CurrentModuleName.js~CurrentModuleName#link",
+    "js/base/directives/currentmodulename.js~currentmodulename#linkdirective",
+    "class/js/base/directives/CurrentModuleName.js~CurrentModuleName.html#instance-method-linkDirective",
+    "js/base/directives/CurrentModuleName.js~CurrentModuleName#linkDirective",
     "method"
   ],
   [
@@ -1104,9 +1122,9 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
-    "js/base/directives/modulecollapse.js~modulecollapse#link",
-    "class/js/base/directives/ModuleCollapse.js~ModuleCollapse.html#instance-method-link",
-    "js/base/directives/ModuleCollapse.js~ModuleCollapse#link",
+    "js/base/directives/modulecollapse.js~modulecollapse#linkdirective",
+    "class/js/base/directives/ModuleCollapse.js~ModuleCollapse.html#instance-method-linkDirective",
+    "js/base/directives/ModuleCollapse.js~ModuleCollapse#linkDirective",
     "method"
   ],
   [
@@ -1134,9 +1152,9 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
-    "js/base/directives/modulename.js~modulename#link",
-    "class/js/base/directives/ModuleName.js~ModuleName.html#instance-method-link",
-    "js/base/directives/ModuleName.js~ModuleName#link",
+    "js/base/directives/modulename.js~modulename#linkdirective",
+    "class/js/base/directives/ModuleName.js~ModuleName.html#instance-method-linkDirective",
+    "js/base/directives/ModuleName.js~ModuleName#linkDirective",
     "method"
   ],
   [
@@ -1170,9 +1188,9 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
-    "js/base/directives/overallsyncstatus.js~overallsyncstatus#link",
-    "class/js/base/directives/OverallSyncStatus.js~OverallSyncStatus.html#instance-method-link",
-    "js/base/directives/OverallSyncStatus.js~OverallSyncStatus#link",
+    "js/base/directives/overallsyncstatus.js~overallsyncstatus#linkdirective",
+    "class/js/base/directives/OverallSyncStatus.js~OverallSyncStatus.html#instance-method-linkDirective",
+    "js/base/directives/OverallSyncStatus.js~OverallSyncStatus#linkDirective",
     "method"
   ],
   [
@@ -1194,6 +1212,126 @@ window.esdocSearchIndex = [
     "member"
   ],
   [
+    "js/base/directives/synthattachments.js",
+    "file/js/base/directives/SynthAttachments.js.html",
+    "js/base/directives/SynthAttachments.js",
+    "file"
+  ],
+  [
+    "js/base/directives/synthattachments.js~synthattachments#$filter",
+    "class/js/base/directives/SynthAttachments.js~SynthAttachments.html#instance-member-$filter",
+    "js/base/directives/SynthAttachments.js~SynthAttachments#$filter",
+    "member"
+  ],
+  [
+    "js/base/directives/synthattachments.js~synthattachments#constructor",
+    "class/js/base/directives/SynthAttachments.js~SynthAttachments.html#instance-constructor-constructor",
+    "js/base/directives/SynthAttachments.js~SynthAttachments#constructor",
+    "method"
+  ],
+  [
+    "js/base/directives/synthattachments.js~synthattachments#linkdirective",
+    "class/js/base/directives/SynthAttachments.js~SynthAttachments.html#instance-method-linkDirective",
+    "js/base/directives/SynthAttachments.js~SynthAttachments#linkDirective",
+    "method"
+  ],
+  [
+    "js/base/directives/synthattachments.js~synthattachments#restrict",
+    "class/js/base/directives/SynthAttachments.js~SynthAttachments.html#instance-member-restrict",
+    "js/base/directives/SynthAttachments.js~SynthAttachments#restrict",
+    "member"
+  ],
+  [
+    "js/base/directives/synthattachments.js~synthattachments#scope",
+    "class/js/base/directives/SynthAttachments.js~SynthAttachments.html#instance-member-scope",
+    "js/base/directives/SynthAttachments.js~SynthAttachments#scope",
+    "member"
+  ],
+  [
+    "js/base/directives/synthattachments.js~synthattachments#templateurl",
+    "class/js/base/directives/SynthAttachments.js~SynthAttachments.html#instance-member-templateUrl",
+    "js/base/directives/SynthAttachments.js~SynthAttachments#templateUrl",
+    "member"
+  ],
+  [
+    "js/base/directives/synthfooter.js",
+    "file/js/base/directives/SynthFooter.js.html",
+    "js/base/directives/SynthFooter.js",
+    "file"
+  ],
+  [
+    "js/base/directives/synthfooter.js~synthfooter#constructor",
+    "class/js/base/directives/SynthFooter.js~SynthFooter.html#instance-constructor-constructor",
+    "js/base/directives/SynthFooter.js~SynthFooter#constructor",
+    "method"
+  ],
+  [
+    "js/base/directives/synthfooter.js~synthfooter#restrict",
+    "class/js/base/directives/SynthFooter.js~SynthFooter.html#instance-member-restrict",
+    "js/base/directives/SynthFooter.js~SynthFooter#restrict",
+    "member"
+  ],
+  [
+    "js/base/directives/synthfooter.js~synthfooter#scope",
+    "class/js/base/directives/SynthFooter.js~SynthFooter.html#instance-member-scope",
+    "js/base/directives/SynthFooter.js~SynthFooter#scope",
+    "member"
+  ],
+  [
+    "js/base/directives/synthfooter.js~synthfooter#templateurl",
+    "class/js/base/directives/SynthFooter.js~SynthFooter.html#instance-member-templateUrl",
+    "js/base/directives/SynthFooter.js~SynthFooter#templateUrl",
+    "member"
+  ],
+  [
+    "js/base/directives/synthmenu.js",
+    "file/js/base/directives/SynthMenu.js.html",
+    "js/base/directives/SynthMenu.js",
+    "file"
+  ],
+  [
+    "js/base/directives/synthmenu.js~synthmenu#$location",
+    "class/js/base/directives/SynthMenu.js~SynthMenu.html#instance-member-$location",
+    "js/base/directives/SynthMenu.js~SynthMenu#$location",
+    "member"
+  ],
+  [
+    "js/base/directives/synthmenu.js~synthmenu#constructor",
+    "class/js/base/directives/SynthMenu.js~SynthMenu.html#instance-constructor-constructor",
+    "js/base/directives/SynthMenu.js~SynthMenu#constructor",
+    "method"
+  ],
+  [
+    "js/base/directives/synthmenu.js~synthmenu#linkdirective",
+    "class/js/base/directives/SynthMenu.js~SynthMenu.html#instance-method-linkDirective",
+    "js/base/directives/SynthMenu.js~SynthMenu#linkDirective",
+    "method"
+  ],
+  [
+    "js/base/directives/synthmenu.js~synthmenu#restrict",
+    "class/js/base/directives/SynthMenu.js~SynthMenu.html#instance-member-restrict",
+    "js/base/directives/SynthMenu.js~SynthMenu#restrict",
+    "member"
+  ],
+  [
+    "js/base/directives/synthmenu.js~synthmenu#scope",
+    "class/js/base/directives/SynthMenu.js~SynthMenu.html#instance-member-scope",
+    "js/base/directives/SynthMenu.js~SynthMenu#scope",
+    "member"
+  ],
+  [
+    "js/base/directives/synthmenu.js~synthmenu#templateurl",
+    "class/js/base/directives/SynthMenu.js~SynthMenu.html#instance-member-templateUrl",
+    "js/base/directives/SynthMenu.js~SynthMenu#templateUrl",
+    "member"
+  ],
+  [
+    "js/base/directives/synthmenu.js~synthmenu#userservice",
+    "class/js/base/directives/SynthMenu.js~SynthMenu.html#instance-member-userService",
+    "js/base/directives/SynthMenu.js~SynthMenu#userService",
+    "member"
+  ],
+  [
     "js/base/directives/toolname.js",
     "file/js/base/directives/ToolName.js.html",
     "js/base/directives/ToolName.js",
@@ -1206,9 +1344,9 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
-    "js/base/directives/toolname.js~toolname#link",
-    "class/js/base/directives/ToolName.js~ToolName.html#instance-method-link",
-    "js/base/directives/ToolName.js~ToolName#link",
+    "js/base/directives/toolname.js~toolname#linkdirective",
+    "class/js/base/directives/ToolName.js~ToolName.html#instance-method-linkDirective",
+    "js/base/directives/ToolName.js~ToolName#linkDirective",
     "method"
   ],
   [
@@ -1230,28 +1368,40 @@ window.esdocSearchIndex = [
     "member"
   ],
   [
-    "js/base/directives/synthattachments.js",
-    "file/js/base/directives/synthAttachments.js.html",
-    "js/base/directives/synthAttachments.js",
-    "file"
-  ],
-  [
-    "js/base/directives/synthfooter.js",
-    "file/js/base/directives/synthFooter.js.html",
-    "js/base/directives/synthFooter.js",
-    "file"
-  ],
-  [
-    "js/base/directives/synthmenu.js",
-    "file/js/base/directives/synthMenu.js.html",
-    "js/base/directives/synthMenu.js",
-    "file"
-  ],
-  [
     "js/base/directives/toolsyncstatus.js",
-    "file/js/base/directives/toolSyncStatus.js.html",
-    "js/base/directives/toolSyncStatus.js",
+    "file/js/base/directives/ToolSyncStatus.js.html",
+    "js/base/directives/ToolSyncStatus.js",
     "file"
+  ],
+  [
+    "js/base/directives/toolsyncstatus.js~toolsyncstatus#constructor",
+    "class/js/base/directives/ToolSyncStatus.js~ToolSyncStatus.html#instance-constructor-constructor",
+    "js/base/directives/ToolSyncStatus.js~ToolSyncStatus#constructor",
+    "method"
+  ],
+  [
+    "js/base/directives/toolsyncstatus.js~toolsyncstatus#linkdirective",
+    "class/js/base/directives/ToolSyncStatus.js~ToolSyncStatus.html#instance-method-linkDirective",
+    "js/base/directives/ToolSyncStatus.js~ToolSyncStatus#linkDirective",
+    "method"
+  ],
+  [
+    "js/base/directives/toolsyncstatus.js~toolsyncstatus#restrict",
+    "class/js/base/directives/ToolSyncStatus.js~ToolSyncStatus.html#instance-member-restrict",
+    "js/base/directives/ToolSyncStatus.js~ToolSyncStatus#restrict",
+    "member"
+  ],
+  [
+    "js/base/directives/toolsyncstatus.js~toolsyncstatus#scope",
+    "class/js/base/directives/ToolSyncStatus.js~ToolSyncStatus.html#instance-member-scope",
+    "js/base/directives/ToolSyncStatus.js~ToolSyncStatus#scope",
+    "member"
+  ],
+  [
+    "js/base/directives/toolsyncstatus.js~toolsyncstatus#syncapiservice",
+    "class/js/base/directives/ToolSyncStatus.js~ToolSyncStatus.html#instance-member-syncAPIService",
+    "js/base/directives/ToolSyncStatus.js~ToolSyncStatus#syncAPIService",
+    "member"
   ],
   [
     "js/base/factories/appsyncstatus.js",

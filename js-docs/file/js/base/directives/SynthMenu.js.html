@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <base data-ice="baseUrl" href="../../../../">
-  <title data-ice="title">js/base/handlers/SynthDeleteHandlerProvider.js | API Document</title>
+  <title data-ice="title">js/base/directives/SynthMenu.js | API Document</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
@@ -142,43 +142,99 @@
 </div>
 </nav>
 
-<div class="content" data-ice="content"><h1 data-ice="title">js/base/handlers/SynthDeleteHandlerProvider.js</h1>
+<div class="content" data-ice="content"><h1 data-ice="title">js/base/directives/SynthMenu.js</h1>
 <pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">&apos;use strict&apos;;
 
-/**
-* Handlers to find content that needs to be deleted.
-* The handler function will be called with the following parameters (dataDir
-*/
-var SynthDeleteHandlerProvider = function(){
-	// Map of registered handler names
-	var handlersMap = {};
+class SynthMenu {
 
 	/**
-	 * Adds a handler to the list map of attachments miners
-	 * @param toolName Name of the tool this handler is for.
-	 * @param funcHandler Handler function to use.
+	 * Creates a new instance of the SynthMenu directive
 	 */
-	this.addHandler = (toolName, handlerName) =&gt;{
-		if (handlersMap[toolName] == null){
-			handlersMap[toolName] = handlerName;
-		}
-	};
+	constructor($location, userService){
+		/**
+		 * Directive restricted to Element.
+		 */
+		this.restrict = &apos;E&apos;;
 
-	this.$get = [&apos;$injector&apos;, function($injector){
-		return {
-			// Get a handler
-			getHandler : function(toolName){
-				var handlerName = handlersMap[toolName];
-				if(handlerName == null){
-					return null;
-				}
-				return $injector.get(handlerName);
+		/**
+		 * Isolated scope for directive.
+		 */
+		this.scope = false;
+
+		/**
+		 * URL of template to use.
+		 */
+		this.templateUrl = &apos;base/partials/directives/menu.html&apos;;
+
+		/**
+		 * A reference to $location.
+		 */
+		this.$location = $location;
+
+		/**
+		 * A reference to UserService.
+		 */
+		this.userService = userService;
+		const self = this;
+
+		/**
+		 * Linking function.
+		 */
+		this.link = function(){
+			self.linkDirective(...arguments);
+		};
+	}
+
+	/**
+	 * Link function for the directive
+	 */
+	linkDirective(scope){
+		const $location = this.$location,
+			self = this;
+		scope.menuOpen = false;
+		scope.isRegistered = false;
+
+		scope.toggleMenu = () =&gt; {
+			scope.menuOpen = !scope.menuOpen;
+		};
+		scope.openLink = (link) =&gt; {
+			scope.menuOpen = false;
+			$location.path(link);
+		};
+
+		function updateCompleteFlag(){
+			self.userService.isRegistrationComplete().then((iscomplete) =&gt; {
+				scope.isRegistered = iscomplete;
+			});
+		}
+		updateCompleteFlag();
+
+		scope.$on(&apos;registrationDataChanged&apos;, () =&gt; {
+			updateCompleteFlag();
+		});
+
+
+		// Open sync page if user is registered
+		scope.openSync = () =&gt; {
+			// Make sure the close the menu that could maybe be open
+			scope.menuOpen = false;
+
+			if(scope.isRegistered){
+				$location.path(&apos;/sync&apos;);
 			}
 		};
-	}];
 
+	}
+}
+
+/**
+ * Factory to create new instances of the SynthMenu directive
+ */
+var SynthMenuFactory = function() {
+	return new SynthMenu(...arguments);
 };
-export default SynthDeleteHandlerProvider;
+SynthMenuFactory.$inject = [&apos;$location&apos;, &apos;UserService&apos;];
+export default SynthMenuFactory;
 </code></pre>
 
 </div>

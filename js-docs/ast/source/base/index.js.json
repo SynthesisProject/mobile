@@ -3509,7 +3509,7 @@
           "type": "ImportDefaultSpecifier",
           "local": {
             "type": "Identifier",
-            "name": "synthMenu",
+            "name": "SynthMenu",
             "range": [
               2786,
               2795
@@ -3543,8 +3543,8 @@
       ],
       "source": {
         "type": "Literal",
-        "value": "./directives/synthMenu",
-        "raw": "'./directives/synthMenu'",
+        "value": "./directives/SynthMenu",
+        "raw": "'./directives/SynthMenu'",
         "range": [
           2801,
           2825
@@ -3602,7 +3602,7 @@
           "type": "ImportDefaultSpecifier",
           "local": {
             "type": "Identifier",
-            "name": "synthFooter",
+            "name": "SynthFooter",
             "range": [
               2835,
               2846
@@ -3636,8 +3636,8 @@
       ],
       "source": {
         "type": "Literal",
-        "value": "./directives/synthFooter",
-        "raw": "'./directives/synthFooter'",
+        "value": "./directives/SynthFooter",
+        "raw": "'./directives/SynthFooter'",
         "range": [
           2852,
           2878
@@ -3675,7 +3675,7 @@
           "type": "ImportDefaultSpecifier",
           "local": {
             "type": "Identifier",
-            "name": "toolSyncStatus",
+            "name": "ToolSyncStatus",
             "range": [
               2888,
               2902
@@ -3709,8 +3709,8 @@
       ],
       "source": {
         "type": "Literal",
-        "value": "./directives/toolSyncStatus",
-        "raw": "'./directives/toolSyncStatus'",
+        "value": "./directives/ToolSyncStatus",
+        "raw": "'./directives/ToolSyncStatus'",
         "range": [
           2908,
           2937
@@ -3821,7 +3821,7 @@
           "type": "ImportDefaultSpecifier",
           "local": {
             "type": "Identifier",
-            "name": "synthAttachments",
+            "name": "SynthAttachments",
             "range": [
               3012,
               3028
@@ -3855,8 +3855,8 @@
       ],
       "source": {
         "type": "Literal",
-        "value": "./directives/synthAttachments",
-        "raw": "'./directives/synthAttachments'",
+        "value": "./directives/SynthAttachments",
+        "raw": "'./directives/SynthAttachments'",
         "range": [
           3034,
           3065
@@ -9144,7 +9144,7 @@
                                                   },
                                                   {
                                                     "type": "Identifier",
-                                                    "name": "synthMenu",
+                                                    "name": "SynthMenu",
                                                     "range": [
                                                       5674,
                                                       5683
@@ -9231,7 +9231,7 @@
                                               },
                                               {
                                                 "type": "Identifier",
-                                                "name": "synthFooter",
+                                                "name": "SynthFooter",
                                                 "range": [
                                                   5713,
                                                   5724
@@ -9318,7 +9318,7 @@
                                           },
                                           {
                                             "type": "Identifier",
-                                            "name": "toolSyncStatus",
+                                            "name": "ToolSyncStatus",
                                             "range": [
                                               5757,
                                               5771
@@ -9492,7 +9492,7 @@
                                   },
                                   {
                                     "type": "Identifier",
-                                    "name": "synthAttachments",
+                                    "name": "SynthAttachments",
                                     "range": [
                                       5859,
                                       5875

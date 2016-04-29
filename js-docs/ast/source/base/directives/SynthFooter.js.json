@@ -1,0 +1,1175 @@
+{
+  "type": "Program",
+  "body": [
+    {
+      "type": "ExpressionStatement",
+      "expression": {
+        "type": "Literal",
+        "value": "use strict",
+        "raw": "'use strict'",
+        "range": [
+          0,
+          12
+        ],
+        "loc": {
+          "start": {
+            "line": 1,
+            "column": 0
+          },
+          "end": {
+            "line": 1,
+            "column": 12
+          }
+        }
+      },
+      "range": [
+        0,
+        13
+      ],
+      "loc": {
+        "start": {
+          "line": 1,
+          "column": 0
+        },
+        "end": {
+          "line": 1,
+          "column": 13
+        }
+      },
+      "trailingComments": [
+        {
+          "type": "Block",
+          "value": "*\r\n* Directive to create the footer for the application\r\n",
+          "range": [
+            15,
+            76
+          ],
+          "loc": {
+            "start": {
+              "line": 2,
+              "column": 0
+            },
+            "end": {
+              "line": 4,
+              "column": 2
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "ClassDeclaration",
+      "id": {
+        "type": "Identifier",
+        "name": "SynthFooter",
+        "range": [
+          84,
+          95
+        ],
+        "loc": {
+          "start": {
+            "line": 5,
+            "column": 6
+          },
+          "end": {
+            "line": 5,
+            "column": 17
+          }
+        }
+      },
+      "superClass": null,
+      "body": {
+        "type": "ClassBody",
+        "body": [
+          {
+            "type": "MethodDefinition",
+            "key": {
+              "type": "Identifier",
+              "name": "constructor",
+              "range": [
+                170,
+                181
+              ],
+              "loc": {
+                "start": {
+                  "line": 10,
+                  "column": 1
+                },
+                "end": {
+                  "line": 10,
+                  "column": 12
+                }
+              }
+            },
+            "value": {
+              "type": "FunctionExpression",
+              "id": null,
+              "params": [],
+              "body": {
+                "type": "BlockStatement",
+                "body": [
+                  {
+                    "type": "ExpressionStatement",
+                    "expression": {
+                      "type": "AssignmentExpression",
+                      "operator": "=",
+                      "left": {
+                        "type": "MemberExpression",
+                        "computed": false,
+                        "object": {
+                          "type": "ThisExpression",
+                          "range": [
+                            241,
+                            245
+                          ],
+                          "loc": {
+                            "start": {
+                              "line": 14,
+                              "column": 2
+                            },
+                            "end": {
+                              "line": 14,
+                              "column": 6
+                            }
+                          }
+                        },
+                        "property": {
+                          "type": "Identifier",
+                          "name": "restrict",
+                          "range": [
+                            246,
+                            254
+                          ],
+                          "loc": {
+                            "start": {
+                              "line": 14,
+                              "column": 7
+                            },
+                            "end": {
+                              "line": 14,
+                              "column": 15
+                            }
+                          }
+                        },
+                        "range": [
+                          241,
+                          254
+                        ],
+                        "loc": {
+                          "start": {
+                            "line": 14,
+                            "column": 2
+                          },
+                          "end": {
+                            "line": 14,
+                            "column": 15
+                          }
+                        }
+                      },
+                      "right": {
+                        "type": "Literal",
+                        "value": "E",
+                        "raw": "'E'",
+                        "range": [
+                          257,
+                          260
+                        ],
+                        "loc": {
+                          "start": {
+                            "line": 14,
+                            "column": 18
+                          },
+                          "end": {
+                            "line": 14,
+                            "column": 21
+                          }
+                        }
+                      },
+                      "range": [
+                        241,
+                        260
+                      ],
+                      "loc": {
+                        "start": {
+                          "line": 14,
+                          "column": 2
+                        },
+                        "end": {
+                          "line": 14,
+                          "column": 21
+                        }
+                      }
+                    },
+                    "range": [
+                      241,
+                      261
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 14,
+                        "column": 2
+                      },
+                      "end": {
+                        "line": 14,
+                        "column": 22
+                      }
+                    },
+                    "leadingComments": [
+                      {
+                        "type": "Block",
+                        "value": "*\r\n\t\t * Directive restricted to Element.\r\n\t\t ",
+                        "range": [
+                          188,
+                          237
+                        ],
+                        "loc": {
+                          "start": {
+                            "line": 11,
+                            "column": 2
+                          },
+                          "end": {
+                            "line": 13,
+                            "column": 5
+                          }
+                        }
+                      }
+                    ],
+                    "trailingComments": [
+                      {
+                        "type": "Block",
+                        "value": "*\r\n\t\t * Isolated scope for directive.\r\n\t\t ",
+                        "range": [
+                          267,
+                          313
+                        ],
+                        "loc": {
+                          "start": {
+                            "line": 16,
+                            "column": 2
+                          },
+                          "end": {
+                            "line": 18,
+                            "column": 5
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "type": "ExpressionStatement",
+                    "expression": {
+                      "type": "AssignmentExpression",
+                      "operator": "=",
+                      "left": {
+                        "type": "MemberExpression",
+                        "computed": false,
+                        "object": {
+                          "type": "ThisExpression",
+                          "range": [
+                            317,
+                            321
+                          ],
+                          "loc": {
+                            "start": {
+                              "line": 19,
+                              "column": 2
+                            },
+                            "end": {
+                              "line": 19,
+                              "column": 6
+                            }
+                          }
+                        },
+                        "property": {
+                          "type": "Identifier",
+                          "name": "scope",
+                          "range": [
+                            322,
+                            327
+                          ],
+                          "loc": {
+                            "start": {
+                              "line": 19,
+                              "column": 7
+                            },
+                            "end": {
+                              "line": 19,
+                              "column": 12
+                            }
+                          }
+                        },
+                        "range": [
+                          317,
+                          327
+                        ],
+                        "loc": {
+                          "start": {
+                            "line": 19,
+                            "column": 2
+                          },
+                          "end": {
+                            "line": 19,
+                            "column": 12
+                          }
+                        }
+                      },
+                      "right": {
+                        "type": "Literal",
+                        "value": false,
+                        "raw": "false",
+                        "range": [
+                          330,
+                          335
+                        ],
+                        "loc": {
+                          "start": {
+                            "line": 19,
+                            "column": 15
+                          },
+                          "end": {
+                            "line": 19,
+                            "column": 20
+                          }
+                        }
+                      },
+                      "range": [
+                        317,
+                        335
+                      ],
+                      "loc": {
+                        "start": {
+                          "line": 19,
+                          "column": 2
+                        },
+                        "end": {
+                          "line": 19,
+                          "column": 20
+                        }
+                      }
+                    },
+                    "range": [
+                      317,
+                      336
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 19,
+                        "column": 2
+                      },
+                      "end": {
+                        "line": 19,
+                        "column": 21
+                      }
+                    },
+                    "leadingComments": [
+                      {
+                        "type": "Block",
+                        "value": "*\r\n\t\t * Isolated scope for directive.\r\n\t\t ",
+                        "range": [
+                          267,
+                          313
+                        ],
+                        "loc": {
+                          "start": {
+                            "line": 16,
+                            "column": 2
+                          },
+                          "end": {
+                            "line": 18,
+                            "column": 5
+                          }
+                        }
+                      }
+                    ],
+                    "trailingComments": [
+                      {
+                        "type": "Block",
+                        "value": "*\r\n\t\t * URL of template to use.\r\n\t\t ",
+                        "range": [
+                          342,
+                          382
+                        ],
+                        "loc": {
+                          "start": {
+                            "line": 21,
+                            "column": 2
+                          },
+                          "end": {
+                            "line": 23,
+                            "column": 5
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "type": "ExpressionStatement",
+                    "expression": {
+                      "type": "AssignmentExpression",
+                      "operator": "=",
+                      "left": {
+                        "type": "MemberExpression",
+                        "computed": false,
+                        "object": {
+                          "type": "ThisExpression",
+                          "range": [
+                            386,
+                            390
+                          ],
+                          "loc": {
+                            "start": {
+                              "line": 24,
+                              "column": 2
+                            },
+                            "end": {
+                              "line": 24,
+                              "column": 6
+                            }
+                          }
+                        },
+                        "property": {
+                          "type": "Identifier",
+                          "name": "templateUrl",
+                          "range": [
+                            391,
+                            402
+                          ],
+                          "loc": {
+                            "start": {
+                              "line": 24,
+                              "column": 7
+                            },
+                            "end": {
+                              "line": 24,
+                              "column": 18
+                            }
+                          }
+                        },
+                        "range": [
+                          386,
+                          402
+                        ],
+                        "loc": {
+                          "start": {
+                            "line": 24,
+                            "column": 2
+                          },
+                          "end": {
+                            "line": 24,
+                            "column": 18
+                          }
+                        }
+                      },
+                      "right": {
+                        "type": "Literal",
+                        "value": "base/partials/directives/footer.html",
+                        "raw": "'base/partials/directives/footer.html'",
+                        "range": [
+                          405,
+                          443
+                        ],
+                        "loc": {
+                          "start": {
+                            "line": 24,
+                            "column": 21
+                          },
+                          "end": {
+                            "line": 24,
+                            "column": 59
+                          }
+                        }
+                      },
+                      "range": [
+                        386,
+                        443
+                      ],
+                      "loc": {
+                        "start": {
+                          "line": 24,
+                          "column": 2
+                        },
+                        "end": {
+                          "line": 24,
+                          "column": 59
+                        }
+                      }
+                    },
+                    "range": [
+                      386,
+                      444
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 24,
+                        "column": 2
+                      },
+                      "end": {
+                        "line": 24,
+                        "column": 60
+                      }
+                    },
+                    "leadingComments": [
+                      {
+                        "type": "Block",
+                        "value": "*\r\n\t\t * URL of template to use.\r\n\t\t ",
+                        "range": [
+                          342,
+                          382
+                        ],
+                        "loc": {
+                          "start": {
+                            "line": 21,
+                            "column": 2
+                          },
+                          "end": {
+                            "line": 23,
+                            "column": 5
+                          }
+                        }
+                      }
+                    ]
+                  }
+                ],
+                "range": [
+                  183,
+                  448
+                ],
+                "loc": {
+                  "start": {
+                    "line": 10,
+                    "column": 14
+                  },
+                  "end": {
+                    "line": 25,
+                    "column": 2
+                  }
+                }
+              },
+              "generator": false,
+              "expression": false,
+              "range": [
+                181,
+                448
+              ],
+              "loc": {
+                "start": {
+                  "line": 10,
+                  "column": 12
+                },
+                "end": {
+                  "line": 25,
+                  "column": 2
+                }
+              }
+            },
+            "kind": "constructor",
+            "computed": false,
+            "range": [
+              170,
+              448
+            ],
+            "loc": {
+              "start": {
+                "line": 10,
+                "column": 1
+              },
+              "end": {
+                "line": 25,
+                "column": 2
+              }
+            },
+            "leadingComments": [
+              {
+                "type": "Block",
+                "value": "*\r\n\t * Creates a new instance of the SynthFooter directive\r\n\t ",
+                "range": [
+                  101,
+                  167
+                ],
+                "loc": {
+                  "start": {
+                    "line": 7,
+                    "column": 1
+                  },
+                  "end": {
+                    "line": 9,
+                    "column": 4
+                  }
+                }
+              }
+            ],
+            "static": false
+          }
+        ],
+        "range": [
+          95,
+          451
+        ],
+        "loc": {
+          "start": {
+            "line": 5,
+            "column": 17
+          },
+          "end": {
+            "line": 26,
+            "column": 1
+          }
+        }
+      },
+      "range": [
+        78,
+        451
+      ],
+      "loc": {
+        "start": {
+          "line": 5,
+          "column": 0
+        },
+        "end": {
+          "line": 26,
+          "column": 1
+        }
+      },
+      "leadingComments": [
+        {
+          "type": "Block",
+          "value": "*\r\n* Directive to create the footer for the application\r\n",
+          "range": [
+            15,
+            76
+          ],
+          "loc": {
+            "start": {
+              "line": 2,
+              "column": 0
+            },
+            "end": {
+              "line": 4,
+              "column": 2
+            }
+          }
+        }
+      ],
+      "trailingComments": [
+        {
+          "type": "Block",
+          "value": "*\r\n * Factory to create new instances of the SynthFooter directive.\r\n ",
+          "range": [
+            455,
+            529
+          ],
+          "loc": {
+            "start": {
+              "line": 28,
+              "column": 0
+            },
+            "end": {
+              "line": 30,
+              "column": 3
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "Identifier",
+      "declarations": [
+        {
+          "type": "VariableDeclarator",
+          "id": {
+            "type": "Identifier",
+            "name": "SynthFooterFactory",
+            "range": [
+              535,
+              553
+            ],
+            "loc": {
+              "start": {
+                "line": 31,
+                "column": 4
+              },
+              "end": {
+                "line": 31,
+                "column": 22
+              }
+            }
+          },
+          "init": {
+            "type": "ArrowFunctionExpression",
+            "id": null,
+            "params": [],
+            "body": {
+              "type": "BlockStatement",
+              "body": [
+                {
+                  "type": "ReturnStatement",
+                  "argument": {
+                    "type": "NewExpression",
+                    "callee": {
+                      "type": "Identifier",
+                      "name": "SynthFooter",
+                      "range": [
+                        577,
+                        588
+                      ],
+                      "loc": {
+                        "start": {
+                          "line": 32,
+                          "column": 12
+                        },
+                        "end": {
+                          "line": 32,
+                          "column": 23
+                        }
+                      }
+                    },
+                    "arguments": [],
+                    "range": [
+                      573,
+                      590
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 32,
+                        "column": 8
+                      },
+                      "end": {
+                        "line": 32,
+                        "column": 25
+                      }
+                    }
+                  },
+                  "range": [
+                    566,
+                    591
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 32,
+                      "column": 1
+                    },
+                    "end": {
+                      "line": 32,
+                      "column": 26
+                    }
+                  }
+                }
+              ],
+              "range": [
+                562,
+                594
+              ],
+              "loc": {
+                "start": {
+                  "line": 31,
+                  "column": 31
+                },
+                "end": {
+                  "line": 33,
+                  "column": 1
+                }
+              }
+            },
+            "generator": false,
+            "expression": false,
+            "range": [
+              556,
+              594
+            ],
+            "loc": {
+              "start": {
+                "line": 31,
+                "column": 25
+              },
+              "end": {
+                "line": 33,
+                "column": 1
+              }
+            }
+          },
+          "range": [
+            535,
+            594
+          ],
+          "loc": {
+            "start": {
+              "line": 31,
+              "column": 4
+            },
+            "end": {
+              "line": 33,
+              "column": 1
+            }
+          }
+        }
+      ],
+      "kind": "var",
+      "range": [
+        531,
+        595
+      ],
+      "loc": {
+        "start": {
+          "line": 31,
+          "column": 0
+        },
+        "end": {
+          "line": 33,
+          "column": 2
+        }
+      },
+      "leadingComments": [],
+      "name": "_",
+      "trailingComments": []
+    },
+    {
+      "type": "Identifier",
+      "declaration": {
+        "type": "Identifier",
+        "name": "SynthFooterFactory",
+        "range": [
+          614,
+          632
+        ],
+        "loc": {
+          "start": {
+            "line": 35,
+            "column": 15
+          },
+          "end": {
+            "line": 35,
+            "column": 33
+          }
+        }
+      },
+      "range": [
+        599,
+        633
+      ],
+      "loc": {
+        "start": {
+          "line": 35,
+          "column": 0
+        },
+        "end": {
+          "line": 35,
+          "column": 34
+        }
+      },
+      "name": "_",
+      "leadingComments": [],
+      "trailingComments": []
+    },
+    {
+      "type": "ExportDefaultDeclaration",
+      "declaration": {
+        "type": "VariableDeclaration",
+        "declarations": [
+          {
+            "type": "VariableDeclarator",
+            "id": {
+              "type": "Identifier",
+              "name": "SynthFooterFactory",
+              "range": [
+                535,
+                553
+              ],
+              "loc": {
+                "start": {
+                  "line": 31,
+                  "column": 4
+                },
+                "end": {
+                  "line": 31,
+                  "column": 22
+                }
+              }
+            },
+            "init": {
+              "type": "ArrowFunctionExpression",
+              "id": null,
+              "params": [],
+              "body": {
+                "type": "BlockStatement",
+                "body": [
+                  {
+                    "type": "ReturnStatement",
+                    "argument": {
+                      "type": "NewExpression",
+                      "callee": {
+                        "type": "Identifier",
+                        "name": "SynthFooter",
+                        "range": [
+                          577,
+                          588
+                        ],
+                        "loc": {
+                          "start": {
+                            "line": 32,
+                            "column": 12
+                          },
+                          "end": {
+                            "line": 32,
+                            "column": 23
+                          }
+                        }
+                      },
+                      "arguments": [],
+                      "range": [
+                        573,
+                        590
+                      ],
+                      "loc": {
+                        "start": {
+                          "line": 32,
+                          "column": 8
+                        },
+                        "end": {
+                          "line": 32,
+                          "column": 25
+                        }
+                      }
+                    },
+                    "range": [
+                      566,
+                      591
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 32,
+                        "column": 1
+                      },
+                      "end": {
+                        "line": 32,
+                        "column": 26
+                      }
+                    }
+                  }
+                ],
+                "range": [
+                  562,
+                  594
+                ],
+                "loc": {
+                  "start": {
+                    "line": 31,
+                    "column": 31
+                  },
+                  "end": {
+                    "line": 33,
+                    "column": 1
+                  }
+                }
+              },
+              "generator": false,
+              "expression": false,
+              "range": [
+                556,
+                594
+              ],
+              "loc": {
+                "start": {
+                  "line": 31,
+                  "column": 25
+                },
+                "end": {
+                  "line": 33,
+                  "column": 1
+                }
+              }
+            },
+            "range": [
+              535,
+              594
+            ],
+            "loc": {
+              "start": {
+                "line": 31,
+                "column": 4
+              },
+              "end": {
+                "line": 33,
+                "column": 1
+              }
+            }
+          }
+        ],
+        "kind": "var",
+        "range": [
+          531,
+          595
+        ],
+        "loc": {
+          "start": {
+            "line": 31,
+            "column": 0
+          },
+          "end": {
+            "line": 33,
+            "column": 2
+          }
+        },
+        "leadingComments": [
+          {
+            "type": "Block",
+            "value": "*\r\n * Factory to create new instances of the SynthFooter directive.\r\n ",
+            "range": [
+              455,
+              529
+            ],
+            "loc": {
+              "start": {
+                "line": 28,
+                "column": 0
+              },
+              "end": {
+                "line": 30,
+                "column": 3
+              }
+            }
+          }
+        ],
+        "trailingComments": []
+      },
+      "range": [
+        599,
+        633
+      ],
+      "loc": {
+        "start": {
+          "line": 35,
+          "column": 0
+        },
+        "end": {
+          "line": 35,
+          "column": 34
+        }
+      }
+    }
+  ],
+  "sourceType": "module",
+  "range": [
+    0,
+    633
+  ],
+  "loc": {
+    "start": {
+      "line": 1,
+      "column": 0
+    },
+    "end": {
+      "line": 35,
+      "column": 34
+    }
+  },
+  "comments": [
+    {
+      "type": "Block",
+      "value": "*\r\n* Directive to create the footer for the application\r\n",
+      "range": [
+        15,
+        76
+      ],
+      "loc": {
+        "start": {
+          "line": 2,
+          "column": 0
+        },
+        "end": {
+          "line": 4,
+          "column": 2
+        }
+      }
+    },
+    {
+      "type": "Block",
+      "value": "*\r\n\t * Creates a new instance of the SynthFooter directive\r\n\t ",
+      "range": [
+        101,
+        167
+      ],
+      "loc": {
+        "start": {
+          "line": 7,
+          "column": 1
+        },
+        "end": {
+          "line": 9,
+          "column": 4
+        }
+      }
+    },
+    {
+      "type": "Block",
+      "value": "*\r\n\t\t * Directive restricted to Element.\r\n\t\t ",
+      "range": [
+        188,
+        237
+      ],
+      "loc": {
+        "start": {
+          "line": 11,
+          "column": 2
+        },
+        "end": {
+          "line": 13,
+          "column": 5
+        }
+      }
+    },
+    {
+      "type": "Block",
+      "value": "*\r\n\t\t * Isolated scope for directive.\r\n\t\t ",
+      "range": [
+        267,
+        313
+      ],
+      "loc": {
+        "start": {
+          "line": 16,
+          "column": 2
+        },
+        "end": {
+          "line": 18,
+          "column": 5
+        }
+      }
+    },
+    {
+      "type": "Block",
+      "value": "*\r\n\t\t * URL of template to use.\r\n\t\t ",
+      "range": [
+        342,
+        382
+      ],
+      "loc": {
+        "start": {
+          "line": 21,
+          "column": 2
+        },
+        "end": {
+          "line": 23,
+          "column": 5
+        }
+      }
+    },
+    {
+      "type": "Block",
+      "value": "*\r\n * Factory to create new instances of the SynthFooter directive.\r\n ",
+      "range": [
+        455,
+        529
+      ],
+      "loc": {
+        "start": {
+          "line": 28,
+          "column": 0
+        },
+        "end": {
+          "line": 30,
+          "column": 3
+        }
+      }
+    }
+  ]
+}
