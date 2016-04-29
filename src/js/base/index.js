@@ -56,11 +56,11 @@ import SynthUploadResponseHandlerProvider from './handlers/SynthUploadResponseHa
 
 
 // Import base directives
-import synthMenu from './directives/synthMenu';
-import synthFooter from './directives/synthFooter';
-import toolSyncStatus from './directives/toolSyncStatus';
+import SynthMenu from './directives/SynthMenu';
+import SynthFooter from './directives/SynthFooter';
+import ToolSyncStatus from './directives/ToolSyncStatus';
 import OverallSyncStatus from './directives/OverallSyncStatus';
-import synthAttachments from './directives/synthAttachments';
+import SynthAttachments from './directives/SynthAttachments';
 import ModuleCollapse from './directives/ModuleCollapse';
 import AnimatedEllipse from './directives/AnimatedEllipse';
 import CurrentModuleName from './directives/CurrentModuleName';
@@ -129,11 +129,11 @@ angular.module(filters, [])
 
 // Register directives
 angular.module(directives, [])
-	.directive('synthMenu', synthMenu)
-	.directive('synthFooter', synthFooter)
-	.directive('toolSyncStatus', toolSyncStatus)
+	.directive('synthMenu', SynthMenu)
+	.directive('synthFooter', SynthFooter)
+	.directive('toolSyncStatus', ToolSyncStatus)
 	.directive('overallSyncStatus', OverallSyncStatus)
-	.directive('synthAttachments', synthAttachments)
+	.directive('synthAttachments', SynthAttachments)
 	.directive('bootSpinner', BootSpinner)
 	.directive('moduleCollapse', ModuleCollapse)
 	.directive('animatedEllipse', AnimatedEllipse)

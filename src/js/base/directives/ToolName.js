@@ -2,16 +2,41 @@
 
 class ToolName {
 
+	/**
+	 * Creates a new instance of the ToolName directive
+	 */
 	constructor(moduleService){
-		this.moduleService = moduleService;
+		/**
+		 * Directive restricted to Attribute.
+		 */
 		this.restrict = 'A';
+
+		/**
+		 * Isolated scope for directive.
+		 */
 		this.scope = {
 			'moduleId' : '=',
 			'toolName' : '='
 		};
+		const self = this;
+
+		/**
+		 * Linking function.
+		 */
+		this.link = function(){
+			self.linkDirective(...arguments);
+		};
+
+		/**
+		 * A reference to ModuleService.
+		 */
+		this.moduleService = moduleService;
 	}
 
-	link(scope, element, attrs){
+	/**
+	 * Link function for the directive
+	 */
+	linkDirective(scope, element, attrs){
 		if(!angular.isDefined(attrs.moduleId)){
 			throw '"moduleId" should be an attribute of this directive.';
 		}

@@ -5,15 +5,40 @@
 */
 class ModuleName{
 
+	/**
+	 * Creates a new instance of the ModuleName directive
+	 */
 	constructor(moduleService){
+		/**
+		 * A reference to ModuleService.
+		 */
 		this.moduleService = moduleService;
+
+		/**
+		 * Directive restricted to Attribute.
+		 */
 		this.restrict = 'A';
+
+		/**
+		 * Isolated scope for directive.
+		 */
 		this.scope = {
 			'moduleName' : '='
 		};
+
+		const self = this;
+		/**
+		 * Linking function.
+		 */
+		this.link = function(){
+			self.linkDirective(...arguments);
+		};
 	}
 
-	link(scope, element){
+	/**
+	 * Link function for the directive
+	 */
+	linkDirective(scope, element){
 		scope.$watch('moduleName', function(moduleId){
 			if(moduleId == null){
 				element.text('');

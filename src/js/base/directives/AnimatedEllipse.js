@@ -5,18 +5,44 @@
  */
 class AnimatedEllipse{
 
+	/**
+	 * Creates a new instance of this directive
+	 */
 	constructor($interval){
+		/**
+		 * A reference to $interval.
+		 */
 		this.$interval = $interval;
 
+		/**
+		 * Directive restricted to Element
+		 */
 		this.restrict = 'E';
+
+		/**
+		 * Isolated scope for directive.
+		 */
 		this.scope = false;
+
+		const self = this;
+
+		/**
+		 * Linking function.
+		 */
+		this.link = function(){
+			self.linkDirective(...arguments);
+		};
 	}
 
-	link(scope, element, attrs){
+	/**
+	 * Link function for the directive
+	 */
+	linkDirective(scope, element, attrs){
 
 		var timerId = null,
 			running = false,
 			state = 0;
+		const $interval = this.$interval;
 
 		element.text('\u00a0\u00a0\u00a0');
 
@@ -36,13 +62,13 @@ class AnimatedEllipse{
 			if(run && !running){
 				running = true;
 				state = 0;
-				timerId = this.$interval(function() {
+				timerId = $interval(function() {
 					updateAnimation(); // update DOM
 				}, 1100);
 			}
 			// Else id we need to stop and we are running
 			else if(!run && running){
-				this.$interval.cancel(timerId);
+				$interval.cancel(timerId);
 				element.text('\u00a0\u00a0\u00a0');
 				running = false;
 			}

@@ -2,17 +2,41 @@
 
 class OverallSyncStatus{
 
+	/**
+	 * Creates a new instance of the OverallSyncStatus directive
+	 */
 	constructor(syncAPIService){
+		/**
+		 * A reference to SyncAPIService.
+		 */
 		this.syncAPIService = syncAPIService;
+
+		/**
+		 * Directive restricted to Class.
+		 */
 		this.restrict = 'C';
+
+		/**
+		 * Isolated scope for directive.
+		 */
 		this.scope = {
 			'tool' : '='
 		};
+		const self = this;
+		/**
+		 * Linking function.
+		 */
+		this.link = function(){
+			self.linkDirective(...arguments);
+		};
 	}
 
-	link(scope, element){
+	/**
+	 * Link function for the directive
+	 */
+	linkDirective(scope, element){
 		var cloudElement = $(element.find('.glyphicon')[0]);
-
+		var self = this;
 		function updateSyncIndicator(sync){
 
 			/**
@@ -20,7 +44,7 @@ class OverallSyncStatus{
 			* have to perform a sync check our self to find out what the status is
 			*/
 			if(sync == null || (sync.state == null && sync.action == null)){
-				this.syncAPIService.getSyncStatusModulesOffline().then(function(syncStatus){
+				self.syncAPIService.getSyncStatusModulesOffline().then(function(syncStatus){
 					updateSyncIndicator({'action' : null, 'state' : (syncStatus.inSync ? 'inSync' : 'outSync')});
 				});
 			}

@@ -5,18 +5,50 @@
 */
 class CurrentModuleName {
 
+	/**
+	 * Creates a new instance of the CurrentModuleName directive
+	 */
 	constructor($rootScope, $route, registrationService){
+		/**
+		 * A reference to $rootScope.
+		 */
 		this.$rootScope = $rootScope;
+
+		/**
+		 * A reference to $route.
+		 */
 		this.$route = $route;
+
+		/**
+		 * A reference to RegistrationService.
+		 */
 		this.registrationService = registrationService;
 
+		/**
+		 * Directive restricted to Attribute.
+		 */
 		this.restrict = 'A';
+
+		/**
+		 * Isolated scope for directive.
+		 */
 		this.scope = {
 			'moduleName' : '='
 		};
+
+		const self = this;
+		/**
+		 * Linking function.
+		 */
+		this.link = function(){
+			self.linkDirective(...arguments);
+		};
 	}
 
-	link(scope, element){
+	/**
+	 * Link function for the directive
+	 */
+	linkDirective(scope, element){
 		this.$rootScope.$on('$locationChangeSuccess', () => {
 			var newModuleId = this.$route.current.params ? this.$route.current.params.moduleId : null;
 

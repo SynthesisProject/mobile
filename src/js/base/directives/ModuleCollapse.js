@@ -5,14 +5,37 @@
  */
 class ModuleCollapse {
 
+	/**
+	 * Creates a new instance of the ModuleCollapse directive
+	 */
 	constructor($rootScope){
+		/**
+		 * A reference to $rootScope.
+		 */
 		this.$rootScope = $rootScope;
 
+		/**
+		 * Directive restricted to Attribute.
+		 */
 		this.restrict = 'A';
+
+		/**
+		 * Isolated scope for directive.
+		 */
 		this.scope = false;
+		const self = this;
+		/**
+		 * Linking function.
+		 */
+		this.link = function(){
+			self.linkDirective(...arguments);
+		};
 	}
 
-	link(scope, element){
+	/**
+	 * Link function for the directive
+	 */
+	linkDirective(scope, element){
 
 		var collapseButton = $(element.find('a')[0]), toCollapse = $(element.find('.collapse')[0]);
 
