@@ -78,6 +78,30 @@ window.esdocSearchIndex = [
     "function"
   ],
   [
+    "synthesis-mobile/js/base/filters/arraytoobjectfilter.js~arraytoobjectfilter",
+    "function/index.html#static-function-ArrayToObjectFilter",
+    "<span>ArrayToObjectFilter</span> <span class=\"search-result-import-path\">synthesis-mobile/js/base/filters/ArrayToObjectFilter.js</span>",
+    "function"
+  ],
+  [
+    "synthesis-mobile/js/base/filters/arraytoobjectfilter.js~arraytoobjectfilterfactory",
+    "function/index.html#static-function-ArrayToObjectFilterFactory",
+    "<span>ArrayToObjectFilterFactory</span> <span class=\"search-result-import-path\">synthesis-mobile/js/base/filters/ArrayToObjectFilter.js</span>",
+    "function"
+  ],
+  [
+    "synthesis-mobile/js/base/filters/attachmentsfilter.js~attachmentsfilter",
+    "function/index.html#static-function-AttachmentsFilter",
+    "<span>AttachmentsFilter</span> <span class=\"search-result-import-path\">synthesis-mobile/js/base/filters/AttachmentsFilter.js</span>",
+    "function"
+  ],
+  [
+    "synthesis-mobile/js/base/filters/attachmentsfilter.js~attachmentsfilterfactory",
+    "function/index.html#static-function-AttachmentsFilterFactory",
+    "<span>AttachmentsFilterFactory</span> <span class=\"search-result-import-path\">synthesis-mobile/js/base/filters/AttachmentsFilter.js</span>",
+    "function"
+  ],
+  [
     "synthesis-mobile/js/base/boot/bootctrl.js~bootctrl",
     "variable/index.html#static-variable-BootCtrl",
     "<span>BootCtrl</span> <span class=\"search-result-import-path\">synthesis-mobile/js/base/boot/BootCtrl.js</span>",
@@ -93,6 +117,18 @@ window.esdocSearchIndex = [
     "synthesis-mobile/js/base/directives/bootspinner.js~bootspinnerfactory",
     "function/index.html#static-function-BootSpinnerFactory",
     "<span>BootSpinnerFactory</span> <span class=\"search-result-import-path\">synthesis-mobile/js/base/directives/BootSpinner.js</span>",
+    "function"
+  ],
+  [
+    "synthesis-mobile/js/base/filters/bytestosizefilter.js~bytestosizefilter",
+    "function/index.html#static-function-BytesToSizeFilter",
+    "<span>BytesToSizeFilter</span> <span class=\"search-result-import-path\">synthesis-mobile/js/base/filters/BytesToSizeFilter.js</span>",
+    "function"
+  ],
+  [
+    "synthesis-mobile/js/base/filters/bytestosizefilter.js~bytestosizefilterfactory",
+    "function/index.html#static-function-BytesToSizeFilterFactory",
+    "<span>BytesToSizeFilterFactory</span> <span class=\"search-result-import-path\">synthesis-mobile/js/base/filters/BytesToSizeFilter.js</span>",
     "function"
   ],
   [
@@ -130,6 +166,18 @@ window.esdocSearchIndex = [
     "variable/index.html#static-variable-DataService",
     "<span>DataService</span> <span class=\"search-result-import-path\">synthesis-mobile/js/base/services/DataService.js</span>",
     "variable"
+  ],
+  [
+    "synthesis-mobile/js/base/filters/formatdatefilter.js~formatdatefilter",
+    "function/index.html#static-function-FormatDateFilter",
+    "<span>FormatDateFilter</span> <span class=\"search-result-import-path\">synthesis-mobile/js/base/filters/FormatDateFilter.js</span>",
+    "function"
+  ],
+  [
+    "synthesis-mobile/js/base/filters/formatdatefilter.js~formatdatefilterfactory",
+    "function/index.html#static-function-FormatDateFilterFactory",
+    "<span>FormatDateFilterFactory</span> <span class=\"search-result-import-path\">synthesis-mobile/js/base/filters/FormatDateFilter.js</span>",
+    "function"
   ],
   [
     "synthesis-mobile/js/base/home/homectrl.js~homectrl",
@@ -196,6 +244,24 @@ window.esdocSearchIndex = [
     "variable/index.html#static-variable-ModuleService",
     "<span>ModuleService</span> <span class=\"search-result-import-path\">synthesis-mobile/js/base/services/ModuleService.js</span>",
     "variable"
+  ],
+  [
+    "synthesis-mobile/js/base/filters/noescapefilter.js~noescapefilterfactory",
+    "variable/index.html#static-variable-NoEscapeFilterFactory",
+    "<span>NoEscapeFilterFactory</span> <span class=\"search-result-import-path\">synthesis-mobile/js/base/filters/NoEscapeFilter.js</span>",
+    "variable"
+  ],
+  [
+    "synthesis-mobile/js/base/filters/object2arrayfilter.js~object2arrayfilter",
+    "function/index.html#static-function-Object2ArrayFilter",
+    "<span>Object2ArrayFilter</span> <span class=\"search-result-import-path\">synthesis-mobile/js/base/filters/Object2ArrayFilter.js</span>",
+    "function"
+  ],
+  [
+    "synthesis-mobile/js/base/filters/object2arrayfilter.js~object2arrayfilterfactory",
+    "function/index.html#static-function-Object2ArrayFilterFactory",
+    "<span>Object2ArrayFilterFactory</span> <span class=\"search-result-import-path\">synthesis-mobile/js/base/filters/Object2ArrayFilter.js</span>",
+    "function"
   ],
   [
     "synthesis-mobile/js/base/directives/overallsyncstatus.js~overallsyncstatus",
@@ -552,27 +618,9 @@ window.esdocSearchIndex = [
     "function"
   ],
   [
-    "synthesis-mobile/js/base/filters/array2object.js~array2object",
-    "variable/index.html#static-variable-array2Object",
-    "<span>array2Object</span> <span class=\"search-result-import-path\">synthesis-mobile/js/base/filters/array2Object.js</span>",
-    "variable"
-  ],
-  [
-    "synthesis-mobile/js/base/filters/attachments.js~attachments",
-    "variable/index.html#static-variable-attachments",
-    "<span>attachments</span> <span class=\"search-result-import-path\">synthesis-mobile/js/base/filters/attachments.js</span>",
-    "variable"
-  ],
-  [
     "synthesis-mobile/js/base/index.js~base",
     "variable/index.html#static-variable-base",
     "<span>base</span> <span class=\"search-result-import-path\">synthesis-mobile/js/base/index.js</span>",
-    "variable"
-  ],
-  [
-    "synthesis-mobile/js/base/filters/bytestosize.js~bytestosize",
-    "variable/index.html#static-variable-bytesToSize",
-    "<span>bytesToSize</span> <span class=\"search-result-import-path\">synthesis-mobile/js/base/filters/bytesToSize.js</span>",
     "variable"
   ],
   [
@@ -588,12 +636,6 @@ window.esdocSearchIndex = [
     "function"
   ],
   [
-    "synthesis-mobile/js/base/filters/formatdate.js~formatdate",
-    "variable/index.html#static-variable-formatDate",
-    "<span>formatDate</span> <span class=\"search-result-import-path\">synthesis-mobile/js/base/filters/formatDate.js</span>",
-    "variable"
-  ],
-  [
     "synthesis-mobile/js/base/utilities.js~generateuid",
     "function/index.html#static-function-generateUID",
     "<span>generateUID</span> <span class=\"search-result-import-path\">synthesis-mobile/js/base/Utilities.js</span>",
@@ -604,18 +646,6 @@ window.esdocSearchIndex = [
     "function/index.html#static-function-getNumberOfProperties",
     "<span>getNumberOfProperties</span> <span class=\"search-result-import-path\">synthesis-mobile/js/base/Utilities.js</span>",
     "function"
-  ],
-  [
-    "synthesis-mobile/js/base/filters/noescape.js~noescape",
-    "variable/index.html#static-variable-noEscape",
-    "<span>noEscape</span> <span class=\"search-result-import-path\">synthesis-mobile/js/base/filters/noEscape.js</span>",
-    "variable"
-  ],
-  [
-    "synthesis-mobile/js/base/filters/object2array.js~object2array",
-    "variable/index.html#static-variable-object2Array",
-    "<span>object2Array</span> <span class=\"search-result-import-path\">synthesis-mobile/js/base/filters/object2Array.js</span>",
-    "variable"
   ],
   [
     "synthesis-mobile/js/tools/resources/directives/resourceimg.js~resourceimg",
@@ -1590,39 +1620,39 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "js/base/filters/array2object.js",
-    "file/js/base/filters/array2Object.js.html",
-    "js/base/filters/array2Object.js",
+    "js/base/filters/arraytoobjectfilter.js",
+    "file/js/base/filters/ArrayToObjectFilter.js.html",
+    "js/base/filters/ArrayToObjectFilter.js",
     "file"
   ],
   [
-    "js/base/filters/attachments.js",
-    "file/js/base/filters/attachments.js.html",
-    "js/base/filters/attachments.js",
+    "js/base/filters/attachmentsfilter.js",
+    "file/js/base/filters/AttachmentsFilter.js.html",
+    "js/base/filters/AttachmentsFilter.js",
     "file"
   ],
   [
-    "js/base/filters/bytestosize.js",
-    "file/js/base/filters/bytesToSize.js.html",
-    "js/base/filters/bytesToSize.js",
+    "js/base/filters/bytestosizefilter.js",
+    "file/js/base/filters/BytesToSizeFilter.js.html",
+    "js/base/filters/BytesToSizeFilter.js",
     "file"
   ],
   [
-    "js/base/filters/formatdate.js",
-    "file/js/base/filters/formatDate.js.html",
-    "js/base/filters/formatDate.js",
+    "js/base/filters/formatdatefilter.js",
+    "file/js/base/filters/FormatDateFilter.js.html",
+    "js/base/filters/FormatDateFilter.js",
     "file"
   ],
   [
-    "js/base/filters/noescape.js",
-    "file/js/base/filters/noEscape.js.html",
-    "js/base/filters/noEscape.js",
+    "js/base/filters/noescapefilter.js",
+    "file/js/base/filters/NoEscapeFilter.js.html",
+    "js/base/filters/NoEscapeFilter.js",
     "file"
   ],
   [
-    "js/base/filters/object2array.js",
-    "file/js/base/filters/object2Array.js.html",
-    "js/base/filters/object2Array.js",
+    "js/base/filters/object2arrayfilter.js",
+    "file/js/base/filters/Object2ArrayFilter.js.html",
+    "js/base/filters/Object2ArrayFilter.js",
     "file"
   ],
   [

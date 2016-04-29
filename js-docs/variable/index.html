@@ -77,12 +77,17 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SynthQIfStatement">SynthQIfStatement</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SynthQLoop">SynthQLoop</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-safo">safo</a></span></span></li>
-<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">base/filters</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-array2Object">array2Object</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-attachments">attachments</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-bytesToSize">bytesToSize</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-formatDate">formatDate</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-noEscape">noEscape</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-object2Array">object2Array</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">base/filters</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ArrayToObjectFilter">ArrayToObjectFilter</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ArrayToObjectFilterFactory">ArrayToObjectFilterFactory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-AttachmentsFilter">AttachmentsFilter</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-AttachmentsFilterFactory">AttachmentsFilterFactory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-BytesToSizeFilter">BytesToSizeFilter</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-BytesToSizeFilterFactory">BytesToSizeFilterFactory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-FormatDateFilter">FormatDateFilter</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-FormatDateFilterFactory">FormatDateFilterFactory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Object2ArrayFilter">Object2ArrayFilter</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Object2ArrayFilterFactory">Object2ArrayFilterFactory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-NoEscapeFilterFactory">NoEscapeFilterFactory</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">base/handlers</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-SynthAttachmentMinerProvider">SynthAttachmentMinerProvider</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-SynthDeleteHandlerProvider">SynthDeleteHandlerProvider</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-SynthEmbeddedImageHandlerProvider">SynthEmbeddedImageHandlerProvider</a></span></span></li>
@@ -341,8 +346,7 @@
       <div>
         
         
-        <div data-ice="description"><p>Configure routes for announcements</p>
-</div>
+        
       </div>
     </td>
     <td>
@@ -367,7 +371,8 @@
       <div>
         
         
-        
+        <div data-ice="description"><p>Configure routes for announcements</p>
+</div>
       </div>
     </td>
     <td>
@@ -468,6 +473,33 @@
         
         
         
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+           <span data-ice="name"><span><a href="variable/index.html#static-variable-NoEscapeFilterFactory">NoEscapeFilterFactory</a></span></span><span data-ice="signature">: <span>*</span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Factory to create new instances of the NoEscapeFilter
+Filter to avoid angular from escaping content</p>
+</div>
       </div>
     </td>
     <td>
@@ -1278,160 +1310,7 @@ promise to execute, or null when there are no more promises.</p>
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="variable/index.html#static-variable-array2Object">array2Object</a></span></span><span data-ice="signature">: <span>*</span></span>
-        </p>
-      </div>
-      <div>
-        
-        
-        <div data-ice="description"><p>Filter to convert an array into a map</p>
-</div>
-      </div>
-    </td>
-    <td>
-      
-      
-    </td>
-  </tr>
-<tr data-ice="target">
-    <td>
-      <span class="access" data-ice="access">public</span>
-      
-      
-      
-      <span class="override" data-ice="override"></span>
-    </td>
-    <td>
-      <div>
-        <p>
-           <span data-ice="name"><span><a href="variable/index.html#static-variable-attachments">attachments</a></span></span><span data-ice="signature">: <span>*</span></span>
-        </p>
-      </div>
-      <div>
-        
-        
-        <div data-ice="description"><p>Filter to get all the attachments from an array</p>
-</div>
-      </div>
-    </td>
-    <td>
-      
-      
-    </td>
-  </tr>
-<tr data-ice="target">
-    <td>
-      <span class="access" data-ice="access">public</span>
-      
-      
-      
-      <span class="override" data-ice="override"></span>
-    </td>
-    <td>
-      <div>
-        <p>
            <span data-ice="name"><span><a href="variable/index.html#static-variable-base">base</a></span></span><span data-ice="signature">: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span></span>
-        </p>
-      </div>
-      <div>
-        
-        
-        
-      </div>
-    </td>
-    <td>
-      
-      
-    </td>
-  </tr>
-<tr data-ice="target">
-    <td>
-      <span class="access" data-ice="access">public</span>
-      
-      
-      
-      <span class="override" data-ice="override"></span>
-    </td>
-    <td>
-      <div>
-        <p>
-           <span data-ice="name"><span><a href="variable/index.html#static-variable-bytesToSize">bytesToSize</a></span></span><span data-ice="signature">: <span>*</span></span>
-        </p>
-      </div>
-      <div>
-        
-        
-        <div data-ice="description"><p>Filter to convert bytes to a size</p>
-</div>
-      </div>
-    </td>
-    <td>
-      
-      
-    </td>
-  </tr>
-<tr data-ice="target">
-    <td>
-      <span class="access" data-ice="access">public</span>
-      
-      
-      
-      <span class="override" data-ice="override"></span>
-    </td>
-    <td>
-      <div>
-        <p>
-           <span data-ice="name"><span><a href="variable/index.html#static-variable-formatDate">formatDate</a></span></span><span data-ice="signature">: <span>*</span></span>
-        </p>
-      </div>
-      <div>
-        
-        
-        
-      </div>
-    </td>
-    <td>
-      
-      
-    </td>
-  </tr>
-<tr data-ice="target">
-    <td>
-      <span class="access" data-ice="access">public</span>
-      
-      
-      
-      <span class="override" data-ice="override"></span>
-    </td>
-    <td>
-      <div>
-        <p>
-           <span data-ice="name"><span><a href="variable/index.html#static-variable-noEscape">noEscape</a></span></span><span data-ice="signature">: <span>*</span></span>
-        </p>
-      </div>
-      <div>
-        
-        
-        
-      </div>
-    </td>
-    <td>
-      
-      
-    </td>
-  </tr>
-<tr data-ice="target">
-    <td>
-      <span class="access" data-ice="access">public</span>
-      
-      
-      
-      <span class="override" data-ice="override"></span>
-    </td>
-    <td>
-      <div>
-        <p>
-           <span data-ice="name"><span><a href="variable/index.html#static-variable-object2Array">object2Array</a></span></span><span data-ice="signature">: <span>*</span></span>
         </p>
       </div>
       <div>
@@ -1819,15 +1698,14 @@ promise to execute, or null when there are no more promises.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/js/tools/announcements/config.js.html#lineNumber6">source</a></span></span>
+      <span data-ice="source"><span><a href="file/js/tools/resources/config.js.html#lineNumber2">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import Config from &apos;<span><a href="file/js/tools/announcements/config.js.html#lineNumber6">synthesis-mobile/js/tools/announcements/config.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import Config from &apos;<span><a href="file/js/tools/resources/config.js.html#lineNumber2">synthesis-mobile/js/tools/resources/config.js</a></span>&apos;</code></pre></div>
   
   
-  <div data-ice="description"><p>Configure routes for announcements</p>
-</div>
+  
 
   
 
@@ -1860,14 +1738,15 @@ promise to execute, or null when there are no more promises.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/js/tools/resources/config.js.html#lineNumber2">source</a></span></span>
+      <span data-ice="source"><span><a href="file/js/tools/announcements/config.js.html#lineNumber6">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import Config from &apos;<span><a href="file/js/tools/resources/config.js.html#lineNumber2">synthesis-mobile/js/tools/resources/config.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import Config from &apos;<span><a href="file/js/tools/announcements/config.js.html#lineNumber6">synthesis-mobile/js/tools/announcements/config.js</a></span>&apos;</code></pre></div>
   
   
-  
+  <div data-ice="description"><p>Configure routes for announcements</p>
+</div>
 
   
 
@@ -2028,6 +1907,48 @@ promise to execute, or null when there are no more promises.</p>
   
   
   
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="static-variable-NoEscapeFilterFactory">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    <span data-ice="name">NoEscapeFilterFactory</span><span data-ice="signature">: <span>*</span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/js/base/filters/NoEscapeFilter.js.html#lineNumber6">source</a></span></span>
+    </span>
+  </h3>
+
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import NoEscapeFilterFactory from &apos;<span><a href="file/js/base/filters/NoEscapeFilter.js.html#lineNumber6">synthesis-mobile/js/base/filters/NoEscapeFilter.js</a></span>&apos;</code></pre></div>
+  
+  
+  <div data-ice="description"><p>Factory to create new instances of the NoEscapeFilter
+Filter to avoid angular from escaping content</p>
+</div>
 
   
 
@@ -3324,88 +3245,6 @@ promiseFunction returns null (no more promises)</p>
   
 </div>
 <div class="detail" data-ice="detail">
-  <h3 data-ice="anchor" id="static-variable-array2Object">
-    <span class="access" data-ice="access">public</span>
-    
-    
-    
-    
-    <span data-ice="name">array2Object</span><span data-ice="signature">: <span>*</span></span>
-    <span class="right-info">
-      
-      
-      <span data-ice="source"><span><a href="file/js/base/filters/array2Object.js.html#lineNumber5">source</a></span></span>
-    </span>
-  </h3>
-
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import array2Object from &apos;<span><a href="file/js/base/filters/array2Object.js.html#lineNumber5">synthesis-mobile/js/base/filters/array2Object.js</a></span>&apos;</code></pre></div>
-  
-  
-  <div data-ice="description"><p>Filter to convert an array into a map</p>
-</div>
-
-  
-
-  <div data-ice="properties">
-</div>
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-  
-</div>
-<div class="detail" data-ice="detail">
-  <h3 data-ice="anchor" id="static-variable-attachments">
-    <span class="access" data-ice="access">public</span>
-    
-    
-    
-    
-    <span data-ice="name">attachments</span><span data-ice="signature">: <span>*</span></span>
-    <span class="right-info">
-      
-      
-      <span data-ice="source"><span><a href="file/js/base/filters/attachments.js.html#lineNumber5">source</a></span></span>
-    </span>
-  </h3>
-
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import attachments from &apos;<span><a href="file/js/base/filters/attachments.js.html#lineNumber5">synthesis-mobile/js/base/filters/attachments.js</a></span>&apos;</code></pre></div>
-  
-  
-  <div data-ice="description"><p>Filter to get all the attachments from an array</p>
-</div>
-
-  
-
-  <div data-ice="properties">
-</div>
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-  
-</div>
-<div class="detail" data-ice="detail">
   <h3 data-ice="anchor" id="static-variable-base">
     <span class="access" data-ice="access">public</span>
     
@@ -3421,167 +3260,6 @@ promiseFunction returns null (no more promises)</p>
   </h3>
 
   <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import base from &apos;<span><a href="file/js/base/index.js.html#lineNumber74">synthesis-mobile/js/base/index.js</a></span>&apos;</code></pre></div>
-  
-  
-  
-
-  
-
-  <div data-ice="properties">
-</div>
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-  
-</div>
-<div class="detail" data-ice="detail">
-  <h3 data-ice="anchor" id="static-variable-bytesToSize">
-    <span class="access" data-ice="access">public</span>
-    
-    
-    
-    
-    <span data-ice="name">bytesToSize</span><span data-ice="signature">: <span>*</span></span>
-    <span class="right-info">
-      
-      
-      <span data-ice="source"><span><a href="file/js/base/filters/bytesToSize.js.html#lineNumber5">source</a></span></span>
-    </span>
-  </h3>
-
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import bytesToSize from &apos;<span><a href="file/js/base/filters/bytesToSize.js.html#lineNumber5">synthesis-mobile/js/base/filters/bytesToSize.js</a></span>&apos;</code></pre></div>
-  
-  
-  <div data-ice="description"><p>Filter to convert bytes to a size</p>
-</div>
-
-  
-
-  <div data-ice="properties">
-</div>
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-  
-</div>
-<div class="detail" data-ice="detail">
-  <h3 data-ice="anchor" id="static-variable-formatDate">
-    <span class="access" data-ice="access">public</span>
-    
-    
-    
-    
-    <span data-ice="name">formatDate</span><span data-ice="signature">: <span>*</span></span>
-    <span class="right-info">
-      
-      
-      <span data-ice="source"><span><a href="file/js/base/filters/formatDate.js.html#lineNumber2">source</a></span></span>
-    </span>
-  </h3>
-
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import formatDate from &apos;<span><a href="file/js/base/filters/formatDate.js.html#lineNumber2">synthesis-mobile/js/base/filters/formatDate.js</a></span>&apos;</code></pre></div>
-  
-  
-  
-
-  
-
-  <div data-ice="properties">
-</div>
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-  
-</div>
-<div class="detail" data-ice="detail">
-  <h3 data-ice="anchor" id="static-variable-noEscape">
-    <span class="access" data-ice="access">public</span>
-    
-    
-    
-    
-    <span data-ice="name">noEscape</span><span data-ice="signature">: <span>*</span></span>
-    <span class="right-info">
-      
-      
-      <span data-ice="source"><span><a href="file/js/base/filters/noEscape.js.html#lineNumber2">source</a></span></span>
-    </span>
-  </h3>
-
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import noEscape from &apos;<span><a href="file/js/base/filters/noEscape.js.html#lineNumber2">synthesis-mobile/js/base/filters/noEscape.js</a></span>&apos;</code></pre></div>
-  
-  
-  
-
-  
-
-  <div data-ice="properties">
-</div>
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-  
-</div>
-<div class="detail" data-ice="detail">
-  <h3 data-ice="anchor" id="static-variable-object2Array">
-    <span class="access" data-ice="access">public</span>
-    
-    
-    
-    
-    <span data-ice="name">object2Array</span><span data-ice="signature">: <span>*</span></span>
-    <span class="right-info">
-      
-      
-      <span data-ice="source"><span><a href="file/js/base/filters/object2Array.js.html#lineNumber2">source</a></span></span>
-    </span>
-  </h3>
-
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import object2Array from &apos;<span><a href="file/js/base/filters/object2Array.js.html#lineNumber2">synthesis-mobile/js/base/filters/object2Array.js</a></span>&apos;</code></pre></div>
   
   
   

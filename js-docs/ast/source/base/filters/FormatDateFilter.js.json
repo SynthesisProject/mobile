@@ -1,0 +1,1041 @@
+{
+  "type": "Program",
+  "body": [
+    {
+      "type": "ExpressionStatement",
+      "expression": {
+        "type": "Literal",
+        "value": "use strict",
+        "raw": "'use strict'",
+        "range": [
+          0,
+          12
+        ],
+        "loc": {
+          "start": {
+            "line": 1,
+            "column": 0
+          },
+          "end": {
+            "line": 1,
+            "column": 12
+          }
+        }
+      },
+      "range": [
+        0,
+        13
+      ],
+      "loc": {
+        "start": {
+          "line": 1,
+          "column": 0
+        },
+        "end": {
+          "line": 1,
+          "column": 13
+        }
+      },
+      "trailingComments": [
+        {
+          "type": "Block",
+          "value": "*\r\n * Filter to format a date\r\n ",
+          "range": [
+            15,
+            51
+          ],
+          "loc": {
+            "start": {
+              "line": 2,
+              "column": 0
+            },
+            "end": {
+              "line": 4,
+              "column": 3
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "VariableDeclaration",
+      "declarations": [
+        {
+          "type": "VariableDeclarator",
+          "id": {
+            "type": "Identifier",
+            "name": "FormatDateFilter",
+            "range": [
+              57,
+              73
+            ],
+            "loc": {
+              "start": {
+                "line": 5,
+                "column": 4
+              },
+              "end": {
+                "line": 5,
+                "column": 20
+              }
+            }
+          },
+          "init": {
+            "type": "FunctionExpression",
+            "id": {
+              "type": "Identifier",
+              "name": "FormatDateFilter",
+              "range": [
+                57,
+                73
+              ],
+              "loc": {
+                "start": {
+                  "line": 5,
+                  "column": 4
+                },
+                "end": {
+                  "line": 5,
+                  "column": 20
+                }
+              }
+            },
+            "params": [
+              {
+                "type": "Identifier",
+                "name": "date",
+                "range": [
+                  85,
+                  89
+                ],
+                "loc": {
+                  "start": {
+                    "line": 5,
+                    "column": 32
+                  },
+                  "end": {
+                    "line": 5,
+                    "column": 36
+                  }
+                }
+              },
+              {
+                "type": "Identifier",
+                "name": "format",
+                "range": [
+                  91,
+                  97
+                ],
+                "loc": {
+                  "start": {
+                    "line": 5,
+                    "column": 38
+                  },
+                  "end": {
+                    "line": 5,
+                    "column": 44
+                  }
+                }
+              }
+            ],
+            "body": {
+              "type": "BlockStatement",
+              "body": [
+                {
+                  "type": "IfStatement",
+                  "test": {
+                    "type": "UnaryExpression",
+                    "operator": "!",
+                    "argument": {
+                      "type": "Identifier",
+                      "name": "format",
+                      "range": [
+                        158,
+                        164
+                      ],
+                      "loc": {
+                        "start": {
+                          "line": 8,
+                          "column": 6
+                        },
+                        "end": {
+                          "line": 8,
+                          "column": 12
+                        }
+                      }
+                    },
+                    "prefix": true,
+                    "range": [
+                      157,
+                      164
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 8,
+                        "column": 5
+                      },
+                      "end": {
+                        "line": 8,
+                        "column": 12
+                      }
+                    }
+                  },
+                  "consequent": {
+                    "type": "BlockStatement",
+                    "body": [
+                      {
+                        "type": "ExpressionStatement",
+                        "expression": {
+                          "type": "AssignmentExpression",
+                          "operator": "=",
+                          "left": {
+                            "type": "Identifier",
+                            "name": "format",
+                            "range": [
+                              171,
+                              177
+                            ],
+                            "loc": {
+                              "start": {
+                                "line": 9,
+                                "column": 2
+                              },
+                              "end": {
+                                "line": 9,
+                                "column": 8
+                              }
+                            }
+                          },
+                          "right": {
+                            "type": "Literal",
+                            "value": "YYYY-MM-DD h:mm a",
+                            "raw": "'YYYY-MM-DD h:mm a'",
+                            "range": [
+                              180,
+                              199
+                            ],
+                            "loc": {
+                              "start": {
+                                "line": 9,
+                                "column": 11
+                              },
+                              "end": {
+                                "line": 9,
+                                "column": 30
+                              }
+                            }
+                          },
+                          "range": [
+                            171,
+                            199
+                          ],
+                          "loc": {
+                            "start": {
+                              "line": 9,
+                              "column": 2
+                            },
+                            "end": {
+                              "line": 9,
+                              "column": 30
+                            }
+                          }
+                        },
+                        "range": [
+                          171,
+                          200
+                        ],
+                        "loc": {
+                          "start": {
+                            "line": 9,
+                            "column": 2
+                          },
+                          "end": {
+                            "line": 9,
+                            "column": 31
+                          }
+                        }
+                      }
+                    ],
+                    "range": [
+                      166,
+                      204
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 8,
+                        "column": 14
+                      },
+                      "end": {
+                        "line": 10,
+                        "column": 2
+                      }
+                    }
+                  },
+                  "alternate": null,
+                  "range": [
+                    153,
+                    204
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 8,
+                      "column": 1
+                    },
+                    "end": {
+                      "line": 10,
+                      "column": 2
+                    }
+                  },
+                  "leadingComments": [
+                    {
+                      "type": "Line",
+                      "value": " If there is no format use a default format",
+                      "range": [
+                        105,
+                        150
+                      ],
+                      "loc": {
+                        "start": {
+                          "line": 7,
+                          "column": 1
+                        },
+                        "end": {
+                          "line": 7,
+                          "column": 46
+                        }
+                      }
+                    }
+                  ],
+                  "trailingComments": [
+                    {
+                      "type": "Line",
+                      "value": " If there is no date, return an empty string",
+                      "range": [
+                        209,
+                        255
+                      ],
+                      "loc": {
+                        "start": {
+                          "line": 12,
+                          "column": 1
+                        },
+                        "end": {
+                          "line": 12,
+                          "column": 47
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "IfStatement",
+                  "test": {
+                    "type": "LogicalExpression",
+                    "operator": "||",
+                    "left": {
+                      "type": "BinaryExpression",
+                      "operator": "===",
+                      "left": {
+                        "type": "Identifier",
+                        "name": "date",
+                        "range": [
+                          262,
+                          266
+                        ],
+                        "loc": {
+                          "start": {
+                            "line": 13,
+                            "column": 5
+                          },
+                          "end": {
+                            "line": 13,
+                            "column": 9
+                          }
+                        }
+                      },
+                      "right": {
+                        "type": "Literal",
+                        "value": null,
+                        "raw": "null",
+                        "range": [
+                          271,
+                          275
+                        ],
+                        "loc": {
+                          "start": {
+                            "line": 13,
+                            "column": 14
+                          },
+                          "end": {
+                            "line": 13,
+                            "column": 18
+                          }
+                        }
+                      },
+                      "range": [
+                        262,
+                        275
+                      ],
+                      "loc": {
+                        "start": {
+                          "line": 13,
+                          "column": 5
+                        },
+                        "end": {
+                          "line": 13,
+                          "column": 18
+                        }
+                      }
+                    },
+                    "right": {
+                      "type": "BinaryExpression",
+                      "operator": "===",
+                      "left": {
+                        "type": "Identifier",
+                        "name": "date",
+                        "range": [
+                          279,
+                          283
+                        ],
+                        "loc": {
+                          "start": {
+                            "line": 13,
+                            "column": 22
+                          },
+                          "end": {
+                            "line": 13,
+                            "column": 26
+                          }
+                        }
+                      },
+                      "right": {
+                        "type": "Literal",
+                        "value": "",
+                        "raw": "''",
+                        "range": [
+                          288,
+                          290
+                        ],
+                        "loc": {
+                          "start": {
+                            "line": 13,
+                            "column": 31
+                          },
+                          "end": {
+                            "line": 13,
+                            "column": 33
+                          }
+                        }
+                      },
+                      "range": [
+                        279,
+                        290
+                      ],
+                      "loc": {
+                        "start": {
+                          "line": 13,
+                          "column": 22
+                        },
+                        "end": {
+                          "line": 13,
+                          "column": 33
+                        }
+                      }
+                    },
+                    "range": [
+                      262,
+                      290
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 13,
+                        "column": 5
+                      },
+                      "end": {
+                        "line": 13,
+                        "column": 33
+                      }
+                    }
+                  },
+                  "consequent": {
+                    "type": "BlockStatement",
+                    "body": [
+                      {
+                        "type": "ReturnStatement",
+                        "argument": {
+                          "type": "Literal",
+                          "value": "",
+                          "raw": "''",
+                          "range": [
+                            304,
+                            306
+                          ],
+                          "loc": {
+                            "start": {
+                              "line": 14,
+                              "column": 9
+                            },
+                            "end": {
+                              "line": 14,
+                              "column": 11
+                            }
+                          }
+                        },
+                        "range": [
+                          297,
+                          307
+                        ],
+                        "loc": {
+                          "start": {
+                            "line": 14,
+                            "column": 2
+                          },
+                          "end": {
+                            "line": 14,
+                            "column": 12
+                          }
+                        }
+                      }
+                    ],
+                    "range": [
+                      292,
+                      311
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 13,
+                        "column": 35
+                      },
+                      "end": {
+                        "line": 15,
+                        "column": 2
+                      }
+                    }
+                  },
+                  "alternate": null,
+                  "range": [
+                    258,
+                    311
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 13,
+                      "column": 1
+                    },
+                    "end": {
+                      "line": 15,
+                      "column": 2
+                    }
+                  },
+                  "leadingComments": [
+                    {
+                      "type": "Line",
+                      "value": " If there is no date, return an empty string",
+                      "range": [
+                        209,
+                        255
+                      ],
+                      "loc": {
+                        "start": {
+                          "line": 12,
+                          "column": 1
+                        },
+                        "end": {
+                          "line": 12,
+                          "column": 47
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "ReturnStatement",
+                  "argument": {
+                    "type": "CallExpression",
+                    "callee": {
+                      "type": "MemberExpression",
+                      "computed": false,
+                      "object": {
+                        "type": "CallExpression",
+                        "callee": {
+                          "type": "Identifier",
+                          "name": "moment",
+                          "range": [
+                            321,
+                            327
+                          ],
+                          "loc": {
+                            "start": {
+                              "line": 16,
+                              "column": 8
+                            },
+                            "end": {
+                              "line": 16,
+                              "column": 14
+                            }
+                          }
+                        },
+                        "arguments": [
+                          {
+                            "type": "Identifier",
+                            "name": "date",
+                            "range": [
+                              328,
+                              332
+                            ],
+                            "loc": {
+                              "start": {
+                                "line": 16,
+                                "column": 15
+                              },
+                              "end": {
+                                "line": 16,
+                                "column": 19
+                              }
+                            }
+                          }
+                        ],
+                        "range": [
+                          321,
+                          333
+                        ],
+                        "loc": {
+                          "start": {
+                            "line": 16,
+                            "column": 8
+                          },
+                          "end": {
+                            "line": 16,
+                            "column": 20
+                          }
+                        }
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "format",
+                        "range": [
+                          334,
+                          340
+                        ],
+                        "loc": {
+                          "start": {
+                            "line": 16,
+                            "column": 21
+                          },
+                          "end": {
+                            "line": 16,
+                            "column": 27
+                          }
+                        }
+                      },
+                      "range": [
+                        321,
+                        340
+                      ],
+                      "loc": {
+                        "start": {
+                          "line": 16,
+                          "column": 8
+                        },
+                        "end": {
+                          "line": 16,
+                          "column": 27
+                        }
+                      }
+                    },
+                    "arguments": [
+                      {
+                        "type": "Identifier",
+                        "name": "format",
+                        "range": [
+                          341,
+                          347
+                        ],
+                        "loc": {
+                          "start": {
+                            "line": 16,
+                            "column": 28
+                          },
+                          "end": {
+                            "line": 16,
+                            "column": 34
+                          }
+                        }
+                      }
+                    ],
+                    "range": [
+                      321,
+                      348
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 16,
+                        "column": 8
+                      },
+                      "end": {
+                        "line": 16,
+                        "column": 35
+                      }
+                    }
+                  },
+                  "range": [
+                    314,
+                    349
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 16,
+                      "column": 1
+                    },
+                    "end": {
+                      "line": 16,
+                      "column": 36
+                    }
+                  }
+                }
+              ],
+              "range": [
+                99,
+                352
+              ],
+              "loc": {
+                "start": {
+                  "line": 5,
+                  "column": 46
+                },
+                "end": {
+                  "line": 17,
+                  "column": 1
+                }
+              }
+            },
+            "generator": false,
+            "expression": false,
+            "range": [
+              76,
+              352
+            ],
+            "loc": {
+              "start": {
+                "line": 5,
+                "column": 23
+              },
+              "end": {
+                "line": 17,
+                "column": 1
+              }
+            }
+          },
+          "range": [
+            57,
+            352
+          ],
+          "loc": {
+            "start": {
+              "line": 5,
+              "column": 4
+            },
+            "end": {
+              "line": 17,
+              "column": 1
+            }
+          }
+        }
+      ],
+      "kind": "var",
+      "range": [
+        53,
+        353
+      ],
+      "loc": {
+        "start": {
+          "line": 5,
+          "column": 0
+        },
+        "end": {
+          "line": 17,
+          "column": 2
+        }
+      },
+      "leadingComments": [
+        {
+          "type": "Block",
+          "value": "*\r\n * Filter to format a date\r\n ",
+          "range": [
+            15,
+            51
+          ],
+          "loc": {
+            "start": {
+              "line": 2,
+              "column": 0
+            },
+            "end": {
+              "line": 4,
+              "column": 3
+            }
+          }
+        }
+      ],
+      "trailingComments": [
+        {
+          "type": "Block",
+          "value": "*\r\n * Factory to create new instances of the FormatDateFilter\r\n ",
+          "range": [
+            357,
+            425
+          ],
+          "loc": {
+            "start": {
+              "line": 19,
+              "column": 0
+            },
+            "end": {
+              "line": 21,
+              "column": 3
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "ExportDefaultDeclaration",
+      "declaration": {
+        "type": "FunctionDeclaration",
+        "id": {
+          "type": "Identifier",
+          "name": "FormatDateFilterFactory",
+          "range": [
+            451,
+            474
+          ],
+          "loc": {
+            "start": {
+              "line": 22,
+              "column": 24
+            },
+            "end": {
+              "line": 22,
+              "column": 47
+            }
+          }
+        },
+        "params": [],
+        "body": {
+          "type": "BlockStatement",
+          "body": [
+            {
+              "type": "ReturnStatement",
+              "argument": {
+                "type": "Identifier",
+                "name": "FormatDateFilter",
+                "range": [
+                  487,
+                  503
+                ],
+                "loc": {
+                  "start": {
+                    "line": 23,
+                    "column": 8
+                  },
+                  "end": {
+                    "line": 23,
+                    "column": 24
+                  }
+                }
+              },
+              "range": [
+                480,
+                504
+              ],
+              "loc": {
+                "start": {
+                  "line": 23,
+                  "column": 1
+                },
+                "end": {
+                  "line": 23,
+                  "column": 25
+                }
+              }
+            }
+          ],
+          "range": [
+            476,
+            507
+          ],
+          "loc": {
+            "start": {
+              "line": 22,
+              "column": 49
+            },
+            "end": {
+              "line": 24,
+              "column": 1
+            }
+          }
+        },
+        "generator": false,
+        "expression": false,
+        "range": [
+          442,
+          507
+        ],
+        "loc": {
+          "start": {
+            "line": 22,
+            "column": 15
+          },
+          "end": {
+            "line": 24,
+            "column": 1
+          }
+        },
+        "leadingComments": [
+          {
+            "type": "Block",
+            "value": "*\r\n * Factory to create new instances of the FormatDateFilter\r\n ",
+            "range": [
+              357,
+              425
+            ],
+            "loc": {
+              "start": {
+                "line": 19,
+                "column": 0
+              },
+              "end": {
+                "line": 21,
+                "column": 3
+              }
+            }
+          }
+        ],
+        "trailingComments": []
+      },
+      "range": [
+        427,
+        507
+      ],
+      "loc": {
+        "start": {
+          "line": 22,
+          "column": 0
+        },
+        "end": {
+          "line": 24,
+          "column": 1
+        }
+      },
+      "leadingComments": [
+        {
+          "type": "Block",
+          "value": "*\r\n * Factory to create new instances of the FormatDateFilter\r\n ",
+          "range": [
+            357,
+            425
+          ],
+          "loc": {
+            "start": {
+              "line": 19,
+              "column": 0
+            },
+            "end": {
+              "line": 21,
+              "column": 3
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "sourceType": "module",
+  "range": [
+    0,
+    507
+  ],
+  "loc": {
+    "start": {
+      "line": 1,
+      "column": 0
+    },
+    "end": {
+      "line": 24,
+      "column": 1
+    }
+  },
+  "comments": [
+    {
+      "type": "Block",
+      "value": "*\r\n * Filter to format a date\r\n ",
+      "range": [
+        15,
+        51
+      ],
+      "loc": {
+        "start": {
+          "line": 2,
+          "column": 0
+        },
+        "end": {
+          "line": 4,
+          "column": 3
+        }
+      }
+    },
+    {
+      "type": "Line",
+      "value": " If there is no format use a default format",
+      "range": [
+        105,
+        150
+      ],
+      "loc": {
+        "start": {
+          "line": 7,
+          "column": 1
+        },
+        "end": {
+          "line": 7,
+          "column": 46
+        }
+      }
+    },
+    {
+      "type": "Line",
+      "value": " If there is no date, return an empty string",
+      "range": [
+        209,
+        255
+      ],
+      "loc": {
+        "start": {
+          "line": 12,
+          "column": 1
+        },
+        "end": {
+          "line": 12,
+          "column": 47
+        }
+      }
+    },
+    {
+      "type": "Block",
+      "value": "*\r\n * Factory to create new instances of the FormatDateFilter\r\n ",
+      "range": [
+        357,
+        425
+      ],
+      "loc": {
+        "start": {
+          "line": 19,
+          "column": 0
+        },
+        "end": {
+          "line": 21,
+          "column": 3
+        }
+      }
+    }
+  ]
+}

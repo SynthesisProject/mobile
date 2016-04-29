@@ -77,12 +77,17 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SynthQIfStatement">SynthQIfStatement</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SynthQLoop">SynthQLoop</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-safo">safo</a></span></span></li>
-<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">base/filters</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-array2Object">array2Object</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-attachments">attachments</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-bytesToSize">bytesToSize</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-formatDate">formatDate</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-noEscape">noEscape</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-object2Array">object2Array</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">base/filters</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ArrayToObjectFilter">ArrayToObjectFilter</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ArrayToObjectFilterFactory">ArrayToObjectFilterFactory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-AttachmentsFilter">AttachmentsFilter</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-AttachmentsFilterFactory">AttachmentsFilterFactory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-BytesToSizeFilter">BytesToSizeFilter</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-BytesToSizeFilterFactory">BytesToSizeFilterFactory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-FormatDateFilter">FormatDateFilter</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-FormatDateFilterFactory">FormatDateFilterFactory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Object2ArrayFilter">Object2ArrayFilter</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Object2ArrayFilterFactory">Object2ArrayFilterFactory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-NoEscapeFilterFactory">NoEscapeFilterFactory</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">base/handlers</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-SynthAttachmentMinerProvider">SynthAttachmentMinerProvider</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-SynthDeleteHandlerProvider">SynthDeleteHandlerProvider</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-SynthEmbeddedImageHandlerProvider">SynthEmbeddedImageHandlerProvider</a></span></span></li>
@@ -235,6 +240,110 @@
     <td>
       <div>
         <p>
+           <span data-ice="name"><span><a href="function/index.html#static-function-ArrayToObjectFilter">ArrayToObjectFilter</a></span></span><span data-ice="signature">(input: <span>*</span>, srcIdName: <span>*</span>): <span>*</span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Filter to convert an array into a map</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+           <span data-ice="name"><span><a href="function/index.html#static-function-ArrayToObjectFilterFactory">ArrayToObjectFilterFactory</a></span></span><span data-ice="signature">(): <span>*</span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Factory to create new instances of the ArrayToObjectFilter</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+           <span data-ice="name"><span><a href="function/index.html#static-function-AttachmentsFilter">AttachmentsFilter</a></span></span><span data-ice="signature">(attachmentsArray: <span>*</span>): <span>*</span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Filter to get all the attachments from an array</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+           <span data-ice="name"><span><a href="function/index.html#static-function-AttachmentsFilterFactory">AttachmentsFilterFactory</a></span></span><span data-ice="signature">(): <span>*</span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Factory to create new instances of the AttachmentsFilter</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
            <span data-ice="name"><span><a href="function/index.html#static-function-BootSpinnerFactory">BootSpinnerFactory</a></span></span><span data-ice="signature">(): <span>*</span></span>
         </p>
       </div>
@@ -261,6 +370,58 @@
     <td>
       <div>
         <p>
+           <span data-ice="name"><span><a href="function/index.html#static-function-BytesToSizeFilter">BytesToSizeFilter</a></span></span><span data-ice="signature">(bytes: <span>*</span>, showZero: <span>*</span>): <span>*</span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Filter to convert bytes to a size</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+           <span data-ice="name"><span><a href="function/index.html#static-function-BytesToSizeFilterFactory">BytesToSizeFilterFactory</a></span></span><span data-ice="signature">(): <span>*</span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Factory to create new instances of the BytesToSizeFilter</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
            <span data-ice="name"><span><a href="function/index.html#static-function-CurrentModuleNameFactory">CurrentModuleNameFactory</a></span></span><span data-ice="signature">(): <span>*</span></span>
         </p>
       </div>
@@ -268,6 +429,58 @@
         
         
         <div data-ice="description"><p>Factory to create a new instance of the directive</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+           <span data-ice="name"><span><a href="function/index.html#static-function-FormatDateFilter">FormatDateFilter</a></span></span><span data-ice="signature">(date: <span>*</span>, format: <span>*</span>): <span>*</span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Filter to format a date</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+           <span data-ice="name"><span><a href="function/index.html#static-function-FormatDateFilterFactory">FormatDateFilterFactory</a></span></span><span data-ice="signature">(): <span>*</span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Factory to create new instances of the FormatDateFilter</p>
 </div>
       </div>
     </td>
@@ -391,6 +604,58 @@
     <td>
       <div>
         <p>
+           <span data-ice="name"><span><a href="function/index.html#static-function-Object2ArrayFilter">Object2ArrayFilter</a></span></span><span data-ice="signature">(input: <span>*</span>): <span>*</span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Filter to convert a object&apos;s keys to a map</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+           <span data-ice="name"><span><a href="function/index.html#static-function-Object2ArrayFilterFactory">Object2ArrayFilterFactory</a></span></span><span data-ice="signature">(): <span>*</span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Factory to create new instances of the Object2ArrayFilter</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
            <span data-ice="name"><span><a href="function/index.html#static-function-OverallSyncStatusFactory">OverallSyncStatusFactory</a></span></span><span data-ice="signature">(): <span>*</span></span>
         </p>
       </div>
@@ -473,8 +738,7 @@
       <div>
         
         
-        <div data-ice="description"><p>An object that manages handlers that have tool specific handlers to manage
-the mining of attachments in tool specific data.</p>
+        <div data-ice="description"><p>Handlers for responses to uploads.</p>
 </div>
       </div>
     </td>
@@ -500,7 +764,8 @@ the mining of attachments in tool specific data.</p>
       <div>
         
         
-        <div data-ice="description"><p>Handlers for responses to uploads.</p>
+        <div data-ice="description"><p>An object that manages handlers that have tool specific handlers to manage
+the mining of attachments in tool specific data.</p>
 </div>
       </div>
     </td>
@@ -1058,6 +1323,250 @@ in an external browser.</p>
   
 </div>
 <div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="static-function-ArrayToObjectFilter">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    <span data-ice="name">ArrayToObjectFilter</span><span data-ice="signature">(input: <span>*</span>, srcIdName: <span>*</span>): <span>*</span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/js/base/filters/ArrayToObjectFilter.js.html#lineNumber7">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  <div data-ice="description"><p>Filter to convert an array into a map</p>
+</div>
+
+  
+
+  <div data-ice="properties"><div data-ice="properties">
+  <h4 data-ice="title">Params:</h4>
+  <table class="params">
+    <thead>
+    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+    
+    <tr data-ice="property" data-depth="0">
+      <td data-ice="name" data-depth="0">input</td>
+      <td data-ice="type"><span>*</span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>input Array</p>
+</td>
+    </tr>
+<tr data-ice="property" data-depth="0">
+      <td data-ice="name" data-depth="0">srcIdName</td>
+      <td data-ice="type"><span>*</span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>name of the field in the source array that contains the id</p>
+</td>
+    </tr>
+</tbody>
+  </table>
+</div>
+</div>
+
+  <div class="return-params" data-ice="returnParams">
+    <h4>Return:</h4>
+    <table>
+      <tr>
+        <td class="return-type" data-ice="returnType"><span>*</span></td>
+        
+      </tr>
+    </table>
+    <div data-ice="returnProperties">
+</div>
+  </div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="static-function-ArrayToObjectFilterFactory">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    <span data-ice="name">ArrayToObjectFilterFactory</span><span data-ice="signature">(): <span>*</span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/js/base/filters/ArrayToObjectFilter.js.html#lineNumber20">source</a></span></span>
+    </span>
+  </h3>
+
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import ArrayToObjectFilterFactory from &apos;<span><a href="file/js/base/filters/ArrayToObjectFilter.js.html#lineNumber20">synthesis-mobile/js/base/filters/ArrayToObjectFilter.js</a></span>&apos;</code></pre></div>
+  
+  
+  <div data-ice="description"><p>Factory to create new instances of the ArrayToObjectFilter</p>
+</div>
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  <div class="return-params" data-ice="returnParams">
+    <h4>Return:</h4>
+    <table>
+      <tr>
+        <td class="return-type" data-ice="returnType"><span>*</span></td>
+        
+      </tr>
+    </table>
+    <div data-ice="returnProperties">
+</div>
+  </div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="static-function-AttachmentsFilter">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    <span data-ice="name">AttachmentsFilter</span><span data-ice="signature">(attachmentsArray: <span>*</span>): <span>*</span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/js/base/filters/AttachmentsFilter.js.html#lineNumber5">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  <div data-ice="description"><p>Filter to get all the attachments from an array</p>
+</div>
+
+  
+
+  <div data-ice="properties"><div data-ice="properties">
+  <h4 data-ice="title">Params:</h4>
+  <table class="params">
+    <thead>
+    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+    
+    <tr data-ice="property" data-depth="0">
+      <td data-ice="name" data-depth="0">attachmentsArray</td>
+      <td data-ice="type"><span>*</span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"></td>
+    </tr>
+</tbody>
+  </table>
+</div>
+</div>
+
+  <div class="return-params" data-ice="returnParams">
+    <h4>Return:</h4>
+    <table>
+      <tr>
+        <td class="return-type" data-ice="returnType"><span>*</span></td>
+        
+      </tr>
+    </table>
+    <div data-ice="returnProperties">
+</div>
+  </div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="static-function-AttachmentsFilterFactory">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    <span data-ice="name">AttachmentsFilterFactory</span><span data-ice="signature">(): <span>*</span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/js/base/filters/AttachmentsFilter.js.html#lineNumber19">source</a></span></span>
+    </span>
+  </h3>
+
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import AttachmentsFilterFactory from &apos;<span><a href="file/js/base/filters/AttachmentsFilter.js.html#lineNumber19">synthesis-mobile/js/base/filters/AttachmentsFilter.js</a></span>&apos;</code></pre></div>
+  
+  
+  <div data-ice="description"><p>Factory to create new instances of the AttachmentsFilter</p>
+</div>
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  <div class="return-params" data-ice="returnParams">
+    <h4>Return:</h4>
+    <table>
+      <tr>
+        <td class="return-type" data-ice="returnType"><span>*</span></td>
+        
+      </tr>
+    </table>
+    <div data-ice="returnProperties">
+</div>
+  </div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
   <h3 data-ice="anchor" id="static-function-BootSpinnerFactory">
     <span class="access" data-ice="access">public</span>
     
@@ -1109,6 +1618,130 @@ in an external browser.</p>
   
 </div>
 <div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="static-function-BytesToSizeFilter">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    <span data-ice="name">BytesToSizeFilter</span><span data-ice="signature">(bytes: <span>*</span>, showZero: <span>*</span>): <span>*</span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/js/base/filters/BytesToSizeFilter.js.html#lineNumber5">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  <div data-ice="description"><p>Filter to convert bytes to a size</p>
+</div>
+
+  
+
+  <div data-ice="properties"><div data-ice="properties">
+  <h4 data-ice="title">Params:</h4>
+  <table class="params">
+    <thead>
+    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+    
+    <tr data-ice="property" data-depth="0">
+      <td data-ice="name" data-depth="0">bytes</td>
+      <td data-ice="type"><span>*</span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"></td>
+    </tr>
+<tr data-ice="property" data-depth="0">
+      <td data-ice="name" data-depth="0">showZero</td>
+      <td data-ice="type"><span>*</span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"></td>
+    </tr>
+</tbody>
+  </table>
+</div>
+</div>
+
+  <div class="return-params" data-ice="returnParams">
+    <h4>Return:</h4>
+    <table>
+      <tr>
+        <td class="return-type" data-ice="returnType"><span>*</span></td>
+        
+      </tr>
+    </table>
+    <div data-ice="returnProperties">
+</div>
+  </div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="static-function-BytesToSizeFilterFactory">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    <span data-ice="name">BytesToSizeFilterFactory</span><span data-ice="signature">(): <span>*</span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/js/base/filters/BytesToSizeFilter.js.html#lineNumber25">source</a></span></span>
+    </span>
+  </h3>
+
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import BytesToSizeFilterFactory from &apos;<span><a href="file/js/base/filters/BytesToSizeFilter.js.html#lineNumber25">synthesis-mobile/js/base/filters/BytesToSizeFilter.js</a></span>&apos;</code></pre></div>
+  
+  
+  <div data-ice="description"><p>Factory to create new instances of the BytesToSizeFilter</p>
+</div>
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  <div class="return-params" data-ice="returnParams">
+    <h4>Return:</h4>
+    <table>
+      <tr>
+        <td class="return-type" data-ice="returnType"><span>*</span></td>
+        
+      </tr>
+    </table>
+    <div data-ice="returnProperties">
+</div>
+  </div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
   <h3 data-ice="anchor" id="static-function-CurrentModuleNameFactory">
     <span class="access" data-ice="access">public</span>
     
@@ -1127,6 +1760,130 @@ in an external browser.</p>
   
   
   <div data-ice="description"><p>Factory to create a new instance of the directive</p>
+</div>
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  <div class="return-params" data-ice="returnParams">
+    <h4>Return:</h4>
+    <table>
+      <tr>
+        <td class="return-type" data-ice="returnType"><span>*</span></td>
+        
+      </tr>
+    </table>
+    <div data-ice="returnProperties">
+</div>
+  </div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="static-function-FormatDateFilter">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    <span data-ice="name">FormatDateFilter</span><span data-ice="signature">(date: <span>*</span>, format: <span>*</span>): <span>*</span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/js/base/filters/FormatDateFilter.js.html#lineNumber5">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  <div data-ice="description"><p>Filter to format a date</p>
+</div>
+
+  
+
+  <div data-ice="properties"><div data-ice="properties">
+  <h4 data-ice="title">Params:</h4>
+  <table class="params">
+    <thead>
+    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+    
+    <tr data-ice="property" data-depth="0">
+      <td data-ice="name" data-depth="0">date</td>
+      <td data-ice="type"><span>*</span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"></td>
+    </tr>
+<tr data-ice="property" data-depth="0">
+      <td data-ice="name" data-depth="0">format</td>
+      <td data-ice="type"><span>*</span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"></td>
+    </tr>
+</tbody>
+  </table>
+</div>
+</div>
+
+  <div class="return-params" data-ice="returnParams">
+    <h4>Return:</h4>
+    <table>
+      <tr>
+        <td class="return-type" data-ice="returnType"><span>*</span></td>
+        
+      </tr>
+    </table>
+    <div data-ice="returnProperties">
+</div>
+  </div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="static-function-FormatDateFilterFactory">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    <span data-ice="name">FormatDateFilterFactory</span><span data-ice="signature">(): <span>*</span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/js/base/filters/FormatDateFilter.js.html#lineNumber22">source</a></span></span>
+    </span>
+  </h3>
+
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import FormatDateFilterFactory from &apos;<span><a href="file/js/base/filters/FormatDateFilter.js.html#lineNumber22">synthesis-mobile/js/base/filters/FormatDateFilter.js</a></span>&apos;</code></pre></div>
+  
+  
+  <div data-ice="description"><p>Factory to create new instances of the FormatDateFilter</p>
 </div>
 
   
@@ -1364,6 +2121,124 @@ in an external browser.</p>
   
 </div>
 <div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="static-function-Object2ArrayFilter">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    <span data-ice="name">Object2ArrayFilter</span><span data-ice="signature">(input: <span>*</span>): <span>*</span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/js/base/filters/Object2ArrayFilter.js.html#lineNumber5">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  <div data-ice="description"><p>Filter to convert a object&apos;s keys to a map</p>
+</div>
+
+  
+
+  <div data-ice="properties"><div data-ice="properties">
+  <h4 data-ice="title">Params:</h4>
+  <table class="params">
+    <thead>
+    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+    
+    <tr data-ice="property" data-depth="0">
+      <td data-ice="name" data-depth="0">input</td>
+      <td data-ice="type"><span>*</span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"></td>
+    </tr>
+</tbody>
+  </table>
+</div>
+</div>
+
+  <div class="return-params" data-ice="returnParams">
+    <h4>Return:</h4>
+    <table>
+      <tr>
+        <td class="return-type" data-ice="returnType"><span>*</span></td>
+        
+      </tr>
+    </table>
+    <div data-ice="returnProperties">
+</div>
+  </div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="static-function-Object2ArrayFilterFactory">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    <span data-ice="name">Object2ArrayFilterFactory</span><span data-ice="signature">(): <span>*</span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/js/base/filters/Object2ArrayFilter.js.html#lineNumber18">source</a></span></span>
+    </span>
+  </h3>
+
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import Object2ArrayFilterFactory from &apos;<span><a href="file/js/base/filters/Object2ArrayFilter.js.html#lineNumber18">synthesis-mobile/js/base/filters/Object2ArrayFilter.js</a></span>&apos;</code></pre></div>
+  
+  
+  <div data-ice="description"><p>Factory to create new instances of the Object2ArrayFilter</p>
+</div>
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  <div class="return-params" data-ice="returnParams">
+    <h4>Return:</h4>
+    <table>
+      <tr>
+        <td class="return-type" data-ice="returnType"><span>*</span></td>
+        
+      </tr>
+    </table>
+    <div data-ice="returnProperties">
+</div>
+  </div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
   <h3 data-ice="anchor" id="static-function-OverallSyncStatusFactory">
     <span class="access" data-ice="access">public</span>
     
@@ -1525,27 +2400,33 @@ in an external browser.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/js/base/handlers/SynthAttachmentMinerProvider.js.html#lineNumber23">source</a></span></span>
+      <span data-ice="source"><span><a href="file/js/base/handlers/SynthUploadResponseHandlerProvider.js.html#lineNumber30">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import SynthAttachmentMinerProvider from &apos;<span><a href="file/js/base/handlers/SynthAttachmentMinerProvider.js.html#lineNumber23">synthesis-mobile/js/base/handlers/SynthAttachmentMinerProvider.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import SynthAttachmentMinerProvider from &apos;<span><a href="file/js/base/handlers/SynthUploadResponseHandlerProvider.js.html#lineNumber30">synthesis-mobile/js/base/handlers/SynthUploadResponseHandlerProvider.js</a></span>&apos;</code></pre></div>
   
   
-  <div data-ice="description"><p>An object that manages handlers that have tool specific handlers to manage
-the mining of attachments in tool specific data.</p>
-<p>Params:
-toolName - name of the tool locally to SynthMobile - not SynthService name
-funcHandler - function for handler - or the word &quot;default&quot; to use default implementation</p>
-<p>The handler method should conform to the following rules:
-1) Accept the tool data as the first parameter of the handler method and the download path as the second.
-2) The handler must update the data to include the full local path for the attachments
-3) Return an array of files to download. The data structure for these files are:
-{
-  &apos;downloadKey&apos; : &apos;&lt;the key&gt;&apos;,
-  &apos;downloadPath&apos; : &apos;&lt;full cdv-file:// path&gt;&apos;</p>
-<p>}
-4) Return an empty array if there are no attachments to download</p>
+  <div data-ice="description"><p>Handlers for responses to uploads.
+Some tools will have to fix ids for generated content to ids
+returned by the server.</p>
+<p>The handler will be called with the following parameters
+$1 - sentObject        - The original data String
+$2 - responseObject    - The response from the server after the upload</p>
+<p>The handler should return a string or object representing the
+fixed data.</p>
+<p>Example
+function myUploadHandler(sentObject, responseObject){
+        var string = JSON.stringify(sentObject);
+    // Replace Ids
+    for(var oldKey in responseObject){
+        var newKey = responseObject[oldKey];
+        var regEx = new RegExp(oldKey, &apos;g&apos;);
+        // Replace all instances of the old key with the new key
+        string = string.replace(regEx, newKey);
+    }
+    return string;
+}</p>
 </div>
 
   
@@ -1579,33 +2460,27 @@ funcHandler - function for handler - or the word &quot;default&quot; to use defa
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/js/base/handlers/SynthUploadResponseHandlerProvider.js.html#lineNumber30">source</a></span></span>
+      <span data-ice="source"><span><a href="file/js/base/handlers/SynthAttachmentMinerProvider.js.html#lineNumber23">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import SynthAttachmentMinerProvider from &apos;<span><a href="file/js/base/handlers/SynthUploadResponseHandlerProvider.js.html#lineNumber30">synthesis-mobile/js/base/handlers/SynthUploadResponseHandlerProvider.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import SynthAttachmentMinerProvider from &apos;<span><a href="file/js/base/handlers/SynthAttachmentMinerProvider.js.html#lineNumber23">synthesis-mobile/js/base/handlers/SynthAttachmentMinerProvider.js</a></span>&apos;</code></pre></div>
   
   
-  <div data-ice="description"><p>Handlers for responses to uploads.
-Some tools will have to fix ids for generated content to ids
-returned by the server.</p>
-<p>The handler will be called with the following parameters
-$1 - sentObject        - The original data String
-$2 - responseObject    - The response from the server after the upload</p>
-<p>The handler should return a string or object representing the
-fixed data.</p>
-<p>Example
-function myUploadHandler(sentObject, responseObject){
-        var string = JSON.stringify(sentObject);
-    // Replace Ids
-    for(var oldKey in responseObject){
-        var newKey = responseObject[oldKey];
-        var regEx = new RegExp(oldKey, &apos;g&apos;);
-        // Replace all instances of the old key with the new key
-        string = string.replace(regEx, newKey);
-    }
-    return string;
-}</p>
+  <div data-ice="description"><p>An object that manages handlers that have tool specific handlers to manage
+the mining of attachments in tool specific data.</p>
+<p>Params:
+toolName - name of the tool locally to SynthMobile - not SynthService name
+funcHandler - function for handler - or the word &quot;default&quot; to use default implementation</p>
+<p>The handler method should conform to the following rules:
+1) Accept the tool data as the first parameter of the handler method and the download path as the second.
+2) The handler must update the data to include the full local path for the attachments
+3) Return an array of files to download. The data structure for these files are:
+{
+  &apos;downloadKey&apos; : &apos;&lt;the key&gt;&apos;,
+  &apos;downloadPath&apos; : &apos;&lt;full cdv-file:// path&gt;&apos;</p>
+<p>}
+4) Return an empty array if there are no attachments to download</p>
 </div>
 
   

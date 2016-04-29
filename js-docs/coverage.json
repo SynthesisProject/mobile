@@ -1,7 +1,7 @@
 {
-  "coverage": "62.76%",
-  "expectCount": 239,
-  "actualCount": 150,
+  "coverage": "64.75%",
+  "expectCount": 244,
+  "actualCount": 158,
   "files": {
     "js/base/directives/SynthAttachments.js": {
       "expectCount": 8,
@@ -35,6 +35,19 @@
         3
       ]
     },
+    "js/base/services/UserSettings.js": {
+      "expectCount": 11,
+      "actualCount": 4,
+      "undocumentLines": [
+        9,
+        10,
+        15,
+        8,
+        11,
+        21,
+        89
+      ]
+    },
     "js/base/services/RegistrationService.js": {
       "expectCount": 9,
       "actualCount": 2,
@@ -58,27 +71,14 @@
         11
       ]
     },
-    "js/base/services/UserSettings.js": {
-      "expectCount": 11,
-      "actualCount": 4,
-      "undocumentLines": [
-        9,
-        10,
-        15,
-        8,
-        11,
-        21,
-        89
-      ]
+    "js/base/directives/ModuleCollapse.js": {
+      "expectCount": 7,
+      "actualCount": 7,
+      "undocumentLines": []
     },
     "js/base/directives/CurrentModuleName.js": {
       "expectCount": 9,
       "actualCount": 9,
-      "undocumentLines": []
-    },
-    "js/base/directives/ModuleCollapse.js": {
-      "expectCount": 7,
-      "actualCount": 7,
       "undocumentLines": []
     },
     "js/tools/announcements/controllers/AnnouncementDetailCtrl.js": {
@@ -148,6 +148,16 @@
         37
       ]
     },
+    "js/base/filters/ArrayToObjectFilter.js": {
+      "expectCount": 2,
+      "actualCount": 2,
+      "undocumentLines": []
+    },
+    "js/base/filters/AttachmentsFilter.js": {
+      "expectCount": 2,
+      "actualCount": 2,
+      "undocumentLines": []
+    },
     "js/base/boot/BootCtrl.js": {
       "expectCount": 1,
       "actualCount": 0,
@@ -160,12 +170,15 @@
       "actualCount": 5,
       "undocumentLines": []
     },
-    "js/tools/resources/config.js": {
+    "js/base/filters/BytesToSizeFilter.js": {
+      "expectCount": 2,
+      "actualCount": 2,
+      "undocumentLines": []
+    },
+    "js/tools/announcements/config.js": {
       "expectCount": 1,
-      "actualCount": 0,
-      "undocumentLines": [
-        2
-      ]
+      "actualCount": 1,
+      "undocumentLines": []
     },
     "js/tools/schedule/config.js": {
       "expectCount": 1,
@@ -174,10 +187,12 @@
         2
       ]
     },
-    "js/tools/announcements/config.js": {
+    "js/tools/resources/config.js": {
       "expectCount": 1,
-      "actualCount": 1,
-      "undocumentLines": []
+      "actualCount": 0,
+      "undocumentLines": [
+        2
+      ]
     },
     "js/base/services/DataService.js": {
       "expectCount": 1,
@@ -185,6 +200,11 @@
       "undocumentLines": [
         8
       ]
+    },
+    "js/base/filters/FormatDateFilter.js": {
+      "expectCount": 2,
+      "actualCount": 2,
+      "undocumentLines": []
     },
     "js/base/home/HomeCtrl.js": {
       "expectCount": 2,
@@ -219,6 +239,16 @@
       "undocumentLines": [
         3
       ]
+    },
+    "js/base/filters/NoEscapeFilter.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "js/base/filters/Object2ArrayFilter.js": {
+      "expectCount": 2,
+      "actualCount": 2,
+      "undocumentLines": []
     },
     "js/base/directives/OverallSyncStatus.js": {
       "expectCount": 7,
@@ -486,16 +516,6 @@
         7
       ]
     },
-    "js/base/filters/array2Object.js": {
-      "expectCount": 1,
-      "actualCount": 1,
-      "undocumentLines": []
-    },
-    "js/base/filters/attachments.js": {
-      "expectCount": 1,
-      "actualCount": 1,
-      "undocumentLines": []
-    },
     "js/base/index.js": {
       "expectCount": 1,
       "actualCount": 0,
@@ -503,36 +523,10 @@
         74
       ]
     },
-    "js/base/filters/bytesToSize.js": {
-      "expectCount": 1,
-      "actualCount": 1,
-      "undocumentLines": []
-    },
     "js/base/Utilities.js": {
       "expectCount": 4,
       "actualCount": 4,
       "undocumentLines": []
-    },
-    "js/base/filters/formatDate.js": {
-      "expectCount": 1,
-      "actualCount": 0,
-      "undocumentLines": [
-        2
-      ]
-    },
-    "js/base/filters/noEscape.js": {
-      "expectCount": 1,
-      "actualCount": 0,
-      "undocumentLines": [
-        2
-      ]
-    },
-    "js/base/filters/object2Array.js": {
-      "expectCount": 1,
-      "actualCount": 0,
-      "undocumentLines": [
-        2
-      ]
     },
     "js/tools/resources/directives/resourceImg.js": {
       "expectCount": 1,

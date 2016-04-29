@@ -77,12 +77,17 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SynthQIfStatement">SynthQIfStatement</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SynthQLoop">SynthQLoop</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-safo">safo</a></span></span></li>
-<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">base/filters</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-array2Object">array2Object</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-attachments">attachments</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-bytesToSize">bytesToSize</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-formatDate">formatDate</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-noEscape">noEscape</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-object2Array">object2Array</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">base/filters</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ArrayToObjectFilter">ArrayToObjectFilter</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ArrayToObjectFilterFactory">ArrayToObjectFilterFactory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-AttachmentsFilter">AttachmentsFilter</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-AttachmentsFilterFactory">AttachmentsFilterFactory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-BytesToSizeFilter">BytesToSizeFilter</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-BytesToSizeFilterFactory">BytesToSizeFilterFactory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-FormatDateFilter">FormatDateFilter</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-FormatDateFilterFactory">FormatDateFilterFactory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Object2ArrayFilter">Object2ArrayFilter</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Object2ArrayFilterFactory">Object2ArrayFilterFactory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-NoEscapeFilterFactory">NoEscapeFilterFactory</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">base/handlers</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-SynthAttachmentMinerProvider">SynthAttachmentMinerProvider</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-SynthDeleteHandlerProvider">SynthDeleteHandlerProvider</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-SynthEmbeddedImageHandlerProvider">SynthEmbeddedImageHandlerProvider</a></span></span></li>
@@ -185,12 +190,12 @@ import Lock from &apos;./factories/Lock&apos;;
 
 
 // Import base filters
-import noEscape from &apos;./filters/noEscape&apos;;
-import object2Array from &apos;./filters/object2Array&apos;;
-import array2Object from &apos;./filters/array2Object&apos;;
-import formatDate from &apos;./filters/formatDate&apos;;
-import bytesToSize from &apos;./filters/bytesToSize&apos;;
-import attachments from &apos;./filters/attachments&apos;;
+import NoEscapeFilter from &apos;./filters/NoEscapeFilter&apos;;
+import Object2ArrayFilter from &apos;./filters/Object2ArrayFilter&apos;;
+import ArrayToObjectFilter from &apos;./filters/ArrayToObjectFilter&apos;;
+import FormatDateFilter from &apos;./filters/FormatDateFilter&apos;;
+import BytesToSizeFilter from &apos;./filters/BytesToSizeFilter&apos;;
+import AttachmentsFilter from &apos;./filters/AttachmentsFilter&apos;;
 
 // Import providers
 import SynthAttachmentMinerProvider from &apos;./handlers/SynthAttachmentMinerProvider&apos;;
@@ -265,12 +270,12 @@ angular.module(factories, [])
 
 // Register filters
 angular.module(filters, [])
-	.filter(&apos;noEscape&apos;, noEscape)
-	.filter(&apos;object2Array&apos;, object2Array)
-	.filter(&apos;array2Object&apos;, array2Object)
-	.filter(&apos;formatDate&apos;, formatDate)
-	.filter(&apos;bytesToSize&apos;, bytesToSize)
-	.filter(&apos;attachments&apos;, attachments);
+	.filter(&apos;noEscape&apos;, NoEscapeFilter)
+	.filter(&apos;object2Array&apos;, Object2ArrayFilter)
+	.filter(&apos;array2Object&apos;, ArrayToObjectFilter)
+	.filter(&apos;formatDate&apos;, FormatDateFilter)
+	.filter(&apos;bytesToSize&apos;, BytesToSizeFilter)
+	.filter(&apos;attachments&apos;, AttachmentsFilter);
 
 // Register directives
 angular.module(directives, [])
