@@ -65,10 +65,10 @@ All source code for the application is located `src` directory
  - js, all the JavaScript assets
  - less, styling
  - res, icons and images
- - 
- ### Android SDK Setup
+
+### Android SDK Setup
 You need to install the android sdk and have it configured to your path ($ANDROID_HOME, $ANDROID_HOME/tools, $ANDROID_HOME/platform-tools)
-Open the SDK manager and install
+Open the SDK manager and install:
  - Android SDK Tools
  - Android SDK Platform Tools
  - Android 5.1.1 (API 22)
