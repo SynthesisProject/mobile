@@ -72,6 +72,7 @@ Open the SDK manager and install:
  - Android SDK Tools
  - Android SDK Platform Tools
  - Android 5.1.1 (API 22)
+ - Android 6 (API 23)
  - Google Play Servics
  - Android Support Repository
  - Google Cloud Messanging for Android Library
