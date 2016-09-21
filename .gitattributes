@@ -1,0 +1,22 @@
+*               text eol=crlf
+
+# Source code
+*.css           text
+*.js            text
+*.html          text
+*.json          text
+*.sh            text eol=lf
+*.jsp           text
+*.xml           text
+*.properties    text
+
+# Images
+*.gif           binary
+*.ico           binary
+*.jpg           binary
+*.jpeg          binary
+*.png           binary
+*.otf           binary
+*.ttf           binary
+*.woff          binary
+*.woff2         binary
