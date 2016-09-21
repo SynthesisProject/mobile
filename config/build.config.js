@@ -7,7 +7,7 @@ var fs = require('fs'),
 var buildConfig = {
 	'cordova' : {
 		'dir' : 'cordova',
-		'packageId' : 'za.ac.nwu.efundi.mobile',
+		'packageId' : 'coza.opencollab.synthesis.mobile',
 		'authorName' : 'Charl Thiem',
 		'authorEmail' : 'charl@opencollab.co.za',
 		'iconsAndroidXml' : path.resolve(__dirname, 'icons-android.xml'),
@@ -57,14 +57,14 @@ var buildConfig = {
 	 * Do NOT include any context path or trailing slash
 	 * example: http://my.server.com or http://my.server.com:8080
 	 */
-	'serverBaseUrl' : 'http://v-sakai-shs-lnx1.nwu.ac.za',
+	'serverBaseUrl' : 'http://synthesis.opencollab.co.za',
 	/**
  	 * Context path the of the Synthesis Server.
 	 * This path should contain a trailing slash. if the service is hosted
 	 * on the root of the server, enter only the "/" as the value
 	 */
-	'serverBaseContextPath' : '/synthesis',
-	'applicationName' : 'eFundi MOVE',
+	'serverBaseContextPath' : '/synthesis-service',
+	'applicationName' : 'Synthesis Mobile',
 	'vendorName' : 'OPENCOLLAB',
 	// URL to the vendor website
 	'vendorURL' : 'http://www.opencollab.co.za',
@@ -78,7 +78,7 @@ var buildConfig = {
 	 * see the content they already downloaded, and content not uploaded
 	 * yet will seem lost!
 	 */
-	'dataDir' : 'eFundiMOVE',
+	'dataDir' : 'SynthMobile',
 	/*
 	 * Logging level
 	 * DEBUG : 1,
@@ -102,10 +102,10 @@ var buildConfig = {
 	'logFileCount' : 5,
 
 	// Flag if push notifications are enabled for the application
-	'pushEnabled' : true,
+	'pushEnabled' : false,
 
 	// Sender ID for android push notifications
-	'androidSenderID' : '1056951188126'
+	'androidSenderID' : null
 };
 
 // Check if there is an external file with build config we need to load
@@ -141,4 +141,5 @@ catch(error){
 if(externalConfig != null){
 	buildConfig = extend(true, buildConfig, externalConfig);
 }
+
 module.exports = buildConfig;

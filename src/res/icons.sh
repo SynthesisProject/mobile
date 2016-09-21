@@ -17,11 +17,11 @@ NATIVE_SPLASH=app_banner.svg
 NATIVE_SPLASH_BG=#ffffff
 
 # A squared logo (SVG only)
-LOGO_SQUARE=app_logo_square.svg
+LOGO_SQUARE=app_logo.svg
 
 # If you have an icon with a rounded border (SVG only)
 # if not, use the same icon as for LOGO_SQUARE
-LOGO_ROUNDED=app_logo_rounded.svg
+LOGO_ROUNDED=$LOGO_SQUARE
 
 # Native logo for Android
 NATIVE_LOGO_ANDROID=$LOGO_ROUNDED
