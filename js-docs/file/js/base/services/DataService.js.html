@@ -358,30 +358,30 @@ var DataService = ($q, $http, $rootScope, LoggerService, SynthError, UserSession
 		getApplicationRoot(){
 			const deferred = $q.defer();
 			// TODO remove the false!
-			if (false &amp;&amp; this.cachedRouteFileSystem !== null){
-				deferred.resolve(this.cachedRouteFileSystem);
-			}
-			else {
-				var self = this;
-				this.cordovaReady().then(() =&gt; {
-					window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
-					function gotFS(fileSystem) {
-						fileSystem.root.getDirectory(SynthConfig.dataDir, {create : true, exclusive : false},
-							(directory) =&gt; {
-								self.cachedRouteFileSystem = directory;
-								deferred.resolve(directory);
-							}, (error) =&gt; {
-								LOG.warn(&apos;Failed to get application root : &apos; + error);
-								deferred.reject(SynthError(1004, error.code));
-							}
-						);
-					}
-					function fail(error) {
-						LOG.warn(&apos;Failed to get filesystem, code:&apos; + error.code);
-						deferred.reject(SynthError(1004, error.code));
-					}
-				});
-			}
+			// if (false &amp;&amp; this.cachedRouteFileSystem !== null){
+			//deferred.resolve(this.cachedRouteFileSystem);
+			//}
+			//else {
+			var self = this;
+			this.cordovaReady().then(() =&gt; {
+				window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
+				function gotFS(fileSystem) {
+					fileSystem.root.getDirectory(SynthConfig.dataDir, {create : true, exclusive : false},
+						(directory) =&gt; {
+							self.cachedRouteFileSystem = directory;
+							deferred.resolve(directory);
+						}, (error) =&gt; {
+							LOG.warn(&apos;Failed to get application root : &apos; + error);
+							deferred.reject(SynthError(1004, error.code));
+						}
+					);
+				}
+				function fail(error) {
+					LOG.warn(&apos;Failed to get filesystem, code:&apos; + error.code);
+					deferred.reject(SynthError(1004, error.code));
+				}
+			});
+			//}
 			return deferred.promise;
 		}
 
