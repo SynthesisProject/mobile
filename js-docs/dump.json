@@ -5632,7 +5632,7 @@
     "access": null,
     "description": null,
     "lineNumber": 1,
-    "content": "'use strict';\r\n\r\nimport base from './base';\r\nimport tools from './tools';\r\n\r\nvar SynthMobile = 'SynthMobile';\r\n/* Main application module */\r\nangular.module(SynthMobile, [\r\n\t'ngRoute',\r\n\t'ngAnimate',\r\n\t'ngTouch',\r\n\t'ab-base64',\r\n\t'ui.bootstrap',\r\n\t'frapontillo.bootstrap-switch',\r\n\t'ng-iscroll',\r\n\t'synthesis.config',\r\n\tbase,\r\n\ttools\r\n]);\r\n\r\nangular.element(document).ready(function () {\r\n\tangular.bootstrap(document, [SynthMobile]);\r\n});\r\n"
+    "content": "'use strict';\r\n\r\nimport base from './base';\r\nimport tools from './tools';\r\n\r\nvar SynthMobile = 'SynthMobile';\r\n/* Main application module */\r\nangular.module(SynthMobile, [\r\n\t'ngRoute',\r\n\t'ngAnimate',\r\n\t'ngTouch',\r\n\t'ab-base64',\r\n\t'ui.bootstrap',\r\n\t'frapontillo.bootstrap-switch',\r\n\t'ng-iscroll',\r\n\t'synthesis.config',\r\n\t'synthesis.templates',\r\n\tbase,\r\n\ttools\r\n]);\r\n\r\nangular.element(document).ready(function () {\r\n\tangular.bootstrap(document, [SynthMobile]);\r\n});\r\n"
   },
   {
     "__docId__": 294,
