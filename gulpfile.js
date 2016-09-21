@@ -17,12 +17,14 @@ var gulp = require('gulp'),
 	xml = require('gulp-cordova-xml'),
 	pref = require('gulp-cordova-preference'),
 // gulp plugins
+	templateCache = require('gulp-angular-templatecache'),
+	htmlmin = require('gulp-htmlmin'),
+	sourcemaps = require('gulp-sourcemaps'),
 	replace = require('gulp-replace-task'),
-	concat = require('gulp-concat'),
 	usemin = require('gulp-usemin'),
 	uglify = require('gulp-uglify'),
 	less = require('gulp-less'),
-	minifyCss = require('gulp-minify-css'),
+	minifyCss = require('gulp-clean-css'),
 	rev = require('gulp-rev'),
 	browserify = require('browserify'),
 	buffer = require('vinyl-buffer'),
@@ -32,10 +34,17 @@ var gulp = require('gulp'),
 	eslint = require('gulp-eslint'),
 	gutil = require('gulp-util'),
 	cordovaRun = require('cordova-lib').cordova.run,
+	pumpify = require('pumpify'),
 	process = require('process'),
-	path = require('path');
+	merge = require('merge-stream');
 
-var DEVELOPMENT = !!process.env.DEVELOPMENT && (process.env.DEVELOPMENT.indexOf('true') == 0);
+var argv = require('minimist')(process.argv.slice(2));
+
+var options = {
+	development : argv.development === true
+};
+gutil.log('Running ' + (options.development ? 'DEVELOPMENT' : 'PRODUCTION') + ' mode');
+
 
 // Directories where sources come from
 var src = __dirname + '/src';
@@ -61,17 +70,47 @@ gulp.task('cleanup-build', function(cb) {
 	rimraf(workPipeline, cb);
 });
 
-gulp.task('lint', function () {
+/**
+ * Create template caches.
+ * @returns {Stream} A gulp stream
+ */
+function runTemplateCache(){
+	var sources = ['!' + srcHtml + '/index.html', srcHtml + '/**/*.html'];
+	return gulp.src(sources, {base : srcHtml})
+	.pipe(htmlmin({
+		collapseWhitespace : true,
+		removeComments : true
+	}))
+	.pipe(templateCache({
+		standalone : true,
+		module : 'synthesis.templates',
+		filename : 'js/synthesis-templates.js',
+		transformUrl : function(url){
+			// Remove starting slash
+			url = url.replace(/^\//, ''); // Linux
+			url = url.replace(/^\\/, ''); // Windows
+			return url;
+		}
+	}))
+	.pipe(uglify())
+	.pipe(gulp.dest(workPipeline + '/www'));
+}
+
+/**
+ * Run ESlint on source code
+ * @return {Steam} A gulp stream
+ */
+function runLint(){
 	return gulp.src([srcJs + '/**/*.js', '!node_modules/**'])
 		.pipe(eslint())
 		.pipe(eslint.format())
 		.pipe(eslint.failAfterError());
-});
+}
 
 /**
  * Generate the SynthesisConfig.js file
  */
-gulp.task('generate-config', ['cleanup-build'], function() {
+function createConfig(){
 	var configHeader = 'angular.module(\'synthesis.config\',[]).constant("SynthConfig",';
 	var configFooter = ');';
 	var configObject = {
@@ -97,9 +136,13 @@ gulp.task('generate-config', ['cleanup-build'], function() {
 	stream.write(configFooter);
 	stream.end();
 	stream.pipe(gulp.dest(workPipeline + '/www/js'));
-});
+}
 
-gulp.task('usemin', ['lint', 'cleanup-build'], function() {
+/**
+ * Run usemin.
+ * @returns {Stream} A gulp stream.
+ */
+function runUsemin(){
 	return gulp.src(srcHtml + '/index.html')
 		.pipe(replace({
 			patterns : [
@@ -118,37 +161,44 @@ gulp.task('usemin', ['lint', 'cleanup-build'], function() {
 			]
 		}))
 		.pipe(usemin({
-			less : [less/*, minifyCss, concat*/],
+			less : [less(), options.development ? gutil.noop() : minifyCss()],
 			css : [ rev() ],
-			//html : [ DEVELOPMENT ? gutil.noop() : minifyHtml({ empty : true }) ],
-			js : [ rev ],
-			inlinejs : [ uglify ],
-			inlinecss : [ minifyCss, concat ]
+			jsLibraries : [ options.development ? gutil.noop() : uglify(), rev()],
+			jsAngular : [ options.development ? gutil.noop() : uglify(), rev()],
+			jsBootstrap : [ options.development ? gutil.noop() : uglify(), rev()]
 		}))
 		.pipe(gulp.dest(workPipeline + '/www'));
-});
+}
 
-gulp.task('copy-html', ['cleanup-build'], function(){
-	return gulp.src([srcHtml + '/**', '!' + srcHtml + '/index.html'], {base : srcHtml})
+function copyWebassets(){
+	var streams = [];
+	streams[0] = gulp.src([srcHtml + '/**', '!' + srcHtml + '/index.html'], {base : srcHtml})
 		.pipe(gulp.dest(workPipeline + '/www'));
-});
 
-gulp.task('copy-bootstrap-assets', ['cleanup-build'], function(){
-	return gulp.src(['./bower_components/bootstrap/dist/fonts/**'], {base : './bower_components/bootstrap/dist'})
-		.pipe(gulp.dest(workPipeline + '/www'));
-});
+	streams[1] = gulp.src(['./bower_components/bootstrap/dist/fonts/**'], {base : './bower_components/bootstrap/dist'})
+			.pipe(gulp.dest(workPipeline + '/www'));
 
-gulp.task('pipeline', ['usemin', 'copy-html', 'generate-config', 'copy-bootstrap-assets'], function () {
-	return browserify(srcJs + '/init.js', { debug : DEVELOPMENT })
-		.bundle()
-		.on('error', function (err) {
-			throw new gutil.PluginError(pkg.name, 'Error while compiling application scripts : ' + err);
-		})
-		.pipe(source(pkg.name + '.min.js'))
-		.pipe(buffer())
-		.pipe(DEVELOPMENT ? gutil.noop() : uglify())
-		.pipe(gulp.dest(workPipeline + '/www/js'));
-});
+	return merge(streams);
+}
+
+function compileJavascript(){
+	var bundler = browserify({
+		entries : [srcJs + '/init.js'],
+		debug : options.development
+	});
+
+	var pipeline = [
+		bundler.bundle(),
+		source(pkg.name + '.min.js'),
+		buffer(),
+		options.development ? sourcemaps.init() : gutil.noop(),
+		options.development ? gutil.noop() : uglify(),
+		options.development ? sourcemaps.write() : gutil.noop(),
+		gulp.dest(workPipeline + '/www/js')
+	];
+
+	return pumpify(pipeline);
+}
 
 
 function createCordova(){
@@ -227,4 +277,14 @@ gulp.task('run-ios', ['build-ios'], function() {
 });
 
 
-gulp.task('default', ['cordova-android']);
+gulp.task('config:clean', ['cleanup-build'], createConfig);
+gulp.task('js:clean', ['cleanup-build'], compileJavascript);
+gulp.task('lint', runLint);
+gulp.task('templates:clean', ['cleanup-build'], runTemplateCache);
+gulp.task('web:clean', ['cleanup-build'], copyWebassets);
+gulp.task('usemin:clean', ['cleanup-build'], runUsemin);
+
+
+gulp.task('pipeline', ['js:clean', 'usemin:clean', 'web:clean', 'config:clean', 'templates:clean']);
+
+gulp.task('default', ['pipeline']);

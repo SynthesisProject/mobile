@@ -14,6 +14,7 @@ angular.module(SynthMobile, [
 	'frapontillo.bootstrap-switch',
 	'ng-iscroll',
 	'synthesis.config',
+	'synthesis.templates',
 	base,
 	tools
 ]);
