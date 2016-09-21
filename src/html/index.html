@@ -60,12 +60,11 @@
 		  <span ng-if="breadcrumb.url == null">{{breadcrumb.name}}</span>
 	  </li>
 	</ol>
-    <!--ng-iscroll='wrapper' ng-iscroll-refresh="1000" -->
-    <div class="wrapper" ng-iscroll="mainScroll">
-       <div class="scroller">
+	<div class="wrapper" ng-iscroll="mainScroll">
+	   <div class="scroller">
 			<div ng-view class="view-frame"></div>
-       </div>
-    </div>
+	   </div>
+	</div>
 	<!-- Modal for authenticate -->
 	<div class="modal fade" id="synthAuthenticationModal" tabindex="-1" role="dialog" aria-hidden="true">
 		<div class="modal-dialog">
@@ -81,15 +80,15 @@
 						<input type="text" class="form-control" disabled="disabled" ng-model="authenticationModel.username" required>
 						<input type="password" class="form-control" placeholder="Password" ng-model="authenticationModel.password" required autofocus>
 						<div class="alert alert-danger" ng-show="authenticationModel.authFailed">
-                            <b>{{authenticationModel.message}}</b><br>
-                            <span>{{authenticationModel.instruction}}</span>
-                        </div>
+							<b>{{authenticationModel.message}}</b><br>
+							<span>{{authenticationModel.instruction}}</span>
+						</div>
 						<button class="btn btn-lg btn-primary btn-block" type="submit">{{authenticationModel.submitText}}</button>
 					</form>
 				</div>
 			</div>
 		</div>
-    </div>
+	</div>
 
 	<!-- Modal for error message-->
 	<div class="modal fade no-select" id="synthErrorModal" tabindex="-1" role="dialog" aria-hidden="true">
