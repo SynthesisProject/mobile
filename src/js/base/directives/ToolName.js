@@ -40,15 +40,16 @@ class ToolName {
 		if(!angular.isDefined(attrs.moduleId)){
 			throw '"moduleId" should be an attribute of this directive.';
 		}
-
+		const self = this;
 		function update(){
 			if(scope.moduleId == null || scope.toolName == null){
 				element.text('');
 			}
-			else{
-				this.moduleService.getToolName(scope.moduleId, scope.toolName).then(function(name){
-					element.text(name ? name : 'unknown');
-				});
+			else {
+				self.moduleService.getToolName(scope.moduleId, scope.toolName)
+					.then(function(name){
+						element.text(name ? name : 'unknown');
+					});
 			}
 		}
 

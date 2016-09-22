@@ -146,7 +146,7 @@ var SyncService = ($q, $timeout, $filter, $rootScope, SyncAPIService, LoggerServ
 		}
 
 		startBackgroundSync(){
-			var self = this;
+			const self = this;
 			// Make sure we are not already running
 			if(syncBackgroundPromise == null){
 
@@ -164,7 +164,7 @@ var SyncService = ($q, $timeout, $filter, $rootScope, SyncAPIService, LoggerServ
 							if(settings.autoSyncDownload || settings.autoSyncUpload){
 								self._handleTimedSync();
 							}
-						}, settings.autoSyncInterval);
+						}, settings.autoSyncInterval || 180000); // Avoid runaway if for some reason this gets null
 					}
 					else{
 						LOG.debug('Not going to start sync, it is not enabled');
@@ -178,7 +178,7 @@ var SyncService = ($q, $timeout, $filter, $rootScope, SyncAPIService, LoggerServ
 
 		_handleTimedSync(){
 			LOG.debug('Need to check for sync now');
-			var self = this;
+			const self = this;
 			$timeout.cancel(syncBackgroundPromise);
 
 			UserSettings.getSettings().then((settings) => {

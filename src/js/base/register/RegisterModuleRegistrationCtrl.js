@@ -25,7 +25,7 @@ var RegisterModuleRegistrationCtrl = ($scope, $rootScope, $location, UserSession
 	ModuleService.getLinkedModules().then((registeredModulesObj) => {
 		var modules = [];
 
-		_.forEach(UserSession.registration.modules, (module) => {
+		angular.forEach(UserSession.registration.modules, (module) => {
 			if(!(registeredModulesObj[module.id] != null)){
 				modules.push(module);
 			}

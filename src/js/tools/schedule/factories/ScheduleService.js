@@ -68,7 +68,7 @@ var ScheduleService = ($q, $filter, ModuleService) => {
 
 				if (!allowedDays || (jQuery.inArray(start.day(), allowedDays)) > -1) {
 					var copiedRecurringEvent = {};
-					jQuery.extend(copiedRecurringEvent, event);
+					angular.extend(copiedRecurringEvent, event);
 					copiedRecurringEvent.start = start.toDate();
 					copiedRecurringEvent.end = moment(event.end).add(count * multiply, addType).toDate();
 					copiedRecurringEvent.id = event.id + '_' + count++;

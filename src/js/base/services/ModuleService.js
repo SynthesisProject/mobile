@@ -356,7 +356,7 @@ var ModuleService = ($q, DataService, RegistrationService, LoggerService, _SF, $
 			}
 
 			function getMergedDataPromise(){
-				var mergedData = jQuery.extend(true, toolData, toolUploadData);
+				var mergedData = angular.merge(toolData, toolUploadData);
 				return $q.when(mergedData);
 			}
 
@@ -382,7 +382,7 @@ var ModuleService = ($q, DataService, RegistrationService, LoggerService, _SF, $
 				// Success
 				function(data){
 					var jsonObject = convertToObject(jsonData);
-					var writeObject = jQuery.extend(true, data, jsonObject);
+					var writeObject = angular.merge(data, jsonObject);
 					// Write the merged data to the file
 					DataService.writeToolData(moduleId, toolname, writeObject, isUploadData).then(
 						// Success

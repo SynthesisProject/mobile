@@ -23,7 +23,7 @@ var RegisterService = ($q, $filter, DataService, RegistrationService, SyncAPISer
 			var self = this;
 			let promise = $q.when();
 			angular.forEach(modules, function(theModule){
-				promise.then(function(){
+				promise = promise.then(function(){
 					return self._createModuleStructure(theModule.id);
 				});
 			});
