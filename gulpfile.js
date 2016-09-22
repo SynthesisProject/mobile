@@ -191,7 +191,7 @@ function compileJavascript(){
 		bundler.bundle(),
 		source(pkg.name + '.min.js'),
 		buffer(),
-		options.development ? sourcemaps.init() : gutil.noop(),
+		options.development ? sourcemaps.init({loadMaps : true}) : gutil.noop(),
 		options.development ? gutil.noop() : uglify(),
 		options.development ? sourcemaps.write() : gutil.noop(),
 		gulp.dest(workPipeline + '/www/js')
