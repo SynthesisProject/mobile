@@ -63,19 +63,21 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ToolNameFactory">ToolNameFactory</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ToolSyncStatusFactory">ToolSyncStatusFactory</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SynthFooterFactory">SynthFooterFactory</a></span></span></li>
-<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">base/factories</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/base/factories/AppSyncStatus.js~AppSyncStatus.html">AppSyncStatus</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">base/factories</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/base/factories/AccessPermission.js~AccessPermission.html">AccessPermission</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/base/factories/AppSyncStatus.js~AppSyncStatus.html">AppSyncStatus</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/base/factories/Lock.js~Lock.html">Lock</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/base/factories/UserSession.js~UserSession.html">UserSession</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-AccessPermissionFactory">AccessPermissionFactory</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-AppSyncStatusFactory">AppSyncStatusFactory</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-LockFactory">LockFactory</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-UserSessionFactory">UserSessionFactory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-FILE_ACCESS_LOCK">FILE_ACCESS_LOCK</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SynthAuthenticateUser">SynthAuthenticateUser</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SynthCheckResponseError">SynthCheckResponseError</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SynthError">SynthError</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SynthErrorHandler">SynthErrorHandler</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SynthFail">SynthFail</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SynthQIfStatement">SynthQIfStatement</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SynthQLoop">SynthQLoop</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-safo">safo</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">base/filters</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ArrayToObjectFilter">ArrayToObjectFilter</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ArrayToObjectFilterFactory">ArrayToObjectFilterFactory</a></span></span></li>
@@ -153,6 +155,31 @@
   <tbody>
   
   <tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+           <span data-ice="name"><span><a href="function/index.html#static-function-AccessPermissionFactory">AccessPermissionFactory</a></span></span><span data-ice="signature">(): <span>*</span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
     <td>
       <span class="access" data-ice="access">public</span>
       
@@ -738,7 +765,8 @@
       <div>
         
         
-        <div data-ice="description"><p>Handlers for responses to uploads.</p>
+        <div data-ice="description"><p>An object that manages handlers that have tool specific handlers to manage
+the mining of attachments in tool specific data.</p>
 </div>
       </div>
     </td>
@@ -764,8 +792,7 @@
       <div>
         
         
-        <div data-ice="description"><p>An object that manages handlers that have tool specific handlers to manage
-the mining of attachments in tool specific data.</p>
+        <div data-ice="description"><p>Handlers for responses to uploads.</p>
 </div>
       </div>
     </td>
@@ -1170,6 +1197,56 @@ in an external browser.</p>
 </div>
 <div data-ice="details"><h2 data-ice="title">Static Public </h2>
 
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="static-function-AccessPermissionFactory">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    <span data-ice="name">AccessPermissionFactory</span><span data-ice="signature">(): <span>*</span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/js/base/factories/AccessPermission.js.html#lineNumber72">source</a></span></span>
+    </span>
+  </h3>
+
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import AccessPermissionFactory from &apos;<span><a href="file/js/base/factories/AccessPermission.js.html#lineNumber72">synthesis-mobile/js/base/factories/AccessPermission.js</a></span>&apos;</code></pre></div>
+  
+  
+  
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  <div class="return-params" data-ice="returnParams">
+    <h4>Return:</h4>
+    <table>
+      <tr>
+        <td class="return-type" data-ice="returnType"><span>*</span></td>
+        
+      </tr>
+    </table>
+    <div data-ice="returnProperties">
+</div>
+  </div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
 <div class="detail" data-ice="detail">
   <h3 data-ice="anchor" id="static-function-AnimatedEllipseFactory">
     <span class="access" data-ice="access">public</span>
@@ -2080,11 +2157,11 @@ in an external browser.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/js/base/directives/ModuleName.js.html#lineNumber59">source</a></span></span>
+      <span data-ice="source"><span><a href="file/js/base/directives/ModuleName.js.html#lineNumber60">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import ModuleNameFactory from &apos;<span><a href="file/js/base/directives/ModuleName.js.html#lineNumber59">synthesis-mobile/js/base/directives/ModuleName.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import ModuleNameFactory from &apos;<span><a href="file/js/base/directives/ModuleName.js.html#lineNumber60">synthesis-mobile/js/base/directives/ModuleName.js</a></span>&apos;</code></pre></div>
   
   
   <div data-ice="description"><p>Factory to create a new instance of the directive</p>
@@ -2400,33 +2477,27 @@ in an external browser.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/js/base/handlers/SynthUploadResponseHandlerProvider.js.html#lineNumber30">source</a></span></span>
+      <span data-ice="source"><span><a href="file/js/base/handlers/SynthAttachmentMinerProvider.js.html#lineNumber23">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import SynthAttachmentMinerProvider from &apos;<span><a href="file/js/base/handlers/SynthUploadResponseHandlerProvider.js.html#lineNumber30">synthesis-mobile/js/base/handlers/SynthUploadResponseHandlerProvider.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import SynthAttachmentMinerProvider from &apos;<span><a href="file/js/base/handlers/SynthAttachmentMinerProvider.js.html#lineNumber23">synthesis-mobile/js/base/handlers/SynthAttachmentMinerProvider.js</a></span>&apos;</code></pre></div>
   
   
-  <div data-ice="description"><p>Handlers for responses to uploads.
-Some tools will have to fix ids for generated content to ids
-returned by the server.</p>
-<p>The handler will be called with the following parameters
-$1 - sentObject        - The original data String
-$2 - responseObject    - The response from the server after the upload</p>
-<p>The handler should return a string or object representing the
-fixed data.</p>
-<p>Example
-function myUploadHandler(sentObject, responseObject){
-        var string = JSON.stringify(sentObject);
-    // Replace Ids
-    for(var oldKey in responseObject){
-        var newKey = responseObject[oldKey];
-        var regEx = new RegExp(oldKey, &apos;g&apos;);
-        // Replace all instances of the old key with the new key
-        string = string.replace(regEx, newKey);
-    }
-    return string;
-}</p>
+  <div data-ice="description"><p>An object that manages handlers that have tool specific handlers to manage
+the mining of attachments in tool specific data.</p>
+<p>Params:
+toolName - name of the tool locally to SynthMobile - not SynthService name
+funcHandler - function for handler - or the word &quot;default&quot; to use default implementation</p>
+<p>The handler method should conform to the following rules:
+1) Accept the tool data as the first parameter of the handler method and the download path as the second.
+2) The handler must update the data to include the full local path for the attachments
+3) Return an array of files to download. The data structure for these files are:
+{
+  &apos;downloadKey&apos; : &apos;&lt;the key&gt;&apos;,
+  &apos;downloadPath&apos; : &apos;&lt;full cdv-file:// path&gt;&apos;</p>
+<p>}
+4) Return an empty array if there are no attachments to download</p>
 </div>
 
   
@@ -2460,27 +2531,33 @@ function myUploadHandler(sentObject, responseObject){
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/js/base/handlers/SynthAttachmentMinerProvider.js.html#lineNumber23">source</a></span></span>
+      <span data-ice="source"><span><a href="file/js/base/handlers/SynthUploadResponseHandlerProvider.js.html#lineNumber30">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import SynthAttachmentMinerProvider from &apos;<span><a href="file/js/base/handlers/SynthAttachmentMinerProvider.js.html#lineNumber23">synthesis-mobile/js/base/handlers/SynthAttachmentMinerProvider.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import SynthAttachmentMinerProvider from &apos;<span><a href="file/js/base/handlers/SynthUploadResponseHandlerProvider.js.html#lineNumber30">synthesis-mobile/js/base/handlers/SynthUploadResponseHandlerProvider.js</a></span>&apos;</code></pre></div>
   
   
-  <div data-ice="description"><p>An object that manages handlers that have tool specific handlers to manage
-the mining of attachments in tool specific data.</p>
-<p>Params:
-toolName - name of the tool locally to SynthMobile - not SynthService name
-funcHandler - function for handler - or the word &quot;default&quot; to use default implementation</p>
-<p>The handler method should conform to the following rules:
-1) Accept the tool data as the first parameter of the handler method and the download path as the second.
-2) The handler must update the data to include the full local path for the attachments
-3) Return an array of files to download. The data structure for these files are:
-{
-  &apos;downloadKey&apos; : &apos;&lt;the key&gt;&apos;,
-  &apos;downloadPath&apos; : &apos;&lt;full cdv-file:// path&gt;&apos;</p>
-<p>}
-4) Return an empty array if there are no attachments to download</p>
+  <div data-ice="description"><p>Handlers for responses to uploads.
+Some tools will have to fix ids for generated content to ids
+returned by the server.</p>
+<p>The handler will be called with the following parameters
+$1 - sentObject        - The original data String
+$2 - responseObject    - The response from the server after the upload</p>
+<p>The handler should return a string or object representing the
+fixed data.</p>
+<p>Example
+function myUploadHandler(sentObject, responseObject){
+        var string = JSON.stringify(sentObject);
+    // Replace Ids
+    for(var oldKey in responseObject){
+        var newKey = responseObject[oldKey];
+        var regEx = new RegExp(oldKey, &apos;g&apos;);
+        // Replace all instances of the old key with the new key
+        string = string.replace(regEx, newKey);
+    }
+    return string;
+}</p>
 </div>
 
   

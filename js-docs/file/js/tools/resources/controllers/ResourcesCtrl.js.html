@@ -63,19 +63,21 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ToolNameFactory">ToolNameFactory</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ToolSyncStatusFactory">ToolSyncStatusFactory</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SynthFooterFactory">SynthFooterFactory</a></span></span></li>
-<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">base/factories</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/base/factories/AppSyncStatus.js~AppSyncStatus.html">AppSyncStatus</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">base/factories</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/base/factories/AccessPermission.js~AccessPermission.html">AccessPermission</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/base/factories/AppSyncStatus.js~AppSyncStatus.html">AppSyncStatus</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/base/factories/Lock.js~Lock.html">Lock</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/base/factories/UserSession.js~UserSession.html">UserSession</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-AccessPermissionFactory">AccessPermissionFactory</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-AppSyncStatusFactory">AppSyncStatusFactory</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-LockFactory">LockFactory</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-UserSessionFactory">UserSessionFactory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-FILE_ACCESS_LOCK">FILE_ACCESS_LOCK</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SynthAuthenticateUser">SynthAuthenticateUser</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SynthCheckResponseError">SynthCheckResponseError</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SynthError">SynthError</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SynthErrorHandler">SynthErrorHandler</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SynthFail">SynthFail</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SynthQIfStatement">SynthQIfStatement</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SynthQLoop">SynthQLoop</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-safo">safo</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">base/filters</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ArrayToObjectFilter">ArrayToObjectFilter</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ArrayToObjectFilterFactory">ArrayToObjectFilterFactory</a></span></span></li>
@@ -149,7 +151,7 @@
 
 <div class="content" data-ice="content"><h1 data-ice="title">js/tools/resources/controllers/ResourcesCtrl.js</h1>
 <pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">&apos;use strict&apos;;
-var ResourcesCtrl = ($scope, $filter, $rootScope, $routeParams, $window, $timeout, ResourcesService, DataService, SynthErrorHandler, SynthQLoop, SynthError) =&gt; {
+var ResourcesCtrl = ($scope, $filter, $rootScope, $routeParams, $window, $timeout, $q, ResourcesService, DataService, SynthErrorHandler, SynthError) =&gt; {
 
 	$rootScope.activePage = &apos;forums&apos;;
 	$rootScope.breadcrumbs = [{&apos;name&apos; : &apos;Resources&apos;}];
@@ -197,56 +199,47 @@ var ResourcesCtrl = ($scope, $filter, $rootScope, $routeParams, $window, $timeou
 		$event.stopPropagation();
 		$scope.promptDownloadAll = false;
 		$scope.busyDownloadingAll = true;
-		var rIdx = 0; // Index of the resources
 
 		// Get the next resource in the list if there is any
 		function getDownloadResourcePromise(){
-			// If there is nothing we are done
-			if($scope.downloadAllObject.resources == null){
-				return null;
-			}
-			else if(rIdx &lt; $scope.downloadAllObject.resources.length){
-				return ResourcesService.downloadResource(moduleId, $scope.downloadAllObject.resources[rIdx])
-				.then(function(){
-					var resource = $scope.downloadAllObject.resources[rIdx];
-					// If there is no progress yet we add a zero progress
-					if(resource.downloaded === undefined){
-						resource.downloaded = 0;
-					}
-					// When a resource is completly download we add the full size to the progress
-					$scope.downloadAllObject.downloaded = ($scope.downloadAllObject.downloaded - resource.downloaded) + resource.size;
-					$scope.downloadAllObject.progress = ($scope.downloadAllObject.downloaded / $scope.downloadAllObject.size) * 100;
-					$scope.downloadAllObject.downloadedFiles++;
-					rIdx++;
+			let promise = $q.when();
+			angular.forEach($scope.downloadAllObject.resources, function(resource){
+				promise = promise.then(function(){
+					return ResourcesService.downloadResource(moduleId, resource)
+						.then(function success(){
+							// If there is no progress yet we add a zero progress
+							if(resource.downloaded === undefined){
+								resource.downloaded = 0;
+							}
+							// When a resource is completly download we add the full size to the progress
+							$scope.downloadAllObject.downloaded = ($scope.downloadAllObject.downloaded - resource.downloaded) + resource.size;
+							$scope.downloadAllObject.progress = ($scope.downloadAllObject.downloaded / $scope.downloadAllObject.size) * 100;
+							$scope.downloadAllObject.downloadedFiles++;
+						}, function error(reason){
+							return $q.reject(reason);
+						}, function notify(notification){
+							if(notification.lengthComputable) {
+								resource.size = notification.total;
+							}
+							// If there is no progress yet we add a zero progress
+							if(resource.downloaded === undefined){
+								resource.downloaded = 0;
+							}
+							$scope.downloadAllObject.downloaded = ($scope.downloadAllObject.downloaded - resource.downloaded) + notification.loaded;
+							resource.downloaded = notification.loaded;
+							$scope.downloadAllObject.progress = ($scope.downloadAllObject.downloaded / $scope.downloadAllObject.size) * 100;
+						});
 				});
-			}
-			// We are done
-			else{
-				return null;
-			}
+			});
+			return promise;
 		}
 
-		SynthQLoop(getDownloadResourcePromise)
+		getDownloadResourcePromise()
 		.then(function(){ // Success
 			$scope.busyDownloadingAll = false;
 			openDirectory(currentDirectory);
 		}, function(){ // Error
 			$scope.busyDownloadingAll = false;
-		}, function(notification){ // Status
-			// Check the file download progress
-			if(notification instanceof ProgressEvent){
-				var resource = $scope.downloadAllObject.resources[rIdx];
-				if(notification.lengthComputable) {
-					resource.size = notification.total;
-				}
-				// If there is no progress yet we add a zero progress
-				if(resource.downloaded === undefined){
-					resource.downloaded = 0;
-				}
-				$scope.downloadAllObject.downloaded = ($scope.downloadAllObject.downloaded - resource.downloaded) + notification.loaded;
-				resource.downloaded = notification.loaded;
-				$scope.downloadAllObject.progress = ($scope.downloadAllObject.downloaded / $scope.downloadAllObject.size) * 100;
-			}
 		});
 	};
 
@@ -486,7 +479,7 @@ var ResourcesCtrl = ($scope, $filter, $rootScope, $routeParams, $window, $timeou
 
 	openDirectory(null);
 };
-ResourcesCtrl.$inject = [&apos;$scope&apos;, &apos;$filter&apos;, &apos;$rootScope&apos;, &apos;$routeParams&apos;, &apos;$window&apos;, &apos;$timeout&apos;, &apos;ResourcesService&apos;, &apos;DataService&apos;, &apos;SynthErrorHandler&apos;, &apos;SynthQLoop&apos;, &apos;SynthError&apos;];
+ResourcesCtrl.$inject = [&apos;$scope&apos;, &apos;$filter&apos;, &apos;$rootScope&apos;, &apos;$routeParams&apos;, &apos;$window&apos;, &apos;$timeout&apos;, &apos;$q&apos;, &apos;ResourcesService&apos;, &apos;DataService&apos;, &apos;SynthErrorHandler&apos;, &apos;SynthError&apos;];
 export default ResourcesCtrl;
 </code></pre>
 

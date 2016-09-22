@@ -63,19 +63,21 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ToolNameFactory">ToolNameFactory</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ToolSyncStatusFactory">ToolSyncStatusFactory</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SynthFooterFactory">SynthFooterFactory</a></span></span></li>
-<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">base/factories</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/base/factories/AppSyncStatus.js~AppSyncStatus.html">AppSyncStatus</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">base/factories</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/base/factories/AccessPermission.js~AccessPermission.html">AccessPermission</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/base/factories/AppSyncStatus.js~AppSyncStatus.html">AppSyncStatus</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/base/factories/Lock.js~Lock.html">Lock</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/base/factories/UserSession.js~UserSession.html">UserSession</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-AccessPermissionFactory">AccessPermissionFactory</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-AppSyncStatusFactory">AppSyncStatusFactory</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-LockFactory">LockFactory</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-UserSessionFactory">UserSessionFactory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-FILE_ACCESS_LOCK">FILE_ACCESS_LOCK</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SynthAuthenticateUser">SynthAuthenticateUser</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SynthCheckResponseError">SynthCheckResponseError</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SynthError">SynthError</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SynthErrorHandler">SynthErrorHandler</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SynthFail">SynthFail</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SynthQIfStatement">SynthQIfStatement</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SynthQLoop">SynthQLoop</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-safo">safo</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">base/filters</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ArrayToObjectFilter">ArrayToObjectFilter</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ArrayToObjectFilterFactory">ArrayToObjectFilterFactory</a></span></span></li>
@@ -153,7 +155,7 @@
 // TODO all the rest calls should move to SynthesisRESTClient
 var SyncAPIService = ($q, $http, $filter, $rootScope, base64, DataService,
 	LoggerService, SynthError, _SF, CheckError,
-	SynthConfig, SynthQLoop, ModuleService, RegistrationService, SynthAttachmentMiner,
+	SynthConfig, ModuleService, RegistrationService, SynthAttachmentMiner,
 	SynthEmbeddedImageHandler, SynthDeleteHandler, SynthLinkHandler, SynthUploadResponseHandler) =&gt; {
 
 	var LOG = LoggerService(&apos;SyncAPIService&apos;);
@@ -262,52 +264,40 @@ var SyncAPIService = ($q, $http, $filter, $rootScope, base64, DataService,
 		}
 	 */
 	SyncAPIServiceImpl.prototype.getSyncStatusModulesOffline = function(){
-		var modules, // Array of modules we have to get statuses for
-			self = this,
+		var self = this,
 			syncStatus = {
 				&apos;inSync&apos; : true,
 				&apos;contentDownloadSize&apos; : 0,
 				&apos;contentUploadSize&apos; : 0,
 				&apos;total&apos; : 0,
 				&apos;modules&apos; : {}
-			},
-			idx = 0;
+			};
 
-		/**
-		 * Returns a promise to get the Sync Status of the next module in a list.
-		 * If there is no more modules in the list, it return null
-		 */
-		function getSyncStatusPromise(){
-			// Check if we have any more modules to work with
-			if(modules == null || idx &gt;= modules.length){
-				return null;
-			}
-
-			// Get the next module and increment the index
-			var module = modules[idx++];
-
-			// Get the sync details for the current item in the list
-			return self.getSyncStatusModuleOffline(module.id)
-				.then((moduleSyncStatus) =&gt; {
-
-					// Add the module to the modules map
-					syncStatus.modules[module.id] = moduleSyncStatus;
-
-					// Update the overall sync status to include the totals of the module
-					syncStatus.inSync &amp;= moduleSyncStatus.inSync;
-					syncStatus.contentDownloadSize += moduleSyncStatus.contentDownloadSize;
-					syncStatus.contentUploadSize += moduleSyncStatus.contentUploadSize;
-					syncStatus.total += moduleSyncStatus.total;
-					return syncStatus;
-				});
-		}
 
 		/**
 		 * Returns a promise to loop through all the modules to get their sync status
 		 */
 		function getLoopModulesPromise(linkedModules){
-			modules = linkedModules;
-			return SynthQLoop(getSyncStatusPromise).then(() =&gt; {
+			let promise = $q.when();
+			angular.forEach(linkedModules, function(linkedModule){
+				promise = promise.then(function(){
+					return self.getSyncStatusModuleOffline(linkedModule.id)
+						.then((moduleSyncStatus) =&gt; {
+
+							// Add the module to the modules map
+							syncStatus.modules[linkedModule.id] = moduleSyncStatus;
+
+							// Update the overall sync status to include the totals of the module
+							syncStatus.inSync &amp;= moduleSyncStatus.inSync;
+							syncStatus.contentDownloadSize += moduleSyncStatus.contentDownloadSize;
+							syncStatus.contentUploadSize += moduleSyncStatus.contentUploadSize;
+							syncStatus.total += moduleSyncStatus.total;
+							return syncStatus;
+						});
+				});
+			});
+
+			return promise.then(() =&gt; {
 				return syncStatus;
 			});
 		}
@@ -341,12 +331,7 @@ var SyncAPIService = ($q, $http, $filter, $rootScope, base64, DataService,
 		}
 	 */
 	SyncAPIServiceImpl.prototype.getSyncStatusModuleOffline = function(moduleId){
-		var deferred = $q.defer();
-
-
-		var errorHandler = _SF(deferred);
 		var self = this;
-		var moduleData = {};
 		// The response object that will be sent to the caller of this function
 		var syncStatus = {
 			&apos;inSync&apos; : true,
@@ -372,32 +357,27 @@ var SyncAPIService = ($q, $http, $filter, $rootScope, base64, DataService,
 			});
 		};
 
-		ModuleService.getModuleData(moduleId).then((data) =&gt; {
-			moduleData = data;
+		return ModuleService.getModuleData(moduleId).then((moduleData) =&gt; {
 			// If we don&apos;t have tool we must be out of sync
 			if(moduleData == null || moduleData.tools == null){
 				syncStatus.inSync = false;
-				deferred.resolve(syncStatus);
+				return syncStatus; // Resolve with this sync status
 			}
 			else{
-				var idx = 0;
-				var toolsArray = $filter(&apos;object2Array&apos;)(moduleData.toolsLocal);
-				SynthQLoop(() =&gt; {
-					var promise;
-					// We have no more promises to update
-					if (idx &gt;= toolsArray.length){
-						promise = null;
-					}
-					else{
-						promise = funcUpdateTool(toolsArray[idx++].key);
-					}
-					return promise;
-				}).then(() =&gt; {
-					deferred.resolve(syncStatus);
+				let toolsArray = $filter(&apos;object2Array&apos;)(moduleData.toolsLocal);
+				let promise = $q.when();
+				angular.forEach(toolsArray, function(tool){
+					promise = promise.then(function(){
+						return funcUpdateTool(tool.key);
+					});
+				});
+
+				// Else return another promise
+				return promise.then(function(){
+					return syncStatus;
 				});
 			}
-		}, errorHandler);
-		return deferred.promise;
+		});
 	};
 
 	/**
@@ -528,41 +508,36 @@ var SyncAPIService = ($q, $http, $filter, $rootScope, base64, DataService,
 		}
 
 		/**
-		 * Gets a promise to check the upload size for a tool
+		 * Gets a promise to check the upload size for all tools
 		 */
-		var uIdx = 0;
-		var toolsArray = null;
 		function getUploadSizePromise(){
-
+			var promise = $q.when();
+			var toolsArray = null;
 			// Create the array if we don&apos;t have it
 			if(toolsArray == null){
 				toolsArray = $filter(&apos;object2Array&apos;)(syncStatus.tools);
 			}
 
-			// If there are no more tools return null
-			if(uIdx == toolsArray.length) {
-				return null;
-			}
+			angular.forEach(toolsArray, function(tool){
+				let toolId = tool.key;
+				syncStatus.tools[toolId] = syncStatus.tools[toolId] || {
+					&apos;codeDownloadSize&apos; : 0,
+					&apos;contentDownloadSize&apos; : 0,
+					&apos;contentUploadSize&apos; : 0,
+					&apos;inSync&apos; : true
+				};
+				syncStatus.tools[toolId].label = moduleData.toolDescriptions[toolId].label;
 
-			// Get the next tool id
-			var toolId = toolsArray[uIdx++].key;
-
-			syncStatus.tools[toolId] = syncStatus.tools[toolId] || {
-				&apos;codeDownloadSize&apos; : 0,
-				&apos;contentDownloadSize&apos; : 0,
-				&apos;contentUploadSize&apos; : 0,
-				&apos;inSync&apos; : true
-			};
-			syncStatus.tools[toolId].label = moduleData.toolDescriptions[toolId].label;
-
-			return self
-				.getToolUploadSize(moduleId, toolId)
-				.then((size) =&gt; {
-					syncStatus.tools[toolId].contentUploadSize = size;
-					syncStatus.tools[toolId].inSync = (syncStatus.tools[toolId].inSync &amp;&amp; (size === 0));
-					syncStatus.upload = ((syncStatus.upload ? syncStatus.upload : 0) + size);
-					syncStatus.inSync = (syncStatus.inSync &amp;&amp; syncStatus.tools[toolId].inSync);
+				promise = promise.then(function(){
+					return self.getToolUploadSize(moduleId, toolId).then((size) =&gt; {
+						syncStatus.tools[toolId].contentUploadSize = size;
+						syncStatus.tools[toolId].inSync = (syncStatus.tools[toolId].inSync &amp;&amp; (size === 0));
+						syncStatus.upload = ((syncStatus.upload ? syncStatus.upload : 0) + size);
+						syncStatus.inSync = (syncStatus.inSync &amp;&amp; syncStatus.tools[toolId].inSync);
+					});
 				});
+			});
+			return promise;
 		}
 
 
@@ -574,9 +549,7 @@ var SyncAPIService = ($q, $http, $filter, $rootScope, base64, DataService,
 			// Write the response to the module file
 			.then(getWriteDownloadResponsePromise)
 			// Get the upload size
-			.then(() =&gt; {
-				return SynthQLoop(getUploadSizePromise);
-			})
+			.then(getUploadSizePromise)
 			.then(() =&gt; {
 				syncStatus.total = ((syncStatus.download ? syncStatus.download : 0) + (syncStatus.upload ? syncStatus.upload : 0));
 				return syncStatus; // Finally we are done!
@@ -971,31 +944,18 @@ var SyncAPIService = ($q, $http, $filter, $rootScope, base64, DataService,
 	 * Download an array of files from the remote server for a specific tool
 	 */
 	SyncAPIServiceImpl.prototype.getAttachementsFromServer = function(attachments) {
-		var self = this;
-		let idx = 0;
+		const self = this;
 		if (!attachments || attachments.length === 0){
 			LOG.info(&apos;No need to download any attachments, an empty array was given&apos;);
 			return $q.when({});
 		}
-
-		function downloadFile(){
-			return self.getFileFromServer(attachments[idx].downloadKey, attachments[idx].downloadPath);
-		}
-
-		function getAttachment(){
-			// if there is no more to get return null
-			if(attachments.length === idx){
-				return null;
-			}
-			var promise = downloadFile()
-				.then(function(returnData){
-					idx++;
-					return returnData;
-				});
-			return promise;
-		}
-
-		return SynthQLoop(getAttachment);
+		let promise = $q.when();
+		angular.forEach(attachments, function(attachment){
+			promise = promise.then(function(){
+				return self.getFileFromServer(attachment.downloadKey, attachment.downloadPath);
+			});
+		});
+		return promise;
 	};
 
 
@@ -1046,7 +1006,7 @@ var SyncAPIService = ($q, $http, $filter, $rootScope, base64, DataService,
 };
 SyncAPIService.$inject = [&apos;$q&apos;, &apos;$http&apos;, &apos;$filter&apos;, &apos;$rootScope&apos;, &apos;base64&apos;, &apos;DataService&apos;,
 	&apos;LoggerService&apos;, &apos;SynthError&apos;, &apos;SynthFail&apos;, &apos;SynthCheckResponseError&apos;,
-	&apos;SynthConfig&apos;, &apos;SynthQLoop&apos;, &apos;ModuleService&apos;, &apos;RegistrationService&apos;, &apos;SynthAttachmentMiner&apos;,
+	&apos;SynthConfig&apos;, &apos;ModuleService&apos;, &apos;RegistrationService&apos;, &apos;SynthAttachmentMiner&apos;,
 	&apos;SynthEmbeddedImageHandler&apos;, &apos;SynthDeleteHandler&apos;, &apos;SynthLinkHandler&apos;, &apos;SynthUploadResponseHandler&apos;];
 
 export default SyncAPIService;

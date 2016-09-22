@@ -63,19 +63,21 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ToolNameFactory">ToolNameFactory</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ToolSyncStatusFactory">ToolSyncStatusFactory</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SynthFooterFactory">SynthFooterFactory</a></span></span></li>
-<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">base/factories</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/base/factories/AppSyncStatus.js~AppSyncStatus.html">AppSyncStatus</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">base/factories</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/base/factories/AccessPermission.js~AccessPermission.html">AccessPermission</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/base/factories/AppSyncStatus.js~AppSyncStatus.html">AppSyncStatus</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/base/factories/Lock.js~Lock.html">Lock</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/base/factories/UserSession.js~UserSession.html">UserSession</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-AccessPermissionFactory">AccessPermissionFactory</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-AppSyncStatusFactory">AppSyncStatusFactory</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-LockFactory">LockFactory</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-UserSessionFactory">UserSessionFactory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-FILE_ACCESS_LOCK">FILE_ACCESS_LOCK</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SynthAuthenticateUser">SynthAuthenticateUser</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SynthCheckResponseError">SynthCheckResponseError</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SynthError">SynthError</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SynthErrorHandler">SynthErrorHandler</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SynthFail">SynthFail</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SynthQIfStatement">SynthQIfStatement</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SynthQLoop">SynthQLoop</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-safo">safo</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">base/filters</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ArrayToObjectFilter">ArrayToObjectFilter</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ArrayToObjectFilterFactory">ArrayToObjectFilterFactory</a></span></span></li>
@@ -151,7 +153,7 @@
 <pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">&apos;use strict&apos;;
 
 var SyncService = ($q, $timeout, $filter, $rootScope, SyncAPIService, LoggerService,
-	UserSession, SynthQLoop, SyncSelection, ModuleService, safo, UserSettings) =&gt; {
+	UserSession, SyncSelection, ModuleService, safo, UserSettings) =&gt; {
 
 
 	var LOG = LoggerService(&apos;SyncService&apos;);
@@ -168,47 +170,36 @@ var SyncService = ($q, $timeout, $filter, $rootScope, SyncAPIService, LoggerServ
 		*/
 		getSyncDetails(){
 
-			var modules, idx = 0,
-				syncDetails = {&apos;inSync&apos; : true,
-					&apos;download&apos; : 0,
-					&apos;upload&apos; : 0,
-					&apos;total&apos; : 0,
-					&apos;tools&apos; : []
-				};
-
-			/**
-			* Returns a promise to get the Sync Status of the next module in a list.
-			* If there is no more modules in the list, it return null
-			*/
-			function getSyncStatusPromise(){
-				// Check if we have any more modules to work with
-				if(modules == null || idx &gt;= modules.length){
-					return null;
-				}
-
-				// Get the next module and increment the index
-				var module = modules[idx++];
-
-				// Get the sync details for the current item in the list
-				return SyncAPIService.getSyncStatus(module.id)
-				.then((syncStatus) =&gt; {
-					syncDetails.inSync = syncDetails.inSync &amp;&amp; syncStatus.inSync;
-					syncDetails.download += syncStatus.download;
-					syncDetails.upload += syncStatus.upload;
-					syncDetails.total += syncStatus.total;
-
-					var tools = $filter(&apos;object2Array&apos;)(syncStatus.tools);
-					safo(tools, &apos;moduleId&apos;, module.id, &apos;moduleName&apos;, module.name);
-					syncDetails.tools = syncDetails.tools.concat(tools);
-				});
-			}
+			var syncDetails = {
+				inSync : true,
+				download : 0,
+				upload : 0,
+				total : 0,
+				tools : []
+			};
 
 			/**
 			* Returns a promise to loop through all the modules to get their sync status
 			*/
 			function getLoopModulesPromise(linkedModules){
-				modules = linkedModules;
-				return SynthQLoop(getSyncStatusPromise).then(function(){
+				let promise = $q.when();
+				angular.forEach(linkedModules, function(linkedModule){
+					promise = promise.then(function(){
+						// Get the sync details for the current item in the list
+						return SyncAPIService.getSyncStatus(linkedModule.id)
+							.then((syncStatus) =&gt; {
+								syncDetails.inSync = syncDetails.inSync &amp;&amp; syncStatus.inSync;
+								syncDetails.download += syncStatus.download;
+								syncDetails.upload += syncStatus.upload;
+								syncDetails.total += syncStatus.total;
+
+								var tools = $filter(&apos;object2Array&apos;)(syncStatus.tools);
+								safo(tools, &apos;moduleId&apos;, linkedModule.id, &apos;moduleName&apos;, linkedModule.name);
+								syncDetails.tools = syncDetails.tools.concat(tools);
+							});
+					});
+				});
+				return promise.then(function(){
 					$rootScope.$broadcast(&apos;syncStatusChanged&apos;, {&apos;state&apos; : syncDetails.inSync ? &apos;inSync&apos; : &apos;outSync&apos;});
 					return syncDetails;
 				});
@@ -245,22 +236,22 @@ var SyncService = ($q, $timeout, $filter, $rootScope, SyncAPIService, LoggerServ
 			* Function that will return promise for new download if there is any
 			* or returns null if there are no more promises for downloads
 			*/
-			var dIdx = 0;
 			function getDownloadPromise(){
-				var promise = null;
-				var idx = dIdx++; // keep a local instance of the current index
-				if (idx &lt; toolDownloads.length){
-					promise = self.syncDownloadTool(toolDownloads[idx].moduleId, toolDownloads[idx].key)
-					.then(() =&gt; {
-						LOG.debug(&apos;Completed download for tool : &apos; + toolDownloads[idx].key);
-						toolDownloads[idx].downloadProgress = 100;
+				let promise = $q.when();
+				angular.forEach(toolDownloads, function(tool){
+					promise = promise.then(function(){
+						return self.syncDownloadTool(tool.moduleId, tool.key)
+						.then(() =&gt; {
+							LOG.debug(&apos;Completed download for tool : &apos; + tool.key);
+							tool.downloadProgress = 100;
 
-						// Set the flag if we downloaded for base
-						if(toolDownloads[idx].key == &apos;base&apos;){
-							didUpdateBase = true;
-						}
+							// Set the flag if we downloaded for base
+							if(tool.key == &apos;base&apos;){
+								didUpdateBase = true;
+							}
+						});
 					});
-				}
+				});
 				return promise;
 			}
 
@@ -268,40 +259,32 @@ var SyncService = ($q, $timeout, $filter, $rootScope, SyncAPIService, LoggerServ
 			* Function that will return a promise for the new upload if there is any
 			* or returns null if there are no more promises for uploads
 			*/
-			var uIdx = 0;
 			function getUploadPromise(){
-				var promise = null;
-				var idx = uIdx++; // keep a local instance of the current index
-				if (idx &lt; toolUploads.length){
-					promise = self
-					.syncUploadTool(toolUploads[idx].key)
-					.then(() =&gt; {
-						LOG.debug(&apos;Completed upload for tool : &apos; + toolUploads[idx].key);
-						toolUploads[idx].downloadProgress = 100;
+				let promise = $q.when();
+				angular.forEach(toolUploads, function(tool){
+					promise = promise.then(function(){
+						return self.syncUploadTool(tool.key)
+						.then(() =&gt; {
+							LOG.debug(&apos;Completed upload for tool : &apos; + tool.key);
+							tool.downloadProgress = 100;
+						});
 					});
-				}
+				});
 				return promise;
 			}
 
 			// Get the promise to check the offline status
 			function emitSyncStatusChange(){
 				$rootScope.$broadcast(&apos;syncStatusChanged&apos;);
-				return $q.when([]);
-			}
-
-			// Start loop with downloads
-			return SynthQLoop(getDownloadPromise)
-			// When all downloads are complete, we start with the uploads
-			.then(() =&gt; {
-				return SynthQLoop(getUploadPromise);
-			})
-			// Now we do an offline Sync status check just to update the UI
-			.then(emitSyncStatusChange)
-			.then(() =&gt; {
 				return {
 					&apos;didUpdateBase&apos; : didUpdateBase
 				};
-			});
+			}
+
+			// Start loop with downloads
+			return getDownloadPromise()
+				.then(getUploadPromise)
+				.then(emitSyncStatusChange);
 
 		}
 
@@ -398,7 +381,7 @@ var SyncService = ($q, $timeout, $filter, $rootScope, SyncAPIService, LoggerServ
 
 };
 SyncService.$inject = [&apos;$q&apos;, &apos;$timeout&apos;, &apos;$filter&apos;, &apos;$rootScope&apos;, &apos;SyncAPIService&apos;, &apos;LoggerService&apos;,
-&apos;UserSession&apos;, &apos;SynthQLoop&apos;, &apos;SyncSelection&apos;, &apos;ModuleService&apos;, &apos;safo&apos;, &apos;UserSettings&apos;];
+&apos;UserSession&apos;, &apos;SyncSelection&apos;, &apos;ModuleService&apos;, &apos;safo&apos;, &apos;UserSettings&apos;];
 export default SyncService;
 </code></pre>
 

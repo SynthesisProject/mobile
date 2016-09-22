@@ -63,19 +63,21 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ToolNameFactory">ToolNameFactory</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ToolSyncStatusFactory">ToolSyncStatusFactory</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SynthFooterFactory">SynthFooterFactory</a></span></span></li>
-<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">base/factories</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/base/factories/AppSyncStatus.js~AppSyncStatus.html">AppSyncStatus</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">base/factories</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/base/factories/AccessPermission.js~AccessPermission.html">AccessPermission</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/base/factories/AppSyncStatus.js~AppSyncStatus.html">AppSyncStatus</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/base/factories/Lock.js~Lock.html">Lock</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/base/factories/UserSession.js~UserSession.html">UserSession</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-AccessPermissionFactory">AccessPermissionFactory</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-AppSyncStatusFactory">AppSyncStatusFactory</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-LockFactory">LockFactory</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-UserSessionFactory">UserSessionFactory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-FILE_ACCESS_LOCK">FILE_ACCESS_LOCK</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SynthAuthenticateUser">SynthAuthenticateUser</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SynthCheckResponseError">SynthCheckResponseError</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SynthError">SynthError</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SynthErrorHandler">SynthErrorHandler</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SynthFail">SynthFail</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SynthQIfStatement">SynthQIfStatement</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SynthQLoop">SynthQLoop</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-safo">safo</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">base/filters</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ArrayToObjectFilter">ArrayToObjectFilter</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ArrayToObjectFilterFactory">ArrayToObjectFilterFactory</a></span></span></li>
@@ -150,7 +152,7 @@
 <div class="content" data-ice="content"><h1 data-ice="title">js/base/services/ModuleService.js</h1>
 <pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">&apos;use strict&apos;;
 import {convertToObject} from &apos;../Utilities&apos;;
-var ModuleService = ($q, DataService, RegistrationService, LoggerService, _SF, SynthQLoop, $filter, safo, SynthError, SynthesisRESTClient) =&gt; {
+var ModuleService = ($q, DataService, RegistrationService, LoggerService, _SF, $filter, safo, SynthError, SynthesisRESTClient) =&gt; {
 	var LOG = LoggerService(&apos;ModuleService&apos;);
 
 
@@ -346,26 +348,22 @@ var ModuleService = ($q, DataService, RegistrationService, LoggerService, _SF, S
 			* }]
 		 */
 		getAllHomeToolsSorted(){
-			var modules, idx = 0,
-				moduleTools = [];
 			const self = this;
 
-			function getModuleToolsPromise(){
-				if(modules == null || idx &gt;= modules.length) {
-					return null;
-				}
-
-				var theModule = modules[idx++];
-				return self.getModuleHomeToolsSorted(theModule.id)
-					.then((tools) =&gt; {
-						moduleTools.push(theModule);
-						moduleTools[moduleTools.length - 1].tools = tools;
-					});
-			}
-
 			function getLoopModulesPromise(availableModules){
-				modules = availableModules;
-				return SynthQLoop(getModuleToolsPromise).then(() =&gt; {
+				let promise = $q.when();
+				let moduleTools = [];
+				angular.forEach(availableModules, function(module){
+					promise = promise.then(function(){
+						return self.getModuleHomeToolsSorted(module.id)
+							.then((tools) =&gt; {
+								moduleTools.push(module);
+								moduleTools[moduleTools.length - 1].tools = tools;
+							});
+					});
+				});
+
+				return promise.then(() =&gt; {
 					return moduleTools;
 				});
 			}
@@ -558,7 +556,7 @@ var ModuleService = ($q, DataService, RegistrationService, LoggerService, _SF, S
 
 	return new ModuleServiceImpl();
 };
-ModuleService.$inject = [&apos;$q&apos;, &apos;DataService&apos;, &apos;RegistrationService&apos;, &apos;LoggerService&apos;, &apos;SynthFail&apos;, &apos;SynthQLoop&apos;, &apos;$filter&apos;, &apos;safo&apos;, &apos;SynthError&apos;, &apos;SynthesisRESTClient&apos;];
+ModuleService.$inject = [&apos;$q&apos;, &apos;DataService&apos;, &apos;RegistrationService&apos;, &apos;LoggerService&apos;, &apos;SynthFail&apos;, &apos;$filter&apos;, &apos;safo&apos;, &apos;SynthError&apos;, &apos;SynthesisRESTClient&apos;];
 export default ModuleService;
 </code></pre>
 

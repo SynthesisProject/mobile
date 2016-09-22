@@ -1487,14 +1487,86 @@
                         "line": 40,
                         "column": 93
                       }
+                    }
+                  },
+                  {
+                    "type": "VariableDeclaration",
+                    "declarations": [
+                      {
+                        "type": "VariableDeclarator",
+                        "id": {
+                          "type": "Identifier",
+                          "name": "self",
+                          "range": [
+                            747,
+                            751
+                          ],
+                          "loc": {
+                            "start": {
+                              "line": 41,
+                              "column": 8
+                            },
+                            "end": {
+                              "line": 41,
+                              "column": 12
+                            }
+                          }
+                        },
+                        "init": {
+                          "type": "ThisExpression",
+                          "range": [
+                            754,
+                            758
+                          ],
+                          "loc": {
+                            "start": {
+                              "line": 41,
+                              "column": 15
+                            },
+                            "end": {
+                              "line": 41,
+                              "column": 19
+                            }
+                          }
+                        },
+                        "range": [
+                          747,
+                          758
+                        ],
+                        "loc": {
+                          "start": {
+                            "line": 41,
+                            "column": 8
+                          },
+                          "end": {
+                            "line": 41,
+                            "column": 19
+                          }
+                        }
+                      }
+                    ],
+                    "kind": "const",
+                    "range": [
+                      741,
+                      759
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 41,
+                        "column": 2
+                      },
+                      "end": {
+                        "line": 41,
+                        "column": 20
+                      }
                     },
                     "trailingComments": [
                       {
                         "type": "Block",
                         "value": "*\r\n\t\t* Refresh the scrolle before and after modules has been collapsed\r\n\t\t",
                         "range": [
-                          745,
-                          823
+                          765,
+                          843
                         ],
                         "loc": {
                           "start": {
@@ -1515,8 +1587,8 @@
                       "type": "Identifier",
                       "name": "refreshScoller",
                       "range": [
-                        836,
-                        850
+                        856,
+                        870
                       ],
                       "loc": {
                         "start": {
@@ -1544,10 +1616,11 @@
                                 "type": "MemberExpression",
                                 "computed": false,
                                 "object": {
-                                  "type": "ThisExpression",
+                                  "type": "Identifier",
+                                  "name": "self",
                                   "range": [
-                                    858,
-                                    862
+                                    878,
+                                    882
                                   ],
                                   "loc": {
                                     "start": {
@@ -1564,8 +1637,8 @@
                                   "type": "Identifier",
                                   "name": "$rootScope",
                                   "range": [
-                                    863,
-                                    873
+                                    883,
+                                    893
                                   ],
                                   "loc": {
                                     "start": {
@@ -1579,8 +1652,8 @@
                                   }
                                 },
                                 "range": [
-                                  858,
-                                  873
+                                  878,
+                                  893
                                 ],
                                 "loc": {
                                   "start": {
@@ -1597,8 +1670,8 @@
                                 "type": "Identifier",
                                 "name": "$broadcast",
                                 "range": [
-                                  874,
-                                  884
+                                  894,
+                                  904
                                 ],
                                 "loc": {
                                   "start": {
@@ -1612,8 +1685,8 @@
                                 }
                               },
                               "range": [
-                                858,
-                                884
+                                878,
+                                904
                               ],
                               "loc": {
                                 "start": {
@@ -1632,8 +1705,8 @@
                                 "value": "iScrollRefresh",
                                 "raw": "'iScrollRefresh'",
                                 "range": [
-                                  885,
-                                  901
+                                  905,
+                                  921
                                 ],
                                 "loc": {
                                   "start": {
@@ -1656,8 +1729,8 @@
                                       "value": "scollerId",
                                       "raw": "'scollerId'",
                                       "range": [
-                                        904,
-                                        915
+                                        924,
+                                        935
                                       ],
                                       "loc": {
                                         "start": {
@@ -1675,8 +1748,8 @@
                                       "value": "mainScroll",
                                       "raw": "'mainScroll'",
                                       "range": [
-                                        918,
-                                        930
+                                        938,
+                                        950
                                       ],
                                       "loc": {
                                         "start": {
@@ -1694,8 +1767,8 @@
                                     "shorthand": false,
                                     "computed": false,
                                     "range": [
-                                      904,
-                                      930
+                                      924,
+                                      950
                                     ],
                                     "loc": {
                                       "start": {
@@ -1710,8 +1783,8 @@
                                   }
                                 ],
                                 "range": [
-                                  903,
-                                  931
+                                  923,
+                                  951
                                 ],
                                 "loc": {
                                   "start": {
@@ -1726,8 +1799,8 @@
                               }
                             ],
                             "range": [
-                              858,
-                              932
+                              878,
+                              952
                             ],
                             "loc": {
                               "start": {
@@ -1741,8 +1814,8 @@
                             }
                           },
                           "range": [
-                            858,
-                            933
+                            878,
+                            953
                           ],
                           "loc": {
                             "start": {
@@ -1757,8 +1830,8 @@
                         }
                       ],
                       "range": [
-                        852,
-                        938
+                        872,
+                        958
                       ],
                       "loc": {
                         "start": {
@@ -1774,8 +1847,8 @@
                     "generator": false,
                     "expression": false,
                     "range": [
-                      827,
-                      938
+                      847,
+                      958
                     ],
                     "loc": {
                       "start": {
@@ -1792,8 +1865,8 @@
                         "type": "Block",
                         "value": "*\r\n\t\t* Refresh the scrolle before and after modules has been collapsed\r\n\t\t",
                         "range": [
-                          745,
-                          823
+                          765,
+                          843
                         ],
                         "loc": {
                           "start": {
@@ -1819,8 +1892,8 @@
                           "type": "Identifier",
                           "name": "toCollapse",
                           "range": [
-                            944,
-                            954
+                            964,
+                            974
                           ],
                           "loc": {
                             "start": {
@@ -1837,8 +1910,8 @@
                           "type": "Identifier",
                           "name": "on",
                           "range": [
-                            955,
-                            957
+                            975,
+                            977
                           ],
                           "loc": {
                             "start": {
@@ -1852,8 +1925,8 @@
                           }
                         },
                         "range": [
-                          944,
-                          957
+                          964,
+                          977
                         ],
                         "loc": {
                           "start": {
@@ -1872,8 +1945,8 @@
                           "value": "shown.bs.collapse",
                           "raw": "'shown.bs.collapse'",
                           "range": [
-                            958,
-                            977
+                            978,
+                            997
                           ],
                           "loc": {
                             "start": {
@@ -1890,8 +1963,8 @@
                           "type": "Identifier",
                           "name": "refreshScoller",
                           "range": [
-                            979,
-                            993
+                            999,
+                            1013
                           ],
                           "loc": {
                             "start": {
@@ -1906,8 +1979,8 @@
                         }
                       ],
                       "range": [
-                        944,
-                        994
+                        964,
+                        1014
                       ],
                       "loc": {
                         "start": {
@@ -1921,8 +1994,8 @@
                       }
                     },
                     "range": [
-                      944,
-                      995
+                      964,
+                      1015
                     ],
                     "loc": {
                       "start": {
@@ -1946,8 +2019,8 @@
                           "type": "Identifier",
                           "name": "toCollapse",
                           "range": [
-                            999,
-                            1009
+                            1019,
+                            1029
                           ],
                           "loc": {
                             "start": {
@@ -1964,8 +2037,8 @@
                           "type": "Identifier",
                           "name": "on",
                           "range": [
-                            1010,
-                            1012
+                            1030,
+                            1032
                           ],
                           "loc": {
                             "start": {
@@ -1979,8 +2052,8 @@
                           }
                         },
                         "range": [
-                          999,
-                          1012
+                          1019,
+                          1032
                         ],
                         "loc": {
                           "start": {
@@ -1999,8 +2072,8 @@
                           "value": "hidden.bs.collapse",
                           "raw": "'hidden.bs.collapse'",
                           "range": [
-                            1013,
-                            1033
+                            1033,
+                            1053
                           ],
                           "loc": {
                             "start": {
@@ -2017,8 +2090,8 @@
                           "type": "Identifier",
                           "name": "refreshScoller",
                           "range": [
-                            1035,
-                            1049
+                            1055,
+                            1069
                           ],
                           "loc": {
                             "start": {
@@ -2033,8 +2106,8 @@
                         }
                       ],
                       "range": [
-                        999,
-                        1050
+                        1019,
+                        1070
                       ],
                       "loc": {
                         "start": {
@@ -2048,8 +2121,8 @@
                       }
                     },
                     "range": [
-                      999,
-                      1051
+                      1019,
+                      1071
                     ],
                     "loc": {
                       "start": {
@@ -2066,8 +2139,8 @@
                         "type": "Block",
                         "value": "*\r\n\t\t* Toggles the collapse of a module at the specified index\r\n\t\t",
                         "range": [
-                          1057,
-                          1127
+                          1077,
+                          1147
                         ],
                         "loc": {
                           "start": {
@@ -2093,8 +2166,8 @@
                           "type": "Identifier",
                           "name": "collapseButton",
                           "range": [
-                            1131,
-                            1145
+                            1151,
+                            1165
                           ],
                           "loc": {
                             "start": {
@@ -2111,8 +2184,8 @@
                           "type": "Identifier",
                           "name": "on",
                           "range": [
-                            1146,
-                            1148
+                            1166,
+                            1168
                           ],
                           "loc": {
                             "start": {
@@ -2126,8 +2199,8 @@
                           }
                         },
                         "range": [
-                          1131,
-                          1148
+                          1151,
+                          1168
                         ],
                         "loc": {
                           "start": {
@@ -2146,8 +2219,8 @@
                           "value": "click",
                           "raw": "'click'",
                           "range": [
-                            1149,
-                            1156
+                            1169,
+                            1176
                           ],
                           "loc": {
                             "start": {
@@ -2178,8 +2251,8 @@
                                       "type": "Identifier",
                                       "name": "toCollapse",
                                       "range": [
-                                        1174,
-                                        1184
+                                        1194,
+                                        1204
                                       ],
                                       "loc": {
                                         "start": {
@@ -2196,8 +2269,8 @@
                                       "type": "Identifier",
                                       "name": "collapse",
                                       "range": [
-                                        1185,
-                                        1193
+                                        1205,
+                                        1213
                                       ],
                                       "loc": {
                                         "start": {
@@ -2211,8 +2284,8 @@
                                       }
                                     },
                                     "range": [
-                                      1174,
-                                      1193
+                                      1194,
+                                      1213
                                     ],
                                     "loc": {
                                       "start": {
@@ -2231,8 +2304,8 @@
                                       "value": "toggle",
                                       "raw": "'toggle'",
                                       "range": [
-                                        1194,
-                                        1202
+                                        1214,
+                                        1222
                                       ],
                                       "loc": {
                                         "start": {
@@ -2247,8 +2320,8 @@
                                     }
                                   ],
                                   "range": [
-                                    1174,
-                                    1203
+                                    1194,
+                                    1223
                                   ],
                                   "loc": {
                                     "start": {
@@ -2262,8 +2335,8 @@
                                   }
                                 },
                                 "range": [
-                                  1174,
-                                  1204
+                                  1194,
+                                  1224
                                 ],
                                 "loc": {
                                   "start": {
@@ -2278,8 +2351,8 @@
                               }
                             ],
                             "range": [
-                              1168,
-                              1209
+                              1188,
+                              1229
                             ],
                             "loc": {
                               "start": {
@@ -2295,8 +2368,8 @@
                           "generator": false,
                           "expression": false,
                           "range": [
-                            1158,
-                            1209
+                            1178,
+                            1229
                           ],
                           "loc": {
                             "start": {
@@ -2311,8 +2384,8 @@
                         }
                       ],
                       "range": [
-                        1131,
-                        1210
+                        1151,
+                        1230
                       ],
                       "loc": {
                         "start": {
@@ -2326,8 +2399,8 @@
                       }
                     },
                     "range": [
-                      1131,
-                      1211
+                      1151,
+                      1231
                     ],
                     "loc": {
                       "start": {
@@ -2344,8 +2417,8 @@
                         "type": "Block",
                         "value": "*\r\n\t\t* Toggles the collapse of a module at the specified index\r\n\t\t",
                         "range": [
-                          1057,
-                          1127
+                          1077,
+                          1147
                         ],
                         "loc": {
                           "start": {
@@ -2363,7 +2436,7 @@
                 ],
                 "range": [
                   639,
-                  1215
+                  1235
                 ],
                 "loc": {
                   "start": {
@@ -2380,7 +2453,7 @@
               "expression": false,
               "range": [
                 623,
-                1215
+                1235
               ],
               "loc": {
                 "start": {
@@ -2397,7 +2470,7 @@
             "computed": false,
             "range": [
               610,
-              1215
+              1235
             ],
             "loc": {
               "start": {
@@ -2434,7 +2507,7 @@
         ],
         "range": [
           83,
-          1218
+          1238
         ],
         "loc": {
           "start": {
@@ -2449,7 +2522,7 @@
       },
       "range": [
         62,
-        1218
+        1238
       ],
       "loc": {
         "start": {
@@ -2486,8 +2559,8 @@
           "type": "Block",
           "value": "*\r\n * Factory to create a new instance of the directive\r\n ",
           "range": [
-            1222,
-            1284
+            1242,
+            1304
           ],
           "loc": {
             "start": {
@@ -2511,8 +2584,8 @@
             "type": "Identifier",
             "name": "ModuleCollapseFactory",
             "range": [
-              1290,
-              1311
+              1310,
+              1331
             ],
             "loc": {
               "start": {
@@ -2540,8 +2613,8 @@
                       "type": "Identifier",
                       "name": "ModuleCollapse",
                       "range": [
-                        1340,
-                        1354
+                        1360,
+                        1374
                       ],
                       "loc": {
                         "start": {
@@ -2561,8 +2634,8 @@
                           "type": "Identifier",
                           "name": "arguments",
                           "range": [
-                            1358,
-                            1367
+                            1378,
+                            1387
                           ],
                           "loc": {
                             "start": {
@@ -2576,8 +2649,8 @@
                           }
                         },
                         "range": [
-                          1355,
-                          1367
+                          1375,
+                          1387
                         ],
                         "loc": {
                           "start": {
@@ -2592,8 +2665,8 @@
                       }
                     ],
                     "range": [
-                      1336,
-                      1368
+                      1356,
+                      1388
                     ],
                     "loc": {
                       "start": {
@@ -2607,8 +2680,8 @@
                     }
                   },
                   "range": [
-                    1329,
-                    1369
+                    1349,
+                    1389
                   ],
                   "loc": {
                     "start": {
@@ -2623,8 +2696,8 @@
                 }
               ],
               "range": [
-                1325,
-                1372
+                1345,
+                1392
               ],
               "loc": {
                 "start": {
@@ -2640,8 +2713,8 @@
             "generator": false,
             "expression": false,
             "range": [
-              1314,
-              1372
+              1334,
+              1392
             ],
             "loc": {
               "start": {
@@ -2655,8 +2728,8 @@
             }
           },
           "range": [
-            1290,
-            1372
+            1310,
+            1392
           ],
           "loc": {
             "start": {
@@ -2672,8 +2745,8 @@
       ],
       "kind": "var",
       "range": [
-        1286,
-        1373
+        1306,
+        1393
       ],
       "loc": {
         "start": {
@@ -2701,8 +2774,8 @@
             "type": "Identifier",
             "name": "ModuleCollapseFactory",
             "range": [
-              1375,
-              1396
+              1395,
+              1416
             ],
             "loc": {
               "start": {
@@ -2719,8 +2792,8 @@
             "type": "Identifier",
             "name": "$inject",
             "range": [
-              1397,
-              1404
+              1417,
+              1424
             ],
             "loc": {
               "start": {
@@ -2734,8 +2807,8 @@
             }
           },
           "range": [
-            1375,
-            1404
+            1395,
+            1424
           ],
           "loc": {
             "start": {
@@ -2756,8 +2829,8 @@
               "value": "$rootScope",
               "raw": "'$rootScope'",
               "range": [
-                1408,
-                1420
+                1428,
+                1440
               ],
               "loc": {
                 "start": {
@@ -2772,8 +2845,8 @@
             }
           ],
           "range": [
-            1407,
-            1421
+            1427,
+            1441
           ],
           "loc": {
             "start": {
@@ -2787,8 +2860,8 @@
           }
         },
         "range": [
-          1375,
-          1421
+          1395,
+          1441
         ],
         "loc": {
           "start": {
@@ -2802,8 +2875,8 @@
         }
       },
       "range": [
-        1375,
-        1422
+        1395,
+        1442
       ],
       "loc": {
         "start": {
@@ -2822,8 +2895,8 @@
         "type": "Identifier",
         "name": "ModuleCollapseFactory",
         "range": [
-          1439,
-          1460
+          1459,
+          1480
         ],
         "loc": {
           "start": {
@@ -2837,8 +2910,8 @@
         }
       },
       "range": [
-        1424,
-        1461
+        1444,
+        1481
       ],
       "loc": {
         "start": {
@@ -2865,8 +2938,8 @@
               "type": "Identifier",
               "name": "ModuleCollapseFactory",
               "range": [
-                1290,
-                1311
+                1310,
+                1331
               ],
               "loc": {
                 "start": {
@@ -2885,8 +2958,8 @@
                 "type": "Identifier",
                 "name": "ModuleCollapseFactory",
                 "range": [
-                  1290,
-                  1311
+                  1310,
+                  1331
                 ],
                 "loc": {
                   "start": {
@@ -2911,8 +2984,8 @@
                         "type": "Identifier",
                         "name": "ModuleCollapse",
                         "range": [
-                          1340,
-                          1354
+                          1360,
+                          1374
                         ],
                         "loc": {
                           "start": {
@@ -2932,8 +3005,8 @@
                             "type": "Identifier",
                             "name": "arguments",
                             "range": [
-                              1358,
-                              1367
+                              1378,
+                              1387
                             ],
                             "loc": {
                               "start": {
@@ -2947,8 +3020,8 @@
                             }
                           },
                           "range": [
-                            1355,
-                            1367
+                            1375,
+                            1387
                           ],
                           "loc": {
                             "start": {
@@ -2963,8 +3036,8 @@
                         }
                       ],
                       "range": [
-                        1336,
-                        1368
+                        1356,
+                        1388
                       ],
                       "loc": {
                         "start": {
@@ -2978,8 +3051,8 @@
                       }
                     },
                     "range": [
-                      1329,
-                      1369
+                      1349,
+                      1389
                     ],
                     "loc": {
                       "start": {
@@ -2994,8 +3067,8 @@
                   }
                 ],
                 "range": [
-                  1325,
-                  1372
+                  1345,
+                  1392
                 ],
                 "loc": {
                   "start": {
@@ -3011,8 +3084,8 @@
               "generator": false,
               "expression": false,
               "range": [
-                1314,
-                1372
+                1334,
+                1392
               ],
               "loc": {
                 "start": {
@@ -3026,8 +3099,8 @@
               }
             },
             "range": [
-              1290,
-              1372
+              1310,
+              1392
             ],
             "loc": {
               "start": {
@@ -3043,8 +3116,8 @@
         ],
         "kind": "var",
         "range": [
-          1286,
-          1373
+          1306,
+          1393
         ],
         "loc": {
           "start": {
@@ -3061,8 +3134,8 @@
             "type": "Block",
             "value": "*\r\n * Factory to create a new instance of the directive\r\n ",
             "range": [
-              1222,
-              1284
+              1242,
+              1304
             ],
             "loc": {
               "start": {
@@ -3079,8 +3152,8 @@
         "trailingComments": []
       },
       "range": [
-        1424,
-        1461
+        1444,
+        1481
       ],
       "loc": {
         "start": {
@@ -3097,7 +3170,7 @@
   "sourceType": "module",
   "range": [
     0,
-    1461
+    1481
   ],
   "loc": {
     "start": {
@@ -3240,8 +3313,8 @@
       "type": "Block",
       "value": "*\r\n\t\t* Refresh the scrolle before and after modules has been collapsed\r\n\t\t",
       "range": [
-        745,
-        823
+        765,
+        843
       ],
       "loc": {
         "start": {
@@ -3258,8 +3331,8 @@
       "type": "Block",
       "value": "*\r\n\t\t* Toggles the collapse of a module at the specified index\r\n\t\t",
       "range": [
-        1057,
-        1127
+        1077,
+        1147
       ],
       "loc": {
         "start": {
@@ -3276,8 +3349,8 @@
       "type": "Block",
       "value": "*\r\n * Factory to create a new instance of the directive\r\n ",
       "range": [
-        1222,
-        1284
+        1242,
+        1304
       ],
       "loc": {
         "start": {

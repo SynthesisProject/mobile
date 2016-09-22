@@ -1,7 +1,7 @@
 {
-  "coverage": "64.75%",
-  "expectCount": 244,
-  "actualCount": 158,
+  "coverage": "62.54%",
+  "expectCount": 251,
+  "actualCount": 157,
   "files": {
     "js/base/directives/SynthAttachments.js": {
       "expectCount": 8,
@@ -35,6 +35,30 @@
         3
       ]
     },
+    "js/base/factories/Lock.js": {
+      "expectCount": 8,
+      "actualCount": 4,
+      "undocumentLines": [
+        9,
+        10,
+        8,
+        11
+      ]
+    },
+    "js/base/factories/AccessPermission.js": {
+      "expectCount": 8,
+      "actualCount": 0,
+      "undocumentLines": [
+        9,
+        6,
+        72,
+        4,
+        10,
+        8,
+        11,
+        44
+      ]
+    },
     "js/base/services/UserSettings.js": {
       "expectCount": 11,
       "actualCount": 4,
@@ -61,24 +85,14 @@
         22
       ]
     },
-    "js/base/factories/Lock.js": {
-      "expectCount": 8,
-      "actualCount": 4,
-      "undocumentLines": [
-        9,
-        10,
-        8,
-        11
-      ]
+    "js/base/directives/CurrentModuleName.js": {
+      "expectCount": 9,
+      "actualCount": 9,
+      "undocumentLines": []
     },
     "js/base/directives/ModuleCollapse.js": {
       "expectCount": 7,
       "actualCount": 7,
-      "undocumentLines": []
-    },
-    "js/base/directives/CurrentModuleName.js": {
-      "expectCount": 9,
-      "actualCount": 9,
       "undocumentLines": []
     },
     "js/tools/announcements/controllers/AnnouncementDetailCtrl.js": {
@@ -175,17 +189,17 @@
       "actualCount": 2,
       "undocumentLines": []
     },
-    "js/tools/announcements/config.js": {
-      "expectCount": 1,
-      "actualCount": 1,
-      "undocumentLines": []
-    },
     "js/tools/schedule/config.js": {
       "expectCount": 1,
       "actualCount": 0,
       "undocumentLines": [
         2
       ]
+    },
+    "js/tools/announcements/config.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
     },
     "js/tools/resources/config.js": {
       "expectCount": 1,
@@ -415,12 +429,12 @@
         3
       ]
     },
-    "js/base/handlers/SynthUploadResponseHandlerProvider.js": {
+    "js/base/handlers/SynthAttachmentMinerProvider.js": {
       "expectCount": 1,
       "actualCount": 1,
       "undocumentLines": []
     },
-    "js/base/handlers/SynthAttachmentMinerProvider.js": {
+    "js/base/handlers/SynthUploadResponseHandlerProvider.js": {
       "expectCount": 1,
       "actualCount": 1,
       "undocumentLines": []
@@ -483,11 +497,6 @@
       "undocumentLines": [
         2
       ]
-    },
-    "js/base/factories/SynthQLoop.js": {
-      "expectCount": 1,
-      "actualCount": 1,
-      "undocumentLines": []
     },
     "js/tools/index.js": {
       "expectCount": 1,

@@ -63,19 +63,21 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ToolNameFactory">ToolNameFactory</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ToolSyncStatusFactory">ToolSyncStatusFactory</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SynthFooterFactory">SynthFooterFactory</a></span></span></li>
-<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">base/factories</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/base/factories/AppSyncStatus.js~AppSyncStatus.html">AppSyncStatus</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">base/factories</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/base/factories/AccessPermission.js~AccessPermission.html">AccessPermission</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/base/factories/AppSyncStatus.js~AppSyncStatus.html">AppSyncStatus</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/base/factories/Lock.js~Lock.html">Lock</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/base/factories/UserSession.js~UserSession.html">UserSession</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-AccessPermissionFactory">AccessPermissionFactory</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-AppSyncStatusFactory">AppSyncStatusFactory</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-LockFactory">LockFactory</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-UserSessionFactory">UserSessionFactory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-FILE_ACCESS_LOCK">FILE_ACCESS_LOCK</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SynthAuthenticateUser">SynthAuthenticateUser</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SynthCheckResponseError">SynthCheckResponseError</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SynthError">SynthError</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SynthErrorHandler">SynthErrorHandler</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SynthFail">SynthFail</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SynthQIfStatement">SynthQIfStatement</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SynthQLoop">SynthQLoop</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-safo">safo</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">base/filters</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ArrayToObjectFilter">ArrayToObjectFilter</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ArrayToObjectFilterFactory">ArrayToObjectFilterFactory</a></span></span></li>
@@ -155,7 +157,7 @@ import bases from &apos;bases&apos;;
  * base/js/services/DataService.js
  * Create factory for the DataService
  */
-var DataService = ($q, $http, $rootScope, LoggerService, SynthError, UserSession, SynthConfig, SynthQLoop, Lock) =&gt; {
+var DataService = ($q, $http, $rootScope, LoggerService, SynthError, UserSession, SynthConfig, Lock, AccessPermission) =&gt; {
 
 	var LOG = LoggerService(&apos;DataService&apos;);
 	// Characters that will be used to generate filenames
@@ -168,6 +170,7 @@ var DataService = ($q, $http, $rootScope, LoggerService, SynthError, UserSession
 	// The lock key that is used when generating new file names
 	const FILE_CREATE_LOCK = &apos;DataService.FILE_CREATE_LOCK&apos;;
 
+
 	/**
 	 * Constructor
 	 */
@@ -175,6 +178,8 @@ var DataService = ($q, $http, $rootScope, LoggerService, SynthError, UserSession
 
 		constructor(){
 			this.deviceReady = false;
+			// Android 6+ requires user permission to acces files
+			this.hasFilePermissions = false;
 			this.cachedRouteFileSystem = null;
 		}
 
@@ -184,7 +189,6 @@ var DataService = ($q, $http, $rootScope, LoggerService, SynthError, UserSession
 		 */
 		cordovaReady(){
 			const deferred = $q.defer();
-
 			if (this.deviceReady === true){
 				deferred.resolve();
 			}
@@ -194,8 +198,9 @@ var DataService = ($q, $http, $rootScope, LoggerService, SynthError, UserSession
 					deferred.resolve();
 				}, false);
 			}
-
-			return deferred.promise;
+			return deferred.promise.then(function(){
+				return AccessPermission.requestFilePermission();
+			});
 		}
 
 		/**
@@ -829,19 +834,14 @@ var DataService = ($q, $http, $rootScope, LoggerService, SynthError, UserSession
 		  @param deleteFiles Array of cdv:// file protocal file path
 		 */
 		deleteCDVFiles(filePaths = []){
-			var idx = 0;
+			let promise = $q.when();
 			const self = this;
-			function getNextFile(){
-				// if there is no more to get return null
-				if(filePaths.length === idx){
-					return null;
-				}
-				var promise = self.deleteToolFile(filePaths[idx]);
-				idx++;
-				return promise;
-			}
-
-			return SynthQLoop(getNextFile);
+			angular.forEach(filePaths, function(filePath){
+				promise = promise.then(function(){
+					return self.deleteToolFile(filePath);
+				});
+			});
+			return promise;
 		}
 
 		/**
@@ -1031,7 +1031,7 @@ var DataService = ($q, $http, $rootScope, LoggerService, SynthError, UserSession
 
 	return new DataServiceImpl();
 };
-DataService.$inject = [&apos;$q&apos;, &apos;$http&apos;, &apos;$rootScope&apos;, &apos;LoggerService&apos;, &apos;SynthError&apos;, &apos;UserSession&apos;, &apos;SynthConfig&apos;, &apos;SynthQLoop&apos;, &apos;Lock&apos;];
+DataService.$inject = [&apos;$q&apos;, &apos;$http&apos;, &apos;$rootScope&apos;, &apos;LoggerService&apos;, &apos;SynthError&apos;, &apos;UserSession&apos;, &apos;SynthConfig&apos;, &apos;Lock&apos;, &apos;AccessPermission&apos;];
 export default DataService;
 </code></pre>
 

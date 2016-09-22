@@ -63,19 +63,21 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ToolNameFactory">ToolNameFactory</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ToolSyncStatusFactory">ToolSyncStatusFactory</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SynthFooterFactory">SynthFooterFactory</a></span></span></li>
-<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">base/factories</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/base/factories/AppSyncStatus.js~AppSyncStatus.html">AppSyncStatus</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">base/factories</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/base/factories/AccessPermission.js~AccessPermission.html">AccessPermission</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/base/factories/AppSyncStatus.js~AppSyncStatus.html">AppSyncStatus</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/base/factories/Lock.js~Lock.html">Lock</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/base/factories/UserSession.js~UserSession.html">UserSession</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-AccessPermissionFactory">AccessPermissionFactory</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-AppSyncStatusFactory">AppSyncStatusFactory</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-LockFactory">LockFactory</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-UserSessionFactory">UserSessionFactory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-FILE_ACCESS_LOCK">FILE_ACCESS_LOCK</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SynthAuthenticateUser">SynthAuthenticateUser</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SynthCheckResponseError">SynthCheckResponseError</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SynthError">SynthError</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SynthErrorHandler">SynthErrorHandler</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SynthFail">SynthFail</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SynthQIfStatement">SynthQIfStatement</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SynthQLoop">SynthQLoop</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-safo">safo</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">base/filters</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ArrayToObjectFilter">ArrayToObjectFilter</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ArrayToObjectFilterFactory">ArrayToObjectFilterFactory</a></span></span></li>
@@ -187,48 +189,37 @@ var SynthAttachmentMinerProvider = function(){
 	};
 
 
-	this.$get = [&apos;$q&apos;, &apos;$injector&apos;, &apos;$timeout&apos;, &apos;DataService&apos;, &apos;SynthQLoop&apos;,
-		function($q, $injector, $timeout, DataService, SynthQLoop){
+	this.$get = [&apos;$q&apos;, &apos;$injector&apos;, &apos;$timeout&apos;, &apos;DataService&apos;,
+		function($q, $injector, $timeout, DataService){
 
 			/**
 			 * Gets the handler for a tool.
 			 * @param toolName Name of the tool to get a handler for
 			 * @returns The configured handler for the tool.
 			 */
-			let parseArray = (attachArray) =&gt; {
+			let parseArray = (attachArray = []) =&gt; {
 					// If there is no array, we can return right now
 				if (!attachArray || attachArray.size === 0) {
 					return $q.when([]);
 				}
 
-				var filesToDownload = [];
-				var attachments = attachArray;
-				let index = 0;
-
-				function getFixAttachmentPromise(){
-					if(index &lt; attachments.length){
-						var attachment = attachments[index++];
-						/*
-						 *  Ignore attachments that does not have a download key
-						 *  This is a bug from the server&apos;s side if this happens
-						 */
-						if (attachment.downloadKey == null){
-							return $q.when([]);
-						}
-
-						return DataService.createNewFile(attachment.name)
-							.then((fileEntry) =&gt; {
-								attachment.downloadPath = fileEntry.toInternalURL();
-								filesToDownload.push(attachment);
-							});
+				let promise = $q.when();
+				let filesToDownload = [];
+				angular.forEach(attachArray, function(attachment){
+					// Only if the attachment has a download key
+					if(attachment.downloadKey != null){
+						promise = promise.then(function(){
+							return DataService.createNewFile(attachment.name)
+								.then((fileEntry) =&gt; {
+									attachment.downloadPath = fileEntry.toInternalURL();
+									filesToDownload.push(attachment);
+								});
+						});
 					}
-					return null;
-				}
-
-				return SynthQLoop(getFixAttachmentPromise)
-					.then(() =&gt; {
-						return filesToDownload;
-					});
+				});
+				return promise.then(() =&gt; {
+					return filesToDownload;
+				});
 			};
 
 
@@ -238,20 +229,19 @@ var SynthAttachmentMinerProvider = function(){
 			 * on the root level of the content data.
 			 */
 			var defaultHandler = (contentData) =&gt; {
-				let idx = 0;
+				let promise = $q.when();
 				let keys = Object.keys(contentData);
 				let filesToDownload = [];
-				function visitEntry(){
-					if(idx &lt; keys.length){
-						return parseArray(contentData[keys[idx++]].attachments)
+				angular.forEach(keys, function(key){
+					promise = promise.then(function(){
+						return parseArray(contentData[key].attachments)
 							.then((downloadEntries)=&gt;{
 								filesToDownload = filesToDownload.concat(downloadEntries);
 							});
-					}
-					return null;
-				}
+					});
 
-				return SynthQLoop(visitEntry).then(() =&gt; {
+				});
+				return promise.then(function(){
 					return filesToDownload;
 				});
 			};

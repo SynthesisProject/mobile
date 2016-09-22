@@ -1,5 +1,17 @@
 window.esdocSearchIndex = [
   [
+    "synthesis-mobile/js/base/factories/accesspermission.js~accesspermission",
+    "class/js/base/factories/AccessPermission.js~AccessPermission.html",
+    "<span>AccessPermission</span> <span class=\"search-result-import-path\">synthesis-mobile/js/base/factories/AccessPermission.js</span>",
+    "class"
+  ],
+  [
+    "synthesis-mobile/js/base/factories/accesspermission.js~accesspermissionfactory",
+    "function/index.html#static-function-AccessPermissionFactory",
+    "<span>AccessPermissionFactory</span> <span class=\"search-result-import-path\">synthesis-mobile/js/base/factories/AccessPermission.js</span>",
+    "function"
+  ],
+  [
     "synthesis-mobile/js/base/directives/animatedellipse.js~animatedellipse",
     "class/js/base/directives/AnimatedEllipse.js~AnimatedEllipse.html",
     "<span>AnimatedEllipse</span> <span class=\"search-result-import-path\">synthesis-mobile/js/base/directives/AnimatedEllipse.js</span>",
@@ -165,6 +177,12 @@ window.esdocSearchIndex = [
     "synthesis-mobile/js/base/services/dataservice.js~dataservice",
     "variable/index.html#static-variable-DataService",
     "<span>DataService</span> <span class=\"search-result-import-path\">synthesis-mobile/js/base/services/DataService.js</span>",
+    "variable"
+  ],
+  [
+    "synthesis-mobile/js/base/factories/accesspermission.js~file_access_lock",
+    "variable/index.html#static-variable-FILE_ACCESS_LOCK",
+    "<span>FILE_ACCESS_LOCK</span> <span class=\"search-result-import-path\">synthesis-mobile/js/base/factories/AccessPermission.js</span>",
     "variable"
   ],
   [
@@ -531,12 +549,6 @@ window.esdocSearchIndex = [
     "synthesis-mobile/js/base/factories/synthqifstatement.js~synthqifstatement",
     "variable/index.html#static-variable-SynthQIfStatement",
     "<span>SynthQIfStatement</span> <span class=\"search-result-import-path\">synthesis-mobile/js/base/factories/SynthQIfStatement.js</span>",
-    "variable"
-  ],
-  [
-    "synthesis-mobile/js/base/factories/synthqloop.js~synthqloop",
-    "variable/index.html#static-variable-SynthQLoop",
-    "<span>SynthQLoop</span> <span class=\"search-result-import-path\">synthesis-mobile/js/base/factories/SynthQLoop.js</span>",
     "variable"
   ],
   [
@@ -1434,6 +1446,42 @@ window.esdocSearchIndex = [
     "member"
   ],
   [
+    "js/base/factories/accesspermission.js",
+    "file/js/base/factories/AccessPermission.js.html",
+    "js/base/factories/AccessPermission.js",
+    "file"
+  ],
+  [
+    "js/base/factories/accesspermission.js~accesspermission#$q",
+    "class/js/base/factories/AccessPermission.js~AccessPermission.html#instance-member-$q",
+    "js/base/factories/AccessPermission.js~AccessPermission#$q",
+    "member"
+  ],
+  [
+    "js/base/factories/accesspermission.js~accesspermission#lock",
+    "class/js/base/factories/AccessPermission.js~AccessPermission.html#instance-member-Lock",
+    "js/base/factories/AccessPermission.js~AccessPermission#Lock",
+    "member"
+  ],
+  [
+    "js/base/factories/accesspermission.js~accesspermission#constructor",
+    "class/js/base/factories/AccessPermission.js~AccessPermission.html#instance-constructor-constructor",
+    "js/base/factories/AccessPermission.js~AccessPermission#constructor",
+    "method"
+  ],
+  [
+    "js/base/factories/accesspermission.js~accesspermission#hasfilepermission",
+    "class/js/base/factories/AccessPermission.js~AccessPermission.html#instance-member-hasFilePermission",
+    "js/base/factories/AccessPermission.js~AccessPermission#hasFilePermission",
+    "member"
+  ],
+  [
+    "js/base/factories/accesspermission.js~accesspermission#requestfilepermission",
+    "class/js/base/factories/AccessPermission.js~AccessPermission.html#instance-method-requestFilePermission",
+    "js/base/factories/AccessPermission.js~AccessPermission#requestFilePermission",
+    "method"
+  ],
+  [
     "js/base/factories/appsyncstatus.js",
     "file/js/base/factories/AppSyncStatus.js.html",
     "js/base/factories/AppSyncStatus.js",
@@ -1551,12 +1599,6 @@ window.esdocSearchIndex = [
     "js/base/factories/synthqifstatement.js",
     "file/js/base/factories/SynthQIfStatement.js.html",
     "js/base/factories/SynthQIfStatement.js",
-    "file"
-  ],
-  [
-    "js/base/factories/synthqloop.js",
-    "file/js/base/factories/SynthQLoop.js.html",
-    "js/base/factories/SynthQLoop.js",
     "file"
   ],
   [
