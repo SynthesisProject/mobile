@@ -1,6 +1,6 @@
 'use strict';
 import {convertToObject} from '../Utilities';
-var ModuleService = ($q, DataService, RegistrationService, LoggerService, _SF, SynthQLoop, $filter, safo, SynthError, SynthesisRESTClient) => {
+var ModuleService = ($q, DataService, RegistrationService, LoggerService, _SF, $filter, safo, SynthError, SynthesisRESTClient) => {
 	var LOG = LoggerService('ModuleService');
 
 
@@ -196,26 +196,22 @@ var ModuleService = ($q, DataService, RegistrationService, LoggerService, _SF, S
 			* }]
 		 */
 		getAllHomeToolsSorted(){
-			var modules, idx = 0,
-				moduleTools = [];
 			const self = this;
 
-			function getModuleToolsPromise(){
-				if(modules == null || idx >= modules.length) {
-					return null;
-				}
-
-				var theModule = modules[idx++];
-				return self.getModuleHomeToolsSorted(theModule.id)
-					.then((tools) => {
-						moduleTools.push(theModule);
-						moduleTools[moduleTools.length - 1].tools = tools;
-					});
-			}
-
 			function getLoopModulesPromise(availableModules){
-				modules = availableModules;
-				return SynthQLoop(getModuleToolsPromise).then(() => {
+				let promise = $q.when();
+				let moduleTools = [];
+				angular.forEach(availableModules, function(module){
+					promise = promise.then(function(){
+						return self.getModuleHomeToolsSorted(module.id)
+							.then((tools) => {
+								moduleTools.push(module);
+								moduleTools[moduleTools.length - 1].tools = tools;
+							});
+					});
+				});
+
+				return promise.then(() => {
 					return moduleTools;
 				});
 			}
@@ -408,5 +404,5 @@ var ModuleService = ($q, DataService, RegistrationService, LoggerService, _SF, S
 
 	return new ModuleServiceImpl();
 };
-ModuleService.$inject = ['$q', 'DataService', 'RegistrationService', 'LoggerService', 'SynthFail', 'SynthQLoop', '$filter', 'safo', 'SynthError', 'SynthesisRESTClient'];
+ModuleService.$inject = ['$q', 'DataService', 'RegistrationService', 'LoggerService', 'SynthFail', '$filter', 'safo', 'SynthError', 'SynthesisRESTClient'];
 export default ModuleService;

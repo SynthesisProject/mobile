@@ -5,7 +5,7 @@ import bases from 'bases';
  * base/js/services/DataService.js
  * Create factory for the DataService
  */
-var DataService = ($q, $http, $rootScope, LoggerService, SynthError, UserSession, SynthConfig, SynthQLoop, Lock) => {
+var DataService = ($q, $http, $rootScope, LoggerService, SynthError, UserSession, SynthConfig, Lock, AccessPermission) => {
 
 	var LOG = LoggerService('DataService');
 	// Characters that will be used to generate filenames
@@ -18,6 +18,7 @@ var DataService = ($q, $http, $rootScope, LoggerService, SynthError, UserSession
 	// The lock key that is used when generating new file names
 	const FILE_CREATE_LOCK = 'DataService.FILE_CREATE_LOCK';
 
+
 	/**
 	 * Constructor
 	 */
@@ -25,6 +26,8 @@ var DataService = ($q, $http, $rootScope, LoggerService, SynthError, UserSession
 
 		constructor(){
 			this.deviceReady = false;
+			// Android 6+ requires user permission to acces files
+			this.hasFilePermissions = false;
 			this.cachedRouteFileSystem = null;
 		}
 
@@ -34,7 +37,6 @@ var DataService = ($q, $http, $rootScope, LoggerService, SynthError, UserSession
 		 */
 		cordovaReady(){
 			const deferred = $q.defer();
-
 			if (this.deviceReady === true){
 				deferred.resolve();
 			}
@@ -44,8 +46,9 @@ var DataService = ($q, $http, $rootScope, LoggerService, SynthError, UserSession
 					deferred.resolve();
 				}, false);
 			}
-
-			return deferred.promise;
+			return deferred.promise.then(function(){
+				return AccessPermission.requestFilePermission();
+			});
 		}
 
 		/**
@@ -679,19 +682,14 @@ var DataService = ($q, $http, $rootScope, LoggerService, SynthError, UserSession
 		  @param deleteFiles Array of cdv:// file protocal file path
 		 */
 		deleteCDVFiles(filePaths = []){
-			var idx = 0;
+			let promise = $q.when();
 			const self = this;
-			function getNextFile(){
-				// if there is no more to get return null
-				if(filePaths.length === idx){
-					return null;
-				}
-				var promise = self.deleteToolFile(filePaths[idx]);
-				idx++;
-				return promise;
-			}
-
-			return SynthQLoop(getNextFile);
+			angular.forEach(filePaths, function(filePath){
+				promise = promise.then(function(){
+					return self.deleteToolFile(filePath);
+				});
+			});
+			return promise;
 		}
 
 		/**
@@ -881,5 +879,5 @@ var DataService = ($q, $http, $rootScope, LoggerService, SynthError, UserSession
 
 	return new DataServiceImpl();
 };
-DataService.$inject = ['$q', '$http', '$rootScope', 'LoggerService', 'SynthError', 'UserSession', 'SynthConfig', 'SynthQLoop', 'Lock'];
+DataService.$inject = ['$q', '$http', '$rootScope', 'LoggerService', 'SynthError', 'UserSession', 'SynthConfig', 'Lock', 'AccessPermission'];
 export default DataService;

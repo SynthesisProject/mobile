@@ -1,5 +1,5 @@
 'use strict';
-var ResourcesCtrl = ($scope, $filter, $rootScope, $routeParams, $window, $timeout, ResourcesService, DataService, SynthErrorHandler, SynthQLoop, SynthError) => {
+var ResourcesCtrl = ($scope, $filter, $rootScope, $routeParams, $window, $timeout, $q, ResourcesService, DataService, SynthErrorHandler, SynthError) => {
 
 	$rootScope.activePage = 'forums';
 	$rootScope.breadcrumbs = [{'name' : 'Resources'}];
@@ -47,56 +47,47 @@ var ResourcesCtrl = ($scope, $filter, $rootScope, $routeParams, $window, $timeou
 		$event.stopPropagation();
 		$scope.promptDownloadAll = false;
 		$scope.busyDownloadingAll = true;
-		var rIdx = 0; // Index of the resources
 
 		// Get the next resource in the list if there is any
 		function getDownloadResourcePromise(){
-			// If there is nothing we are done
-			if($scope.downloadAllObject.resources == null){
-				return null;
-			}
-			else if(rIdx < $scope.downloadAllObject.resources.length){
-				return ResourcesService.downloadResource(moduleId, $scope.downloadAllObject.resources[rIdx])
-				.then(function(){
-					var resource = $scope.downloadAllObject.resources[rIdx];
-					// If there is no progress yet we add a zero progress
-					if(resource.downloaded === undefined){
-						resource.downloaded = 0;
-					}
-					// When a resource is completly download we add the full size to the progress
-					$scope.downloadAllObject.downloaded = ($scope.downloadAllObject.downloaded - resource.downloaded) + resource.size;
-					$scope.downloadAllObject.progress = ($scope.downloadAllObject.downloaded / $scope.downloadAllObject.size) * 100;
-					$scope.downloadAllObject.downloadedFiles++;
-					rIdx++;
+			let promise = $q.when();
+			angular.forEach($scope.downloadAllObject.resources, function(resource){
+				promise = promise.then(function(){
+					return ResourcesService.downloadResource(moduleId, resource)
+						.then(function success(){
+							// If there is no progress yet we add a zero progress
+							if(resource.downloaded === undefined){
+								resource.downloaded = 0;
+							}
+							// When a resource is completly download we add the full size to the progress
+							$scope.downloadAllObject.downloaded = ($scope.downloadAllObject.downloaded - resource.downloaded) + resource.size;
+							$scope.downloadAllObject.progress = ($scope.downloadAllObject.downloaded / $scope.downloadAllObject.size) * 100;
+							$scope.downloadAllObject.downloadedFiles++;
+						}, function error(reason){
+							return $q.reject(reason);
+						}, function notify(notification){
+							if(notification.lengthComputable) {
+								resource.size = notification.total;
+							}
+							// If there is no progress yet we add a zero progress
+							if(resource.downloaded === undefined){
+								resource.downloaded = 0;
+							}
+							$scope.downloadAllObject.downloaded = ($scope.downloadAllObject.downloaded - resource.downloaded) + notification.loaded;
+							resource.downloaded = notification.loaded;
+							$scope.downloadAllObject.progress = ($scope.downloadAllObject.downloaded / $scope.downloadAllObject.size) * 100;
+						});
 				});
-			}
-			// We are done
-			else{
-				return null;
-			}
+			});
+			return promise;
 		}
 
-		SynthQLoop(getDownloadResourcePromise)
+		getDownloadResourcePromise()
 		.then(function(){ // Success
 			$scope.busyDownloadingAll = false;
 			openDirectory(currentDirectory);
 		}, function(){ // Error
 			$scope.busyDownloadingAll = false;
-		}, function(notification){ // Status
-			// Check the file download progress
-			if(notification instanceof ProgressEvent){
-				var resource = $scope.downloadAllObject.resources[rIdx];
-				if(notification.lengthComputable) {
-					resource.size = notification.total;
-				}
-				// If there is no progress yet we add a zero progress
-				if(resource.downloaded === undefined){
-					resource.downloaded = 0;
-				}
-				$scope.downloadAllObject.downloaded = ($scope.downloadAllObject.downloaded - resource.downloaded) + notification.loaded;
-				resource.downloaded = notification.loaded;
-				$scope.downloadAllObject.progress = ($scope.downloadAllObject.downloaded / $scope.downloadAllObject.size) * 100;
-			}
 		});
 	};
 
@@ -336,5 +327,5 @@ var ResourcesCtrl = ($scope, $filter, $rootScope, $routeParams, $window, $timeou
 
 	openDirectory(null);
 };
-ResourcesCtrl.$inject = ['$scope', '$filter', '$rootScope', '$routeParams', '$window', '$timeout', 'ResourcesService', 'DataService', 'SynthErrorHandler', 'SynthQLoop', 'SynthError'];
+ResourcesCtrl.$inject = ['$scope', '$filter', '$rootScope', '$routeParams', '$window', '$timeout', '$q', 'ResourcesService', 'DataService', 'SynthErrorHandler', 'SynthError'];
 export default ResourcesCtrl;

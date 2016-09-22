@@ -2,7 +2,7 @@
 /*
  * base/js/services/services.LoggerService.js
  */
-var LoggerService = ($q, $log, $injector, SynthConfig, SynthQLoop) => {
+var LoggerService = ($q, $log, $injector, SynthConfig, AccessPermission) => {
 // Map of loggers created
 	const loggers = {};
 
@@ -46,7 +46,9 @@ var LoggerService = ($q, $log, $injector, SynthConfig, SynthQLoop) => {
 				deferred.resolve();
 			}, false);
 		}
-		return deferred.promise;
+		return deferred.promise.then(function(){
+			return AccessPermission.requestFilePermission();
+		});
 	}
 
 	/**
@@ -141,13 +143,15 @@ var LoggerService = ($q, $log, $injector, SynthConfig, SynthQLoop) => {
 	 * Rotate the log files
 	 */
 	function rotateLogs(){
-		var idx = (numFiles - 1);
 		function getShiftLogPromise(){
-			// If we have done the last one allready
-			if(idx < 0){
-				return null;
+			/*eslint no-loop-func: "off"*/
+			let promise = $q.when();
+			for(var idx = numFiles - 1; idx >= 0; idx--){
+				promise = promise.then(function(){
+					return shiftLog(idx);
+				});
 			}
-			return shiftLog(idx--);
+			return promise;
 		}
 
 		function getNewLogPromise(){
@@ -157,9 +161,7 @@ var LoggerService = ($q, $log, $injector, SynthConfig, SynthQLoop) => {
 		// Delete last log file
 		return removeFileLastLog()
 			// Shift remaining files
-			.then(function(){
-				return SynthQLoop(getShiftLogPromise);
-			})
+			.then(getShiftLogPromise)
 			.then(getNewLogPromise);
 	}
 
@@ -304,5 +306,5 @@ var LoggerService = ($q, $log, $injector, SynthConfig, SynthQLoop) => {
 	};
 
 };
-LoggerService.$inject = ['$q', '$log', '$injector', 'SynthConfig', 'SynthQLoop'];
+LoggerService.$inject = ['$q', '$log', '$injector', 'SynthConfig', 'AccessPermission'];
 export default LoggerService;

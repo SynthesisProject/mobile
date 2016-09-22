@@ -1,5 +1,5 @@
 'use strict';
-var SyncProgressCtrl = ($scope, $rootScope, $filter, $timeout, $q, SyncService, DataService, SyncAPIService, SynthQLoop, SyncSelection, LoggerService, HomeService, SynthErrorHandler, SynthAuthenticateUser) => {
+var SyncProgressCtrl = ($scope, $rootScope, $filter, $timeout, $q, SyncService, DataService, SyncAPIService, SyncSelection, LoggerService, HomeService, SynthErrorHandler, SynthAuthenticateUser) => {
 	var LOG = LoggerService('SyncProgressCtrl');
 
 	// Update active page and breadcrumbs
@@ -67,5 +67,5 @@ var SyncProgressCtrl = ($scope, $rootScope, $filter, $timeout, $q, SyncService, 
 	}
 	startSync();
 };
-SyncProgressCtrl.$inject = ['$scope', '$rootScope', '$filter', '$timeout', '$q', 'SyncService', 'DataService', 'SyncAPIService', 'SynthQLoop', 'SyncSelection', 'LoggerService', 'HomeService', 'SynthErrorHandler', 'SynthAuthenticateUser'];
+SyncProgressCtrl.$inject = ['$scope', '$rootScope', '$filter', '$timeout', '$q', 'SyncService', 'DataService', 'SyncAPIService', 'SyncSelection', 'LoggerService', 'HomeService', 'SynthErrorHandler', 'SynthAuthenticateUser'];
 export default SyncProgressCtrl;

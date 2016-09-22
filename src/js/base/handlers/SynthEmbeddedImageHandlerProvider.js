@@ -31,8 +31,8 @@ var SynthEmbeddedImageHandlerProvider = function(){
 		}
 	};
 
-	this.$get = ['$q', '$injector', '$timeout', 'SynthQLoop',
-		function($q, $injector, $timeout, SynthQLoop){
+	this.$get = ['$q', '$injector', '$timeout',
+		function($q, $injector, $timeout){
 
 
 			return {
@@ -63,25 +63,21 @@ var SynthEmbeddedImageHandlerProvider = function(){
 					if(images.length === 0){
 						return $q.when(htmlContent);
 					}
-
-					var idx = 0;
-					function getFixImagePromise(){
-						if(idx < images.length){
-							let currentImage = $(images[idx++]);
+					let promise = $q.when();
+					angular.forEach(images, function(image){
+						promise = promise.then(function(){
+							let currentImage = $(image);
 							// Get the current path of the image
 							var currentImagePath = currentImage.attr('src');
 							return resolveImageFunction(currentImagePath).then((localpath) => {
 								currentImage.attr('src', localpath);
 							});
-						}
-						// There are no more images to fix
-						return null;
-					}
-
-					return SynthQLoop(getFixImagePromise)
-						.then(()=>{
-							return dummyData.html();
 						});
+					});
+
+					return promise.then(()=>{
+						return dummyData.html();
+					});
 				},
 				resolveImageLocalPathFromAttachments : function(imagePath, attachments){
 

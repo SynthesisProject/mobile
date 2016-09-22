@@ -27,7 +27,6 @@ import SyncService from './sync/SyncService';
 import SyncSelection from './sync/SyncSelection';
 import SynthesisRESTClient from './services/SynthesisRESTClient';
 
-import SynthQLoop from './factories/SynthQLoop';
 import SynthQIfStatement from './factories/SynthQIfStatement';
 import safo from './factories/safo';
 import SynthError from './factories/SynthError';
@@ -37,6 +36,7 @@ import SynthErrorHandler from './factories/SynthErrorHandler';
 import SynthAuthenticateUser from './factories/SynthAuthenticateUser';
 import UserSession from './factories/UserSession';
 import Lock from './factories/Lock';
+import AccessPermission from './factories/AccessPermission';
 
 
 // Import base filters
@@ -107,7 +107,6 @@ angular.module(factories, [])
 	.factory('UserSession', UserSession)
 	.factory('SyncService', SyncService)
 	.factory('SyncSelection', SyncSelection)
-	.factory('SynthQLoop', SynthQLoop)
 	.factory('SynthQIfStatement', SynthQIfStatement)
 	.factory('safo', safo)
 	.factory('SynthError', SynthError)
@@ -116,7 +115,8 @@ angular.module(factories, [])
 	.factory('SynthErrorHandler', SynthErrorHandler)
 	.factory('SynthAuthenticateUser', SynthAuthenticateUser)
 	.factory('SynthesisRESTClient', SynthesisRESTClient)
-	.factory('Lock', Lock);
+	.factory('Lock', Lock)
+	.factory('AccessPermission', AccessPermission);
 
 // Register filters
 angular.module(filters, [])

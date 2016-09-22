@@ -28,7 +28,8 @@ var buildConfig = {
 			'cordova-plugin-statusbar@2.1.1',
 			'cordova-plugin-dialogs@1.2.0',
 			'cordova-plugin-disable-nsapptransportsecurity@1.0.2',
-			'https://github.com/OpenCollabZA/cordova-plugin-fileopener.git'
+			'https://github.com/OpenCollabZA/cordova-plugin-fileopener.git',
+			'cordova-plugin-android-permissions@0.10.0'
 		],
 		'preferences' : {
 			'fullscreen' : 'false',
@@ -121,7 +122,7 @@ var externalConfig = null;
 try{
 	var stat = fs.statSync(externalConfigPath);
 	if(stat.isFile()){
-		var externalConfig = fs.readFileSync(externalConfigPath, 'utf8');
+		externalConfig = fs.readFileSync(externalConfigPath, 'utf8');
 		try{
 			externalConfig = JSON.parse(externalConfig);
 			console.log('Loaded external config: ' + externalConfigPath);

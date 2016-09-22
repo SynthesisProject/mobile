@@ -38,13 +38,13 @@ class ModuleCollapse {
 	linkDirective(scope, element){
 
 		var collapseButton = $(element.find('a')[0]), toCollapse = $(element.find('.collapse')[0]);
-
+		const self = this;
 
 		/**
 		* Refresh the scrolle before and after modules has been collapsed
 		*/
 		function refreshScoller(){
-			this.$rootScope.$broadcast('iScrollRefresh', {'scollerId' : 'mainScroll'});
+			self.$rootScope.$broadcast('iScrollRefresh', {'scollerId' : 'mainScroll'});
 		}
 
 		toCollapse.on('shown.bs.collapse', refreshScoller);

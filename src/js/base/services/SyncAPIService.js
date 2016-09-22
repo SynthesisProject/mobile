@@ -3,7 +3,7 @@
 // TODO all the rest calls should move to SynthesisRESTClient
 var SyncAPIService = ($q, $http, $filter, $rootScope, base64, DataService,
 	LoggerService, SynthError, _SF, CheckError,
-	SynthConfig, SynthQLoop, ModuleService, RegistrationService, SynthAttachmentMiner,
+	SynthConfig, ModuleService, RegistrationService, SynthAttachmentMiner,
 	SynthEmbeddedImageHandler, SynthDeleteHandler, SynthLinkHandler, SynthUploadResponseHandler) => {
 
 	var LOG = LoggerService('SyncAPIService');
@@ -112,52 +112,40 @@ var SyncAPIService = ($q, $http, $filter, $rootScope, base64, DataService,
 		}
 	 */
 	SyncAPIServiceImpl.prototype.getSyncStatusModulesOffline = function(){
-		var modules, // Array of modules we have to get statuses for
-			self = this,
+		var self = this,
 			syncStatus = {
 				'inSync' : true,
 				'contentDownloadSize' : 0,
 				'contentUploadSize' : 0,
 				'total' : 0,
 				'modules' : {}
-			},
-			idx = 0;
+			};
 
-		/**
-		 * Returns a promise to get the Sync Status of the next module in a list.
-		 * If there is no more modules in the list, it return null
-		 */
-		function getSyncStatusPromise(){
-			// Check if we have any more modules to work with
-			if(modules == null || idx >= modules.length){
-				return null;
-			}
-
-			// Get the next module and increment the index
-			var module = modules[idx++];
-
-			// Get the sync details for the current item in the list
-			return self.getSyncStatusModuleOffline(module.id)
-				.then((moduleSyncStatus) => {
-
-					// Add the module to the modules map
-					syncStatus.modules[module.id] = moduleSyncStatus;
-
-					// Update the overall sync status to include the totals of the module
-					syncStatus.inSync &= moduleSyncStatus.inSync;
-					syncStatus.contentDownloadSize += moduleSyncStatus.contentDownloadSize;
-					syncStatus.contentUploadSize += moduleSyncStatus.contentUploadSize;
-					syncStatus.total += moduleSyncStatus.total;
-					return syncStatus;
-				});
-		}
 
 		/**
 		 * Returns a promise to loop through all the modules to get their sync status
 		 */
 		function getLoopModulesPromise(linkedModules){
-			modules = linkedModules;
-			return SynthQLoop(getSyncStatusPromise).then(() => {
+			let promise = $q.when();
+			angular.forEach(linkedModules, function(linkedModule){
+				promise = promise.then(function(){
+					return self.getSyncStatusModuleOffline(linkedModule.id)
+						.then((moduleSyncStatus) => {
+
+							// Add the module to the modules map
+							syncStatus.modules[linkedModule.id] = moduleSyncStatus;
+
+							// Update the overall sync status to include the totals of the module
+							syncStatus.inSync &= moduleSyncStatus.inSync;
+							syncStatus.contentDownloadSize += moduleSyncStatus.contentDownloadSize;
+							syncStatus.contentUploadSize += moduleSyncStatus.contentUploadSize;
+							syncStatus.total += moduleSyncStatus.total;
+							return syncStatus;
+						});
+				});
+			});
+
+			return promise.then(() => {
 				return syncStatus;
 			});
 		}
@@ -191,12 +179,7 @@ var SyncAPIService = ($q, $http, $filter, $rootScope, base64, DataService,
 		}
 	 */
 	SyncAPIServiceImpl.prototype.getSyncStatusModuleOffline = function(moduleId){
-		var deferred = $q.defer();
-
-
-		var errorHandler = _SF(deferred);
 		var self = this;
-		var moduleData = {};
 		// The response object that will be sent to the caller of this function
 		var syncStatus = {
 			'inSync' : true,
@@ -222,32 +205,27 @@ var SyncAPIService = ($q, $http, $filter, $rootScope, base64, DataService,
 			});
 		};
 
-		ModuleService.getModuleData(moduleId).then((data) => {
-			moduleData = data;
+		return ModuleService.getModuleData(moduleId).then((moduleData) => {
 			// If we don't have tool we must be out of sync
 			if(moduleData == null || moduleData.tools == null){
 				syncStatus.inSync = false;
-				deferred.resolve(syncStatus);
+				return syncStatus; // Resolve with this sync status
 			}
 			else{
-				var idx = 0;
-				var toolsArray = $filter('object2Array')(moduleData.toolsLocal);
-				SynthQLoop(() => {
-					var promise;
-					// We have no more promises to update
-					if (idx >= toolsArray.length){
-						promise = null;
-					}
-					else{
-						promise = funcUpdateTool(toolsArray[idx++].key);
-					}
-					return promise;
-				}).then(() => {
-					deferred.resolve(syncStatus);
+				let toolsArray = $filter('object2Array')(moduleData.toolsLocal);
+				let promise = $q.when();
+				angular.forEach(toolsArray, function(tool){
+					promise = promise.then(function(){
+						return funcUpdateTool(tool.key);
+					});
+				});
+
+				// Else return another promise
+				return promise.then(function(){
+					return syncStatus;
 				});
 			}
-		}, errorHandler);
-		return deferred.promise;
+		});
 	};
 
 	/**
@@ -378,41 +356,36 @@ var SyncAPIService = ($q, $http, $filter, $rootScope, base64, DataService,
 		}
 
 		/**
-		 * Gets a promise to check the upload size for a tool
+		 * Gets a promise to check the upload size for all tools
 		 */
-		var uIdx = 0;
-		var toolsArray = null;
 		function getUploadSizePromise(){
-
+			var promise = $q.when();
+			var toolsArray = null;
 			// Create the array if we don't have it
 			if(toolsArray == null){
 				toolsArray = $filter('object2Array')(syncStatus.tools);
 			}
 
-			// If there are no more tools return null
-			if(uIdx == toolsArray.length) {
-				return null;
-			}
+			angular.forEach(toolsArray, function(tool){
+				let toolId = tool.key;
+				syncStatus.tools[toolId] = syncStatus.tools[toolId] || {
+					'codeDownloadSize' : 0,
+					'contentDownloadSize' : 0,
+					'contentUploadSize' : 0,
+					'inSync' : true
+				};
+				syncStatus.tools[toolId].label = moduleData.toolDescriptions[toolId].label;
 
-			// Get the next tool id
-			var toolId = toolsArray[uIdx++].key;
-
-			syncStatus.tools[toolId] = syncStatus.tools[toolId] || {
-				'codeDownloadSize' : 0,
-				'contentDownloadSize' : 0,
-				'contentUploadSize' : 0,
-				'inSync' : true
-			};
-			syncStatus.tools[toolId].label = moduleData.toolDescriptions[toolId].label;
-
-			return self
-				.getToolUploadSize(moduleId, toolId)
-				.then((size) => {
-					syncStatus.tools[toolId].contentUploadSize = size;
-					syncStatus.tools[toolId].inSync = (syncStatus.tools[toolId].inSync && (size === 0));
-					syncStatus.upload = ((syncStatus.upload ? syncStatus.upload : 0) + size);
-					syncStatus.inSync = (syncStatus.inSync && syncStatus.tools[toolId].inSync);
+				promise = promise.then(function(){
+					return self.getToolUploadSize(moduleId, toolId).then((size) => {
+						syncStatus.tools[toolId].contentUploadSize = size;
+						syncStatus.tools[toolId].inSync = (syncStatus.tools[toolId].inSync && (size === 0));
+						syncStatus.upload = ((syncStatus.upload ? syncStatus.upload : 0) + size);
+						syncStatus.inSync = (syncStatus.inSync && syncStatus.tools[toolId].inSync);
+					});
 				});
+			});
+			return promise;
 		}
 
 
@@ -424,9 +397,7 @@ var SyncAPIService = ($q, $http, $filter, $rootScope, base64, DataService,
 			// Write the response to the module file
 			.then(getWriteDownloadResponsePromise)
 			// Get the upload size
-			.then(() => {
-				return SynthQLoop(getUploadSizePromise);
-			})
+			.then(getUploadSizePromise)
 			.then(() => {
 				syncStatus.total = ((syncStatus.download ? syncStatus.download : 0) + (syncStatus.upload ? syncStatus.upload : 0));
 				return syncStatus; // Finally we are done!
@@ -821,31 +792,18 @@ var SyncAPIService = ($q, $http, $filter, $rootScope, base64, DataService,
 	 * Download an array of files from the remote server for a specific tool
 	 */
 	SyncAPIServiceImpl.prototype.getAttachementsFromServer = function(attachments) {
-		var self = this;
-		let idx = 0;
+		const self = this;
 		if (!attachments || attachments.length === 0){
 			LOG.info('No need to download any attachments, an empty array was given');
 			return $q.when({});
 		}
-
-		function downloadFile(){
-			return self.getFileFromServer(attachments[idx].downloadKey, attachments[idx].downloadPath);
-		}
-
-		function getAttachment(){
-			// if there is no more to get return null
-			if(attachments.length === idx){
-				return null;
-			}
-			var promise = downloadFile()
-				.then(function(returnData){
-					idx++;
-					return returnData;
-				});
-			return promise;
-		}
-
-		return SynthQLoop(getAttachment);
+		let promise = $q.when();
+		angular.forEach(attachments, function(attachment){
+			promise = promise.then(function(){
+				return self.getFileFromServer(attachment.downloadKey, attachment.downloadPath);
+			});
+		});
+		return promise;
 	};
 
 
@@ -896,7 +854,7 @@ var SyncAPIService = ($q, $http, $filter, $rootScope, base64, DataService,
 };
 SyncAPIService.$inject = ['$q', '$http', '$filter', '$rootScope', 'base64', 'DataService',
 	'LoggerService', 'SynthError', 'SynthFail', 'SynthCheckResponseError',
-	'SynthConfig', 'SynthQLoop', 'ModuleService', 'RegistrationService', 'SynthAttachmentMiner',
+	'SynthConfig', 'ModuleService', 'RegistrationService', 'SynthAttachmentMiner',
 	'SynthEmbeddedImageHandler', 'SynthDeleteHandler', 'SynthLinkHandler', 'SynthUploadResponseHandler'];
 
 export default SyncAPIService;

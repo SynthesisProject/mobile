@@ -1,7 +1,7 @@
 'use strict';
 
 var SyncService = ($q, $timeout, $filter, $rootScope, SyncAPIService, LoggerService,
-	UserSession, SynthQLoop, SyncSelection, ModuleService, safo, UserSettings) => {
+	UserSession, SyncSelection, ModuleService, safo, UserSettings) => {
 
 
 	var LOG = LoggerService('SyncService');
@@ -18,47 +18,36 @@ var SyncService = ($q, $timeout, $filter, $rootScope, SyncAPIService, LoggerServ
 		*/
 		getSyncDetails(){
 
-			var modules, idx = 0,
-				syncDetails = {'inSync' : true,
-					'download' : 0,
-					'upload' : 0,
-					'total' : 0,
-					'tools' : []
-				};
-
-			/**
-			* Returns a promise to get the Sync Status of the next module in a list.
-			* If there is no more modules in the list, it return null
-			*/
-			function getSyncStatusPromise(){
-				// Check if we have any more modules to work with
-				if(modules == null || idx >= modules.length){
-					return null;
-				}
-
-				// Get the next module and increment the index
-				var module = modules[idx++];
-
-				// Get the sync details for the current item in the list
-				return SyncAPIService.getSyncStatus(module.id)
-				.then((syncStatus) => {
-					syncDetails.inSync = syncDetails.inSync && syncStatus.inSync;
-					syncDetails.download += syncStatus.download;
-					syncDetails.upload += syncStatus.upload;
-					syncDetails.total += syncStatus.total;
-
-					var tools = $filter('object2Array')(syncStatus.tools);
-					safo(tools, 'moduleId', module.id, 'moduleName', module.name);
-					syncDetails.tools = syncDetails.tools.concat(tools);
-				});
-			}
+			var syncDetails = {
+				inSync : true,
+				download : 0,
+				upload : 0,
+				total : 0,
+				tools : []
+			};
 
 			/**
 			* Returns a promise to loop through all the modules to get their sync status
 			*/
 			function getLoopModulesPromise(linkedModules){
-				modules = linkedModules;
-				return SynthQLoop(getSyncStatusPromise).then(function(){
+				let promise = $q.when();
+				angular.forEach(linkedModules, function(linkedModule){
+					promise = promise.then(function(){
+						// Get the sync details for the current item in the list
+						return SyncAPIService.getSyncStatus(linkedModule.id)
+							.then((syncStatus) => {
+								syncDetails.inSync = syncDetails.inSync && syncStatus.inSync;
+								syncDetails.download += syncStatus.download;
+								syncDetails.upload += syncStatus.upload;
+								syncDetails.total += syncStatus.total;
+
+								var tools = $filter('object2Array')(syncStatus.tools);
+								safo(tools, 'moduleId', linkedModule.id, 'moduleName', linkedModule.name);
+								syncDetails.tools = syncDetails.tools.concat(tools);
+							});
+					});
+				});
+				return promise.then(function(){
 					$rootScope.$broadcast('syncStatusChanged', {'state' : syncDetails.inSync ? 'inSync' : 'outSync'});
 					return syncDetails;
 				});
@@ -95,22 +84,22 @@ var SyncService = ($q, $timeout, $filter, $rootScope, SyncAPIService, LoggerServ
 			* Function that will return promise for new download if there is any
 			* or returns null if there are no more promises for downloads
 			*/
-			var dIdx = 0;
 			function getDownloadPromise(){
-				var promise = null;
-				var idx = dIdx++; // keep a local instance of the current index
-				if (idx < toolDownloads.length){
-					promise = self.syncDownloadTool(toolDownloads[idx].moduleId, toolDownloads[idx].key)
-					.then(() => {
-						LOG.debug('Completed download for tool : ' + toolDownloads[idx].key);
-						toolDownloads[idx].downloadProgress = 100;
+				let promise = $q.when();
+				angular.forEach(toolDownloads, function(tool){
+					promise = promise.then(function(){
+						return self.syncDownloadTool(tool.moduleId, tool.key)
+						.then(() => {
+							LOG.debug('Completed download for tool : ' + tool.key);
+							tool.downloadProgress = 100;
 
-						// Set the flag if we downloaded for base
-						if(toolDownloads[idx].key == 'base'){
-							didUpdateBase = true;
-						}
+							// Set the flag if we downloaded for base
+							if(tool.key == 'base'){
+								didUpdateBase = true;
+							}
+						});
 					});
-				}
+				});
 				return promise;
 			}
 
@@ -118,40 +107,32 @@ var SyncService = ($q, $timeout, $filter, $rootScope, SyncAPIService, LoggerServ
 			* Function that will return a promise for the new upload if there is any
 			* or returns null if there are no more promises for uploads
 			*/
-			var uIdx = 0;
 			function getUploadPromise(){
-				var promise = null;
-				var idx = uIdx++; // keep a local instance of the current index
-				if (idx < toolUploads.length){
-					promise = self
-					.syncUploadTool(toolUploads[idx].key)
-					.then(() => {
-						LOG.debug('Completed upload for tool : ' + toolUploads[idx].key);
-						toolUploads[idx].downloadProgress = 100;
+				let promise = $q.when();
+				angular.forEach(toolUploads, function(tool){
+					promise = promise.then(function(){
+						return self.syncUploadTool(tool.key)
+						.then(() => {
+							LOG.debug('Completed upload for tool : ' + tool.key);
+							tool.downloadProgress = 100;
+						});
 					});
-				}
+				});
 				return promise;
 			}
 
 			// Get the promise to check the offline status
 			function emitSyncStatusChange(){
 				$rootScope.$broadcast('syncStatusChanged');
-				return $q.when([]);
-			}
-
-			// Start loop with downloads
-			return SynthQLoop(getDownloadPromise)
-			// When all downloads are complete, we start with the uploads
-			.then(() => {
-				return SynthQLoop(getUploadPromise);
-			})
-			// Now we do an offline Sync status check just to update the UI
-			.then(emitSyncStatusChange)
-			.then(() => {
 				return {
 					'didUpdateBase' : didUpdateBase
 				};
-			});
+			}
+
+			// Start loop with downloads
+			return getDownloadPromise()
+				.then(getUploadPromise)
+				.then(emitSyncStatusChange);
 
 		}
 
@@ -248,5 +229,5 @@ var SyncService = ($q, $timeout, $filter, $rootScope, SyncAPIService, LoggerServ
 
 };
 SyncService.$inject = ['$q', '$timeout', '$filter', '$rootScope', 'SyncAPIService', 'LoggerService',
-'UserSession', 'SynthQLoop', 'SyncSelection', 'ModuleService', 'safo', 'UserSettings'];
+'UserSession', 'SyncSelection', 'ModuleService', 'safo', 'UserSettings'];
 export default SyncService;

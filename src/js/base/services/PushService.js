@@ -1,6 +1,6 @@
 'use strict';
 
-var PushService = ($q, $http, LoggerService, DataService, ModuleService, RegistrationService, SynthError, UserSession, SynthConfig, SynthQLoop, CheckError, $window, SynthesisRESTClient) => {
+var PushService = ($q, $http, LoggerService, DataService, ModuleService, RegistrationService, SynthError, UserSession, SynthConfig, CheckError, $window, SynthesisRESTClient) => {
 
 	var LOG = LoggerService('PushService');
 	/**
@@ -181,23 +181,13 @@ var PushService = ($q, $http, LoggerService, DataService, ModuleService, Registr
 
 			// Loop through each module
 			function loopModules(modules){
-				var idx = 0, currentModuleId;
-
-				// Callback function to get the preferences for the next module
-				function getNextModulePreference(){
-					if(idx < modules.length){
-						currentModuleId = modules[idx++].id;
-
-						// Get the module preferences and add to our overall list
-						return checkModulePreferences(currentModuleId);
-					}
-
-					// Return null when there is no more to loop
-					return null;
-				}
-
-				// Start the loop for each of the registered modules
-				return SynthQLoop(getNextModulePreference);
+				var promise = $q.when();
+				angular.forEach(modules, function(module){
+					promise = promise.then(function(){
+						return checkModulePreferences(module.id);
+					});
+				});
+				return promise;
 			}
 
 			// Get tool preferences for module
@@ -343,5 +333,5 @@ var PushService = ($q, $http, LoggerService, DataService, ModuleService, Registr
 
 	return new PushServiceImpl();
 };
-PushService.$inject = ['$q', '$http', 'LoggerService', 'DataService', 'ModuleService', 'RegistrationService', 'SynthError', 'UserSession', 'SynthConfig', 'SynthQLoop', 'SynthCheckResponseError', '$window', 'SynthesisRESTClient'];
+PushService.$inject = ['$q', '$http', 'LoggerService', 'DataService', 'ModuleService', 'RegistrationService', 'SynthError', 'UserSession', 'SynthConfig', 'SynthCheckResponseError', '$window', 'SynthesisRESTClient'];
 export default PushService;

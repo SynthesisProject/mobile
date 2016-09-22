@@ -39,12 +39,13 @@ class ModuleName{
 	 * Link function for the directive
 	 */
 	linkDirective(scope, element){
+		const self = this;
 		scope.$watch('moduleName', function(moduleId){
 			if(moduleId == null){
 				element.text('');
 			}
 			else{
-				this.moduleService.getModuleName(moduleId).then(function(name){
+				self.moduleService.getModuleName(moduleId).then(function(name){
 					element.text(name ? name : 'unknown');
 				});
 			}

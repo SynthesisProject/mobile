@@ -37,48 +37,37 @@ var SynthAttachmentMinerProvider = function(){
 	};
 
 
-	this.$get = ['$q', '$injector', '$timeout', 'DataService', 'SynthQLoop',
-		function($q, $injector, $timeout, DataService, SynthQLoop){
+	this.$get = ['$q', '$injector', '$timeout', 'DataService',
+		function($q, $injector, $timeout, DataService){
 
 			/**
 			 * Gets the handler for a tool.
 			 * @param toolName Name of the tool to get a handler for
 			 * @returns The configured handler for the tool.
 			 */
-			let parseArray = (attachArray) => {
+			let parseArray = (attachArray = []) => {
 					// If there is no array, we can return right now
 				if (!attachArray || attachArray.size === 0) {
 					return $q.when([]);
 				}
 
-				var filesToDownload = [];
-				var attachments = attachArray;
-				let index = 0;
-
-				function getFixAttachmentPromise(){
-					if(index < attachments.length){
-						var attachment = attachments[index++];
-						/*
-						 *  Ignore attachments that does not have a download key
-						 *  This is a bug from the server's side if this happens
-						 */
-						if (attachment.downloadKey == null){
-							return $q.when([]);
-						}
-
-						return DataService.createNewFile(attachment.name)
-							.then((fileEntry) => {
-								attachment.downloadPath = fileEntry.toInternalURL();
-								filesToDownload.push(attachment);
-							});
+				let promise = $q.when();
+				let filesToDownload = [];
+				angular.forEach(attachArray, function(attachment){
+					// Only if the attachment has a download key
+					if(attachment.downloadKey != null){
+						promise = promise.then(function(){
+							return DataService.createNewFile(attachment.name)
+								.then((fileEntry) => {
+									attachment.downloadPath = fileEntry.toInternalURL();
+									filesToDownload.push(attachment);
+								});
+						});
 					}
-					return null;
-				}
-
-				return SynthQLoop(getFixAttachmentPromise)
-					.then(() => {
-						return filesToDownload;
-					});
+				});
+				return promise.then(() => {
+					return filesToDownload;
+				});
 			};
 
 
@@ -88,20 +77,19 @@ var SynthAttachmentMinerProvider = function(){
 			 * on the root level of the content data.
 			 */
 			var defaultHandler = (contentData) => {
-				let idx = 0;
+				let promise = $q.when();
 				let keys = Object.keys(contentData);
 				let filesToDownload = [];
-				function visitEntry(){
-					if(idx < keys.length){
-						return parseArray(contentData[keys[idx++]].attachments)
+				angular.forEach(keys, function(key){
+					promise = promise.then(function(){
+						return parseArray(contentData[key].attachments)
 							.then((downloadEntries)=>{
 								filesToDownload = filesToDownload.concat(downloadEntries);
 							});
-					}
-					return null;
-				}
+					});
 
-				return SynthQLoop(visitEntry).then(() => {
+				});
+				return promise.then(function(){
 					return filesToDownload;
 				});
 			};

@@ -6,7 +6,7 @@
  * This service interacts with SyncAPI to talk with external services,
  * and with DataService for writing files.
  */
-var RegisterService = ($q, $filter, DataService, RegistrationService, SyncAPIService, LoggerService, _SF, CheckError, SynthQLoop, ModuleService) => {
+var RegisterService = ($q, $filter, DataService, RegistrationService, SyncAPIService, LoggerService, _SF, CheckError, ModuleService) => {
 
 	// A reference to a logger for this service
 	var LOG = LoggerService('RegisterService');
@@ -21,23 +21,13 @@ var RegisterService = ($q, $filter, DataService, RegistrationService, SyncAPISer
 		initModules(modules){
 			LOG.debug('initModules()');
 			var self = this;
-			/*
-			 * Function that will return a promise if there are more modules
-			 * to create
-			 */
-			var cIdx = 0;
-			function getCreateModulePromise(){
-
-				// If there are no more modules return null
-				if(cIdx == modules.length) {
-					return null;
-				}
-
-				// Else return a promise to create the module structure
-				return self._createModuleStructure(modules[cIdx++].id);
-			}
-
-			return SynthQLoop(getCreateModulePromise);
+			let promise = $q.when();
+			angular.forEach(modules, function(theModule){
+				promise.then(function(){
+					return self._createModuleStructure(theModule.id);
+				});
+			});
+			return promise;
 		}
 
 		/**
@@ -50,24 +40,16 @@ var RegisterService = ($q, $filter, DataService, RegistrationService, SyncAPISer
 				return ModuleService.setModuleProperty(module.id, 'registered', true);
 			}
 
-			// Returns a promise to register a module
-			var mIdx = 0;
-			function getRegisterPromise(){
-
-				// If there are no more modules return null
-				if(mIdx == modules.length){
-					return null;
-				}
-
-				var module = modules[mIdx++];
-				return SyncAPIService.updateModuleData(module.id)
-					.then(function(){
-						return markModuleLinked(module);
-					});
-			}
-
-			// Start registering all modules
-			return SynthQLoop(getRegisterPromise);
+			let promise = $q.when();
+			angular.forEach(modules, function(theModule){
+				promise = promise.then(function(){
+					return SyncAPIService.updateModuleData(theModule.id)
+						.then(function(){
+							return markModuleLinked(theModule);
+						});
+				});
+			});
+			return promise;
 		}
 
 
@@ -75,21 +57,19 @@ var RegisterService = ($q, $filter, DataService, RegistrationService, SyncAPISer
 		 * Create the file structure for a module
 		 */
 		_createModuleStructure(moduleId){
-			var tools;
 			const self = this;
-			/*
-			 * Returns a promise to create the directories for a tool
+
+			/**
+			 * Returns a promise to create all the tools
 			 */
-			var tIdx = 0;
-			function getCreateToolPromise(){
-
-				// If there are no more modules return null
-				if(tIdx == tools.length){
-					return null;
-				}
-
-				var tool = tools[tIdx++];
-				return self._createToolDataFile(moduleId, tool.id);
+			function getCreateToolsPromise(tools){
+				let promise = $q.when();
+				angular.forEach(tools, function(tool){
+					promise = promise.then(function(){
+						return self._createToolDataFile(moduleId, tool.id);
+					});
+				});
+				return promise;
 			}
 
 			/*
@@ -97,15 +77,12 @@ var RegisterService = ($q, $filter, DataService, RegistrationService, SyncAPISer
 			 * the tools variable
 			 */
 			function getModuleToolsPromise(){
-				return self._getModuleTools(moduleId)
-					.then((moduleTools) => {
-						tools = moduleTools;
-					});
+				return self._getModuleTools(moduleId);
 			}
 
 			return this._createModuleDataFile(moduleId)
 				.then(getModuleToolsPromise)
-				.then(SynthQLoop(getCreateToolPromise));
+				.then(getCreateToolsPromise);
 		}
 
 		/**
@@ -146,5 +123,5 @@ var RegisterService = ($q, $filter, DataService, RegistrationService, SyncAPISer
 
 	return new RegisterServiceImpl();
 };
-RegisterService.$inject = ['$q', '$filter', 'DataService', 'RegistrationService', 'SyncAPIService', 'LoggerService', 'SynthFail', 'SynthCheckResponseError', 'SynthQLoop', 'ModuleService'];
+RegisterService.$inject = ['$q', '$filter', 'DataService', 'RegistrationService', 'SyncAPIService', 'LoggerService', 'SynthFail', 'SynthCheckResponseError', 'ModuleService'];
 export default RegisterService;

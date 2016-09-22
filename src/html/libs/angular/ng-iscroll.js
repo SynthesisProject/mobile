@@ -22,7 +22,7 @@ THE SOFTWARE.
 */
 
 
-angular.module('ng-iscroll', []).directive('ngIscroll', function (){
+angular.module('ng-iscroll', []).directive('ngIscroll', ['$timeout', '$interval', function ($timeout, $interval){
 	return {
 		replace : false,
 		restrict : 'A',
@@ -70,7 +70,7 @@ angular.module('ng-iscroll', []).directive('ngIscroll', function (){
 
 			if (attr.ngIscrollRefresh !== undefined && attr.ngIscrollRefresh > 0) {
 				refreshDelay = attr.ngIscrollRefresh;
-				setInterval(function(){
+				$interval(function(){
 					if(scope.$parent.myScroll[scrollKey]){
 						if (scroller.height() !== lastHeight){
 							lastHeight = scroller.height();
@@ -133,7 +133,7 @@ angular.module('ng-iscroll', []).directive('ngIscroll', function (){
 					// This is the change handler
 					function(newValue, oldValue) {
 						if ( newValue !== oldValue ) {
-							setTimeout(function () {
+							$timeout(function () {
 								scope.$parent.myScroll[scrollKey].refresh();
 							}, 100);
 
@@ -143,4 +143,4 @@ angular.module('ng-iscroll', []).directive('ngIscroll', function (){
 
 		}
 	};
-});
+}]);
