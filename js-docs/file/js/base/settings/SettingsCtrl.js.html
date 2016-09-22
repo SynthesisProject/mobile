@@ -155,19 +155,15 @@
 var SettingsCtrl = ($scope, $rootScope, $location, LoggerService, DataService, SynthErrorHandler, UserSession, SyncService, UserSettings, UserService, SynthUploadResponseHandler) =&gt; {
 	$rootScope.activePage = &apos;settings&apos;;
 	$rootScope.breadcrumbs = [{&apos;name&apos; : &apos;Settings&apos;}];
-
-	var settings;
-
 	// The application can only upload if there are handlers to uploads
 	$scope.canUpload = SynthUploadResponseHandler.hasHandlers();
 
 	UserSettings.getSettings().then((userSettings) =&gt; {
-		settings = userSettings;
 		/*
 		* Auto sync
 		*/
 		$scope.animateSwitch = false;
-		$scope.settings = settings;
+		$scope.settings = userSettings;
 		$scope.animateSwitch = true;
 
 	});

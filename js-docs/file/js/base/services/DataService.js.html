@@ -623,7 +623,7 @@ var DataService = ($q, $http, $rootScope, LoggerService, SynthError, UserSession
 				// Success
 				(data) =&gt; {
 					// Merge the new data to the old data
-					let writeData = jQuery.extend(true, data, jsonObject);
+					let writeData = angular.merge(data, jsonObject);
 
 
 					// Write the merged data to the file

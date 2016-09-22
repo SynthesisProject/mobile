@@ -198,7 +198,7 @@ var SettingsPushCtrl = ($scope, $rootScope, DataService, SynthErrorHandler, User
 
 	function updateSettings(){
 		$scope.state = STATES.STATE_SAVING;
-		return PushService.updatePushPreferences($scope.preferences)
+		return PushService.updatePushPreferences(angular.copy($scope.preferences))
 			.then(function success(prefs){
 				$scope.state = STATES.STATE_SAVED;
 				$scope.preferences = prefs;
