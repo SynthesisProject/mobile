@@ -120,18 +120,6 @@ window.esdocSearchIndex = [
     "variable"
   ],
   [
-    "synthesis-mobile/js/base/directives/bootspinner.js~bootspinner",
-    "class/js/base/directives/BootSpinner.js~BootSpinner.html",
-    "<span>BootSpinner</span> <span class=\"search-result-import-path\">synthesis-mobile/js/base/directives/BootSpinner.js</span>",
-    "class"
-  ],
-  [
-    "synthesis-mobile/js/base/directives/bootspinner.js~bootspinnerfactory",
-    "function/index.html#static-function-BootSpinnerFactory",
-    "<span>BootSpinnerFactory</span> <span class=\"search-result-import-path\">synthesis-mobile/js/base/directives/BootSpinner.js</span>",
-    "function"
-  ],
-  [
     "synthesis-mobile/js/base/filters/bytestosizefilter.js~bytestosizefilter",
     "function/index.html#static-function-BytesToSizeFilter",
     "<span>BytesToSizeFilter</span> <span class=\"search-result-import-path\">synthesis-mobile/js/base/filters/BytesToSizeFilter.js</span>",
@@ -1071,30 +1059,6 @@ window.esdocSearchIndex = [
     "js/base/directives/animatedellipse.js~animatedellipse#scope",
     "class/js/base/directives/AnimatedEllipse.js~AnimatedEllipse.html#instance-member-scope",
     "js/base/directives/AnimatedEllipse.js~AnimatedEllipse#scope",
-    "member"
-  ],
-  [
-    "js/base/directives/bootspinner.js",
-    "file/js/base/directives/BootSpinner.js.html",
-    "js/base/directives/BootSpinner.js",
-    "file"
-  ],
-  [
-    "js/base/directives/bootspinner.js~bootspinner#constructor",
-    "class/js/base/directives/BootSpinner.js~BootSpinner.html#instance-constructor-constructor",
-    "js/base/directives/BootSpinner.js~BootSpinner#constructor",
-    "method"
-  ],
-  [
-    "js/base/directives/bootspinner.js~bootspinner#restrict",
-    "class/js/base/directives/BootSpinner.js~BootSpinner.html#instance-member-restrict",
-    "js/base/directives/BootSpinner.js~BootSpinner#restrict",
-    "member"
-  ],
-  [
-    "js/base/directives/bootspinner.js~bootspinner#scope",
-    "class/js/base/directives/BootSpinner.js~BootSpinner.html#instance-member-scope",
-    "js/base/directives/BootSpinner.js~BootSpinner#scope",
     "member"
   ],
   [
@@ -2175,6 +2139,12 @@ window.esdocSearchIndex = [
     "js/init.js",
     "file/js/init.js.html",
     "js/init.js",
+    "file"
+  ],
+  [
+    "js/loader.js",
+    "file/js/loader.js.html",
+    "js/loader.js",
     "file"
   ],
   [

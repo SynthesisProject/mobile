@@ -1,7 +1,7 @@
 {
-  "coverage": "62.54%",
-  "expectCount": 251,
-  "actualCount": 157,
+  "coverage": "61.78%",
+  "expectCount": 246,
+  "actualCount": 152,
   "files": {
     "js/base/directives/SynthAttachments.js": {
       "expectCount": 8,
@@ -35,14 +35,17 @@
         3
       ]
     },
-    "js/base/factories/Lock.js": {
-      "expectCount": 8,
-      "actualCount": 4,
+    "js/base/services/RegistrationService.js": {
+      "expectCount": 9,
+      "actualCount": 2,
       "undocumentLines": [
-        9,
-        10,
+        6,
+        7,
+        3,
+        60,
+        5,
         8,
-        11
+        22
       ]
     },
     "js/base/factories/AccessPermission.js": {
@@ -59,6 +62,16 @@
         44
       ]
     },
+    "js/base/factories/Lock.js": {
+      "expectCount": 8,
+      "actualCount": 4,
+      "undocumentLines": [
+        9,
+        10,
+        8,
+        11
+      ]
+    },
     "js/base/services/UserSettings.js": {
       "expectCount": 11,
       "actualCount": 4,
@@ -72,27 +85,14 @@
         89
       ]
     },
-    "js/base/services/RegistrationService.js": {
-      "expectCount": 9,
-      "actualCount": 2,
-      "undocumentLines": [
-        6,
-        7,
-        3,
-        58,
-        5,
-        8,
-        22
-      ]
+    "js/base/directives/ModuleCollapse.js": {
+      "expectCount": 7,
+      "actualCount": 7,
+      "undocumentLines": []
     },
     "js/base/directives/CurrentModuleName.js": {
       "expectCount": 9,
       "actualCount": 9,
-      "undocumentLines": []
-    },
-    "js/base/directives/ModuleCollapse.js": {
-      "expectCount": 7,
-      "actualCount": 7,
       "undocumentLines": []
     },
     "js/tools/announcements/controllers/AnnouncementDetailCtrl.js": {
@@ -179,14 +179,14 @@
         2
       ]
     },
-    "js/base/directives/BootSpinner.js": {
-      "expectCount": 5,
-      "actualCount": 5,
-      "undocumentLines": []
-    },
     "js/base/filters/BytesToSizeFilter.js": {
       "expectCount": 2,
       "actualCount": 2,
+      "undocumentLines": []
+    },
+    "js/tools/announcements/config.js": {
+      "expectCount": 1,
+      "actualCount": 1,
       "undocumentLines": []
     },
     "js/tools/schedule/config.js": {
@@ -195,11 +195,6 @@
       "undocumentLines": [
         2
       ]
-    },
-    "js/tools/announcements/config.js": {
-      "expectCount": 1,
-      "actualCount": 1,
-      "undocumentLines": []
     },
     "js/tools/resources/config.js": {
       "expectCount": 1,
@@ -429,12 +424,12 @@
         3
       ]
     },
-    "js/base/handlers/SynthAttachmentMinerProvider.js": {
+    "js/base/handlers/SynthUploadResponseHandlerProvider.js": {
       "expectCount": 1,
       "actualCount": 1,
       "undocumentLines": []
     },
-    "js/base/handlers/SynthUploadResponseHandlerProvider.js": {
+    "js/base/handlers/SynthAttachmentMinerProvider.js": {
       "expectCount": 1,
       "actualCount": 1,
       "undocumentLines": []
@@ -529,7 +524,7 @@
       "expectCount": 1,
       "actualCount": 0,
       "undocumentLines": [
-        74
+        72
       ]
     },
     "js/base/Utilities.js": {

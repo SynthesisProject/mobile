@@ -629,6 +629,26 @@
             }
           }
         }
+      ],
+      "trailingComments": [
+        {
+          "type": "Line",
+          "value": " Wait for cordova before starting application",
+          "range": [
+            367,
+            414
+          ],
+          "loc": {
+            "start": {
+              "line": 22,
+              "column": 0
+            },
+            "end": {
+              "line": 22,
+              "column": 47
+            }
+          }
+        }
       ]
     },
     {
@@ -639,130 +659,76 @@
           "type": "MemberExpression",
           "computed": false,
           "object": {
-            "type": "CallExpression",
-            "callee": {
-              "type": "MemberExpression",
-              "computed": false,
-              "object": {
-                "type": "Identifier",
-                "name": "angular",
-                "range": [
-                  367,
-                  374
-                ],
-                "loc": {
-                  "start": {
-                    "line": 22,
-                    "column": 0
-                  },
-                  "end": {
-                    "line": 22,
-                    "column": 7
-                  }
-                }
-              },
-              "property": {
-                "type": "Identifier",
-                "name": "element",
-                "range": [
-                  375,
-                  382
-                ],
-                "loc": {
-                  "start": {
-                    "line": 22,
-                    "column": 8
-                  },
-                  "end": {
-                    "line": 22,
-                    "column": 15
-                  }
-                }
-              },
-              "range": [
-                367,
-                382
-              ],
-              "loc": {
-                "start": {
-                  "line": 22,
-                  "column": 0
-                },
-                "end": {
-                  "line": 22,
-                  "column": 15
-                }
-              }
-            },
-            "arguments": [
-              {
-                "type": "Identifier",
-                "name": "document",
-                "range": [
-                  383,
-                  391
-                ],
-                "loc": {
-                  "start": {
-                    "line": 22,
-                    "column": 16
-                  },
-                  "end": {
-                    "line": 22,
-                    "column": 24
-                  }
-                }
-              }
-            ],
+            "type": "Identifier",
+            "name": "document",
             "range": [
-              367,
-              392
+              416,
+              424
             ],
             "loc": {
               "start": {
-                "line": 22,
+                "line": 23,
                 "column": 0
               },
               "end": {
-                "line": 22,
-                "column": 25
+                "line": 23,
+                "column": 8
               }
             }
           },
           "property": {
             "type": "Identifier",
-            "name": "ready",
+            "name": "addEventListener",
             "range": [
-              393,
-              398
+              425,
+              441
             ],
             "loc": {
               "start": {
-                "line": 22,
-                "column": 26
+                "line": 23,
+                "column": 9
               },
               "end": {
-                "line": 22,
-                "column": 31
+                "line": 23,
+                "column": 25
               }
             }
           },
           "range": [
-            367,
-            398
+            416,
+            441
           ],
           "loc": {
             "start": {
-              "line": 22,
+              "line": 23,
               "column": 0
             },
             "end": {
-              "line": 22,
-              "column": 31
+              "line": 23,
+              "column": 25
             }
           }
         },
         "arguments": [
+          {
+            "type": "Literal",
+            "value": "deviceready",
+            "raw": "'deviceready'",
+            "range": [
+              442,
+              455
+            ],
+            "loc": {
+              "start": {
+                "line": 23,
+                "column": 26
+              },
+              "end": {
+                "line": 23,
+                "column": 39
+              }
+            }
+          },
           {
             "type": "FunctionExpression",
             "id": null,
@@ -778,155 +744,358 @@
                       "type": "MemberExpression",
                       "computed": false,
                       "object": {
-                        "type": "Identifier",
-                        "name": "angular",
-                        "range": [
-                          415,
-                          422
-                        ],
-                        "loc": {
-                          "start": {
-                            "line": 23,
-                            "column": 1
-                          },
-                          "end": {
-                            "line": 23,
-                            "column": 8
-                          }
-                        }
-                      },
-                      "property": {
-                        "type": "Identifier",
-                        "name": "bootstrap",
-                        "range": [
-                          423,
-                          432
-                        ],
-                        "loc": {
-                          "start": {
-                            "line": 23,
-                            "column": 9
-                          },
-                          "end": {
-                            "line": 23,
-                            "column": 18
-                          }
-                        }
-                      },
-                      "range": [
-                        415,
-                        432
-                      ],
-                      "loc": {
-                        "start": {
-                          "line": 23,
-                          "column": 1
-                        },
-                        "end": {
-                          "line": 23,
-                          "column": 18
-                        }
-                      }
-                    },
-                    "arguments": [
-                      {
-                        "type": "Identifier",
-                        "name": "document",
-                        "range": [
-                          433,
-                          441
-                        ],
-                        "loc": {
-                          "start": {
-                            "line": 23,
-                            "column": 19
-                          },
-                          "end": {
-                            "line": 23,
-                            "column": 27
-                          }
-                        }
-                      },
-                      {
-                        "type": "ArrayExpression",
-                        "elements": [
-                          {
+                        "type": "CallExpression",
+                        "callee": {
+                          "type": "MemberExpression",
+                          "computed": false,
+                          "object": {
                             "type": "Identifier",
-                            "name": "SynthMobile",
+                            "name": "angular",
                             "range": [
-                              444,
-                              455
+                              472,
+                              479
                             ],
                             "loc": {
                               "start": {
-                                "line": 23,
-                                "column": 30
+                                "line": 24,
+                                "column": 1
                               },
                               "end": {
-                                "line": 23,
-                                "column": 41
+                                "line": 24,
+                                "column": 8
+                              }
+                            }
+                          },
+                          "property": {
+                            "type": "Identifier",
+                            "name": "element",
+                            "range": [
+                              480,
+                              487
+                            ],
+                            "loc": {
+                              "start": {
+                                "line": 24,
+                                "column": 9
+                              },
+                              "end": {
+                                "line": 24,
+                                "column": 16
+                              }
+                            }
+                          },
+                          "range": [
+                            472,
+                            487
+                          ],
+                          "loc": {
+                            "start": {
+                              "line": 24,
+                              "column": 1
+                            },
+                            "end": {
+                              "line": 24,
+                              "column": 16
+                            }
+                          }
+                        },
+                        "arguments": [
+                          {
+                            "type": "Identifier",
+                            "name": "document",
+                            "range": [
+                              488,
+                              496
+                            ],
+                            "loc": {
+                              "start": {
+                                "line": 24,
+                                "column": 17
+                              },
+                              "end": {
+                                "line": 24,
+                                "column": 25
                               }
                             }
                           }
                         ],
                         "range": [
-                          443,
-                          456
+                          472,
+                          497
                         ],
                         "loc": {
                           "start": {
-                            "line": 23,
-                            "column": 29
+                            "line": 24,
+                            "column": 1
                           },
                           "end": {
-                            "line": 23,
-                            "column": 42
+                            "line": 24,
+                            "column": 26
+                          }
+                        }
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "ready",
+                        "range": [
+                          498,
+                          503
+                        ],
+                        "loc": {
+                          "start": {
+                            "line": 24,
+                            "column": 27
+                          },
+                          "end": {
+                            "line": 24,
+                            "column": 32
+                          }
+                        }
+                      },
+                      "range": [
+                        472,
+                        503
+                      ],
+                      "loc": {
+                        "start": {
+                          "line": 24,
+                          "column": 1
+                        },
+                        "end": {
+                          "line": 24,
+                          "column": 32
+                        }
+                      }
+                    },
+                    "arguments": [
+                      {
+                        "type": "FunctionExpression",
+                        "id": null,
+                        "params": [],
+                        "body": {
+                          "type": "BlockStatement",
+                          "body": [
+                            {
+                              "type": "ExpressionStatement",
+                              "expression": {
+                                "type": "CallExpression",
+                                "callee": {
+                                  "type": "MemberExpression",
+                                  "computed": false,
+                                  "object": {
+                                    "type": "Identifier",
+                                    "name": "angular",
+                                    "range": [
+                                      521,
+                                      528
+                                    ],
+                                    "loc": {
+                                      "start": {
+                                        "line": 25,
+                                        "column": 2
+                                      },
+                                      "end": {
+                                        "line": 25,
+                                        "column": 9
+                                      }
+                                    }
+                                  },
+                                  "property": {
+                                    "type": "Identifier",
+                                    "name": "bootstrap",
+                                    "range": [
+                                      529,
+                                      538
+                                    ],
+                                    "loc": {
+                                      "start": {
+                                        "line": 25,
+                                        "column": 10
+                                      },
+                                      "end": {
+                                        "line": 25,
+                                        "column": 19
+                                      }
+                                    }
+                                  },
+                                  "range": [
+                                    521,
+                                    538
+                                  ],
+                                  "loc": {
+                                    "start": {
+                                      "line": 25,
+                                      "column": 2
+                                    },
+                                    "end": {
+                                      "line": 25,
+                                      "column": 19
+                                    }
+                                  }
+                                },
+                                "arguments": [
+                                  {
+                                    "type": "Identifier",
+                                    "name": "document",
+                                    "range": [
+                                      539,
+                                      547
+                                    ],
+                                    "loc": {
+                                      "start": {
+                                        "line": 25,
+                                        "column": 20
+                                      },
+                                      "end": {
+                                        "line": 25,
+                                        "column": 28
+                                      }
+                                    }
+                                  },
+                                  {
+                                    "type": "ArrayExpression",
+                                    "elements": [
+                                      {
+                                        "type": "Identifier",
+                                        "name": "SynthMobile",
+                                        "range": [
+                                          550,
+                                          561
+                                        ],
+                                        "loc": {
+                                          "start": {
+                                            "line": 25,
+                                            "column": 31
+                                          },
+                                          "end": {
+                                            "line": 25,
+                                            "column": 42
+                                          }
+                                        }
+                                      }
+                                    ],
+                                    "range": [
+                                      549,
+                                      562
+                                    ],
+                                    "loc": {
+                                      "start": {
+                                        "line": 25,
+                                        "column": 30
+                                      },
+                                      "end": {
+                                        "line": 25,
+                                        "column": 43
+                                      }
+                                    }
+                                  }
+                                ],
+                                "range": [
+                                  521,
+                                  563
+                                ],
+                                "loc": {
+                                  "start": {
+                                    "line": 25,
+                                    "column": 2
+                                  },
+                                  "end": {
+                                    "line": 25,
+                                    "column": 44
+                                  }
+                                }
+                              },
+                              "range": [
+                                521,
+                                564
+                              ],
+                              "loc": {
+                                "start": {
+                                  "line": 25,
+                                  "column": 2
+                                },
+                                "end": {
+                                  "line": 25,
+                                  "column": 45
+                                }
+                              }
+                            }
+                          ],
+                          "range": [
+                            516,
+                            568
+                          ],
+                          "loc": {
+                            "start": {
+                              "line": 24,
+                              "column": 45
+                            },
+                            "end": {
+                              "line": 26,
+                              "column": 2
+                            }
+                          }
+                        },
+                        "generator": false,
+                        "expression": false,
+                        "range": [
+                          504,
+                          568
+                        ],
+                        "loc": {
+                          "start": {
+                            "line": 24,
+                            "column": 33
+                          },
+                          "end": {
+                            "line": 26,
+                            "column": 2
                           }
                         }
                       }
                     ],
                     "range": [
-                      415,
-                      457
+                      472,
+                      569
                     ],
                     "loc": {
                       "start": {
-                        "line": 23,
+                        "line": 24,
                         "column": 1
                       },
                       "end": {
-                        "line": 23,
-                        "column": 43
+                        "line": 26,
+                        "column": 3
                       }
                     }
                   },
                   "range": [
-                    415,
-                    458
+                    472,
+                    570
                   ],
                   "loc": {
                     "start": {
-                      "line": 23,
+                      "line": 24,
                       "column": 1
                     },
                     "end": {
-                      "line": 23,
-                      "column": 44
+                      "line": 26,
+                      "column": 4
                     }
                   }
                 }
               ],
               "range": [
-                411,
-                461
+                468,
+                573
               ],
               "loc": {
                 "start": {
-                  "line": 22,
-                  "column": 44
+                  "line": 23,
+                  "column": 52
                 },
                 "end": {
-                  "line": 24,
+                  "line": 27,
                   "column": 1
                 }
               }
@@ -934,56 +1103,95 @@
             "generator": false,
             "expression": false,
             "range": [
-              399,
-              461
+              457,
+              573
             ],
             "loc": {
               "start": {
-                "line": 22,
-                "column": 32
+                "line": 23,
+                "column": 41
               },
               "end": {
-                "line": 24,
+                "line": 27,
                 "column": 1
+              }
+            }
+          },
+          {
+            "type": "Literal",
+            "value": false,
+            "raw": "false",
+            "range": [
+              575,
+              580
+            ],
+            "loc": {
+              "start": {
+                "line": 27,
+                "column": 3
+              },
+              "end": {
+                "line": 27,
+                "column": 8
               }
             }
           }
         ],
         "range": [
-          367,
-          462
+          416,
+          581
         ],
         "loc": {
           "start": {
-            "line": 22,
+            "line": 23,
             "column": 0
           },
           "end": {
-            "line": 24,
-            "column": 2
+            "line": 27,
+            "column": 9
           }
         }
       },
       "range": [
-        367,
-        463
+        416,
+        582
       ],
       "loc": {
         "start": {
-          "line": 22,
+          "line": 23,
           "column": 0
         },
         "end": {
-          "line": 24,
-          "column": 3
+          "line": 27,
+          "column": 10
         }
-      }
+      },
+      "leadingComments": [
+        {
+          "type": "Line",
+          "value": " Wait for cordova before starting application",
+          "range": [
+            367,
+            414
+          ],
+          "loc": {
+            "start": {
+              "line": 22,
+              "column": 0
+            },
+            "end": {
+              "line": 22,
+              "column": 47
+            }
+          }
+        }
+      ]
     }
   ],
   "sourceType": "module",
   "range": [
     0,
-    463
+    582
   ],
   "loc": {
     "start": {
@@ -991,8 +1199,8 @@
       "column": 0
     },
     "end": {
-      "line": 24,
-      "column": 3
+      "line": 27,
+      "column": 10
     }
   },
   "comments": [
@@ -1011,6 +1219,24 @@
         "end": {
           "line": 7,
           "column": 29
+        }
+      }
+    },
+    {
+      "type": "Line",
+      "value": " Wait for cordova before starting application",
+      "range": [
+        367,
+        414
+      ],
+      "loc": {
+        "start": {
+          "line": 22,
+          "column": 0
+        },
+        "end": {
+          "line": 22,
+          "column": 47
         }
       }
     }

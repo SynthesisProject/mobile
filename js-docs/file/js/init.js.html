@@ -42,7 +42,6 @@
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">base/boot</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-BootCtrl">BootCtrl</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">base/controllers</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/base/controllers/AppController.js~AppController.html">AppController</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">base/directives</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/base/directives/AnimatedEllipse.js~AnimatedEllipse.html">AnimatedEllipse</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/base/directives/BootSpinner.js~BootSpinner.html">BootSpinner</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/base/directives/CurrentModuleName.js~CurrentModuleName.html">CurrentModuleName</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/base/directives/ModuleCollapse.js~ModuleCollapse.html">ModuleCollapse</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/base/directives/ModuleName.js~ModuleName.html">ModuleName</a></span></span></li>
@@ -53,7 +52,6 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/base/directives/ToolName.js~ToolName.html">ToolName</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/base/directives/ToolSyncStatus.js~ToolSyncStatus.html">ToolSyncStatus</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-AnimatedEllipseFactory">AnimatedEllipseFactory</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-BootSpinnerFactory">BootSpinnerFactory</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-CurrentModuleNameFactory">CurrentModuleNameFactory</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ModuleCollapseFactory">ModuleCollapseFactory</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ModuleNameFactory">ModuleNameFactory</a></span></span></li>
@@ -171,9 +169,12 @@ angular.module(SynthMobile, [
 	tools
 ]);
 
-angular.element(document).ready(function () {
-	angular.bootstrap(document, [SynthMobile]);
-});
+// Wait for cordova before starting application
+document.addEventListener(&apos;deviceready&apos;, function() {
+	angular.element(document).ready(function () {
+		angular.bootstrap(document, [SynthMobile]);
+	});
+}, false);
 </code></pre>
 
 </div>

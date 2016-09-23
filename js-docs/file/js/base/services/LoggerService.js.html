@@ -42,7 +42,6 @@
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">base/boot</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-BootCtrl">BootCtrl</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">base/controllers</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/base/controllers/AppController.js~AppController.html">AppController</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">base/directives</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/base/directives/AnimatedEllipse.js~AnimatedEllipse.html">AnimatedEllipse</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/base/directives/BootSpinner.js~BootSpinner.html">BootSpinner</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/base/directives/CurrentModuleName.js~CurrentModuleName.html">CurrentModuleName</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/base/directives/ModuleCollapse.js~ModuleCollapse.html">ModuleCollapse</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/base/directives/ModuleName.js~ModuleName.html">ModuleName</a></span></span></li>
@@ -53,7 +52,6 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/base/directives/ToolName.js~ToolName.html">ToolName</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/base/directives/ToolSyncStatus.js~ToolSyncStatus.html">ToolSyncStatus</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-AnimatedEllipseFactory">AnimatedEllipseFactory</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-BootSpinnerFactory">BootSpinnerFactory</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-CurrentModuleNameFactory">CurrentModuleNameFactory</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ModuleCollapseFactory">ModuleCollapseFactory</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ModuleNameFactory">ModuleNameFactory</a></span></span></li>
@@ -154,7 +152,7 @@
 /*
  * base/js/services/services.LoggerService.js
  */
-var LoggerService = ($q, $log, $injector, SynthConfig, AccessPermission) =&gt; {
+var LoggerService = ($q, $log, $injector, SynthConfig) =&gt; {
 // Map of loggers created
 	const loggers = {};
 
@@ -179,28 +177,11 @@ var LoggerService = ($q, $log, $injector, SynthConfig, AccessPermission) =&gt; {
 	// Number of log files to keep
 	var numFiles = SynthConfig.logFileCount;
 
-	var deviceReady = false;
-
-
 	/**
-	 * Returns a promise that will be resolved when the cordova thinks
-	 * the device is ready and you can use the API
+	 * TODO remove this, device will be ready before angular starts
 	 */
 	function cordovaReady(){
-		const deferred = $q.defer();
-
-		if (deviceReady === true){
-			deferred.resolve();
-		}
-		else{
-			document.addEventListener(&apos;deviceready&apos;, function(){
-				deviceReady = true;
-				deferred.resolve();
-			}, false);
-		}
-		return deferred.promise.then(function(){
-			return AccessPermission.requestFilePermission();
-		});
+		return $q.when();
 	}
 
 	/**
@@ -458,7 +439,7 @@ var LoggerService = ($q, $log, $injector, SynthConfig, AccessPermission) =&gt; {
 	};
 
 };
-LoggerService.$inject = [&apos;$q&apos;, &apos;$log&apos;, &apos;$injector&apos;, &apos;SynthConfig&apos;, &apos;AccessPermission&apos;];
+LoggerService.$inject = [&apos;$q&apos;, &apos;$log&apos;, &apos;$injector&apos;, &apos;SynthConfig&apos;];
 export default LoggerService;
 </code></pre>
 

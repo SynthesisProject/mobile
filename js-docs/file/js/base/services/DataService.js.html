@@ -42,7 +42,6 @@
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">base/boot</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-BootCtrl">BootCtrl</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">base/controllers</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/base/controllers/AppController.js~AppController.html">AppController</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">base/directives</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/base/directives/AnimatedEllipse.js~AnimatedEllipse.html">AnimatedEllipse</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/base/directives/BootSpinner.js~BootSpinner.html">BootSpinner</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/base/directives/CurrentModuleName.js~CurrentModuleName.html">CurrentModuleName</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/base/directives/ModuleCollapse.js~ModuleCollapse.html">ModuleCollapse</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/base/directives/ModuleName.js~ModuleName.html">ModuleName</a></span></span></li>
@@ -53,7 +52,6 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/base/directives/ToolName.js~ToolName.html">ToolName</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/base/directives/ToolSyncStatus.js~ToolSyncStatus.html">ToolSyncStatus</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-AnimatedEllipseFactory">AnimatedEllipseFactory</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-BootSpinnerFactory">BootSpinnerFactory</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-CurrentModuleNameFactory">CurrentModuleNameFactory</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ModuleCollapseFactory">ModuleCollapseFactory</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ModuleNameFactory">ModuleNameFactory</a></span></span></li>
@@ -157,7 +155,7 @@ import bases from &apos;bases&apos;;
  * base/js/services/DataService.js
  * Create factory for the DataService
  */
-var DataService = ($q, $http, $rootScope, LoggerService, SynthError, UserSession, SynthConfig, Lock, AccessPermission) =&gt; {
+var DataService = ($q, $http, $rootScope, LoggerService, SynthError, UserSession, SynthConfig, Lock) =&gt; {
 
 	var LOG = LoggerService(&apos;DataService&apos;);
 	// Characters that will be used to generate filenames
@@ -177,30 +175,14 @@ var DataService = ($q, $http, $rootScope, LoggerService, SynthError, UserSession
 	class DataServiceImpl{
 
 		constructor(){
-			this.deviceReady = false;
-			// Android 6+ requires user permission to acces files
-			this.hasFilePermissions = false;
 			this.cachedRouteFileSystem = null;
 		}
 
 		/**
-		 * Returns a promise that will be resolved when the cordova thinks
-		 * the device is ready and you can use the API
+		 * TODO remove this, device will be ready before angular starts
 		 */
 		cordovaReady(){
-			const deferred = $q.defer();
-			if (this.deviceReady === true){
-				deferred.resolve();
-			}
-			else{
-				document.addEventListener(&apos;deviceready&apos;, () =&gt; {
-					this.deviceReady = true;
-					deferred.resolve();
-				}, false);
-			}
-			return deferred.promise.then(function(){
-				return AccessPermission.requestFilePermission();
-			});
+			return $q.when();
 		}
 
 		/**
@@ -623,7 +605,7 @@ var DataService = ($q, $http, $rootScope, LoggerService, SynthError, UserSession
 				// Success
 				(data) =&gt; {
 					// Merge the new data to the old data
-					let writeData = angular.merge(data, jsonObject);
+					let writeData = angular.merge(data || {}, jsonObject);
 
 
 					// Write the merged data to the file
@@ -645,45 +627,6 @@ var DataService = ($q, $http, $rootScope, LoggerService, SynthError, UserSession
 			);
 			return deferred.promise;
 		}
-
-		/**
-		 * Gets the directory in which a tool lives
-		 TODO Use another way to find files!
-		getFileInToolData(moduleId, toolname, filepath){
-			const deferred = $q.defer();
-			this.getDataDirectory(moduleId, toolname).then(
-				// Success
-				(dirEntry) =&gt; {
-					dirEntry.getFile(filepath, {create : false},
-						(fileEntry) =&gt; {
-							var reader = new FileReader();
-							reader.onloadend = function(evt) {
-								LOG.debug(evt.target.result);
-								deferred.resolve(evt.target.result);
-							};
-
-							fileEntry.file((file) =&gt; {
-								reader.readAsDataURL(file);
-							},
-							() =&gt; {
-								LOG.warn(&apos;Failed to get file from file entry&apos;);
-								deferred.reject(SynthError(1004));
-							});
-						},
-						() =&gt; {
-							LOG.warn(&apos;Fail while trying to get file in directory&apos;);
-							deferred.reject(SynthError(1004));
-						}
-					);
-				},
-				//Fail
-				(error) =&gt; {
-					deferred.reject(error);
-				}
-			);
-			return deferred.promise;
-		}
-		 */
 
 		/**
 		 * Get data from a web json source
@@ -1031,7 +974,7 @@ var DataService = ($q, $http, $rootScope, LoggerService, SynthError, UserSession
 
 	return new DataServiceImpl();
 };
-DataService.$inject = [&apos;$q&apos;, &apos;$http&apos;, &apos;$rootScope&apos;, &apos;LoggerService&apos;, &apos;SynthError&apos;, &apos;UserSession&apos;, &apos;SynthConfig&apos;, &apos;Lock&apos;, &apos;AccessPermission&apos;];
+DataService.$inject = [&apos;$q&apos;, &apos;$http&apos;, &apos;$rootScope&apos;, &apos;LoggerService&apos;, &apos;SynthError&apos;, &apos;UserSession&apos;, &apos;SynthConfig&apos;, &apos;Lock&apos;];
 export default DataService;
 </code></pre>
 

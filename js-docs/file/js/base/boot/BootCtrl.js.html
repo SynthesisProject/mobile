@@ -42,7 +42,6 @@
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">base/boot</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-BootCtrl">BootCtrl</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">base/controllers</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/base/controllers/AppController.js~AppController.html">AppController</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">base/directives</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/base/directives/AnimatedEllipse.js~AnimatedEllipse.html">AnimatedEllipse</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/base/directives/BootSpinner.js~BootSpinner.html">BootSpinner</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/base/directives/CurrentModuleName.js~CurrentModuleName.html">CurrentModuleName</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/base/directives/ModuleCollapse.js~ModuleCollapse.html">ModuleCollapse</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/base/directives/ModuleName.js~ModuleName.html">ModuleName</a></span></span></li>
@@ -53,7 +52,6 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/base/directives/ToolName.js~ToolName.html">ToolName</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/base/directives/ToolSyncStatus.js~ToolSyncStatus.html">ToolSyncStatus</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-AnimatedEllipseFactory">AnimatedEllipseFactory</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-BootSpinnerFactory">BootSpinnerFactory</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-CurrentModuleNameFactory">CurrentModuleNameFactory</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ModuleCollapseFactory">ModuleCollapseFactory</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ModuleNameFactory">ModuleNameFactory</a></span></span></li>
@@ -151,11 +149,18 @@
 
 <div class="content" data-ice="content"><h1 data-ice="title">js/base/boot/BootCtrl.js</h1>
 <pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">&apos;use strict&apos;;
-var BootCtrl = ($q, $rootScope, $location, $routeParams, DataService, UserService, HomeService, SyncAPIService, SynthErrorHandler, SyncService, PushService, UserSettings, ModuleService) =&gt; {
+var BootCtrl = ($q, $rootScope, $location, $routeParams, $timeout, DataService, UserService,
+	HomeService, SyncAPIService, SynthErrorHandler, SyncService, PushService,
+	UserSettings, ModuleService) =&gt; {
 	$rootScope.activePage = &apos;boot&apos;;
 	$rootScope.breadcrumbs = null;
-
-	$rootScope.applicationBoot = true;
+	navigator.splashscreen.show();
+	let disableListener = $rootScope.$on(&apos;$locationChangeSuccess&apos;, function(){
+		disableListener();
+		$timeout(function(){
+			navigator.splashscreen.hide();
+		}, 1500);
+	});
 
 	var settings;
 	// Make sure there is a no media scan file in place
@@ -198,7 +203,6 @@ var BootCtrl = ($q, $rootScope, $location, $routeParams, DataService, UserServic
 
 				// Check if there are new modules for the user
 				ModuleService.hasNewModules().then((hasNewModules) =&gt; {
-					$rootScope.applicationBoot = false;
 					if(hasNewModules){
 						history.pushState(null, &apos;Home&apos;, &apos;#/home&apos;); // Fake coming from home
 						$location.path(&apos;/register-selectModules&apos;);
@@ -209,7 +213,6 @@ var BootCtrl = ($q, $rootScope, $location, $routeParams, DataService, UserServic
 						return funcGoHomePromise();
 					}
 				}, () =&gt; {
-					$rootScope.applicationBoot = false;
 					// If we couldn&apos;t check online for new modules, we go back home
 					return funcGoHomePromise();
 				});
@@ -218,11 +221,9 @@ var BootCtrl = ($q, $rootScope, $location, $routeParams, DataService, UserServic
 			}
 			else if(UserService.PROGRESS_SELECT_MODULES === progress){
 				$location.path(&apos;/register-selectModules&apos;);
-				$rootScope.applicationBoot = false;
 			}
 			else{
 				$location.path(&apos;/register&apos;);
-				$rootScope.applicationBoot = false;
 			}
 		};
 
@@ -230,11 +231,12 @@ var BootCtrl = ($q, $rootScope, $location, $routeParams, DataService, UserServic
 	.then(funcCheckNoMediaFile)
 	.then(funcCheckRegistrationProgress)
 	.then(funcGetProgressPromise, (reason) =&gt;{
-		$rootScope.applicationBoot = false;
+		navigator.splashscreen.hide();
+		disableListener();
 		return SynthErrorHandler(reason);
 	});
 };
-BootCtrl.$inject = [&apos;$q&apos;, &apos;$rootScope&apos;, &apos;$location&apos;, &apos;$routeParams&apos;, &apos;DataService&apos;,
+BootCtrl.$inject = [&apos;$q&apos;, &apos;$rootScope&apos;, &apos;$location&apos;, &apos;$routeParams&apos;, &apos;$timeout&apos;, &apos;DataService&apos;,
  &apos;UserService&apos;, &apos;HomeService&apos;, &apos;SyncAPIService&apos;, &apos;SynthErrorHandler&apos;, &apos;SyncService&apos;,
  &apos;PushService&apos;, &apos;UserSettings&apos;, &apos;ModuleService&apos;];
 
