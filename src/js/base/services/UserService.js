@@ -35,7 +35,7 @@ class UserService {
 				 * If there isn't even a username and auth token yet
 				 * then the user hasn't been authenticated
 				 */
-				if(data.username == null){
+				if(data == null || data.username == null){
 					return self.PROGRESS_AUTHENTICATE;
 				}
 				/*

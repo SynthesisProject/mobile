@@ -143,7 +143,7 @@ function createConfig(){
  * @returns {Stream} A gulp stream.
  */
 function runUsemin(){
-	return gulp.src(srcHtml + '/index.html')
+	return gulp.src([srcHtml + '/synthesis.html', srcHtml + '/index.html'])
 		.pipe(replace({
 			patterns : [
 				{
@@ -164,6 +164,7 @@ function runUsemin(){
 			less : [less(), options.development ? gutil.noop() : minifyCss()],
 			css : [ rev() ],
 			jsLibraries : [ options.development ? gutil.noop() : uglify(), rev()],
+			js : [ options.development ? gutil.noop() : uglify()],
 			jsAngular : [ options.development ? gutil.noop() : uglify(), rev()],
 			jsBootstrap : [ options.development ? gutil.noop() : uglify(), rev()]
 		}))
@@ -172,7 +173,7 @@ function runUsemin(){
 
 function copyWebassets(){
 	var streams = [];
-	streams[0] = gulp.src([srcHtml + '/**', '!' + srcHtml + '/index.html'], {base : srcHtml})
+	streams[0] = gulp.src([srcHtml + '/**', '!' + srcHtml + '/*.html'], {base : srcHtml})
 		.pipe(gulp.dest(workPipeline + '/www'));
 
 	streams[1] = gulp.src(['./bower_components/bootstrap/dist/fonts/**'], {base : './bower_components/bootstrap/dist'})

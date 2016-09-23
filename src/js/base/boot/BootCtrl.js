@@ -1,9 +1,16 @@
 'use strict';
-var BootCtrl = ($q, $rootScope, $location, $routeParams, DataService, UserService, HomeService, SyncAPIService, SynthErrorHandler, SyncService, PushService, UserSettings, ModuleService) => {
+var BootCtrl = ($q, $rootScope, $location, $routeParams, $timeout, DataService, UserService,
+	HomeService, SyncAPIService, SynthErrorHandler, SyncService, PushService,
+	UserSettings, ModuleService) => {
 	$rootScope.activePage = 'boot';
 	$rootScope.breadcrumbs = null;
-
-	$rootScope.applicationBoot = true;
+	navigator.splashscreen.show();
+	let disableListener = $rootScope.$on('$locationChangeSuccess', function(){
+		disableListener();
+		$timeout(function(){
+			navigator.splashscreen.hide();
+		}, 1500);
+	});
 
 	var settings;
 	// Make sure there is a no media scan file in place
@@ -46,7 +53,6 @@ var BootCtrl = ($q, $rootScope, $location, $routeParams, DataService, UserServic
 
 				// Check if there are new modules for the user
 				ModuleService.hasNewModules().then((hasNewModules) => {
-					$rootScope.applicationBoot = false;
 					if(hasNewModules){
 						history.pushState(null, 'Home', '#/home'); // Fake coming from home
 						$location.path('/register-selectModules');
@@ -57,7 +63,6 @@ var BootCtrl = ($q, $rootScope, $location, $routeParams, DataService, UserServic
 						return funcGoHomePromise();
 					}
 				}, () => {
-					$rootScope.applicationBoot = false;
 					// If we couldn't check online for new modules, we go back home
 					return funcGoHomePromise();
 				});
@@ -66,11 +71,9 @@ var BootCtrl = ($q, $rootScope, $location, $routeParams, DataService, UserServic
 			}
 			else if(UserService.PROGRESS_SELECT_MODULES === progress){
 				$location.path('/register-selectModules');
-				$rootScope.applicationBoot = false;
 			}
 			else{
 				$location.path('/register');
-				$rootScope.applicationBoot = false;
 			}
 		};
 
@@ -78,11 +81,12 @@ var BootCtrl = ($q, $rootScope, $location, $routeParams, DataService, UserServic
 	.then(funcCheckNoMediaFile)
 	.then(funcCheckRegistrationProgress)
 	.then(funcGetProgressPromise, (reason) =>{
-		$rootScope.applicationBoot = false;
+		navigator.splashscreen.hide();
+		disableListener();
 		return SynthErrorHandler(reason);
 	});
 };
-BootCtrl.$inject = ['$q', '$rootScope', '$location', '$routeParams', 'DataService',
+BootCtrl.$inject = ['$q', '$rootScope', '$location', '$routeParams', '$timeout', 'DataService',
  'UserService', 'HomeService', 'SyncAPIService', 'SynthErrorHandler', 'SyncService',
  'PushService', 'UserSettings', 'ModuleService'];
 

@@ -4,21 +4,25 @@ var fs = require('fs'),
 	pkg = require('../package.json'),
 	extend = require('extend');
 
+var argv = require('minimist')(process.argv.slice(2));
+
+var development = argv.development === true;
+
 var buildConfig = {
-	'cordova' : {
-		'dir' : 'cordova',
-		'packageId' : 'coza.opencollab.synthesis.mobile',
-		'authorName' : 'Charl Thiem',
-		'authorEmail' : 'charl@opencollab.co.za',
-		'iconsAndroidXml' : path.resolve(__dirname, 'icons-android.xml'),
-		'iconsIosXml' : path.resolve(__dirname, 'icons-ios.xml'),
-		'iconsWindowsXml' : path.resolve(__dirname, 'icons-windows.xml'),
-		'platforms' : {
-			'android' : '5.1.1',
-			'ios' : '4.1.0',
-			'windows' : '4.3.2'
+	cordova : {
+		dir : 'cordova',
+		packageId : 'coza.opencollab.synthesis.mobile',
+		authorName : 'Charl Thiem',
+		authorEmail : 'charl@opencollab.co.za',
+		iconsAndroidXml : path.resolve(__dirname, 'icons-android.xml'),
+		iconsIosXml : path.resolve(__dirname, 'icons-ios.xml'),
+		iconsWindowsXml : path.resolve(__dirname, 'icons-windows.xml'),
+		platforms : {
+			android : '5.2.2',
+			ios : '4.1.1',
+			windows : '4.4.2'
 		},
-		'plugins' : [
+		plugins : [
 			'cordova-plugin-whitelist@1.2.1',
 			'phonegap-plugin-push@1.3.0',
 			'cordova-plugin-file@4.1.1',
@@ -28,21 +32,26 @@ var buildConfig = {
 			'cordova-plugin-statusbar@2.1.1',
 			'cordova-plugin-dialogs@1.2.0',
 			'cordova-plugin-disable-nsapptransportsecurity@1.0.2',
+			'cordova-plugin-splashscreen@4.0.0',
 			'https://github.com/OpenCollabZA/cordova-plugin-fileopener.git',
 			'cordova-plugin-android-permissions@0.10.0'
 		],
-		'preferences' : {
-			'fullscreen' : 'false',
-			'webviewbounce' : 'false',
-			'DisallowOverscroll' : 'true',
-			'StatusBarOverlaysWebView' : 'false',
-			'StatusBarBackgroundColor' : '#000000',
-			'StatusBarStyle' : 'lightcontent',
-			'AndroidPersistentFileLocation' : 'Compatibility',
-			'iosPersistentFileLocation' : 'Library',
-			'windows-target-version' : '8.1'
+		preferences : {
+			fullscreen : 'false',
+			webviewbounce : 'false',
+			DisallowOverscroll : 'true',
+			StatusBarOverlaysWebView : 'false',
+			StatusBarBackgroundColor : '#000000',
+			StatusBarStyle : 'lightcontent',
+			AndroidPersistentFileLocation : 'Compatibility',
+			iosPersistentFileLocation : 'Library',
+			'windows-target-version' : '8.1',
+			AutoHideSplashScreen : false,
+			SplashMaintainAspectRatio : true,
+			SplashScreenBackgroundColor : '#FFFFFF',
+			SplashShowOnlyFirstTime : false
 		},
-		'android' : {
+		android : {
 			// Path to the key store
 			storeFile : null,
 			// Alias of the key in the key store
@@ -58,17 +67,17 @@ var buildConfig = {
 	 * Do NOT include any context path or trailing slash
 	 * example: http://my.server.com or http://my.server.com:8080
 	 */
-	'serverBaseUrl' : 'http://synthesis.opencollab.co.za',
+	serverBaseUrl : 'http://synthesis.opencollab.co.za',
 	/**
  	 * Context path the of the Synthesis Server.
 	 * This path should contain a trailing slash. if the service is hosted
 	 * on the root of the server, enter only the "/" as the value
 	 */
-	'serverBaseContextPath' : '/synthesis-service',
-	'applicationName' : 'Synthesis Mobile',
-	'vendorName' : 'OPENCOLLAB',
+	serverBaseContextPath : '/synthesis-service',
+	applicationName : 'Synthesis Mobile',
+	vendorName : 'OPENCOLLAB',
 	// URL to the vendor website
-	'vendorURL' : 'http://www.opencollab.co.za',
+	vendorURL : 'http://www.opencollab.co.za',
 	/*
 	 * Name of the directory where synthesis will save content.
 	 * This will be relative to the directory which the native device
@@ -79,7 +88,7 @@ var buildConfig = {
 	 * see the content they already downloaded, and content not uploaded
 	 * yet will seem lost!
 	 */
-	'dataDir' : 'SynthMobile',
+	dataDir : 'SynthMobile',
 	/*
 	 * Logging level
 	 * DEBUG : 1,
@@ -88,25 +97,25 @@ var buildConfig = {
 	 * ERROR : 4
 	 * NONE  : 5
 	 */
-	'logLevel' : 1,
+	logLevel : development ? 1 : 4,
 
 	// Should we log to console
-	'logToConsole' : true,
+	logToConsole : development,
 
 	// Should we log to file
-	'logToFile' : true,
+	logToFile : true,
 
 	// Max size of the log file in bytes
-	'logFileSize' : 1000000,
+	logFileSize : 1000000,
 
 	// Number of log files to keep
-	'logFileCount' : 5,
+	logFileCount : 5,
 
 	// Flag if push notifications are enabled for the application
-	'pushEnabled' : false,
+	pushEnabled : false,
 
 	// Sender ID for android push notifications
-	'androidSenderID' : null
+	androidSenderID : null
 };
 
 // Check if there is an external file with build config we need to load

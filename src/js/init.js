@@ -19,6 +19,9 @@ angular.module(SynthMobile, [
 	tools
 ]);
 
-angular.element(document).ready(function () {
-	angular.bootstrap(document, [SynthMobile]);
-});
+// Wait for cordova before starting application
+document.addEventListener('deviceready', function() {
+	angular.element(document).ready(function () {
+		angular.bootstrap(document, [SynthMobile]);
+	});
+}, false);

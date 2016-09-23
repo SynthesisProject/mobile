@@ -5,7 +5,7 @@ import bases from 'bases';
  * base/js/services/DataService.js
  * Create factory for the DataService
  */
-var DataService = ($q, $http, $rootScope, LoggerService, SynthError, UserSession, SynthConfig, Lock, AccessPermission) => {
+var DataService = ($q, $http, $rootScope, LoggerService, SynthError, UserSession, SynthConfig, Lock) => {
 
 	var LOG = LoggerService('DataService');
 	// Characters that will be used to generate filenames
@@ -25,30 +25,14 @@ var DataService = ($q, $http, $rootScope, LoggerService, SynthError, UserSession
 	class DataServiceImpl{
 
 		constructor(){
-			this.deviceReady = false;
-			// Android 6+ requires user permission to acces files
-			this.hasFilePermissions = false;
 			this.cachedRouteFileSystem = null;
 		}
 
 		/**
-		 * Returns a promise that will be resolved when the cordova thinks
-		 * the device is ready and you can use the API
+		 * TODO remove this, device will be ready before angular starts
 		 */
 		cordovaReady(){
-			const deferred = $q.defer();
-			if (this.deviceReady === true){
-				deferred.resolve();
-			}
-			else{
-				document.addEventListener('deviceready', () => {
-					this.deviceReady = true;
-					deferred.resolve();
-				}, false);
-			}
-			return deferred.promise.then(function(){
-				return AccessPermission.requestFilePermission();
-			});
+			return $q.when();
 		}
 
 		/**
@@ -471,7 +455,7 @@ var DataService = ($q, $http, $rootScope, LoggerService, SynthError, UserSession
 				// Success
 				(data) => {
 					// Merge the new data to the old data
-					let writeData = angular.merge(data, jsonObject);
+					let writeData = angular.merge(data || {}, jsonObject);
 
 
 					// Write the merged data to the file
@@ -493,45 +477,6 @@ var DataService = ($q, $http, $rootScope, LoggerService, SynthError, UserSession
 			);
 			return deferred.promise;
 		}
-
-		/**
-		 * Gets the directory in which a tool lives
-		 TODO Use another way to find files!
-		getFileInToolData(moduleId, toolname, filepath){
-			const deferred = $q.defer();
-			this.getDataDirectory(moduleId, toolname).then(
-				// Success
-				(dirEntry) => {
-					dirEntry.getFile(filepath, {create : false},
-						(fileEntry) => {
-							var reader = new FileReader();
-							reader.onloadend = function(evt) {
-								LOG.debug(evt.target.result);
-								deferred.resolve(evt.target.result);
-							};
-
-							fileEntry.file((file) => {
-								reader.readAsDataURL(file);
-							},
-							() => {
-								LOG.warn('Failed to get file from file entry');
-								deferred.reject(SynthError(1004));
-							});
-						},
-						() => {
-							LOG.warn('Fail while trying to get file in directory');
-							deferred.reject(SynthError(1004));
-						}
-					);
-				},
-				//Fail
-				(error) => {
-					deferred.reject(error);
-				}
-			);
-			return deferred.promise;
-		}
-		 */
 
 		/**
 		 * Get data from a web json source
@@ -879,5 +824,5 @@ var DataService = ($q, $http, $rootScope, LoggerService, SynthError, UserSession
 
 	return new DataServiceImpl();
 };
-DataService.$inject = ['$q', '$http', '$rootScope', 'LoggerService', 'SynthError', 'UserSession', 'SynthConfig', 'Lock', 'AccessPermission'];
+DataService.$inject = ['$q', '$http', '$rootScope', 'LoggerService', 'SynthError', 'UserSession', 'SynthConfig', 'Lock'];
 export default DataService;

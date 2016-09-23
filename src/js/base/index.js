@@ -67,8 +67,6 @@ import CurrentModuleName from './directives/CurrentModuleName';
 import ModuleName from './directives/ModuleName';
 import ToolName from './directives/ToolName';
 
-import BootSpinner from './directives/BootSpinner';
-
 import Routes from './Routes';
 
 var base = 'synthesis.base',
@@ -134,7 +132,6 @@ angular.module(directives, [])
 	.directive('toolSyncStatus', ToolSyncStatus)
 	.directive('overallSyncStatus', OverallSyncStatus)
 	.directive('synthAttachments', SynthAttachments)
-	.directive('bootSpinner', BootSpinner)
 	.directive('moduleCollapse', ModuleCollapse)
 	.directive('animatedEllipse', AnimatedEllipse)
 	.directive('currentModuleName', CurrentModuleName)

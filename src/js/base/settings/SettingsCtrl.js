@@ -30,6 +30,7 @@ var SettingsCtrl = ($scope, $rootScope, $location, LoggerService, DataService, S
 				$rootScope.$broadcast('syncStatusChanged', {'action' : 'none'});
 				$rootScope.tools = null;
 				UserSession.clearSession();
+				navigator.splashscreen.show();
 				$location.path('/boot');
 			}, SynthErrorHandler);
 

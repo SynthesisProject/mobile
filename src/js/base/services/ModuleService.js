@@ -34,7 +34,7 @@ var ModuleService = ($q, DataService, RegistrationService, LoggerService, _SF, $
 		getLinkedModules(){
 			return RegistrationService.getRegistration().then((registrationData) => {
 				var filteredModules = [];
-				if(registrationData.modules){
+				if(registrationData && registrationData.modules){
 					var modulesArray = $filter('object2Array')(registrationData.modules);
 					filteredModules = _.filter(modulesArray, 'registered', true);
 				}

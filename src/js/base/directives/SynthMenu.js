@@ -59,7 +59,9 @@ class SynthMenu {
 
 		function updateCompleteFlag(){
 			self.userService.isRegistrationComplete().then((iscomplete) => {
-				scope.isRegistered = iscomplete;
+				if(scope.isRegistered !== iscomplete){
+					scope.isRegistered = iscomplete;
+				}
 			});
 		}
 		updateCompleteFlag();

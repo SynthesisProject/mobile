@@ -39,11 +39,13 @@ class RegistrationService{
 		if(this.cachedRegistration == null){
 			return this.dataService.getFileData('', 'registration.json')
 			.then((registration) => {
-				// Cache what we just read
-				this.cachedRegistration = registration;
-
 				// Broadcast changes to the registration
-				this.$rootScope.$broadcast('registrationDataChanged', registration);
+				if(registration != null){
+					// Cache what we just read
+					this.cachedRegistration = registration;
+					this.$rootScope.$broadcast('registrationDataChanged', registration);
+				}
+
 				return registration;
 			});
 		// Else we use the cached settings

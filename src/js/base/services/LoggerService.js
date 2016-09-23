@@ -2,7 +2,7 @@
 /*
  * base/js/services/services.LoggerService.js
  */
-var LoggerService = ($q, $log, $injector, SynthConfig, AccessPermission) => {
+var LoggerService = ($q, $log, $injector, SynthConfig) => {
 // Map of loggers created
 	const loggers = {};
 
@@ -27,28 +27,11 @@ var LoggerService = ($q, $log, $injector, SynthConfig, AccessPermission) => {
 	// Number of log files to keep
 	var numFiles = SynthConfig.logFileCount;
 
-	var deviceReady = false;
-
-
 	/**
-	 * Returns a promise that will be resolved when the cordova thinks
-	 * the device is ready and you can use the API
+	 * TODO remove this, device will be ready before angular starts
 	 */
 	function cordovaReady(){
-		const deferred = $q.defer();
-
-		if (deviceReady === true){
-			deferred.resolve();
-		}
-		else{
-			document.addEventListener('deviceready', function(){
-				deviceReady = true;
-				deferred.resolve();
-			}, false);
-		}
-		return deferred.promise.then(function(){
-			return AccessPermission.requestFilePermission();
-		});
+		return $q.when();
 	}
 
 	/**
@@ -306,5 +289,5 @@ var LoggerService = ($q, $log, $injector, SynthConfig, AccessPermission) => {
 	};
 
 };
-LoggerService.$inject = ['$q', '$log', '$injector', 'SynthConfig', 'AccessPermission'];
+LoggerService.$inject = ['$q', '$log', '$injector', 'SynthConfig'];
 export default LoggerService;
