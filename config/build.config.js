@@ -47,7 +47,7 @@ var buildConfig = {
 			iosPersistentFileLocation : 'Library',
 			'windows-target-version' : '8.1',
 			AutoHideSplashScreen : false,
-			SplashMaintainAspectRatio : true,
+			SplashMaintainAspectRatio : false,
 			SplashScreenBackgroundColor : '#FFFFFF',
 			SplashShowOnlyFirstTime : false
 		},

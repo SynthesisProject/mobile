@@ -71,7 +71,7 @@ if [ $? != 0 ] ; then
 fi
 
 
-# Converts a svg to an png
+# Converts a svg to a png
 # $1 source file
 # $2 output file name
 # $3 size
@@ -86,6 +86,14 @@ CONVERT_LOGO(){
 # $2 output file
 # $3 Desired width
 # $4 Desired height
+CONVERT_SPLASH_9(){
+	CONVERT_SPLASH $*;
+	NEW_WIDTH=$(identify -format "%[w]" "$2");
+ 	NEW_HEIGHT=$(identify -format "%[h]" "$2");
+	./9pedit -sx 1,$NEW_WIDTH -sy 1,$NEW_HEIGHT -px 1-$NEW_WIDTH -py 1-$NEW_HEIGHT "$2"
+	rm "$2"
+}
+
 CONVERT_SPLASH(){
 
 	# Which dimesion should we scale on
@@ -178,17 +186,17 @@ CONVERT_LOGO $NATIVE_LOGO_ANDROID "${OUTPUT_DIR_CORDOVA}/android/icon-96-xhdpi.p
 CONVERT_LOGO $NATIVE_LOGO_ANDROID "${OUTPUT_DIR_CORDOVA}/android/icon-144-xxhdpi.png" 144
 
 # Android splash screens
-CONVERT_SPLASH $NATIVE_SPLASH "${OUTPUT_DIR_CORDOVA}/android/splash-720x960-port.png" 720 960
-CONVERT_SPLASH $NATIVE_SPLASH "${OUTPUT_DIR_CORDOVA}/android/splash-960x720-land.png" 960 720
-CONVERT_SPLASH $NATIVE_SPLASH "${OUTPUT_DIR_CORDOVA}/android/splash-480x640-hdpi.png" 480 640
-CONVERT_SPLASH $NATIVE_SPLASH "${OUTPUT_DIR_CORDOVA}/android/splash-640x480-land-hdpi.png" 640 480
-CONVERT_SPLASH $NATIVE_SPLASH "${OUTPUT_DIR_CORDOVA}/android/splash-320x426-port-ldpi.png" 320 426
-CONVERT_SPLASH $NATIVE_SPLASH "${OUTPUT_DIR_CORDOVA}/android/splash-426x320-land-ldpi.png" 426 320
-CONVERT_SPLASH $NATIVE_SPLASH "${OUTPUT_DIR_CORDOVA}/android/splash-320x470-port-mdpi.png" 320 470
-CONVERT_SPLASH $NATIVE_SPLASH "${OUTPUT_DIR_CORDOVA}/android/splash-470x320-land-mdpi.png" 470 320
-CONVERT_SPLASH $NATIVE_SPLASH "${OUTPUT_DIR_CORDOVA}/android/splash-720x960-port-xhdpi.png" 720 960
-CONVERT_SPLASH $NATIVE_SPLASH "${OUTPUT_DIR_CORDOVA}/android/splash-960x720-land-xhdpi.png" 960 720
-CONVERT_SPLASH $NATIVE_SPLASH "${OUTPUT_DIR_CORDOVA}/android/splash-1440x1080-land-xxhdpi.png" 1440 1080
+CONVERT_SPLASH_9 $NATIVE_SPLASH "${OUTPUT_DIR_CORDOVA}/android/splash-720x960-port.png" 720 960
+CONVERT_SPLASH_9 $NATIVE_SPLASH "${OUTPUT_DIR_CORDOVA}/android/splash-960x720-land.png" 960 720
+CONVERT_SPLASH_9 $NATIVE_SPLASH "${OUTPUT_DIR_CORDOVA}/android/splash-480x640-hdpi.png" 480 640
+CONVERT_SPLASH_9 $NATIVE_SPLASH "${OUTPUT_DIR_CORDOVA}/android/splash-640x480-land-hdpi.png" 640 480
+CONVERT_SPLASH_9 $NATIVE_SPLASH "${OUTPUT_DIR_CORDOVA}/android/splash-320x426-port-ldpi.png" 320 426
+CONVERT_SPLASH_9 $NATIVE_SPLASH "${OUTPUT_DIR_CORDOVA}/android/splash-426x320-land-ldpi.png" 426 320
+CONVERT_SPLASH_9 $NATIVE_SPLASH "${OUTPUT_DIR_CORDOVA}/android/splash-320x470-port-mdpi.png" 320 470
+CONVERT_SPLASH_9 $NATIVE_SPLASH "${OUTPUT_DIR_CORDOVA}/android/splash-470x320-land-mdpi.png" 470 320
+CONVERT_SPLASH_9 $NATIVE_SPLASH "${OUTPUT_DIR_CORDOVA}/android/splash-720x960-port-xhdpi.png" 720 960
+CONVERT_SPLASH_9 $NATIVE_SPLASH "${OUTPUT_DIR_CORDOVA}/android/splash-960x720-land-xhdpi.png" 960 720
+CONVERT_SPLASH_9 $NATIVE_SPLASH "${OUTPUT_DIR_CORDOVA}/android/splash-1440x1080-land-xxhdpi.png" 1440 1080
 
 # Create market images
 mkdir -p "$OUTPUT_DIR_MARKETS/android/"

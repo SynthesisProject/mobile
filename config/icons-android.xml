@@ -4,15 +4,15 @@
 	<icon src="../src/res/android/icon-72-hdpi.png" density="hdpi" />
 	<icon src="../src/res/android/icon-96-xhdpi.png" density="xhdpi" />
 	<icon src="../src/res/android/icon-144-xxhdpi.png" density="xxhdpi" />
-	<splash src="../src/res/android/splash-1440x1080-land-xxhdpi.png" density="land-xxhdpi" />
-	<splash src="../src/res/android/splash-320x426-port-ldpi.png" density="port-ldpi"/>
-	<splash src="../src/res/android/splash-320x470-port-mdpi.png" density="port-mdpi"/>
-	<splash src="../src/res/android/splash-426x320-land-ldpi.png" density="land-ldpi" />
-	<splash src="../src/res/android/splash-470x320-land-mdpi.png" density="land-mdpi" />
-	<splash src="../src/res/android/splash-480x640-hdpi.png" density="port-hdpi" />
-	<splash src="../src/res/android/splash-640x480-land-hdpi.png" density="land-hdpi" />
-	<splash src="../src/res/android/splash-720x960-port-xhdpi.png" density="port-xhdpi"/>
-	<splash src="../src/res/android/splash-720x960-port.png" density="port"/>
-	<splash src="../src/res/android/splash-960x720-land-xhdpi.png" density="land-xhdpi" />
-	<splash src="../src/res/android/splash-960x720-land.png" density="land"/>
+	<splash src="../src/res/android/splash-1440x1080-land-xxhdpi.9.png" density="land-xxhdpi" />
+	<splash src="../src/res/android/splash-320x426-port-ldpi.9.png" density="port-ldpi"/>
+	<splash src="../src/res/android/splash-320x470-port-mdpi.9.png" density="port-mdpi"/>
+	<splash src="../src/res/android/splash-426x320-land-ldpi.9.png" density="land-ldpi" />
+	<splash src="../src/res/android/splash-470x320-land-mdpi.9.png" density="land-mdpi" />
+	<splash src="../src/res/android/splash-480x640-hdpi.9.png" density="port-hdpi" />
+	<splash src="../src/res/android/splash-640x480-land-hdpi.9.png" density="land-hdpi" />
+	<splash src="../src/res/android/splash-720x960-port-xhdpi.9.png" density="port-xhdpi"/>
+	<splash src="../src/res/android/splash-720x960-port.9.png" density="port"/>
+	<splash src="../src/res/android/splash-960x720-land-xhdpi.9.png" density="land-xhdpi" />
+	<splash src="../src/res/android/splash-960x720-land.9.png" density="land"/>
 </platform>
