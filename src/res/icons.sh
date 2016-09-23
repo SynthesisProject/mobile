@@ -11,6 +11,8 @@
 
 # Image to use as a splash screen (SVG only)
 NATIVE_SPLASH=app_banner.svg
+NATIVE_SPLASH_W=515
+NATIVE_SPLASH_H=235
 
 # Background to use with the splash screen
 # This color is used to fill the space of the splash
@@ -82,10 +84,40 @@ CONVERT_LOGO(){
 # Convert and SVG to a splash screen
 # $1 source file
 # $2 output file
-# $3 width
-# $4 height
+# $3 Desired width
+# $4 Desired height
 CONVERT_SPLASH(){
-	CONVERT_PNG $1 "${OUTPUT_DIR_TEMP}/~temp.png" $3 $4 $5
+
+	# Which dimesion should we scale on
+	SOURCE_SCALE="height"
+	# Which dimension is the biggest
+	DEST_SCALE="height"
+	if [ "$5" == "--no-alpha" ]; then
+		BACKGROUND="--background-color=$NATIVE_SPLASH_BG";
+	fi
+	if [ $NATIVE_SPLASH_W > $NATIVE_SPLASH_H ] ; then
+		SOURCE_SCALE="width"
+	fi
+
+	if [ $3 > $4 ] ; then
+		DEST_RATIO="width"
+	fi
+
+	#
+	if [ $DEST_RATIO != $SOURCE_SCALE ] ; then
+		if [ $DEST_RATIO == "width" ] ; then
+			$SOURCE_SCALE="height";
+		else
+			$SOURCE_SCALE="width";
+		fi
+	fi
+
+	if [ $SOURCE_SCALE == "width" ] ; then
+		rsvg-convert --keep-aspect-ratio $BACKGROUND --width=$3 --format=png -o "${OUTPUT_DIR_TEMP}/~temp.png" $1
+	else
+		rsvg-convert --keep-aspect-ratio $BACKGROUND --height=$4 --format=png -o "${OUTPUT_DIR_TEMP}/~temp.png" $1
+	fi
+
 	convert "${OUTPUT_DIR_TEMP}/~temp.png" -gravity center -background $NATIVE_SPLASH_BG -extent "$3x$4" "$2"
 	rm "${OUTPUT_DIR_TEMP}/~temp.png"
 	echo "Created file $2";
