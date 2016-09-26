@@ -10,7 +10,7 @@ This project is used as a client for the Synthesis Service
 
 ## Requirements
 
-Node 4.2 or higher with gulp installed globally
+Node 5 or higher with gulp installed globally
 
 `(sudo) npm install -g gulp`
 
@@ -34,17 +34,9 @@ Once ready to run on a device or emulator:
 
 `gulp build-windows`
 
-To use developer mode you need to set an environment variable
-Unix:
-
-``` bash
-export DEVELOPMENT=true; gulp build-android
+To run in development mode, add the `--development` parameter
 ```
-
-Windows:
-
-```
-set DEVELOPMENT=true; gulp build-android
+gulp build-android --development
 ```
 
 ## Additional documentation
