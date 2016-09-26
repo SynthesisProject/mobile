@@ -1,6 +1,6 @@
 {
-  "coverage": "61.78%",
-  "expectCount": 246,
+  "coverage": "62.04%",
+  "expectCount": 245,
   "actualCount": 152,
   "files": {
     "js/base/directives/SynthAttachments.js": {
@@ -486,13 +486,6 @@
         6
       ]
     },
-    "js/base/factories/SynthQIfStatement.js": {
-      "expectCount": 1,
-      "actualCount": 0,
-      "undocumentLines": [
-        2
-      ]
-    },
     "js/tools/index.js": {
       "expectCount": 1,
       "actualCount": 0,
@@ -524,7 +517,7 @@
       "expectCount": 1,
       "actualCount": 0,
       "undocumentLines": [
-        72
+        71
       ]
     },
     "js/base/Utilities.js": {

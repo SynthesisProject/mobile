@@ -534,12 +534,6 @@ window.esdocSearchIndex = [
     "variable"
   ],
   [
-    "synthesis-mobile/js/base/factories/synthqifstatement.js~synthqifstatement",
-    "variable/index.html#static-variable-SynthQIfStatement",
-    "<span>SynthQIfStatement</span> <span class=\"search-result-import-path\">synthesis-mobile/js/base/factories/SynthQIfStatement.js</span>",
-    "variable"
-  ],
-  [
     "synthesis-mobile/js/base/services/synthesisrestclient.js~synthesisrestclient",
     "class/js/base/services/SynthesisRESTClient.js~SynthesisRESTClient.html",
     "<span>SynthesisRESTClient</span> <span class=\"search-result-import-path\">synthesis-mobile/js/base/services/SynthesisRESTClient.js</span>",
@@ -1557,12 +1551,6 @@ window.esdocSearchIndex = [
     "js/base/factories/synthfail.js",
     "file/js/base/factories/SynthFail.js.html",
     "js/base/factories/SynthFail.js",
-    "file"
-  ],
-  [
-    "js/base/factories/synthqifstatement.js",
-    "file/js/base/factories/SynthQIfStatement.js.html",
-    "js/base/factories/SynthQIfStatement.js",
     "file"
   ],
   [
