@@ -251,8 +251,10 @@ CONVERT_SPLASH $NATIVE_SPLASH "$OUTPUT_DIR_MARKETS/ios/4_7_Retina_Screenshot-750
 CONVERT_SPLASH $NATIVE_SPLASH "$OUTPUT_DIR_MARKETS/ios/4_7_Retina_Screenshot-1334x750-landscape.png" 1334 750 --no-alpha
 CONVERT_SPLASH $NATIVE_SPLASH "$OUTPUT_DIR_MARKETS/ios/5_5_Retina_Screenshot-1242x2208.png" 1242 2208 --no-alpha
 CONVERT_SPLASH $NATIVE_SPLASH "$OUTPUT_DIR_MARKETS/ios/5_5_Retina_Screenshot-2208x1242-landscape.png" 2208 1242  --no-alpha
-CONVERT_SPLASH $NATIVE_SPLASH "$OUTPUT_DIR_MARKETS/ios/iPad_Screenshot-1536x2008.png" 2048 1496 --no-alpha
-CONVERT_SPLASH $NATIVE_SPLASH "$OUTPUT_DIR_MARKETS/ios/iPad_Screenshot-1536x2008-landscape.png" 1536 2008 --no-alpha
+CONVERT_SPLASH $NATIVE_SPLASH "$OUTPUT_DIR_MARKETS/ios/9_7_iPad_Retina_Screenshot-1536x2008.png" 2048 1496 --no-alpha
+CONVERT_SPLASH $NATIVE_SPLASH "$OUTPUT_DIR_MARKETS/ios/9_7_iPad_Retina_Screenshot-1536x2008-landscape.png" 1536 2008 --no-alpha
+CONVERT_SPLASH $NATIVE_SPLASH "$OUTPUT_DIR_MARKETS/ios/12_9_iPad_Retina_Screenshot-1536x2008-portrait.png" 2048 2732 --no-alpha
+CONVERT_SPLASH $NATIVE_SPLASH "$OUTPUT_DIR_MARKETS/ios/12_9_iPad_Retina_Screenshot-2732x2048-landscape.png" 2048 2732 --no-alpha
 
 # Windows
 mkdir -p "${OUTPUT_DIR_CORDOVA}/windows"
