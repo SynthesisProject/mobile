@@ -53,10 +53,10 @@ gulp build-android --development
 ## Development
 ### Source code
 All source code for the application is located `src` directory
- - html, all the web assets
- - js, all the JavaScript assets
- - less, styling
- - res, icons and images
+ - `html` - all the web assets
+ - `js` - all the JavaScript assets
+ - `less` - styling
+ - `res` - icons and images
 
 ### Android SDK Setup
 You need to install the android sdk and have it configured to your path ($ANDROID_HOME, $ANDROID_HOME/tools, $ANDROID_HOME/platform-tools)
