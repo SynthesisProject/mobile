@@ -35,7 +35,6 @@ import SynthErrorHandler from './factories/SynthErrorHandler';
 import SynthAuthenticateUser from './factories/SynthAuthenticateUser';
 import UserSession from './factories/UserSession';
 import Lock from './factories/Lock';
-import AccessPermission from './factories/AccessPermission';
 
 
 // Import base filters
@@ -111,8 +110,7 @@ angular.module(factories, [])
 	.factory('SynthErrorHandler', SynthErrorHandler)
 	.factory('SynthAuthenticateUser', SynthAuthenticateUser)
 	.factory('SynthesisRESTClient', SynthesisRESTClient)
-	.factory('Lock', Lock)
-	.factory('AccessPermission', AccessPermission);
+	.factory('Lock', Lock);
 
 // Register filters
 angular.module(filters, [])
