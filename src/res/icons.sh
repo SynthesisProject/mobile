@@ -75,9 +75,14 @@ fi
 # $1 source file
 # $2 output file name
 # $3 size
-# $4 Optional extra parameters to send to CONVERT_PNG (--no-alpha)
+# $4 Optional --no-alpha
 CONVERT_LOGO(){
-	CONVERT_PNG "$1" "$2" "$3" "$3" "$4"
+	BACKGROUND="";
+	if [ "$4" == "--no-alpha" ]; then
+		BACKGROUND="--background-color=$NATIVE_SPLASH_BG";
+	fi
+	rsvg-convert -a $BACKGROUND --width=$3 --height=$3 --format=png -o "$2" $1
+	echo "Created file $2";
 }
 
 
@@ -87,7 +92,7 @@ CONVERT_LOGO(){
 # $3 Desired width
 # $4 Desired height
 CONVERT_SPLASH_9(){
-	CONVERT_SPLASH $*;
+	CONVERT_SPLASH $* --no-alpha;
 	NEW_WIDTH=$(identify -format "%[w]" "$2");
  	NEW_HEIGHT=$(identify -format "%[h]" "$2");
 	./9pedit -sx 1,$NEW_WIDTH -sy 1,$NEW_HEIGHT -px 1-$NEW_WIDTH -py 1-$NEW_HEIGHT "$2"
@@ -99,15 +104,20 @@ CONVERT_SPLASH_9(){
 # $2 output file
 # $3 Desired width
 # $4 Desired height
+# $5 --no-alpha
 CONVERT_SPLASH(){
 
 	# Which dimesion should we scale on
 	SOURCE_SCALE="height"
 	# Which dimension is the biggest
 	DEST_SCALE="height"
+
 	if [ "$5" == "--no-alpha" ]; then
-		BACKGROUND="--background-color=$NATIVE_SPLASH_BG";
+		BACKGROUND="-background $NATIVE_SPLASH_BG";
+	else
+		BACKGROUND="-background none";
 	fi
+
 	if [ $NATIVE_SPLASH_W -gt $NATIVE_SPLASH_H ] ; then
 		SOURCE_SCALE="width";
 	fi
@@ -128,28 +138,13 @@ CONVERT_SPLASH(){
 	fi
 
 	if [ "$SOURCE_SCALE" == "width" ] ; then
-		rsvg-convert --keep-aspect-ratio $BACKGROUND --width=$3 --format=png -o "${OUTPUT_DIR_TEMP}/~temp.png" $1
+		rsvg-convert --keep-aspect-ratio --width=$3 --format=png -o "${OUTPUT_DIR_TEMP}/~temp.png" $1
 	else
-		rsvg-convert --keep-aspect-ratio $BACKGROUND --height=$4 --format=png -o "${OUTPUT_DIR_TEMP}/~temp.png" $1
+		rsvg-convert --keep-aspect-ratio --height=$4 --format=png -o "${OUTPUT_DIR_TEMP}/~temp.png" $1
 	fi
 
-	convert "${OUTPUT_DIR_TEMP}/~temp.png" -gravity center -background $NATIVE_SPLASH_BG -extent "$3x$4" "$2"
-	rm "${OUTPUT_DIR_TEMP}/~temp.png"
-	echo "Created file $2";
-}
-
-# Convert banner to splash screen
-# $1 input file
-# $2 output file name
-# $3 width
-# $4 height
-# $5 optional no alpha
-CONVERT_PNG(){
-	BACKGROUND="";
-	if [ "$5" == "--no-alpha" ]; then
-		BACKGROUND="--background-color=$NATIVE_SPLASH_BG";
-	fi
-	rsvg-convert -a $BACKGROUND --width=$3 --height=$4 --format=png -o "$2" $1
+	convert "${OUTPUT_DIR_TEMP}/~temp.png" $BACKGROUND -gravity center -extent "$3x$4" "$2"
+	#rm "${OUTPUT_DIR_TEMP}/~temp.png"
 	echo "Created file $2";
 }
 
@@ -172,12 +167,17 @@ CONVERT_ICO(){
 }
 
 
+CONVERT_SPLASH $NATIVE_SPLASH "${OUTPUT_DIR_WEB}/images/splash.png" 500 500
+exit 0;
+
+
 # Web apple touch icons
 CONVERT_LOGO $NATIVE_LOGO_IOS "${OUTPUT_DIR_WEB}/apple-touch-icon.png" 57
 CONVERT_LOGO $NATIVE_LOGO_IOS "${OUTPUT_DIR_WEB}/apple-touch-icon-76.png" 76
 CONVERT_LOGO $NATIVE_LOGO_IOS "${OUTPUT_DIR_WEB}/apple-touch-icon-120.png" 120
 CONVERT_LOGO $NATIVE_LOGO_IOS "${OUTPUT_DIR_WEB}/apple-touch-icon-152.png" 152
 
+CONVERT_SPLASH $NATIVE_SPLASH "${OUTPUT_DIR_WEB}/images/splash.png" 500 500
 
 # Web fav icons
 #CONVERT_ICO $WEB_FAVICON "favicon.ico"
