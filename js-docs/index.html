@@ -154,7 +154,7 @@
 <h1 id="synthesis-mobile">Synthesis Mobile</h1>
 <p>This project is used as a client for the Synthesis Service</p>
 <h2 id="requirements">Requirements</h2>
-<p>Node 4.2 or higher with gulp installed globally</p>
+<p>Node 5 or higher with gulp installed globally</p>
 <p><code>(sudo) npm install -g gulp</code></p>
 <p><a href="https://git-scm.com/downloads">Git client </a></p>
 <h2 id="installation">Installation</h2>
@@ -168,12 +168,8 @@ npm install</code>
 <p><code>gulp build-android</code></p>
 <p><code>gulp build-ios</code></p>
 <p><code>gulp build-windows</code></p>
-<p>To use developer mode you need to set an environment variable
-Unix:</p>
-<pre><code class="lang-bash"><code class="source-code prettyprint">export DEVELOPMENT=true; gulp build-android</code>
-</code></pre>
-<p>Windows:</p>
-<pre><code><code class="source-code prettyprint">set DEVELOPMENT=true; gulp build-android</code>
+<p>To run in development mode, add the <code>--development</code> parameter</p>
+<pre><code><code class="source-code prettyprint">gulp build-android --development</code>
 </code></pre><h2 id="additional-documentation">Additional documentation</h2>
 <ul>
 <li><a href="./docs/branding.md">Branding</a></li>
