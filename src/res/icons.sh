@@ -94,6 +94,11 @@ CONVERT_SPLASH_9(){
 	rm "$2"
 }
 
+# Convert and SVG to a splash screen
+# $1 source file
+# $2 output file
+# $3 Desired width
+# $4 Desired height
 CONVERT_SPLASH(){
 
 	# Which dimesion should we scale on
@@ -103,24 +108,26 @@ CONVERT_SPLASH(){
 	if [ "$5" == "--no-alpha" ]; then
 		BACKGROUND="--background-color=$NATIVE_SPLASH_BG";
 	fi
-	if [ $NATIVE_SPLASH_W > $NATIVE_SPLASH_H ] ; then
-		SOURCE_SCALE="width"
+	if [ $NATIVE_SPLASH_W -gt $NATIVE_SPLASH_H ] ; then
+		SOURCE_SCALE="width";
 	fi
 
-	if [ $3 > $4 ] ; then
-		DEST_RATIO="width"
+	# Check if width is bigger than height
+	if [ $3 -gt $4 ] ; then
+		DEST_RATIO="width";
 	fi
 
-	#
-	if [ $DEST_RATIO != $SOURCE_SCALE ] ; then
-		if [ $DEST_RATIO == "width" ] ; then
-			$SOURCE_SCALE="height";
+	# If splash is a square, we have to work with only the dest ratio
+	# If the Dest ratio and source ratio is not the same, use the dest ratio
+	if [ $NATIVE_SPLASH_W == $NATIVE_SPLASH_H ] || [ "$DEST_RATIO" != "$SOURCE_SCALE" ] ; then
+		if [ "$DEST_RATIO" == "width" ] ; then
+			SOURCE_SCALE="height";
 		else
-			$SOURCE_SCALE="width";
+			SOURCE_SCALE="width";
 		fi
 	fi
 
-	if [ $SOURCE_SCALE == "width" ] ; then
+	if [ "$SOURCE_SCALE" == "width" ] ; then
 		rsvg-convert --keep-aspect-ratio $BACKGROUND --width=$3 --format=png -o "${OUTPUT_DIR_TEMP}/~temp.png" $1
 	else
 		rsvg-convert --keep-aspect-ratio $BACKGROUND --height=$4 --format=png -o "${OUTPUT_DIR_TEMP}/~temp.png" $1
