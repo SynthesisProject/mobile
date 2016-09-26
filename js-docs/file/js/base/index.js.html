@@ -61,15 +61,12 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ToolNameFactory">ToolNameFactory</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ToolSyncStatusFactory">ToolSyncStatusFactory</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SynthFooterFactory">SynthFooterFactory</a></span></span></li>
-<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">base/factories</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/base/factories/AccessPermission.js~AccessPermission.html">AccessPermission</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/base/factories/AppSyncStatus.js~AppSyncStatus.html">AppSyncStatus</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">base/factories</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/base/factories/AppSyncStatus.js~AppSyncStatus.html">AppSyncStatus</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/base/factories/Lock.js~Lock.html">Lock</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/js/base/factories/UserSession.js~UserSession.html">UserSession</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-AccessPermissionFactory">AccessPermissionFactory</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-AppSyncStatusFactory">AppSyncStatusFactory</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-LockFactory">LockFactory</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-UserSessionFactory">UserSessionFactory</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-FILE_ACCESS_LOCK">FILE_ACCESS_LOCK</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SynthAuthenticateUser">SynthAuthenticateUser</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SynthCheckResponseError">SynthCheckResponseError</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SynthError">SynthError</a></span></span></li>
@@ -184,7 +181,6 @@ import SynthErrorHandler from &apos;./factories/SynthErrorHandler&apos;;
 import SynthAuthenticateUser from &apos;./factories/SynthAuthenticateUser&apos;;
 import UserSession from &apos;./factories/UserSession&apos;;
 import Lock from &apos;./factories/Lock&apos;;
-import AccessPermission from &apos;./factories/AccessPermission&apos;;
 
 
 // Import base filters
@@ -260,8 +256,7 @@ angular.module(factories, [])
 	.factory(&apos;SynthErrorHandler&apos;, SynthErrorHandler)
 	.factory(&apos;SynthAuthenticateUser&apos;, SynthAuthenticateUser)
 	.factory(&apos;SynthesisRESTClient&apos;, SynthesisRESTClient)
-	.factory(&apos;Lock&apos;, Lock)
-	.factory(&apos;AccessPermission&apos;, AccessPermission);
+	.factory(&apos;Lock&apos;, Lock);
 
 // Register filters
 angular.module(filters, [])

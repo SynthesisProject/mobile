@@ -1,6 +1,6 @@
 {
-  "coverage": "62.04%",
-  "expectCount": 245,
+  "coverage": "64.13%",
+  "expectCount": 237,
   "actualCount": 152,
   "files": {
     "js/base/directives/SynthAttachments.js": {
@@ -48,30 +48,6 @@
         22
       ]
     },
-    "js/base/factories/AccessPermission.js": {
-      "expectCount": 8,
-      "actualCount": 0,
-      "undocumentLines": [
-        9,
-        6,
-        72,
-        4,
-        10,
-        8,
-        11,
-        44
-      ]
-    },
-    "js/base/factories/Lock.js": {
-      "expectCount": 8,
-      "actualCount": 4,
-      "undocumentLines": [
-        9,
-        10,
-        8,
-        11
-      ]
-    },
     "js/base/services/UserSettings.js": {
       "expectCount": 11,
       "actualCount": 4,
@@ -83,6 +59,16 @@
         11,
         21,
         89
+      ]
+    },
+    "js/base/factories/Lock.js": {
+      "expectCount": 8,
+      "actualCount": 4,
+      "undocumentLines": [
+        9,
+        10,
+        8,
+        11
       ]
     },
     "js/base/directives/ModuleCollapse.js": {
@@ -184,19 +170,19 @@
       "actualCount": 2,
       "undocumentLines": []
     },
-    "js/tools/announcements/config.js": {
-      "expectCount": 1,
-      "actualCount": 1,
-      "undocumentLines": []
-    },
-    "js/tools/schedule/config.js": {
+    "js/tools/resources/config.js": {
       "expectCount": 1,
       "actualCount": 0,
       "undocumentLines": [
         2
       ]
     },
-    "js/tools/resources/config.js": {
+    "js/tools/announcements/config.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "js/tools/schedule/config.js": {
       "expectCount": 1,
       "actualCount": 0,
       "undocumentLines": [
@@ -517,7 +503,7 @@
       "expectCount": 1,
       "actualCount": 0,
       "undocumentLines": [
-        71
+        70
       ]
     },
     "js/base/Utilities.js": {
