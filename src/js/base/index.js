@@ -27,7 +27,6 @@ import SyncService from './sync/SyncService';
 import SyncSelection from './sync/SyncSelection';
 import SynthesisRESTClient from './services/SynthesisRESTClient';
 
-import SynthQIfStatement from './factories/SynthQIfStatement';
 import safo from './factories/safo';
 import SynthError from './factories/SynthError';
 import SynthFail from './factories/SynthFail';
@@ -105,7 +104,6 @@ angular.module(factories, [])
 	.factory('UserSession', UserSession)
 	.factory('SyncService', SyncService)
 	.factory('SyncSelection', SyncSelection)
-	.factory('SynthQIfStatement', SynthQIfStatement)
 	.factory('safo', safo)
 	.factory('SynthError', SynthError)
 	.factory('SynthFail', SynthFail)
