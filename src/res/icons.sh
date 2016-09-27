@@ -167,10 +167,6 @@ CONVERT_ICO(){
 }
 
 
-CONVERT_SPLASH $NATIVE_SPLASH "${OUTPUT_DIR_WEB}/images/splash.png" 500 500
-exit 0;
-
-
 # Web apple touch icons
 CONVERT_LOGO $NATIVE_LOGO_IOS "${OUTPUT_DIR_WEB}/apple-touch-icon.png" 57
 CONVERT_LOGO $NATIVE_LOGO_IOS "${OUTPUT_DIR_WEB}/apple-touch-icon-76.png" 76
