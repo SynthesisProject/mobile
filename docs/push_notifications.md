@@ -10,6 +10,7 @@
 5. Click "Enable API"
 
 After completing the server side, follow these steps
+
 1. Navigate to [Google Developers Portal](https://developers.google.com/mobile/add?platform=android)
 2. Select your App's Name, enter the android package name EXACTLY as the "id" in your cordova config.xml
 3. Select "CONTINUE TO Choose and configure services arrow_forward"
