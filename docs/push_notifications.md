@@ -26,7 +26,7 @@ After completing the server side, follow these steps
 2. Click on "App IDs" at "Identifiers" on the left navigation
 3. Click on the App ID for your application.
 4. Check that "Push Notifications" are enabled,
- 1 if not, select edit, and tick the "Push Notifications" box
+ 1. if not, select edit, and tick the "Push Notifications" box
  2. Select Create certificate for development
  3. Follow the prompts to create the certificate, save all files generated and downloaded in the "keys" directory of the project. Use the "ios-dev" or "ios-prod" directories depending on the environment you are creating it for.
   User email: Any email address (preferably your own)
