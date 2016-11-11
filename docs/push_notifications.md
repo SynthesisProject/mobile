@@ -32,12 +32,20 @@ After completing the server side, follow these steps
     - User email: Any email address (preferably your own)
     - Common name: Synthesis Push Development|Production
     - Request is: Saved to disk
-  4. From your keystore, export the private key, of the key you just created (Apple Push Services: \<app id\>) -\> \<app name\> Push [Development|Production].
-    - Export as .12 and save as "SynthesisMobile.p12" in the "keys" (ios-dev or ios-prod) directory of this project. 
+  4. Upload CSR on website
+  5. Download the generated certifcate from website and save into ios-dev directory. (You might have to move it if your Mac automatically saves to another directory)
+  6. From your keystore, export the private key, of the key you just created (Apple Push Services: \<app id\>) -\> \<app name\> Push [Development|Production].
+    - Export as .12 and save as "SynthesisMobile.p12" in the "keys" (ios-dev or ios-prod) directory of this project.
     - Leave the password blank.
-    - This file will be saved as Certificates.p12
+    - This file will be saved as SynthesisMobile.p12
 5. Now that you have all the keys, use the create_keys.sh script in the "keys" directory to generate the server key for you navigate the "keys" directory and execute `./createKeys.sh`
-  - *(You might have to rename some files for the script to work)*
+*(You might have to rename some files for the script to work)*
+  1. "Enter Import Password" : leave blank
+  2. "Enter PEM pass phrase" : Choose a password and remember it
+  3. "Verifyin - Enter PEM pass phrase" : Enter same password
+  4. "Enter pass phrase for private_dev_key.pem" : Enter same password
+  5. "Enter Export Password" : Enter same password
+  6. "Verifying - Enter Export Password" : Enter same password
 6. Once done, you will have a `SynthesisMobile-development-server.p12` file which must be placed on the Synthesis Server
 7. Configure
  * `push.apple.key.file=file:///opt/synthesis_home/SynthesisMobile-development-server.p12`
